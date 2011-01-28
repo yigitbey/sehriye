@@ -1,3 +1,4 @@
+//test
 package org.apache.android.xmpp;
 
 import android.app.Activity;
