@@ -1,4 +1,5 @@
 //test
+//test2
 package org.apache.android.xmpp;
 
 import android.app.Activity;
