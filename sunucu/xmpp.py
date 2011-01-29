@@ -1,4 +1,4 @@
-import logging, random
+import logging, random, time
 from google.appengine.api import xmpp
 from google.appengine.ext import webapp
 from google.appengine.ext import db
@@ -65,8 +65,37 @@ class PersistentUser(db.Model):
 
 class Conversation(db.Model):
     """ For storing conversation sessions """
-    user_1 = User()
-    user_2 = User()
+    user_1 = db.EmailProperty()
+    user_2 = db.EmailProperty() 
+    
+    
+    def matchPeople(self, current_user):
+        """ Function for matching current user with another user """ 
+        dummy_email = "a@aa.aaa" # Will be set as partner if there does not exist any waiting user 
+        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_2 != :2 AND user_1 = :1  LIMIT 1", current_user, dummy_email)
+        query2 = db.GqlQuery("SELECT * FROM Conversation WHERE user_2 = :1 LIMIT 1", current_user)
+        if query.count() == 1:
+            conversation = query.get()
+            return conversation.user_2
+        elif query2.count() == 1:
+            conversation = query2.get()
+            return conversation.user_1
+        
+        else:
+            
+            query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 != :1 AND user_2 = :2 LIMIT 1",current_user, dummy_email)
+            if query.count() == 1:
+                conversation = query.get()
+                conversation.user_2 = current_user
+                conversation.put()
+                logging.debug("ikinci query geldi")
+                return conversation.user_1
+            else:
+                self.user_1 = current_user
+                self.user_2 = "a@aa.aaa"
+                self.put()
+                logging.debug("ucuncu query geldi")
+                return 0
 
 
 class XMPPHandler(webapp.RequestHandler):
@@ -75,15 +104,19 @@ class XMPPHandler(webapp.RequestHandler):
         message = xmpp.Message(self.request.POST)
         
         #        registerUser(message.sender)
-        user = User()
-        user.register(message.sender)
-        puser = PersistentUser()
-        puser.register(message.sender)
 
-        message_to = user.getRandom()
-        logging.debug("kisi:" + message_to.address)
+        sender = message.sender.split("/")[0]
+        conversation = Conversation()
+        partner = 0
+        while (partner == 0):
+            partner = conversation.matchPeople(sender)
+            time.sleep(1)
+            
 
-
+        logging.debug("kisi:" + partner)
+        
+        message.reply(partner)
+        
         logging.info("gelen mesaj: " + message.body) # TODO: remove this logging
         if message.body == 'osman abi evde mi?':
             message.reply("evde.")
