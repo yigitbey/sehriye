@@ -9,3 +9,4 @@ inbound_services:
 handlers:
 - url: /.*
   script: xmpp.py
+

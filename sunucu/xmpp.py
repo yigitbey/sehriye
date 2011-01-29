@@ -14,50 +14,59 @@ class User(db.Model):
     # TODO: Implement a mechanism to look for online users every x minute,
     #       remove others from this list.
 
+    def getRandom(self):
+        """ 
+        This function returns a random user 
+        Since GQL objects does not have len(), it founds its way by doing a dirty hack:
+        Storing a random floating number for every user. And querying another random number
+        This can be a problem if number of active users becomes greater then the precision 
+        of stored random value. 
+        And also our random number can be bigger then any entry on the database.
+        """
+
+        self.is_online = False
+        
+        while (self.is_online == False):
+            random.seed()
+            rand = random.random() # To select a random entry from User table
+            logging.debug(rand)
+            query = db.GqlQuery("SELECT * FROM User WHERE rand > :1 AND is_online = True ORDER BY rand LIMIT 1 ", rand)
+            self = query.get()
+            
+        return self
+        
+    
+    def register(self,sender, is_persistent = True): 
+        """ Registering a user to our datastore """
+        
+        ### Registering our user to current users
+        # TODO: avoid duplicate entries.
+        self.address = sender
+        self.is_online = True
+        self.rand = random.random()
+        self.put()
+        ###
+
+
 
 # TODO: decide if this is necessary.
 class PersistentUser(db.Model):
-    """ For storing every user ever tried this app"""
+    """ For storing every user ever tried this app """
     address = db.EmailProperty()
 
+    def register(self,sender):
+        """ Registering a user to our datastore """
+        # Registering our user as a persistent user
+        # TODO: avoid duplicate entries.
+        self.address = sender
+        self.put()
+        ###
 
-def getRandomUser():
-    """ 
-    This function returns a random user 
-    Since GQL objects does not have len(), it founds its way by doing a dirty hack:
-    Storing a random floating number for every user. And querying another random number
-    This can be a problem if number of active users becomes greater then the precision 
-    of stored random value. 
-    """
-    user = User()
-    user.is_online = False
 
-    rand = random.random() # To select a random entry from User table
-    while (user.is_online == False):
-        query = db.GqlQuery("SELECT * FROM User WHERE rand > :1 AND is_online = True ORDER BY rand LIMIT 1 ", rand)
-        user = query.get()
-
-    return user
-
-    
-def registerUser(sender, is_persistent = True): 
-    """ Registering a user to our datastore """
-
-    ### Registering our user to current users
-    user = User()
-    user.address = sender
-    user.is_online = True
-    user.rand = random.random()
-    user.put()
-    ###
-
-    ### Registering our user as a persistent user
-    # TODO: avoid duplicate entries.
-    if is_persistent == True:
-        puser = PersistentUser()
-        puser.address = sender
-        puser.put()
-    ###
+class Conversation(db.Model):
+    """ For storing conversation sessions """
+    user_1 = User()
+    user_2 = User()
 
 
 class XMPPHandler(webapp.RequestHandler):
@@ -65,13 +74,18 @@ class XMPPHandler(webapp.RequestHandler):
         """ Function to handle received messages """
         message = xmpp.Message(self.request.POST)
         
-        registerUser(message.sender)
+        #        registerUser(message.sender)
+        user = User()
+        user.register(message.sender)
+        puser = PersistentUser()
+        puser.register(message.sender)
+
+        message_to = user.getRandom()
+        logging.debug("kisi:" + message_to.address)
 
 
         logging.info("gelen mesaj: " + message.body) # TODO: remove this logging
         if message.body == 'osman abi evde mi?':
-            message_to = getRandomUser()
-            logging.debug("kisi:" , message_to.address)
             message.reply("evde.")
             logging.info("verilen cevap: " + "evde") # TODO: remove this logging
             
@@ -81,7 +95,14 @@ class MainPage(webapp.RequestHandler):
         """ Placeholder function for mainpage """
         self.response.headers['Content-Type'] = 'text/plain'
 
-        user = getRandomUser()
+        user = User()
+        user.register("mainpage")
+        puser = PersistentUser()
+        puser.register("mainpage")
+
+        user = user.getRandom()
+        
+        
         self.response.out.write(user.address)
 
 
