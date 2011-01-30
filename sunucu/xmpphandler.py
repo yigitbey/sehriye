@@ -13,7 +13,10 @@ class XMPPHandler(webapp.RequestHandler):
         sender = message.sender.split("/")[0] # Remove the identifier string from JID
         conversation = Conversation()
         partner = 0
-        while (partner == 0): # Until a partner is found, Google kills the loop if it takes too long
+        retry = 0
+        while (partner == 0 and retry < 10 ): # Until a partner is found, Google kills the loop if it takes too long
+            retry += 1
+            logging.debug(retry)
             partner = conversation.matchPeople(sender) # Try to find a partner
             if partner != 0: #If we have partner
                 if message.body == DELETE_CONVERSATION: #If a client wants to disconnect

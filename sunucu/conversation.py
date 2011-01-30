@@ -31,7 +31,7 @@ class Conversation(db.Model):
                 self.user_2 = current_user
                 self.put()
                 logging.debug("ikinci query geldi")
-                return conversation.user_1 #R
+                return self.user_1 #R
             else: #Add this user to waiting list
                 self.user_1 = current_user
                 self.user_2 = "a@aa.aaa"
