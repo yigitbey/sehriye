@@ -1,4 +1,3 @@
-
 package org.apache.android.xmpp;
 
 import android.app.Activity;
@@ -10,12 +9,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.PacketListener;
 import org.jivesoftware.smack.XMPPConnection;
+import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.filter.MessageTypeFilter;
 import org.jivesoftware.smack.filter.PacketFilter;
 import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smack.packet.Packet;
+import org.jivesoftware.smack.packet.Presence;
 import org.jivesoftware.smack.util.StringUtils;
 
 import java.util.ArrayList;
@@ -30,43 +33,67 @@ public class XMPPClient extends Activity {
     private ListView mList;
     private XMPPConnection connection;
 
-    /**
-     * Called with the activity is first created.
-     */
+// Called with the activity is first created.
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         Log.i("XMPPClient", "onCreate called");
         setContentView(R.layout.main);
-
-        mRecipient = (EditText) this.findViewById(R.id.recipient);
-        Log.i("XMPPClient", "mRecipient = " + mRecipient);
+        
+        
+        //mRecipient = (EditText) this.findViewById(R.id.);
+        Log.i("XMPPClient", "mRecipient = " + "eren.tantekin@gmail.com");
         mSendText = (EditText) this.findViewById(R.id.sendText);
         Log.i("XMPPClient", "mSendText = " + mSendText);
         mList = (ListView) this.findViewById(R.id.listMessages);
         Log.i("XMPPClient", "mList = " + mList);
-        setListAdapter();
+        setListAdapter();        
+        
+        
+        
+        String host = "talk.google.com";
+        String port = "5222";
+        String service = "gmail.com";
+        String username = "ananyanimda";
+        String password = "anananan";
+        
+        
 
-        // Dialog for getting the xmpp settings
-        mDialog = new SettingsDialog(this);
 
-        // Set a listener to show the settings dialog
-        Button setup = (Button) this.findViewById(R.id.setup);
-        setup.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                mHandler.post(new Runnable() {
-                    public void run() {
-                        mDialog.show();
-                    }
-                });
-            }
-        });
+        // Create a connection
+        ConnectionConfiguration connConfig = new ConnectionConfiguration(host, Integer.parseInt(port), service);
+        final XMPPConnection connection = new XMPPConnection(connConfig);
+
+        try {
+            connection.connect();
+            Log.i("XMPPClient", "[SettingsDialog] Connected to " + connection.getHost());
+        } catch (XMPPException ex) {
+            Log.e("XMPPClient", "[SettingsDialog] Failed to connect to " + connection.getHost());
+            Log.e("XMPPClient", ex.toString());
+            setConnection(null);
+        }
+        try {
+            connection.login(username, password);
+            Log.i("XMPPClient", "Logged in as " + connection.getUser());
+
+            // Set the status to available
+            Presence presence = new Presence(Presence.Type.available);
+            connection.sendPacket(presence);
+            setConnection(connection);
+        } catch (XMPPException ex) {
+            Log.e("XMPPClient", "[SettingsDialog] Failed to log in as " + username);
+            Log.e("XMPPClient", ex.toString());
+            setConnection(null);
+        }
+        
+        
+
 
         // Set a listener to send a chat text message
         Button send = (Button) this.findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String to = mRecipient.getText().toString();
+            	String to = "eren.tantekin@gmail.com";
                 String text = mSendText.getText().toString();
 
                 Log.i("XMPPClient", "Sending text [" + text + "] to [" + to + "]");
@@ -81,8 +108,7 @@ public class XMPPClient extends Activity {
     }
 
     /**
-     * Called by Settings dialog when a connection is establised with the XMPP server
-     *
+     * Called by Settings dialog when a connection is established with the XMPP server
      * @param connection
      */
     public void setConnection
@@ -112,11 +138,10 @@ public class XMPPClient extends Activity {
         }
     }
 
-    private void setListAdapter
-            () {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.multi_line_list_item,
-                messages);
+    private void setListAdapter() {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.multi_line_list_item, messages);
         mList.setAdapter(adapter);
     }
+    
+   
 }
