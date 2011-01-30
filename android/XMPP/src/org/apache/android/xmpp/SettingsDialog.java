@@ -1,3 +1,5 @@
+// unused
+
 package org.apache.android.xmpp;
 
 import android.app.Dialog;
