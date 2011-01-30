@@ -1,4 +1,5 @@
 from google.appengine.ext import db
+import logging
 
 #TODO: decide a method to detect remove discontinued conversations.
 class Conversation(db.Model):
