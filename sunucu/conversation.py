@@ -1,5 +1,10 @@
 from google.appengine.ext import db
+from google.appengine.api import xmpp
+
+from custom_messages import *
+
 import logging
+
 
 #TODO: decide a method to detect remove discontinued conversations.
 class Conversation(db.Model):
@@ -31,6 +36,8 @@ class Conversation(db.Model):
                 self.user_2 = current_user
                 self.put()
                 logging.debug("ikinci query geldi")
+                xmpp.send_message(self.user_1,CHAT_START)
+                xmpp.send_message(self.user_2,CHAT_START)
                 return self.user_1 #R
             else: #Add this user to waiting list
                 self.user_1 = current_user
@@ -39,9 +46,9 @@ class Conversation(db.Model):
                 logging.debug("ucuncu query geldi")
                 return 0
 
-    def remove(self, current_user, partner):
-        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", current_user, partner)
-        query2 = db.GqlQuery("SELECT * FROM Conversation WHERE user_2 = :1 AND user_1 = :2  LIMIT 1", current_user, partner)
+    def remove(self):
+        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", self.user_1, self.user_2)
+        query2 = db.GqlQuery("SELECT * FROM Conversation WHERE user_2 = :1 AND user_1 = :2  LIMIT 1", self.user_1, self.user_2)
         if query.count() ==1:
             db.delete(query.get())
         else:

@@ -7,32 +7,31 @@ import logging, time
 
 class XMPPHandler(webapp.RequestHandler):
     """ Class for handling xmpp events """ 
+    def customMessageHandler(self,conversation,message):
+        """Handling custom messages imported from custom_messages.py"""
+      
+        #Disconnect
+        if message == DELETE_CONVERSATION: #If a client wants to disconnect
+            conversation.remove() # Remove the conversation session from database
+
+
     def post(self):
         """ Function to handle received messages """
         message = xmpp.Message(self.request.POST)
         sender = message.sender.split("/")[0] # Remove the identifier string from JID
         conversation = Conversation()
         partner = 0
-        retry = 0
-        while (partner == 0 and retry < 10 ): # Until a partner is found, Google kills the loop if it takes too long
-            retry += 1
-            logging.debug(retry)
-            partner = conversation.matchPeople(sender) # Try to find a partner
-            if partner != 0: #If we have partner
-                if message.body == DELETE_CONVERSATION: #If a client wants to disconnect
-                    conversation.remove(sender,partner) # Remove the conversation session from database
-
-                # Send the message to partner even if the message is "/DELETETHISCONVERSATION"
-                # This is to make sure that both clients realize the disconnection
-                xmpp.send_message(partner, message.body) 
-
-                break # Break the partner searching loop, if any found
-            time.sleep(1)
-                    
-
-
-
-        
-
-    
-
+        partner = conversation.matchPeople(sender) # Try to find a partner
+        if partner != 0: #If we have partner
+            
+            #Initialize a conversation
+            conversation.user_1 = sender
+            conversation.user_2 = partner
+   
+            #Handling custom messages
+            self.customMessageHandler(conversation,message.body) 
+           
+            # Send the message to partner even if the message is custom
+            # This is to make sure that both clients realize actions
+            xmpp.send_message(partner, message.body) 
+                         
