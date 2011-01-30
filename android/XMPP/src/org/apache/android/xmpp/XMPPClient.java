@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class XMPPClient extends Activity {
 
     private ArrayList<String> messages = new ArrayList();
-    private Handler mHandler = new Handler();   private SettingsDialog mDialog;
+    private Handler mHandler = new Handler();
     private EditText mRecipient;
     private EditText mSendText;
     private ListView mList;
