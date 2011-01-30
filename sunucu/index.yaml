@@ -10,17 +10,17 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: Conversation
+  properties:
+  - name: user_1
+  - name: user_2
+
+- kind: Conversation
+  properties:
+  - name: user_2
+  - name: user_1
+
 - kind: User
   properties:
   - name: is_online
   - name: rand
-
-- kind: Conversation
-  properties:
-  - name: user_1
-  - name: user_2
-
-- kind: Conversation
-  properties:
-  - name: user_2
-  - name: user_1
