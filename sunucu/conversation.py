@@ -40,9 +40,11 @@ class Conversation(db.Model):
                 xmpp.send_message(self.user_2,CHAT_START)
                 return self.user_1 #R
             else: #Add this user to waiting list
-                self.user_1 = current_user
-                self.user_2 = "a@aa.aaa"
-                self.put()
+                query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2 LIMIT 1",current_user, dummy_email) #If they are not already on the waiting line
+                if query.count() == 0:
+                    self.user_1 = current_user
+                    self.user_2 = "a@aa.aaa"
+                    self.put()
                 logging.debug("ucuncu query geldi")
                 return 0
 

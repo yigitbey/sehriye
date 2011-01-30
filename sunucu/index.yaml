@@ -14,11 +14,16 @@ indexes:
   properties:
   - name: user_1
   - name: user_2
+  - name: date_created
+  - name: date_joined
+
 
 - kind: Conversation
   properties:
   - name: user_2
   - name: user_1
+  - name: date_created
+  - name: date_joined
 
 - kind: User
   properties:
