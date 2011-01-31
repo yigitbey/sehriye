@@ -1,0 +1,759 @@
+TXMPPTest
+v7
+r0
+t318195104.559694
+cCheck dependencies
+cProcessInfoPlistFile /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist XMPPTest-Info.plist
+cCompileXIB /Users/samet/Documents/XcodeProjects/XMPPTest/MainWindow.xib
+cCompileXIB /Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTestViewController.xib
+cCpResource build/Debug-iphonesimulator/XMPPTest.app/libidn-1.15.tar.gz Vendor/libidn/libidn-1.15.tar.gz
+cProcessPCH /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch.gch XMPPTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o /Users/samet/Documents/XcodeProjects/XMPPTest/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/SSCrypto.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m normal i386 objective-c com.apple.compilers.gcc.4_2
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
+c000000004CC128950000000000000110
+t1287727253
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c000000004CC1224400000000001C3D40
+t1287725636
+s1850688
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CFNetwork.framework/Headers/CFNetwork.h
+c000000004CC1221800000000000004CF
+t1287725592
+s1231
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c000000004CC122A000000000001D6CE0
+t1287725728
+s1928416
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004CC12246000000000029B310
+t1287725638
+s2732816
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004CC1226D000000000029D5D0
+t1287725677
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC1225F0000000000001466
+t1287725663
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+c000000004CC121F60000000000068970
+t1287725558
+s428400
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004CC1281F0000000000000AA1
+t1287727135
+s2721
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004CC12883000000000074D7B0
+t1287727235
+s7657392
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/arpa/inet.h
+c000000004CB3E46D0000000000001533
+t1286857837
+s5427
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2/libxml/tree.h
+c000000004CC10DA50000000000008F14
+t1287720357
+s36628
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2/libxml/xpath.h
+c000000004CC10DA50000000000003F47
+t1287720357
+s16199
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2/libxml/xpathInternals.h
+c000000004CC10DA50000000000004BF8
+t1287720357
+s19448
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/netdb.h
+c000000004A4181220000000000003057
+t1245806882
+s12375
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/netinet/in.h
+c000000004CBFACA90000000000005462
+t1287629993
+s21602
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/sys/socket.h
+c000000004CBFACAC0000000000005A69
+t1287629996
+s23145
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/lib/libresolv.9.dylib
+c000000004CC109A100000000000038A0
+t1287719329
+s14496
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/lib/libresolv.dylib
+c000000004CC109A100000000000038A0
+t1287719329
+s14496
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/lib/libxml2.dylib
+c000000004CC10DA50000000000122A50
+t1287720357
+s1190480
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.h
+c000000004D46FAE700000000000001DC
+t1296497383
+s476
+i<UIKit/UIKit.h>
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m
+c000000004D46FAE700000000000007B0
+t1296497383
+s1968
+i"XMPPTestAppDelegate.h"
+i"XMPPTestViewController.h"
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.h
+c000000004D46FAE700000000000000E8
+t1296497383
+s232
+i<UIKit/UIKit.h>
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m
+c000000004D46FAE70000000000000553
+t1296497383
+s1363
+i"XMPPTestViewController.h"
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/MainWindow.xib
+c000000004D46FAE70000000000004D13
+t1296497383
+s19731
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.h
+c000000004D4217BF00000000000072B2
+t1296177087
+s29362
+i<Foundation/Foundation.h>
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m
+c000000004D4217BF000000000001C3CC
+t1296177087
+s115660
+i"AsyncSocket.h"
+i<sys/socket.h>
+i<netinet/in.h>
+i<arpa/inet.h>
+i<netdb.h>
+i<CFNetwork/CFNetwork.h>
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.h
+c000000004D4217C00000000000000807
+t1296177088
+s2055
+i<Foundation/Foundation.h>
+i"DDXMLElement.h"
+i"DDXMLNode.h"
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m
+c000000004D4217C00000000000000C5C
+t1296177088
+s3164
+i"DDXMLDocument.h"
+i"NSStringAdditions.h"
+i"DDXMLPrivate.h"
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.h
+c000000004D4217C000000000000006B0
+t1296177088
+s1712
+i<Foundation/Foundation.h>
+i"DDXMLNode.h"
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m
+c000000004D4217C000000000000042D0
+t1296177088
+s17104
+i"DDXMLElement.h"
+i"NSStringAdditions.h"
+i"DDXMLPrivate.h"
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.h
+c000000004D4706C00000000000001392
+t1296500416
+s5010
+i<Foundation/Foundation.h>
+i<libxml/tree.h>
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m
+c000000004D4217C0000000000000B885
+t1296177088
+s47237
+i"DDXMLNode.h"
+i"DDXMLElement.h"
+i"DDXMLDocument.h"
+i"NSStringAdditions.h"
+i"DDXMLPrivate.h"
+i<libxml/xpath.h>
+i<libxml/xpathInternals.h>
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLPrivate.h
+c000000004D4217C0000000000000098B
+t1296177088
+s2443
+i"DDXMLNode.h"
+i"DDXMLElement.h"
+i"DDXMLDocument.h"
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.h
+c000000004D4217C000000000000000FD
+t1296177088
+s253
+i<Foundation/Foundation.h>
+i<libxml/tree.h>
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m
+c000000004D4217C000000000000001DD
+t1296177088
+s477
+i"NSStringAdditions.h"
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h
+c000000004D4217BF0000000000000EAE
+t1296177087
+s3758
+i<Foundation/Foundation.h>
+i<openssl/evp.h>
+i<openssl/rand.h>
+i<openssl/rsa.h>
+i<openssl/engine.h>
+i<openssl/sha.h>
+i<openssl/pem.h>
+i<openssl/bio.h>
+i<openssl/err.h>
+i<openssl/ssl.h>
+i<openssl/md5.h>
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m
+c000000004D4217BF0000000000008C3E
+t1296177087
+s35902
+i"SSCrypto.h"
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/libidn/libidn-1.15.tar.gz
+c000000004D4217BF0000000000283593
+t1296177087
+s2635155
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/libidn/libidn.a
+c000000004D4217BF000000000013C63C
+t1296177087
+s1295932
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTestViewController.xib
+c000000004D46FAE70000000000003EE5
+t1296497383
+s16101
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest_Prefix.pch
+c000000004D46FAE700000000000000B9
+t1296497383
+s185
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app
+t2
+s0
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app.dSYM
+t2
+s0
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist
+t1296502302
+s802
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/MainWindow.nib
+t1296502302
+s1125
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/PkgInfo
+t1296502302
+s8
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest
+t2
+s0
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTestViewController.nib
+t1296502302
+s764
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/libidn-1.15.tar.gz
+t1296502302
+s2635155
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o
+t1296502304
+s212092
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o
+t1296502304
+s16452
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o
+t1296502304
+s43148
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o
+t1296502304
+s83088
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o
+t1296502304
+s7460
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/SSCrypto.o
+t2
+s0
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTest.LinkFileList
+c000000004D470E1E00000000000004EA
+t1296502302
+s1258
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o
+t1296502303
+s50160
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o
+t1296502303
+s38072
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o
+t1296502303
+s6316
+
+N/Users/samet/Documents/XcodeProjects/XMPPTest/main.m
+c000000004D46FAE70000000000000161
+t1296497383
+s353
+i<UIKit/UIKit.h>
+
+N/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch.gch
+t1296502303
+s15453392
+
+N/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-fbefdowxysyfiucfdpttjoaicguo/XMPPTest_Prefix.pch.gch
+t1296500103
+s15453392
+
+N/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-fnrfojnpbbtsrbbkwkjijjmjvvhs/XMPPTest_Prefix.pch.gch
+t1296498788
+s15453392
+
+N/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-gaofbppbwcgdoabrdlpxuflregib/XMPPTest_Prefix.pch.gch
+t1296500417
+s15453392
+
+N/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-hklpiqlsbglgzgfzfhcvhfpjjaty/XMPPTest_Prefix.pch.gch
+t1296492755
+s15453392
+
+NXMPPTest-Info.plist
+c000000004D46FAE700000000000004D6
+t1296497383
+s1238
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies318195102#318195102#0(0"0(0#1#0"8621953216#0"0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318195103.877133
+e318195104.458192
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o
+x/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@86"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m318195103#318195104#0(0"0(0#0#78"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m8624467328#2150"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318195103.936578
+e318195104.027342
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o
+x/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@84"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m318195103#318195104#0(0"0(0#0#76"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m8616906272#2150"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318195104.027442
+e318195104.186041
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o
+x/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@83"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m318195104#318195104#0(0"0(0#0#75"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m8614330528#2148"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318195104.186138
+e318195104.431643
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o
+x/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@80"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m318195104#318195104#0(0"0(0#0#72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m8628129952#2142"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318195104.431740
+e318195104.532214
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o
+x/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m318195104#318195104#0(0"0(0#0#80"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m8629148512#2158"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/SSCrypto.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318195104.458290
+e318195104.559624
+r0
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/SSCrypto.o
+x/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:37:
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:38:24: error: openssl/evp.h: No such file or directory
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:39:25: error: openssl/rand.h: No such file or directory
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:40:24: error: openssl/rsa.h: No such file or directory
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:41:27: error: openssl/engine.h: No such file or directory
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:42:24: error: openssl/sha.h: No such file or directory
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:43:24: error: openssl/pem.h: No such file or directory
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:44:24: error: openssl/bio.h: No such file or directory
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:45:24: error: openssl/err.h: No such file or directory
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:46:24: error: openssl/ssl.h: No such file or directory
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:47:24: error: openssl/md5.h: No such file or directory
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[NSData(HexDump) encodeBase64WithNewlines:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: error: 'BIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: error: (Each undeclared identifier is reported only once
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: error: for each function it appears in.)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: error: 'mem' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: warning: implicit declaration of function 'BIO_new'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: warning: implicit declaration of function 'BIO_s_mem'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:66: error: 'b64' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:66: warning: implicit declaration of function 'BIO_f_base64'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:68: warning: implicit declaration of function 'BIO_set_flags'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:68: error: 'BIO_FLAGS_BASE64_NO_NL' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:69: warning: implicit declaration of function 'BIO_push'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:72: warning: implicit declaration of function 'BIO_write'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:73: warning: implicit declaration of function 'BIO_flush'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:77: warning: implicit declaration of function 'BIO_get_mem_data'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:85: warning: implicit declaration of function 'BIO_free_all'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[NSData(HexDump) decodeBase64WithNewLines:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:97: error: 'BIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:97: error: 'mem' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:97: warning: implicit declaration of function 'BIO_new_mem_buf'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:100: error: 'b64' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:102: error: 'BIO_FLAGS_BASE64_NO_NL' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:109: warning: implicit declaration of function 'BIO_read'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto setupOpenSSL]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:292: warning: implicit declaration of function 'OpenSSL_add_all_algorithms'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:301: warning: implicit declaration of function 'ERR_load_crypto_strings'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto cleanupOpenSSL]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:326: warning: implicit declaration of function 'EVP_cleanup'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:329: warning: implicit declaration of function 'ERR_free_strings'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto decrypt:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:530: error: 'EVP_MAX_IV_LENGTH' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:539: error: 'EVP_MAX_KEY_LENGTH' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:540: error: 'EVP_CIPHER_CTX' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:540: error: expected ';' before 'cCtx'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:541: error: nested functions are disabled, use -fnested-functions to re-enable
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:541: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:541: error: 'cipher' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:545: warning: implicit declaration of function 'EVP_get_cipherbyname'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:554: warning: implicit declaration of function 'EVP_bf_cbc'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:578: warning: implicit declaration of function 'EVP_BytesToKey'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:578: warning: implicit declaration of function 'EVP_md5'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:581: warning: implicit declaration of function 'EVP_CIPHER_CTX_init'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:581: error: 'cCtx' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:583: warning: implicit declaration of function 'EVP_DecryptInit'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:586: warning: implicit declaration of function 'EVP_CIPHER_CTX_cleanup'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:589: warning: implicit declaration of function 'EVP_CIPHER_CTX_set_key_length'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:595: warning: implicit declaration of function 'EVP_CIPHER_CTX_block_size'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:602: warning: implicit declaration of function 'EVP_DecryptUpdate'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:609: warning: implicit declaration of function 'EVP_DecryptFinal'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:539: warning: unused variable 'evp_key'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:629: error: 'BIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:629: error: 'privateBIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:630: error: 'RSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:630: error: 'privateRSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:638: warning: implicit declaration of function 'PEM_read_bio_RSAPrivateKey'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:646: warning: implicit declaration of function 'RSA_check_key'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:656: warning: implicit declaration of function 'RSA_size'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:658: warning: implicit declaration of function 'RSA_private_decrypt'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:658: error: 'RSA_PKCS1_PADDING' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:667: warning: implicit declaration of function 'ERR_error_string'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:667: warning: implicit declaration of function 'ERR_get_error'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:668: warning: implicit declaration of function 'ERR_reason_error_string'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:672: warning: implicit declaration of function 'BIO_free'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:673: warning: implicit declaration of function 'RSA_free'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:530: warning: unused variable 'iv'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto verify]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:713: error: 'BIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:713: error: 'publicBIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:714: error: 'RSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:714: error: 'publicRSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:722: warning: implicit declaration of function 'PEM_read_bio_RSA_PUBKEY'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:733: warning: implicit declaration of function 'RSA_public_decrypt'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:733: error: 'RSA_PKCS1_PADDING' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto encrypt:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:805: error: 'EVP_MAX_IV_LENGTH' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:813: error: 'EVP_MAX_KEY_LENGTH' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:814: error: 'EVP_CIPHER_CTX' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:814: error: expected ';' before 'cCtx'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:815: error: nested functions are disabled, use -fnested-functions to re-enable
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:815: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:815: error: 'cipher' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:833: error: 'cCtx' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:835: warning: implicit declaration of function 'EVP_EncryptInit'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:848: warning: implicit declaration of function 'EVP_EncryptUpdate'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:854: warning: implicit declaration of function 'EVP_EncryptFinal'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:813: warning: unused variable 'evp_key'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:874: error: 'BIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:874: error: 'publicBIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:875: error: 'RSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:875: error: 'publicRSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:894: warning: implicit declaration of function 'RSA_public_encrypt'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:894: error: 'RSA_PKCS1_PADDING' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:805: warning: unused variable 'iv'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto sign]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:949: error: 'BIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:949: error: 'privateBIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:950: error: 'RSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:950: error: 'privateRSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:978: warning: implicit declaration of function 'RSA_private_encrypt'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:978: error: 'RSA_PKCS1_PADDING' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto digest:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1019: error: 'EVP_MAX_MD_SIZE' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1022: error: 'EVP_MD_CTX' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1022: error: expected ';' before 'ctx'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1023: error: nested functions are disabled, use -fnested-functions to re-enable
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1023: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1023: error: 'digest' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1030: warning: implicit declaration of function 'EVP_get_digestbyname'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1043: warning: implicit declaration of function 'EVP_MD_CTX_init'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1043: error: 'ctx' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1044: warning: implicit declaration of function 'EVP_DigestInit'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1045: warning: implicit declaration of function 'EVP_DigestUpdate'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1047: warning: implicit declaration of function 'EVP_MD_CTX_cleanup'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1050: warning: implicit declaration of function 'EVP_DigestFinal'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1019: warning: unused variable 'outbuf'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto generateRSAPrivateKeyWithLength:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1074: error: 'RSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1074: error: 'key' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1076: warning: implicit declaration of function 'RSA_generate_key'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1076: error: 'RSA_F4' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1079: error: 'BIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1079: error: 'bio' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1081: warning: implicit declaration of function 'PEM_write_bio_RSAPrivateKey'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto generateRSAPublicKeyFromPrivateKey:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1100: error: 'BIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1100: error: 'privateBIO' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1101: error: 'RSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1101: error: 'privateRSA' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1124: error: 'bio' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1126: warning: implicit declaration of function 'PEM_write_bio_RSA_PUBKEY'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto getKeyDataWithLength:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1151: warning: implicit declaration of function 'RAND_bytes'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto getKeyDataWithLength:fromPassword:withSalt:withIterations:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1176: warning: implicit declaration of function 'PKCS5_PBKDF2_HMAC_SHA1'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto getSHA1ForData:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1190: error: 'SHA_DIGEST_LENGTH' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1193: warning: implicit declaration of function 'SHA1'
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto getMD5ForData:]':
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1202: error: 'MD5_DIGEST_LENGTH' undeclared (first use in this function)
+o/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1205: warning: implicit declaration of function 'MD5'
+o{standard input}:51:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_0" minus "L00000000001$pb"
+o{standard input}:51:symbol: "L_OBJC_SELECTOR_REFERENCES_0" can't be undefined in a subtraction expression
+o{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_0
+lSLF07#2@80"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#318195104#0(20568"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:37:/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:38:24: error: openssl/evp.h: No such file or directory/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:39:25: error: openssl/rand.h: No such file or directory/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:40:24: error: openssl/rsa.h: No such file or directory/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:41:27: error: openssl/engine.h: No such file or directory/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:42:24: error: openssl/sha.h: No such file or directory/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:43:24: error: openssl/pem.h: No such file or directory/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:44:24: error: openssl/bio.h: No such file or directory/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:45:24: error: openssl/err.h: No such file or directory/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:46:24: error: openssl/ssl.h: No such file or directory/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h:47:24: error: openssl/md5.h: No such file or directory/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[NSData(HexDump) encodeBase64WithNewlines:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: error: 'BIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: error: (Each undeclared identifier is reported only once/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: error: for each function it appears in.)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: error: 'mem' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: warning: implicit declaration of function 'BIO_new'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:63: warning: implicit declaration of function 'BIO_s_mem'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:66: error: 'b64' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:66: warning: implicit declaration of function 'BIO_f_base64'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:68: warning: implicit declaration of function 'BIO_set_flags'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:68: error: 'BIO_FLAGS_BASE64_NO_NL' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:69: warning: implicit declaration of function 'BIO_push'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:72: warning: implicit declaration of function 'BIO_write'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:73: warning: implicit declaration of function 'BIO_flush'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:77: warning: implicit declaration of function 'BIO_get_mem_data'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:85: warning: implicit declaration of function 'BIO_free_all'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[NSData(HexDump) decodeBase64WithNewLines:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:97: error: 'BIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:97: error: 'mem' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:97: warning: implicit declaration of function 'BIO_new_mem_buf'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:100: error: 'b64' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:102: error: 'BIO_FLAGS_BASE64_NO_NL' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:109: warning: implicit declaration of function 'BIO_read'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto setupOpenSSL]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:292: warning: implicit declaration of function 'OpenSSL_add_all_algorithms'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:301: warning: implicit declaration of function 'ERR_load_crypto_strings'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto cleanupOpenSSL]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:326: warning: implicit declaration of function 'EVP_cleanup'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:329: warning: implicit declaration of function 'ERR_free_strings'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto decrypt:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:530: error: 'EVP_MAX_IV_LENGTH' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:539: error: 'EVP_MAX_KEY_LENGTH' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:540: error: 'EVP_CIPHER_CTX' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:540: error: expected ';' before 'cCtx'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:541: error: nested functions are disabled, use -fnested-functions to re-enable/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:541: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:541: error: 'cipher' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:545: warning: implicit declaration of function 'EVP_get_cipherbyname'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:554: warning: implicit declaration of function 'EVP_bf_cbc'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:578: warning: implicit declaration of function 'EVP_BytesToKey'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:578: warning: implicit declaration of function 'EVP_md5'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:581: warning: implicit declaration of function 'EVP_CIPHER_CTX_init'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:581: error: 'cCtx' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:583: warning: implicit declaration of function 'EVP_DecryptInit'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:586: warning: implicit declaration of function 'EVP_CIPHER_CTX_cleanup'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:589: warning: implicit declaration of function 'EVP_CIPHER_CTX_set_key_length'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:595: warning: implicit declaration of function 'EVP_CIPHER_CTX_block_size'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:602: warning: implicit declaration of function 'EVP_DecryptUpdate'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:609: warning: implicit declaration of function 'EVP_DecryptFinal'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:539: warning: unused variable 'evp_key'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:629: error: 'BIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:629: error: 'privateBIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:630: error: 'RSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:630: error: 'privateRSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:638: warning: implicit declaration of function 'PEM_read_bio_RSAPrivateKey'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:646: warning: implicit declaration of function 'RSA_check_key'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:656: warning: implicit declaration of function 'RSA_size'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:658: warning: implicit declaration of function 'RSA_private_decrypt'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:658: error: 'RSA_PKCS1_PADDING' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:667: warning: implicit declaration of function 'ERR_error_string'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:667: warning: implicit declaration of function 'ERR_get_error'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:668: warning: implicit declaration of function 'ERR_reason_error_string'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:672: warning: implicit declaration of function 'BIO_free'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:673: warning: implicit declaration of function 'RSA_free'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:530: warning: unused variable 'iv'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto verify]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:713: error: 'BIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:713: error: 'publicBIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:714: error: 'RSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:714: error: 'publicRSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:722: warning: implicit declaration of function 'PEM_read_bio_RSA_PUBKEY'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:733: warning: implicit declaration of function 'RSA_public_decrypt'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:733: error: 'RSA_PKCS1_PADDING' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto encrypt:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:805: error: 'EVP_MAX_IV_LENGTH' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:813: error: 'EVP_MAX_KEY_LENGTH' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:814: error: 'EVP_CIPHER_CTX' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:814: error: expected ';' before 'cCtx'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:815: error: nested functions are disabled, use -fnested-functions to re-enable/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:815: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:815: error: 'cipher' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:833: error: 'cCtx' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:835: warning: implicit declaration of function 'EVP_EncryptInit'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:848: warning: implicit declaration of function 'EVP_EncryptUpdate'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:854: warning: implicit declaration of function 'EVP_EncryptFinal'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:813: warning: unused variable 'evp_key'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:874: error: 'BIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:874: error: 'publicBIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:875: error: 'RSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:875: error: 'publicRSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:894: warning: implicit declaration of function 'RSA_public_encrypt'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:894: error: 'RSA_PKCS1_PADDING' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:805: warning: unused variable 'iv'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto sign]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:949: error: 'BIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:949: error: 'privateBIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:950: error: 'RSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:950: error: 'privateRSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:978: warning: implicit declaration of function 'RSA_private_encrypt'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:978: error: 'RSA_PKCS1_PADDING' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '-[SSCrypto digest:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1019: error: 'EVP_MAX_MD_SIZE' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1022: error: 'EVP_MD_CTX' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1022: error: expected ';' before 'ctx'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1023: error: nested functions are disabled, use -fnested-functions to re-enable/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1023: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1023: error: 'digest' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1030: warning: implicit declaration of function 'EVP_get_digestbyname'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1043: warning: implicit declaration of function 'EVP_MD_CTX_init'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1043: error: 'ctx' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1044: warning: implicit declaration of function 'EVP_DigestInit'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1045: warning: implicit declaration of function 'EVP_DigestUpdate'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1047: warning: implicit declaration of function 'EVP_MD_CTX_cleanup'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1050: warning: implicit declaration of function 'EVP_DigestFinal'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1019: warning: unused variable 'outbuf'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto generateRSAPrivateKeyWithLength:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1074: error: 'RSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1074: error: 'key' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1076: warning: implicit declaration of function 'RSA_generate_key'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1076: error: 'RSA_F4' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1079: error: 'BIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1079: error: 'bio' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1081: warning: implicit declaration of function 'PEM_write_bio_RSAPrivateKey'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto generateRSAPublicKeyFromPrivateKey:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1100: error: 'BIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1100: error: 'privateBIO' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1101: error: 'RSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1101: error: 'privateRSA' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1124: error: 'bio' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1126: warning: implicit declaration of function 'PEM_write_bio_RSA_PUBKEY'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto getKeyDataWithLength:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1151: warning: implicit declaration of function 'RAND_bytes'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto getKeyDataWithLength:fromPassword:withSalt:withIterations:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1176: warning: implicit declaration of function 'PKCS5_PBKDF2_HMAC_SHA1'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto getSHA1ForData:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1190: error: 'SHA_DIGEST_LENGTH' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1193: warning: implicit declaration of function 'SHA1'/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m: In function '+[SSCrypto getMD5ForData:]':/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1202: error: 'MD5_DIGEST_LENGTH' undeclared (first use in this function)/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m:1205: warning: implicit declaration of function 'MD5'{standard input}:51:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_0" minus "L00000000001$pb"{standard input}:51:symbol: "L_OBJC_SELECTOR_REFERENCES_0" can't be undefined in a subtraction expression{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_0133(4@40"Openssl/evp.h: No such file or directory318195104#99#128#2(7@94"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#37#0#37#0#0"0(13@116"Openssl/evp.h: No such file or directory in /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#38#0#38#0#0"0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#38#0#38#0#28"*: No such file or directory0(4@41"Openssl/rand.h: No such file or directory318195104#227#129#2(7@94"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#37#0#37#0#0"0(13@117"Openssl/rand.h: No such file or directory in /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#39#0#39#0#0"0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#39#0#39#0#28"*: No such file or directory0(4@40"Openssl/rsa.h: No such file or directory318195104#356#128#2(7@94"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#37#0#37#0#0"0(13@116"Openssl/rsa.h: No such file or directory in /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#40#0#40#0#0"0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#40#0#40#0#28"*: No such file or directory0(4@43"Openssl/engine.h: No such file or directory318195104#484#131#2(7@94"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#37#0#37#0#0"0(13@119"Openssl/engine.h: No such file or directory in /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#41#0#41#0#0"0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#41#0#41#0#28"*: No such file or directory0(4@40"Openssl/sha.h: No such file or directory318195104#615#128#2(7@94"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#37#0#37#0#0"0(13@116"Openssl/sha.h: No such file or directory in /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#42#0#42#0#0"0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#42#0#42#0#28"*: No such file or directory0(4@40"Openssl/pem.h: No such file or directory318195104#743#128#2(7@94"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#37#0#37#0#0"0(13@116"Openssl/pem.h: No such file or directory in /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#43#0#43#0#0"0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#43#0#43#0#28"*: No such file or directory0(4@40"Openssl/bio.h: No such file or directory318195104#871#128#2(7@94"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#37#0#37#0#0"0(13@116"Openssl/bio.h: No such file or directory in /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#44#0#44#0#0"0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#44#0#44#0#28"*: No such file or directory0(4@40"Openssl/err.h: No such file or directory318195104#999#128#2(7@94"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#37#0#37#0#0"0(13@116"Openssl/err.h: No such file or directory in /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#45#0#45#0#0"0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#45#0#45#0#28"*: No such file or directory0(4@40"Openssl/ssl.h: No such file or directory318195104#1127#128#2(7@94"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#37#0#37#0#0"0(13@116"Openssl/ssl.h: No such file or directory in /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#46#0#46#0#0"0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#46#0#46#0#28"*: No such file or directory0(4@40"Openssl/md5.h: No such file or directory318195104#1255#128#2(7@94"In file included from /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#37#0#37#0#0"0(13@116"Openssl/md5.h: No such file or directory in /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h318195104#18446744073709551615#0#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#47#0#47#0#0"0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.h317869887#47#0#47#0#28"*: No such file or directory0(4@45"'BIO' undeclared (first use in this function)318195104#1517#130#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#63#0#63#0#43"'*' undeclared (first use in this function)0(4@45"'mem' undeclared (first use in this function)318195104#1899#130#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#63#0#63#0#43"'*' undeclared (first use in this function)0(22@42"Implicit declaration of function 'BIO_new'318195104#2029#129#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#63#0#63#0#36"implicit declaration of function '*'0(22@44"Implicit declaration of function 'BIO_s_mem'318195104#2158#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#63#0#63#0#36"implicit declaration of function '*'0(4@45"'b64' undeclared (first use in this function)318195104#2289#130#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#66#0#66#0#43"'*' undeclared (first use in this function)0(22@47"Implicit declaration of function 'BIO_f_base64'318195104#2419#134#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#66#0#66#0#36"implicit declaration of function '*'0(22@48"Implicit declaration of function 'BIO_set_flags'318195104#2553#135#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#68#0#68#0#36"implicit declaration of function '*'0(4@64"'BIO_FLAGS_BASE64_NO_NL' undeclared (first use in this function)318195104#2688#149#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#68#0#68#0#43"'*' undeclared (first use in this function)0(22@43"Implicit declaration of function 'BIO_push'318195104#2837#130#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#69#0#69#0#36"implicit declaration of function '*'0(22@44"Implicit declaration of function 'BIO_write'318195104#2967#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#72#0#72#0#36"implicit declaration of function '*'0(22@44"Implicit declaration of function 'BIO_flush'318195104#3098#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#73#0#73#0#36"implicit declaration of function '*'0(22@51"Implicit declaration of function 'BIO_get_mem_data'318195104#3229#138#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#77#0#77#0#36"implicit declaration of function '*'0(22@47"Implicit declaration of function 'BIO_free_all'318195104#3367#134#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#85#0#85#0#36"implicit declaration of function '*'0(4@45"'BIO' undeclared (first use in this function)318195104#3635#130#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#97#0#97#0#43"'*' undeclared (first use in this function)0(4@45"'mem' undeclared (first use in this function)318195104#3765#130#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#97#0#97#0#43"'*' undeclared (first use in this function)0(22@50"Implicit declaration of function 'BIO_new_mem_buf'318195104#3895#137#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#97#0#97#0#36"implicit declaration of function '*'0(4@45"'b64' undeclared (first use in this function)318195104#4032#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#100#0#100#0#43"'*' undeclared (first use in this function)0(4@64"'BIO_FLAGS_BASE64_NO_NL' undeclared (first use in this function)318195104#4163#150#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#102#0#102#0#43"'*' undeclared (first use in this function)0(22@43"Implicit declaration of function 'BIO_read'318195104#4313#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#109#0#109#0#36"implicit declaration of function '*'0(22@61"Implicit declaration of function 'OpenSSL_add_all_algorithms'318195104#4558#149#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#292#0#292#0#36"implicit declaration of function '*'0(22@58"Implicit declaration of function 'ERR_load_crypto_strings'318195104#4707#146#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#301#0#301#0#36"implicit declaration of function '*'0(22@46"Implicit declaration of function 'EVP_cleanup'318195104#4969#134#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#326#0#326#0#36"implicit declaration of function '*'0(22@51"Implicit declaration of function 'ERR_free_strings'318195104#5103#139#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#329#0#329#0#36"implicit declaration of function '*'0(4@59"'EVP_MAX_IV_LENGTH' undeclared (first use in this function)318195104#5352#145#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#530#0#530#0#43"'*' undeclared (first use in this function)0(4@60"'EVP_MAX_KEY_LENGTH' undeclared (first use in this function)318195104#5497#146#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#539#0#539#0#43"'*' undeclared (first use in this function)0(4@56"'EVP_CIPHER_CTX' undeclared (first use in this function)318195104#5643#142#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#540#0#540#0#43"'*' undeclared (first use in this function)0(4@26"Expected ';' before 'cCtx'318195104#5785#112#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#540#0#540#0#19"expected * before *0(4@66"Nested functions are disabled, use -fnested-functions to re-enable318195104#5897#152#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#541#0#541#0#66"nested functions are disabled, use -fnested-functions to re-enable0(4@65"Expected '=', ',', ';', 'asm' or '__attribute__' before '*' token318195104#6049#151#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#541#0#541#0#19"expected * before *0(4@48"'cipher' undeclared (first use in this function)318195104#6200#134#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#541#0#541#0#43"'*' undeclared (first use in this function)0(22@55"Implicit declaration of function 'EVP_get_cipherbyname'318195104#6334#143#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#545#0#545#0#36"implicit declaration of function '*'0(22@45"Implicit declaration of function 'EVP_bf_cbc'318195104#6477#133#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#554#0#554#0#36"implicit declaration of function '*'0(22@49"Implicit declaration of function 'EVP_BytesToKey'318195104#6610#137#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#578#0#578#0#36"implicit declaration of function '*'0(22@42"Implicit declaration of function 'EVP_md5'318195104#6747#130#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#578#0#578#0#36"implicit declaration of function '*'0(22@54"Implicit declaration of function 'EVP_CIPHER_CTX_init'318195104#6877#142#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#581#0#581#0#36"implicit declaration of function '*'0(4@46"'cCtx' undeclared (first use in this function)318195104#7019#132#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#581#0#581#0#43"'*' undeclared (first use in this function)0(22@50"Implicit declaration of function 'EVP_DecryptInit'318195104#7151#138#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#583#0#583#0#36"implicit declaration of function '*'0(22@57"Implicit declaration of function 'EVP_CIPHER_CTX_cleanup'318195104#7289#145#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#586#0#586#0#36"implicit declaration of function '*'0(22@64"Implicit declaration of function 'EVP_CIPHER_CTX_set_key_length'318195104#7434#152#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#589#0#589#0#36"implicit declaration of function '*'0(22@60"Implicit declaration of function 'EVP_CIPHER_CTX_block_size'318195104#7586#148#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#595#0#595#0#36"implicit declaration of function '*'0(22@52"Implicit declaration of function 'EVP_DecryptUpdate'318195104#7734#140#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#602#0#602#0#36"implicit declaration of function '*'0(22@51"Implicit declaration of function 'EVP_DecryptFinal'318195104#7874#139#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#609#0#609#0#36"implicit declaration of function '*'0(22@25"Unused variable 'evp_key'318195104#8013#113#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#539#0#539#0#19"unused variable '*'0(4@45"'BIO' undeclared (first use in this function)318195104#8126#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#629#0#629#0#43"'*' undeclared (first use in this function)0(4@52"'privateBIO' undeclared (first use in this function)318195104#8257#138#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#629#0#629#0#43"'*' undeclared (first use in this function)0(4@45"'RSA' undeclared (first use in this function)318195104#8395#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#630#0#630#0#43"'*' undeclared (first use in this function)0(4@52"'privateRSA' undeclared (first use in this function)318195104#8526#138#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#630#0#630#0#43"'*' undeclared (first use in this function)0(22@61"Implicit declaration of function 'PEM_read_bio_RSAPrivateKey'318195104#8664#149#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#638#0#638#0#36"implicit declaration of function '*'0(22@48"Implicit declaration of function 'RSA_check_key'318195104#8813#136#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#646#0#646#0#36"implicit declaration of function '*'0(22@43"Implicit declaration of function 'RSA_size'318195104#8949#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#656#0#656#0#36"implicit declaration of function '*'0(22@54"Implicit declaration of function 'RSA_private_decrypt'318195104#9080#142#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#658#0#658#0#36"implicit declaration of function '*'0(4@59"'RSA_PKCS1_PADDING' undeclared (first use in this function)318195104#9222#145#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#658#0#658#0#43"'*' undeclared (first use in this function)0(22@51"Implicit declaration of function 'ERR_error_string'318195104#9367#139#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#667#0#667#0#36"implicit declaration of function '*'0(22@48"Implicit declaration of function 'ERR_get_error'318195104#9506#136#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#667#0#667#0#36"implicit declaration of function '*'0(22@58"Implicit declaration of function 'ERR_reason_error_string'318195104#9642#146#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#668#0#668#0#36"implicit declaration of function '*'0(22@43"Implicit declaration of function 'BIO_free'318195104#9788#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#672#0#672#0#36"implicit declaration of function '*'0(22@43"Implicit declaration of function 'RSA_free'318195104#9919#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#673#0#673#0#36"implicit declaration of function '*'0(22@20"Unused variable 'iv'318195104#10050#108#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#530#0#530#0#19"unused variable '*'0(4@45"'BIO' undeclared (first use in this function)318195104#10266#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#713#0#713#0#43"'*' undeclared (first use in this function)0(4@51"'publicBIO' undeclared (first use in this function)318195104#10397#137#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#713#0#713#0#43"'*' undeclared (first use in this function)0(4@45"'RSA' undeclared (first use in this function)318195104#10534#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#714#0#714#0#43"'*' undeclared (first use in this function)0(4@51"'publicRSA' undeclared (first use in this function)318195104#10665#137#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#714#0#714#0#43"'*' undeclared (first use in this function)0(22@58"Implicit declaration of function 'PEM_read_bio_RSA_PUBKEY'318195104#10802#146#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#722#0#722#0#36"implicit declaration of function '*'0(22@53"Implicit declaration of function 'RSA_public_decrypt'318195104#10948#141#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#733#0#733#0#36"implicit declaration of function '*'0(4@59"'RSA_PKCS1_PADDING' undeclared (first use in this function)318195104#11089#145#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#733#0#733#0#43"'*' undeclared (first use in this function)0(4@59"'EVP_MAX_IV_LENGTH' undeclared (first use in this function)318195104#11344#145#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#805#0#805#0#43"'*' undeclared (first use in this function)0(4@60"'EVP_MAX_KEY_LENGTH' undeclared (first use in this function)318195104#11489#146#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#813#0#813#0#43"'*' undeclared (first use in this function)0(4@56"'EVP_CIPHER_CTX' undeclared (first use in this function)318195104#11635#142#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#814#0#814#0#43"'*' undeclared (first use in this function)0(4@26"Expected ';' before 'cCtx'318195104#11777#112#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#814#0#814#0#19"expected * before *0(4@66"Nested functions are disabled, use -fnested-functions to re-enable318195104#11889#152#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#815#0#815#0#66"nested functions are disabled, use -fnested-functions to re-enable0(4@65"Expected '=', ',', ';', 'asm' or '__attribute__' before '*' token318195104#12041#151#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#815#0#815#0#19"expected * before *0(4@48"'cipher' undeclared (first use in this function)318195104#12192#134#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#815#0#815#0#43"'*' undeclared (first use in this function)0(4@46"'cCtx' undeclared (first use in this function)318195104#12326#132#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#833#0#833#0#43"'*' undeclared (first use in this function)0(22@50"Implicit declaration of function 'EVP_EncryptInit'318195104#12458#138#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#835#0#835#0#36"implicit declaration of function '*'0(22@52"Implicit declaration of function 'EVP_EncryptUpdate'318195104#12596#140#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#848#0#848#0#36"implicit declaration of function '*'0(22@51"Implicit declaration of function 'EVP_EncryptFinal'318195104#12736#139#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#854#0#854#0#36"implicit declaration of function '*'0(22@25"Unused variable 'evp_key'318195104#12875#113#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#813#0#813#0#19"unused variable '*'0(4@45"'BIO' undeclared (first use in this function)318195104#12988#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#874#0#874#0#43"'*' undeclared (first use in this function)0(4@51"'publicBIO' undeclared (first use in this function)318195104#13119#137#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#874#0#874#0#43"'*' undeclared (first use in this function)0(4@45"'RSA' undeclared (first use in this function)318195104#13256#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#875#0#875#0#43"'*' undeclared (first use in this function)0(4@51"'publicRSA' undeclared (first use in this function)318195104#13387#137#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#875#0#875#0#43"'*' undeclared (first use in this function)0(22@53"Implicit declaration of function 'RSA_public_encrypt'318195104#13524#141#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#894#0#894#0#36"implicit declaration of function '*'0(4@59"'RSA_PKCS1_PADDING' undeclared (first use in this function)318195104#13665#145#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#894#0#894#0#43"'*' undeclared (first use in this function)0(22@20"Unused variable 'iv'318195104#13810#108#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#805#0#805#0#19"unused variable '*'0(4@45"'BIO' undeclared (first use in this function)318195104#14024#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#949#0#949#0#43"'*' undeclared (first use in this function)0(4@52"'privateBIO' undeclared (first use in this function)318195104#14155#138#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#949#0#949#0#43"'*' undeclared (first use in this function)0(4@45"'RSA' undeclared (first use in this function)318195104#14293#131#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#950#0#950#0#43"'*' undeclared (first use in this function)0(4@52"'privateRSA' undeclared (first use in this function)318195104#14424#138#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#950#0#950#0#43"'*' undeclared (first use in this function)0(22@54"Implicit declaration of function 'RSA_private_encrypt'318195104#14562#142#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#978#0#978#0#36"implicit declaration of function '*'0(4@59"'RSA_PKCS1_PADDING' undeclared (first use in this function)318195104#14704#145#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#978#0#978#0#43"'*' undeclared (first use in this function)0(4@57"'EVP_MAX_MD_SIZE' undeclared (first use in this function)318195104#14958#144#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1019#0#1019#0#43"'*' undeclared (first use in this function)0(4@52"'EVP_MD_CTX' undeclared (first use in this function)318195104#15102#139#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1022#0#1022#0#43"'*' undeclared (first use in this function)0(4@25"Expected ';' before 'ctx'318195104#15241#112#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1022#0#1022#0#19"expected * before *0(4@66"Nested functions are disabled, use -fnested-functions to re-enable318195104#15353#153#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1023#0#1023#0#66"nested functions are disabled, use -fnested-functions to re-enable0(4@65"Expected '=', ',', ';', 'asm' or '__attribute__' before '*' token318195104#15506#152#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1023#0#1023#0#19"expected * before *0(4@48"'digest' undeclared (first use in this function)318195104#15658#135#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1023#0#1023#0#43"'*' undeclared (first use in this function)0(22@55"Implicit declaration of function 'EVP_get_digestbyname'318195104#15793#144#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1030#0#1030#0#36"implicit declaration of function '*'0(22@50"Implicit declaration of function 'EVP_MD_CTX_init'318195104#15937#139#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1043#0#1043#0#36"implicit declaration of function '*'0(4@45"'ctx' undeclared (first use in this function)318195104#16076#132#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1043#0#1043#0#43"'*' undeclared (first use in this function)0(22@49"Implicit declaration of function 'EVP_DigestInit'318195104#16208#138#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1044#0#1044#0#36"implicit declaration of function '*'0(22@51"Implicit declaration of function 'EVP_DigestUpdate'318195104#16346#140#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1045#0#1045#0#36"implicit declaration of function '*'0(22@53"Implicit declaration of function 'EVP_MD_CTX_cleanup'318195104#16486#142#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1047#0#1047#0#36"implicit declaration of function '*'0(22@50"Implicit declaration of function 'EVP_DigestFinal'318195104#16628#139#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1050#0#1050#0#36"implicit declaration of function '*'0(22@24"Unused variable 'outbuf'318195104#16767#113#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1019#0#1019#0#19"unused variable '*'0(4@45"'RSA' undeclared (first use in this function)318195104#17014#132#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1074#0#1074#0#43"'*' undeclared (first use in this function)0(4@45"'key' undeclared (first use in this function)318195104#17146#132#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1074#0#1074#0#43"'*' undeclared (first use in this function)0(22@51"Implicit declaration of function 'RSA_generate_key'318195104#17278#140#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1076#0#1076#0#36"implicit declaration of function '*'0(4@48"'RSA_F4' undeclared (first use in this function)318195104#17418#135#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1076#0#1076#0#43"'*' undeclared (first use in this function)0(4@45"'BIO' undeclared (first use in this function)318195104#17553#132#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1079#0#1079#0#43"'*' undeclared (first use in this function)0(4@45"'bio' undeclared (first use in this function)318195104#17685#132#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1079#0#1079#0#43"'*' undeclared (first use in this function)0(22@62"Implicit declaration of function 'PEM_write_bio_RSAPrivateKey'318195104#17817#151#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1081#0#1081#0#36"implicit declaration of function '*'0(4@45"'BIO' undeclared (first use in this function)318195104#18105#132#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1100#0#1100#0#43"'*' undeclared (first use in this function)0(4@52"'privateBIO' undeclared (first use in this function)318195104#18237#139#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1100#0#1100#0#43"'*' undeclared (first use in this function)0(4@45"'RSA' undeclared (first use in this function)318195104#18376#132#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1101#0#1101#0#43"'*' undeclared (first use in this function)0(4@52"'privateRSA' undeclared (first use in this function)318195104#18508#139#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1101#0#1101#0#43"'*' undeclared (first use in this function)0(4@45"'bio' undeclared (first use in this function)318195104#18647#132#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1124#0#1124#0#43"'*' undeclared (first use in this function)0(22@59"Implicit declaration of function 'PEM_write_bio_RSA_PUBKEY'318195104#18779#148#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1126#0#1126#0#36"implicit declaration of function '*'0(22@45"Implicit declaration of function 'RAND_bytes'318195104#19050#134#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1151#0#1151#0#36"implicit declaration of function '*'0(22@57"Implicit declaration of function 'PKCS5_PBKDF2_HMAC_SHA1'318195104#19344#146#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1176#0#1176#0#36"implicit declaration of function '*'0(4@59"'SHA_DIGEST_LENGTH' undeclared (first use in this function)318195104#19607#146#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1190#0#1190#0#43"'*' undeclared (first use in this function)0(22@39"Implicit declaration of function 'SHA1'318195104#19753#128#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1193#0#1193#0#36"implicit declaration of function '*'0(4@59"'MD5_DIGEST_LENGTH' undeclared (first use in this function)318195104#19997#146#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1202#0#1202#0#43"'*' undeclared (first use in this function)0(22@38"Implicit declaration of function 'MD5'318195104#20143#127#0(6@72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m317869887#1205#0#1205#0#36"implicit declaration of function '*'0(0#0#72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m8624450144#2141"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/SSCrypto.o1#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318195103.782409
+e318195103.877037
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o
+x/Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@83"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m318195103#318195103#0(0"0(0#0#75"/Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m8626913824#2155"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318195103.853222
+e318195103.936479
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o
+x/Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@86"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m318195103#318195103#0(0"0(0#0#78"/Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m8614167008#2161"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o /Users/samet/Documents/XcodeProjects/XMPPTest/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318195103.781135
+e318195103.853122
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o
+x/Users/samet/Documents/XcodeProjects/XMPPTest/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/main.m318195103#318195103#0(0"0(0#0#52"/Users/samet/Documents/XcodeProjects/XMPPTest/main.m8623570368#2117"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/main.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/samet/Documents/XcodeProjects/XMPPTest/MainWindow.xib
+s318195102.041527
+e318195102.481896
+r1
+xCompileXIB
+x/Users/samet/Documents/XcodeProjects/XMPPTest/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib318195102#318195102#0(0"0(0#0#60"/Users/samet/Documents/XcodeProjects/XMPPTest/MainWindow.xib8618509536#592"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/MainWindow.nib /Users/samet/Documents/XcodeProjects/XMPPTest/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTestViewController.xib
+s318195102.042193
+e318195102.464571
+r1
+xCompileXIB
+x/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTestViewController.xib
+lSLF07#2@37"CompileXIB XMPPTestViewController.xib318195102#318195102#0(0"0(0#0#72"/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTestViewController.xib8618386112#616"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTestViewController.nib /Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTestViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCpResource build/Debug-iphonesimulator/XMPPTest.app/libidn-1.15.tar.gz Vendor/libidn/libidn-1.15.tar.gz
+s318195102.464659
+e318195102.478003
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/XMPPTest.app/libidn-1.15.tar.gz
+xVendor/libidn/libidn-1.15.tar.gz
+lSLF07#2@37"Copy Vendor/libidn/libidn-1.15.tar.gz318195102#318195102#0(0"0(0#0#78"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/libidn/libidn-1.15.tar.gz8620495872#512"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/libidn/libidn-1.15.tar.gz /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app0#
+
+CGenerateDSYMFile /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app.dSYM /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest
+r0
+
+CLd /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest normal i386
+r0
+
+CProcessInfoPlistFile /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist XMPPTest-Info.plist
+s318195102.037982
+e318195102.041445
+r1
+xProcessInfoPlistFile
+x/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist
+xXMPPTest-Info.plist
+lSLF07#2@27"Process XMPPTest-Info.plist318195102#318195102#0(0"0(0#0#65"/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest-Info.plist8619293376#503"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility XMPPTest-Info.plist -genpkginfo /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist0#
+
+CProcessPCH /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch.gch XMPPTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s318195102.482021
+e318195103.780931
+r1
+xProcessPCH
+x/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch.gch
+xXMPPTest_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile XMPPTest_Prefix.pch318195102#318195103#0(0"0(0#0#65"/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest_Prefix.pch8618936416#2001"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -c /Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest_Prefix.pch -o /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-fbefdowxysyfiucfdpttjoaicguo/XMPPTest_Prefix.pch.gch XMPPTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s318192903.139999
+e318192904.079372
+r1
+xProcessPCH
+x/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-fbefdowxysyfiucfdpttjoaicguo/XMPPTest_Prefix.pch.gch
+xXMPPTest_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile XMPPTest_Prefix.pch318192903#318192904#0(0"0(0#0#65"/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest_Prefix.pch8622431808#1939"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -Fusr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -Iusr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -c /Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest_Prefix.pch -o /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-fbefdowxysyfiucfdpttjoaicguo/XMPPTest_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-fnrfojnpbbtsrbbkwkjijjmjvvhs/XMPPTest_Prefix.pch.gch XMPPTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s318191587.073264
+e318191588.312911
+r1
+xProcessPCH
+x/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-fnrfojnpbbtsrbbkwkjijjmjvvhs/XMPPTest_Prefix.pch.gch
+xXMPPTest_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile XMPPTest_Prefix.pch318191587#318191588#0(0"0(0#0#65"/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest_Prefix.pch8627776928#1917"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -Fusr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -c /Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest_Prefix.pch -o /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-fnrfojnpbbtsrbbkwkjijjmjvvhs/XMPPTest_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-gaofbppbwcgdoabrdlpxuflregib/XMPPTest_Prefix.pch.gch XMPPTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s318193217.152655
+e318193217.942782
+r1
+xProcessPCH
+x/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-gaofbppbwcgdoabrdlpxuflregib/XMPPTest_Prefix.pch.gch
+xXMPPTest_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile XMPPTest_Prefix.pch318193217#318193217#0(0"0(0#0#65"/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest_Prefix.pch8614779616#1917"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -Iusr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -c /Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest_Prefix.pch -o /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-gaofbppbwcgdoabrdlpxuflregib/XMPPTest_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-hklpiqlsbglgzgfzfhcvhfpjjaty/XMPPTest_Prefix.pch.gch XMPPTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CTouch /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app
+r0
+

@@ -1,0 +1,213 @@
+// !$*UTF8*$!
+{
+	117300C212F7326700809A51 /* XMPPTest */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = XMPPTest;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	117300CB12F7326C00809A51 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	117300CC12F7326C00809A51 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	117300DE12F7334E00809A51 /* DDXMLNode.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 2314}}";
+			sepNavSelRange = "{34, 0}";
+			sepNavVisRange = "{0, 545}";
+		};
+	};
+	117301BC12F744D200809A51 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 117300DE12F7334E00809A51 /* DDXMLNode.h */;
+		name = "DDXMLNode.h: 1";
+		rLen = 0;
+		rLoc = 18;
+		rType = 0;
+		vrLen = 1134;
+		vrLoc = 0;
+	};
+	1173020412F748A400809A51 /* LibIDN.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 429}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 756}";
+		};
+	};
+	1173022F12F74C7700809A51 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1173020412F748A400809A51 /* LibIDN.h */;
+		name = "LibIDN.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 756;
+		vrLoc = 0;
+	};
+	1173023312F74C7700809A51 /* xmpptestViewController.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = xmpptestViewController.m;
+		path = /Users/samet/Documents/XcodeProjects/xmpptest/Classes/xmpptestViewController.m;
+		sourceTree = "<absolute>";
+	};
+	1173023612F74CCD00809A51 /* XMPPTestViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 596}}";
+			sepNavSelRange = "{142, 0}";
+			sepNavVisRange = "{0, 525}";
+		};
+	};
+	1173023D12F74CD400809A51 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1173023312F74C7700809A51 /* xmpptestViewController.m */;
+		name = "xmpptestViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1015;
+		vrLoc = 0;
+	};
+	1173024712F74E4900809A51 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* XMPPTestAppDelegate.m */;
+		name = "XMPPTestAppDelegate.m: 129";
+		rLen = 0;
+		rLoc = 3772;
+		rType = 0;
+		vrLen = 1172;
+		vrLoc = 260;
+	};
+	1173027E12F7512100809A51 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1173023612F74CCD00809A51 /* XMPPTestViewController.h */;
+		name = "XMPPTestViewController.h: 9";
+		rLen = 0;
+		rLoc = 142;
+		rType = 0;
+		vrLen = 525;
+		vrLoc = 0;
+	};
+	1173027F12F7512100809A51 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* XMPPTestAppDelegate.h */;
+		name = "XMPPTestAppDelegate.h: 22";
+		rLen = 0;
+		rLoc = 415;
+		rType = 0;
+		vrLen = 687;
+		vrLoc = 0;
+	};
+	1173028012F7512100809A51 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* XMPPTestAppDelegate.m */;
+		name = "XMPPTestAppDelegate.m: 39";
+		rLen = 0;
+		rLoc = 784;
+		rType = 0;
+		vrLen = 1303;
+		vrLoc = 259;
+	};
+	1D3623240D0F684500981E51 /* XMPPTestAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 596}}";
+			sepNavSelRange = "{415, 0}";
+			sepNavVisRange = "{0, 687}";
+		};
+	};
+	1D3623250D0F684500981E51 /* XMPPTestAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 3484}}";
+			sepNavSelRange = "{784, 0}";
+			sepNavVisRange = "{259, 1303}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* XMPPTest */ = {
+		activeExec = 0;
+		executables = (
+			117300C212F7326700809A51 /* XMPPTest */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 117300C212F7326700809A51 /* XMPPTest */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* XMPPTest */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* XMPPTest */,
+		);
+		codeSenseManager = 117300CC12F7326C00809A51 /* Code sense */;
+		executables = (
+			117300C212F7326700809A51 /* XMPPTest */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					833,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 318198039;
+			PBXWorkspaceStateSaveDate = 318198039;
+		};
+		perUserProjectItems = {
+			117301BC12F744D200809A51 /* PBXTextBookmark */ = 117301BC12F744D200809A51 /* PBXTextBookmark */;
+			1173022F12F74C7700809A51 /* PBXTextBookmark */ = 1173022F12F74C7700809A51 /* PBXTextBookmark */;
+			1173023D12F74CD400809A51 /* PBXTextBookmark */ = 1173023D12F74CD400809A51 /* PBXTextBookmark */;
+			1173024712F74E4900809A51 /* PBXTextBookmark */ = 1173024712F74E4900809A51 /* PBXTextBookmark */;
+			1173027E12F7512100809A51 /* PBXTextBookmark */ = 1173027E12F7512100809A51 /* PBXTextBookmark */;
+			1173027F12F7512100809A51 /* PBXTextBookmark */ = 1173027F12F7512100809A51 /* PBXTextBookmark */;
+			1173028012F7512100809A51 /* PBXTextBookmark */ = 1173028012F7512100809A51 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 117300CB12F7326C00809A51 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+}
