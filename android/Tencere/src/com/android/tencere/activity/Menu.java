@@ -1,6 +1,6 @@
 package com.android.tencere.activity;
 
-import com.android.activity.R;
+import com.android.tencere.activity.R;
 
 import android.app.Activity;
 import android.os.Bundle;
