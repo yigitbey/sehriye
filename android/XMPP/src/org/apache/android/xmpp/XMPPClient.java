@@ -39,7 +39,7 @@ public class XMPPClient extends Activity {
         Log.i("XMPPClient", "onCreate called");
         setContentView(R.layout.main);
         
-        
+     
         //mRecipient = (EditText) this.findViewById(R.id.);
         Log.i("XMPPClient", "mRecipient = " + "eren.tantekin@gmail.com");
         mSendText = (EditText) this.findViewById(R.id.sendText);
@@ -86,7 +86,6 @@ public class XMPPClient extends Activity {
         }
         
         
-
 
         // Set a listener to send a chat text message
         Button send = (Button) this.findViewById(R.id.send);
@@ -142,5 +141,4 @@ public class XMPPClient extends Activity {
         mList.setAdapter(adapter);
     }
     
-   
 }
