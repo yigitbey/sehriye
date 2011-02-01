@@ -69,6 +69,7 @@ class Conversation(GeoModel):
             logging.debug("ikinci query geldi")
             xmpp.send_message(self.user_1,START_CONVERSATION) # See custom_messages.py
             xmpp.send_message(self.user_2,START_CONVERSATION) # See custom_messages.py
+            assert self.user_1 != self.user_2 # A user should not be partnered with itself
             return self.user_1 #Return partner
 
         else: #Add this user to waiting list
