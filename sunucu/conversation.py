@@ -20,13 +20,12 @@ class Conversation(GeoModel):
     user_2_age = db.IntegerProperty() # Age of user_2
     user_1_name = db.StringProperty() # Name of user_1    
     user_2_name = db.StringProperty() # Name of user_2    
-    user_1_sex = db.IntegerProperty() # Sex of user_1. See en.wikipedia.org/wiki/ISO_5218
+    user_1_sex = db.IntegerProperty() # Sex of user_1. See http://en.wikipedia.org/wiki/ISO_5218
     user_2_sex = db.IntegerProperty() # Sex of user_2
 
-    #TODO: Clear this algorithm.
-    def matchPeople(self, current_user):
-        """ Function for matching current user with another user """ 
-        dummy_email = "a@aa.aaa" # Will be set as partner if there does not exist any waiting user 
+    def getPartner(self,current_user):
+        """Function to get partner"""
+        dummy_email = "a@aa.aaa" # Will be set as user_2 if there does not exist any waiting user 
         query = db.GqlQuery("SELECT * FROM Conversation WHERE user_2 != :2 AND user_1 = :1  LIMIT 1", current_user, dummy_email) #If user_1 is current user
         query2 = db.GqlQuery("SELECT * FROM Conversation WHERE user_2 = :1 LIMIT 1", current_user) #If user_2 is current user
         if query.count() == 1: #On a match for user_1
@@ -35,29 +34,33 @@ class Conversation(GeoModel):
         elif query2.count() == 1: # On a match for user_2
             self = query2.get()
             return self.user_1
-        
         else:
-            
-            query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 != :1 AND user_2 = :2 LIMIT 1",current_user, dummy_email) #If there is no current match
+            return 0
+
+   #TODO: Clear this algorithm.
+    def matchPeople(self, current_user):
+        """ Function for matching current user with another user """ 
+        dummy_email = "a@aa.aaa" # Will be set as partner if there does not exist any waiting user 
+        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 != :1 AND user_2 = :2 LIMIT 1",current_user, dummy_email) #If there is no current match
 #TODO: Add an optimisation here by move the user_2 query above (query_2) to here. 
-            if query.count() == 1: #Match this user with an existing pending user
-                self = query.get()
-                self.user_2 = current_user
+        if query.count() == 1: #Match this user with an existing pending user
+            self = query.get()
+            self.user_2 = current_user
+            self.put()
+            logging.debug("ikinci query geldi")
+            xmpp.send_message(self.user_1,START_CONVERSATION) # See custom_messages.py
+            xmpp.send_message(self.user_2,START_CONVERSATION) # See custom_messages.py
+            return self.user_1 #R
+        else: #Add this user to waiting list
+            query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2 LIMIT 1",current_user, dummy_email) #If they are not already on the waiting line
+            if query.count() == 0:
+                self.user_1 = current_user
+                self.user_2 = "a@aa.aaa"
+                #self.location = db.GeoPt(41,28) # See http://code.google.com/p/geomodel/wiki/Usage
+                #self.update_location()
                 self.put()
-                logging.debug("ikinci query geldi")
-                xmpp.send_message(self.user_1,START_CONVERSATION) # See custom_messages.py
-                xmpp.send_message(self.user_2,START_CONVERSATION) # See custom_messages.py
-                return self.user_1 #R
-            else: #Add this user to waiting list
-                query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2 LIMIT 1",current_user, dummy_email) #If they are not already on the waiting line
-                if query.count() == 0:
-                    self.user_1 = current_user
-                    self.user_2 = "a@aa.aaa"
-                    #self.location = db.GeoPt(41,28) # See http://code.google.com/p/geomodel/wiki/Usage
-                    #self.update_location()
-                    self.put()
-                logging.debug("ucuncu query geldi")
-                return 0
+            logging.debug("ucuncu query geldi")
+            return 0
 
     def remove(self):
         query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", self.user_1, self.user_2)
