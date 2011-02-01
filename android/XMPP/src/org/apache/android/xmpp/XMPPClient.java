@@ -39,9 +39,9 @@ public class XMPPClient extends Activity {
         Log.i("XMPPClient", "onCreate called");
         setContentView(R.layout.main);
         
-        
+     
         //mRecipient = (EditText) this.findViewById(R.id.);
-        Log.i("XMPPClient", "mRecipient = " + "eren.tantekin@gmail.com");
+        Log.i("XMPPClient", "mRecipient = " + "buluruzbirsey@appspot.com");
         mSendText = (EditText) this.findViewById(R.id.sendText);
         Log.i("XMPPClient", "mSendText = " + mSendText);
         mList = (ListView) this.findViewById(R.id.listMessages);
@@ -53,8 +53,8 @@ public class XMPPClient extends Activity {
         String host = "talk.google.com";
         String port = "5222";
         String service = "gmail.com";
-        String username = "ananyanimda";
-        String password = "anananan";
+        String username = "gngr.kck";
+        String password = "trewq1234ASDFG";
         
         
 
@@ -87,12 +87,11 @@ public class XMPPClient extends Activity {
         
         
 
-
         // Set a listener to send a chat text message
         Button send = (Button) this.findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-            	String to = "eren.tantekin@gmail.com";
+            	String to = "buluruzbirsey@appspot.com";
                 String text = mSendText.getText().toString();
 
                 Log.i("XMPPClient", "Sending text [" + text + "] to [" + to + "]");
@@ -142,5 +141,4 @@ public class XMPPClient extends Activity {
         mList.setAdapter(adapter);
     }
     
-   
 }
