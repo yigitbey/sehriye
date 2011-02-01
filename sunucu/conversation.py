@@ -36,8 +36,8 @@ class Conversation(db.Model):
                 self.user_2 = current_user
                 self.put()
                 logging.debug("ikinci query geldi")
-                xmpp.send_message(self.user_1,CHAT_START)
-                xmpp.send_message(self.user_2,CHAT_START)
+                xmpp.send_message(self.user_1,START_CONVERSATION)
+                xmpp.send_message(self.user_2,START_CONVERSATION)
                 return self.user_1 #R
             else: #Add this user to waiting list
                 query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2 LIMIT 1",current_user, dummy_email) #If they are not already on the waiting line
