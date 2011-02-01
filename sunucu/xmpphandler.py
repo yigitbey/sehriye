@@ -12,24 +12,23 @@ class XMPPHandler(webapp.RequestHandler):
         """Handling custom messages imported from custom_messages.py"""
       
         pass_message = 1 # Whether the message will be passed to partner
+        command = message.body.split(":")[0] # Get the first part of the message
 
-
-        #Disconnect
-        if message.body == DELETE_CONVERSATION: #If a client wants to disconnect
+        ### Disconnect
+        if command == DELETE_CONVERSATION: # If a client wants to disconnect
             conversation.remove() # Remove the conversation session from database
-        
-        #Pending Chat
-        if message.body.split(":")[0] == PENDING_CONVERSATION: # If a client wants a conversation
+        ###
+
+        ### Pending Chat
+        elif command == PENDING_CONVERSATION: # If a client wants a conversation
             sender = message.sender.split("/")[0] # Remove the identifier string from JID
             partner = conversation.matchPeople(sender) # Try to find a partner
 
             if partner == 0 : #If we don't have partner, set the location of the conversation
                 conversation.setLocation(message.body.split(":")[1],message.body.split(":")[2])
 
-
             pass_message = 0 # Don't pass pending chat requests to clients
-            
-                             
+        ###
 
         return pass_message
             
