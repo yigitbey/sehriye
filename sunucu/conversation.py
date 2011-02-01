@@ -1,13 +1,14 @@
 from google.appengine.ext import db
 from google.appengine.api import xmpp
 
+from geo.geomodel import GeoModel
 from custom_messages import *
 
 import logging
 
 
 #TODO: decide a method to detect remove discontinued conversations.
-class Conversation(db.Model):
+class Conversation(GeoModel):
     """ For storing conversation sessions """
     user_1 = db.EmailProperty()
     user_2 = db.EmailProperty() 
@@ -44,14 +45,16 @@ class Conversation(db.Model):
                 self.user_2 = current_user
                 self.put()
                 logging.debug("ikinci query geldi")
-                xmpp.send_message(self.user_1,START_CONVERSATION)
-                xmpp.send_message(self.user_2,START_CONVERSATION)
+                xmpp.send_message(self.user_1,START_CONVERSATION) # See custom_messages.py
+                xmpp.send_message(self.user_2,START_CONVERSATION) # See custom_messages.py
                 return self.user_1 #R
             else: #Add this user to waiting list
                 query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2 LIMIT 1",current_user, dummy_email) #If they are not already on the waiting line
                 if query.count() == 0:
                     self.user_1 = current_user
                     self.user_2 = "a@aa.aaa"
+                    self.location = db.GeoPt(41,28) # See http://code.google.com/p/geomodel/wiki/Usage
+                    self.update_location()
                     self.put()
                 logging.debug("ucuncu query geldi")
                 return 0
@@ -63,3 +66,10 @@ class Conversation(db.Model):
             db.delete(query.get())
         else:
             db.delete(query2.get())
+
+    def setLocation(self,la,lo):
+        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", self.user_1, "a@aa.aaa")
+        conversation = query.get()
+        conversation.location = db.GeoPt(la,lo)
+        conversation.put()
+        
