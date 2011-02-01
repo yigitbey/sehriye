@@ -53,8 +53,8 @@ class Conversation(GeoModel):
                 if query.count() == 0:
                     self.user_1 = current_user
                     self.user_2 = "a@aa.aaa"
-                    self.location = db.GeoPt(41,28) # See http://code.google.com/p/geomodel/wiki/Usage
-                    self.update_location()
+                    #self.location = db.GeoPt(41,28) # See http://code.google.com/p/geomodel/wiki/Usage
+                    #self.update_location()
                     self.put()
                 logging.debug("ucuncu query geldi")
                 return 0
@@ -71,5 +71,7 @@ class Conversation(GeoModel):
         query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", self.user_1, "a@aa.aaa")
         conversation = query.get()
         conversation.location = db.GeoPt(la,lo)
+        logging.debug(str(conversation.location))
+        conversation.update_location()
         conversation.put()
         
