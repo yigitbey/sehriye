@@ -24,8 +24,8 @@ class XMPPHandler(webapp.RequestHandler):
             sender = message.sender.split("/")[0] # Remove the identifier string from JID
             latitude = message.body.split(":")[1] # Latitude of user
             longtitude = message.body.split(":")[2] # Longtitude of user
-            partner = conversation.matchPeopleWithProximity(sender, latitude, longtitude) # Try to find a partner
 
+            partner = conversation.matchPeopleWithProximity(sender, latitude, longtitude) # Try to find a partner
             if partner == 0 : #If we don't have partner, set the location of the conversation
                 conversation.setLocation(message.body.split(":")[1],message.body.split(":")[2])
 
