@@ -5,13 +5,3 @@ class MainPage(webapp.RequestHandler):
     def get(self):
         """ Placeholder function for mainpage """
         self.response.headers['Content-Type'] = 'text/plain'
-
-        user = User()
-        user.register("mainpage")
-        puser = PersistentUser()
-        puser.register("mainpage")
-
-        user = user.getRandom()
-        
-        
-        self.response.out.write(user.address)
