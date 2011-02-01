@@ -4,7 +4,7 @@ from google.appengine.api import xmpp
 from geo.geomodel import GeoModel
 from custom_messages import *
 
-import logging
+import logging, random
 
 
 #TODO: decide a method to detect remove discontinued conversations.
@@ -12,8 +12,10 @@ class Conversation(GeoModel):
     """ For storing conversation sessions """
     user_1 = db.EmailProperty()
     user_2 = db.EmailProperty() 
+    
     date_created = db.DateTimeProperty(auto_now_add = "True") # Creation date of conversation 
     date_joined = db.DateTimeProperty(auto_now = "True") # Join date of user_2
+    is_started = db.BooleanProperty(default = False)
     user_1_loc = db.GeoPtProperty() # Location of user_1. See http://code.google.com/appengine/docs/python/datastore/typesandpropertyclasses.html#GeoPtProperty
     user_2_loc = db.GeoPtProperty() # Location of user_2
     user_1_age = db.IntegerProperty() # Age of user_1
@@ -46,11 +48,12 @@ class Conversation(GeoModel):
         if query.count() == 1: #Match this user with an existing pending user
             self = query.get()
             self.user_2 = current_user
+            self.is_started = True
             self.put()
             logging.debug("ikinci query geldi")
             xmpp.send_message(self.user_1,START_CONVERSATION) # See custom_messages.py
             xmpp.send_message(self.user_2,START_CONVERSATION) # See custom_messages.py
-            return self.user_1 #R
+            return self.user_1 #Return partner
         else: #Add this user to waiting list
             query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2 LIMIT 1",current_user, dummy_email) #If they are not already on the waiting line
             if query.count() == 0:
@@ -61,6 +64,39 @@ class Conversation(GeoModel):
                 self.put()
             logging.debug("ucuncu query geldi")
             return 0
+
+   #TODO: Clear this algorithm.
+    def matchPeopleWithProximity(self, current_user, la,lo):
+        """ Function for matching current user with another user with their proximity""" 
+        dummy_email = "a@aa.aaa" # Will be set as partner if there does not exist any waiting user 
+
+        results = Conversation.proximity_fetch(
+            Conversation.all().filter('is_started', False), # Only conversations that have not started yet
+            db.GeoPt(la, lo), #With these coordinats
+            max_results=10, #Maximum number of results
+            max_distance=100000  # Within 100 km.
+            ) 
+        if len(results) > 0: #Match this user with an existing pending user
+            self = random.choice(results)
+            self.user_2 = current_user
+            self.is_started = True
+            self.put()
+            logging.debug("ikinci query geldi")
+            xmpp.send_message(self.user_1,START_CONVERSATION) # See custom_messages.py
+            xmpp.send_message(self.user_2,START_CONVERSATION) # See custom_messages.py
+            return self.user_1 #Return partner
+
+        else: #Add this user to waiting list
+            query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2 LIMIT 1",current_user, dummy_email) #If they are not already on the waiting line
+            if query.count() == 0:
+                self.user_1 = current_user
+                self.user_2 = "a@aa.aaa"
+                self.location = db.GeoPt(la,lo) # See http://code.google.com/p/geomodel/wiki/Usage
+                self.update_location()
+                self.put()
+            logging.debug("ucuncu query geldi")
+            return 0
+
 
     def remove(self):
         query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", self.user_1, self.user_2)

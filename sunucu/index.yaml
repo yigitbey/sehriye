@@ -28,6 +28,12 @@ indexes:
   - name: location
   - name: location_geocells
 
+- kind: Conversation
+  properties:
+  - name: location_geocells
+  - name: user_2
+  - name: user_1
+
 - kind: User
   properties:
   - name: is_online
