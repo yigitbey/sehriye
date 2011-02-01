@@ -18,9 +18,12 @@ class XMPPHandler(webapp.RequestHandler):
     def post(self):
         """ Function to handle received messages """
         message = xmpp.Message(self.request.POST)
+        logging.info(message.to + message.sender + message.body)
+
         sender = message.sender.split("/")[0] # Remove the identifier string from JID
         conversation = Conversation()
         partner = 0
+        conversation.user_2 = "a@aa.aaa"
         partner = conversation.matchPeople(sender) # Try to find a partner
         if partner != 0: #If we have partner
             
@@ -33,5 +36,6 @@ class XMPPHandler(webapp.RequestHandler):
            
             # Send the message to partner even if the message is custom
             # This is to make sure that both clients realize actions
+            
             xmpp.send_message(partner, message.body) 
                          
