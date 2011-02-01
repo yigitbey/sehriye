@@ -35,8 +35,9 @@
 	[xmppStream setHostName:@"talk.google.com"];
 	[xmppStream setHostPort:5222];
 	
-	[xmppStream setMyJID:[XMPPJID jidWithString:@"samet.gltkn@gmail.com"]];
-	password = @"";
+	//Jabber ID and Password
+	[xmppStream setMyJID:[XMPPJID jidWithString:@"sobiyet.iphone@gmail.com"]];
+	password = @"12349876";
 	 
 	
 	NSError *error = nil;
@@ -124,17 +125,7 @@
 	[[self xmppStream] sendElement:presence];
 }
 
-- (void)testMessage{
-	NSXMLElement *testMsg = [NSXMLElement elementWithName:@"message"];
-	[testMsg addAttributeWithName:@"to" stringValue:@"gngr.kck@gmail.com"];
-	//[testMsg addAttributeWithName:@"from" stringValue:@"samet.gltkn@gmail.com"];
-	[testMsg addAttributeWithName:@"type" stringValue:@"chat"];
-	NSXMLElement *testMsgBody = [NSXMLElement elementWithName:@"body" stringValue:@"iphone'dan mesaj"];
-	[testMsg addChild:testMsgBody];
-	[[self xmppStream] sendElement:testMsg];
-	
-	
-}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark XMPPStream Delegate
@@ -207,7 +198,6 @@
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
 	NSLog(@"---------- xmppStreamDidAuthenticate: ----------");
-	[self testMessage];
 	
 	[self goOnline];
 }
@@ -227,7 +217,6 @@
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
 {
 	NSLog(@"---------- xmppStream:didReceiveMessage: ----------");
-	NSLog(@"RECIEVED MESSAGE:%@", [message elementForName:@"body"]);
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence

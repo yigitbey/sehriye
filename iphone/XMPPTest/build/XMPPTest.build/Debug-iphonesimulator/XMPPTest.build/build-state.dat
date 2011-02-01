@@ -1,39 +1,39 @@
 TXMPPTest
 v7
 r0
-t318196948.551106
+t318216632.483863
 cCheck dependencies
-cProcessInfoPlistFile /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist XMPPTest-Info.plist
-cCompileXIB /Users/samet/Documents/XcodeProjects/XMPPTest/MainWindow.xib
+cProcessInfoPlistFile /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist XMPPTest-Info.plist
+cCompileXIB /Users/samet/Documents/sehriye/iphone/XMPPTest/MainWindow.xib
 cCpResource build/Debug-iphonesimulator/XMPPTest.app/libidn-1.15.tar.gz Vendor/libidn/libidn-1.15.tar.gz
-cCompileXIB /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.xib
-cProcessPCH /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch.gch XMPPTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o /Users/samet/Documents/XcodeProjects/XMPPTest/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDNumber.o /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/DDNumber.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSDataAdditions.o /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/NSDataAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSXMLElementAdditions.o /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/NSXMLElementAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPElement.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPIQ.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPIQ.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPJID.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPJID.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPMessage.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPMessage.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPModule.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPModule.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPParser.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPParser.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPPresence.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPPresence.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPReconnect.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPReconnect.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPStream.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPStream.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/LibIDN.o /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/LibIDN.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/MulticastDelegate.o /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/MulticastDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/RFSRVResolver.o /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/RFSRVResolver.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest normal i386
-cGenerateDSYMFile /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app.dSYM /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest
-cTouch /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app
+cCompileXIB /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.xib
+cProcessPCH /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch.gch XMPPTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o /Users/samet/Documents/sehriye/iphone/XMPPTest/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLNode.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/NSStringAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDNumber.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/DDNumber.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSDataAdditions.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSDataAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSXMLElementAdditions.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSXMLElementAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPElement.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPIQ.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPIQ.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPJID.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPJID.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPMessage.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPMessage.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPModule.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPModule.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPParser.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPParser.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPPresence.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPPresence.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPReconnect.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPReconnect.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPStream.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPStream.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/LibIDN.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/LibIDN.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/MulticastDelegate.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/MulticastDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/RFSRVResolver.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/RFSRVResolver.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest normal i386
+cGenerateDSYMFile /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app.dSYM /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest
+cTouch /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app
 
 N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
 c000000004CC128950000000000000110
@@ -788,6 +788,563 @@ t1296497383
 s353
 i<UIKit/UIKit.h>
 
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/DDNumber.h
+c000000004D4217B9000000000000028C
+t1296177081
+s652
+i<Foundation/Foundation.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/DDNumber.m
+c000000004D4217B900000000000008B1
+t1296177081
+s2225
+i"DDNumber.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSDataAdditions.h
+c000000004D4217B900000000000000DA
+t1296177081
+s218
+i<Foundation/Foundation.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSDataAdditions.m
+c000000004D4217B900000000000010F2
+t1296177081
+s4338
+i"NSDataAdditions.h"
+i<CommonCrypto/CommonDigest.h>
+i"SSCrypto.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSXMLElementAdditions.h
+c000000004D4217B9000000000000076B
+t1296177081
+s1899
+i<Foundation/Foundation.h>
+i"DDXML.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSXMLElementAdditions.m
+c000000004D4217B900000000000019C5
+t1296177081
+s6597
+i"NSXMLElementAdditions.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestAppDelegate.h
+c000000004D4713DB00000000000002AF
+t1296503771
+s687
+i<UIKit/UIKit.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestAppDelegate.m
+c000000004D47605F0000000000001A05
+t1296523359
+s6661
+i"XMPPTestAppDelegate.h"
+i"XMPPTestViewController.h"
+i"XMPP.h"
+i<CFNetwork/CFNetwork.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.h
+c000000004D47572E00000000000002D8
+t1296521006
+s728
+i<UIKit/UIKit.h>
+i"XMPP.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m
+c000000004D475EE30000000000000EA4
+t1296522979
+s3748
+i"XMPPTestViewController.h"
+i"XMPPTestAppDelegate.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.xib
+c000000004D475735000000000000738A
+t1296521013
+s29578
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPP.h
+c000000004D4217BA00000000000000C4
+t1296177082
+s196
+i"XMPPJID.h"
+i"XMPPStream.h"
+i"XMPPElement.h"
+i"XMPPIQ.h"
+i"XMPPMessage.h"
+i"XMPPPresence.h"
+i"XMPPReconnect.h"
+i"NSXMLElementAdditions.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPElement.h
+c000000004D4217BA0000000000000109
+t1296177082
+s265
+i<Foundation/Foundation.h>
+i"DDXML.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPElement.m
+c000000004D4217BA00000000000006DA
+t1296177082
+s1754
+i"XMPPElement.h"
+i"XMPPJID.h"
+i"NSXMLElementAdditions.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPIQ.h
+c000000004D4217BA00000000000008DD
+t1296177082
+s2269
+i<Foundation/Foundation.h>
+i"XMPPElement.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPIQ.m
+c000000004D4217BA0000000000000BA9
+t1296177082
+s2985
+i"XMPPIQ.h"
+i"XMPPJID.h"
+i"NSXMLElementAdditions.h"
+i<objc/runtime.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPJID.h
+c000000004D4217BA0000000000000227
+t1296177082
+s551
+i<Foundation/Foundation.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPJID.m
+c000000004D4217BA0000000000001C95
+t1296177082
+s7317
+i"XMPPJID.h"
+i"LibIDN.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPMessage.h
+c000000004D4217BA00000000000003D3
+t1296177082
+s979
+i<Foundation/Foundation.h>
+i"XMPPElement.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPMessage.m
+c000000004D45C5CA0000000000000DEC
+t1296418250
+s3564
+i"XMPPMessage.h"
+i"XMPPJID.h"
+i"NSXMLElementAdditions.h"
+i<objc/runtime.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPModule.h
+c000000004D4217BA00000000000002AA
+t1296177082
+s682
+i<Foundation/Foundation.h>
+i"MulticastDelegate.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPModule.m
+c000000004D4217BA000000000000036D
+t1296177082
+s877
+i"XMPPModule.h"
+i"XMPPStream.h"
+i"MulticastDelegate.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPParser.h
+c000000004D4217BA0000000000000432
+t1296177082
+s1074
+i<Foundation/Foundation.h>
+i<libxml2/libxml/parser.h>
+i"DDXML.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPParser.m
+c000000004D4217BA0000000000005517
+t1296177082
+s21783
+i"XMPPParser.h"
+i<libxml/parserInternals.h>
+i"DDXMLPrivate.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPPresence.h
+c000000004D4217BA0000000000000367
+t1296177082
+s871
+i<Foundation/Foundation.h>
+i"XMPPElement.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPPresence.m
+c000000004D4217BA0000000000000825
+t1296177082
+s2085
+i"XMPPPresence.h"
+i"NSXMLElementAdditions.h"
+i<objc/runtime.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPReconnect.h
+c000000004D4217BA0000000000001E96
+t1296177082
+s7830
+i<Foundation/Foundation.h>
+i<SystemConfiguration/SystemConfiguration.h>
+i"MulticastDelegate.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPReconnect.m
+c000000004D4217BA0000000000002F7C
+t1296177082
+s12156
+i"XMPPReconnect.h"
+i"XMPPStream.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPStream.h
+c000000004D4217BA0000000000007A91
+t1296177082
+s31377
+i<Foundation/Foundation.h>
+i"MulticastDelegate.h"
+i"DDXML.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPStream.m
+c000000004D4217BA00000000000138E2
+t1296177082
+s80098
+i"XMPPStream.h"
+i"AsyncSocket.h"
+i"MulticastDelegate.h"
+i"RFSRVResolver.h"
+i"XMPPParser.h"
+i"XMPPJID.h"
+i"XMPPIQ.h"
+i"XMPPMessage.h"
+i"XMPPPresence.h"
+i"XMPPModule.h"
+i"NSDataAdditions.h"
+i"NSXMLElementAdditions.h"
+i<CFNetwork/CFNetwork.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/MainWindow.xib
+c000000004D46FAE70000000000004D13
+t1296497383
+s19731
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/DDLog.h
+c000000004D4217BA000000000000063E
+t1296177082
+s1598
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/LibIDN.h
+c000000004D4217BA00000000000002F4
+t1296177082
+s756
+i<Foundation/Foundation.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/LibIDN.m
+c000000004D4217BA000000000000055B
+t1296177082
+s1371
+i"LibIDN.h"
+i"stringprep.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/MulticastDelegate.h
+c000000004D4217BA000000000000034F
+t1296177082
+s847
+i<Foundation/Foundation.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/MulticastDelegate.m
+c000000004D4217BA0000000000002E01
+t1296177082
+s11777
+i"MulticastDelegate.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/RFSRVResolver.h
+c000000004D4217BA000000000000082D
+t1296177082
+s2093
+i<Foundation/Foundation.h>
+i<dns_sd.h>
+i"XMPPStream.h"
+i"DDLog.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/RFSRVResolver.m
+c000000004D4217BA0000000000003E3D
+t1296177082
+s15933
+i"RFSRVResolver.h"
+i<dns_util.h>
+i<stdlib.h>
+i"XMPPStream.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/AsyncSocket/AsyncSocket.h
+c000000004D4217BF00000000000072B2
+t1296177087
+s29362
+i<Foundation/Foundation.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m
+c000000004D4217BF000000000001C3CC
+t1296177087
+s115660
+i"AsyncSocket.h"
+i<sys/socket.h>
+i<netinet/in.h>
+i<arpa/inet.h>
+i<netdb.h>
+i<CFNetwork/CFNetwork.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXML.h
+c000000004D4217C0000000000000073A
+t1296177088
+s1850
+i"DDXMLNode.h"
+i"DDXMLElement.h"
+i"DDXMLDocument.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLDocument.h
+c000000004D4217C00000000000000807
+t1296177088
+s2055
+i<Foundation/Foundation.h>
+i"DDXMLElement.h"
+i"DDXMLNode.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLDocument.m
+c000000004D4217C00000000000000C5C
+t1296177088
+s3164
+i"DDXMLDocument.h"
+i"NSStringAdditions.h"
+i"DDXMLPrivate.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLElement.h
+c000000004D4217C000000000000006B0
+t1296177088
+s1712
+i<Foundation/Foundation.h>
+i"DDXMLNode.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLElement.m
+c000000004D4217C000000000000042D0
+t1296177088
+s17104
+i"DDXMLElement.h"
+i"NSStringAdditions.h"
+i"DDXMLPrivate.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLNode.h
+c000000004D4706C00000000000001392
+t1296500416
+s5010
+i<Foundation/Foundation.h>
+i<libxml/tree.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLNode.m
+c000000004D4217C0000000000000B885
+t1296177088
+s47237
+i"DDXMLNode.h"
+i"DDXMLElement.h"
+i"DDXMLDocument.h"
+i"NSStringAdditions.h"
+i"DDXMLPrivate.h"
+i<libxml/xpath.h>
+i<libxml/xpathInternals.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLPrivate.h
+c000000004D4217C0000000000000098B
+t1296177088
+s2443
+i"DDXMLNode.h"
+i"DDXMLElement.h"
+i"DDXMLDocument.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/NSStringAdditions.h
+c000000004D4217C000000000000000FD
+t1296177088
+s253
+i<Foundation/Foundation.h>
+i<libxml/tree.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/NSStringAdditions.m
+c000000004D4217C000000000000001DD
+t1296177088
+s477
+i"NSStringAdditions.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/libidn/idn-int.h
+c000000004D4217BF0000000000003877
+t1296177087
+s14455
+i<stdint.h>
+i<sys/types.h>
+i<limits.h>
+i<inttypes.h>
+i<sys/inttypes.h>
+i<sys/bitypes.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/libidn/libidn-1.15.tar.gz
+c000000004D4217BF0000000000283593
+t1296177087
+s2635155
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/libidn/libidn.a
+c000000004D4217BF000000000013C63C
+t1296177087
+s1295932
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/libidn/stringprep.h
+c000000004D4217BF0000000000001EBB
+t1296177087
+s7867
+i<stddef.h>
+i<unistd.h>
+i"idn-int.h"
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/XMPPTest_Prefix.pch
+c000000004D46FAE700000000000000B9
+t1296497383
+s185
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app
+t1296523832
+s272
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app.dSYM
+t1296523832
+s102
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist
+t1296502302
+s802
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/MainWindow.nib
+t1296502302
+s1125
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/PkgInfo
+t1296502302
+s8
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest
+t1296523832
+s537100
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTestViewController.nib
+t1296521030
+s2554
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/libidn-1.15.tar.gz
+t1296502302
+s2635155
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o
+t1296506902
+s212092
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDNumber.o
+t1296506902
+s12300
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o
+t1296506902
+s16452
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o
+t1296506902
+s43152
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o
+t1296506902
+s83092
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/LibIDN.o
+t1296506903
+s10136
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/MulticastDelegate.o
+t1296506903
+s23784
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSDataAdditions.o
+t1296506902
+s12964
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o
+t1296506902
+s7460
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSXMLElementAdditions.o
+t1296506902
+s29936
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/RFSRVResolver.o
+t1296506903
+s58556
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPElement.o
+t1296506902
+s14760
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPIQ.o
+t1296506902
+s19676
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPJID.o
+t1296506903
+s27108
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPMessage.o
+t1296506903
+s19476
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPModule.o
+t1296506903
+s15168
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPParser.o
+t1296506903
+s35036
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPPresence.o
+t1296506903
+s16096
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPReconnect.o
+t1296506903
+s37716
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPStream.o
+t1296506903
+s163900
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTest.LinkFileList
+c000000004D4720140000000000000C95
+t1296506900
+s3221
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o
+t1296523832
+s69968
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o
+t1296522984
+s65120
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o
+t1296506902
+s6320
+
+N/Users/samet/Documents/sehriye/iphone/XMPPTest/main.m
+c000000004D46FAE70000000000000161
+t1296497383
+s353
+i<UIKit/UIKit.h>
+
+N/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch.gch
+t1296506901
+s15453392
+
 N/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch.gch
 t1296502303
 s15453392
@@ -815,7 +1372,7 @@ s1238
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies318196947#318196947#0(0"0(0#1#0"8621908896#0"0#
+lSLF07#2@18"Check dependencies318216632#318216632#0(0"0(0#1#0"8600498048#0"0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195103.877133
@@ -830,6 +1387,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@86"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m318195103#318195104#0(0"0(0#0#78"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m8624467328#2150"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.005056
+e318199702.610741
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m318199702#318199702#0(0"0(0#0#79"/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m8627104032#2161"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/AsyncSocket/AsyncSocket.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/AsyncSocket.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDNumber.o /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/DDNumber.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195567.398388
 e318195567.529547
@@ -842,6 +1412,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@75"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/DDNumber.m318195567#318195567#0(0"0(0#0#67"/Users/samet/Documents/XcodeProjects/XMPPTest/Categories/DDNumber.m8590088544#2136"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/DDNumber.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDNumber.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDNumber.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/DDNumber.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.639313
+e318199702.713622
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDNumber.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/DDNumber.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@76"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/DDNumber.m318199702#318199702#0(0"0(0#0#68"/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/DDNumber.m8626421504#2147"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/DDNumber.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDNumber.o0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195103.936578
@@ -856,6 +1439,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@84"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m318195103#318195104#0(0"0(0#0#76"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m8616906272#2150"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLDocument.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.116798
+e318199702.229255
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLDocument.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@85"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLDocument.m318199702#318199702#0(0"0(0#0#77"/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLDocument.m8624307936#2161"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLDocument.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLDocument.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195104.027442
 e318195104.186041
@@ -868,6 +1464,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@83"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m318195104#318195104#0(0"0(0#0#75"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m8614330528#2148"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLElement.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.229350
+e318199702.382642
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLElement.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@84"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLElement.m318199702#318199702#0(0"0(0#0#76"/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLElement.m8623582080#2159"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLElement.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLElement.o0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195104.186138
@@ -882,6 +1491,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@80"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m318195104#318195104#0(0"0(0#0#72"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m8628129952#2142"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/DDXMLNode.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLNode.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.382745
+e318199702.639192
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLNode.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@81"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLNode.m318199702#318199702#0(0"0(0#0#73"/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLNode.m8621682592#2153"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/DDXMLNode.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/DDXMLNode.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/LibIDN.o /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/LibIDN.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195877.962205
 e318195878.034947
@@ -894,6 +1516,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@72"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/LibIDN.m318195877#318195878#0(0"0(0#0#64"/Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/LibIDN.m8616904128#2131"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/LibIDN.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/LibIDN.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/LibIDN.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/LibIDN.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199703.400813
+e318199703.474593
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/LibIDN.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/LibIDN.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/LibIDN.m318199703#318199703#0(0"0(0#0#65"/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/LibIDN.m8622175040#2142"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/LibIDN.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/LibIDN.o0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/MulticastDelegate.o /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/MulticastDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195878.035041
@@ -908,6 +1543,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@83"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/MulticastDelegate.m318195878#318195878#0(0"0(0#0#75"/Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/MulticastDelegate.m8614598368#2153"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/MulticastDelegate.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/MulticastDelegate.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/MulticastDelegate.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/MulticastDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199703.474823
+e318199703.569066
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/MulticastDelegate.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/MulticastDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@84"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/MulticastDelegate.m318199703#318199703#0(0"0(0#0#76"/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/MulticastDelegate.m8621450752#2164"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/MulticastDelegate.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/MulticastDelegate.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSDataAdditions.o /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/NSDataAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195877.555730
 e318195877.650708
@@ -920,6 +1568,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@82"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/NSDataAdditions.m318195877#318195877#0(0"0(0#0#74"/Users/samet/Documents/XcodeProjects/XMPPTest/Categories/NSDataAdditions.m8621391424#2150"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/NSDataAdditions.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSDataAdditions.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSDataAdditions.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSDataAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.713731
+e318199702.800877
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSDataAdditions.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSDataAdditions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@83"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSDataAdditions.m318199702#318199702#0(0"0(0#0#75"/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSDataAdditions.m8624273600#2161"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSDataAdditions.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSDataAdditions.o0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195104.431740
@@ -934,6 +1595,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@88"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m318195104#318195104#0(0"0(0#0#80"/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m8629148512#2158"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/KissXML/NSStringAdditions.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/NSStringAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.610834
+e318199702.730657
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/NSStringAdditions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@89"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/NSStringAdditions.m318199702#318199702#0(0"0(0#0#81"/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/NSStringAdditions.m8627751968#2169"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/KissXML/NSStringAdditions.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSStringAdditions.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSXMLElementAdditions.o /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/NSXMLElementAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195567.530040
 e318195567.709843
@@ -947,6 +1621,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@88"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/NSXMLElementAdditions.m318195567#318195567#0(0"0(0#0#80"/Users/samet/Documents/XcodeProjects/XMPPTest/Categories/NSXMLElementAdditions.m8621614304#2162"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Categories/NSXMLElementAdditions.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSXMLElementAdditions.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSXMLElementAdditions.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSXMLElementAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.730758
+e318199702.855608
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSXMLElementAdditions.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSXMLElementAdditions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@89"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSXMLElementAdditions.m318199702#318199702#0(0"0(0#0#81"/Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSXMLElementAdditions.m8623605440#2173"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Categories/NSXMLElementAdditions.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/NSXMLElementAdditions.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/RFSRVResolver.o /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/RFSRVResolver.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195878.165975
 e318195878.355488
@@ -959,6 +1646,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@79"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/RFSRVResolver.m318195878#318195878#0(0"0(0#0#71"/Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/RFSRVResolver.m8629087648#2145"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Utilities/RFSRVResolver.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/RFSRVResolver.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/RFSRVResolver.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/RFSRVResolver.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199703.569163
+e318199703.760994
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/RFSRVResolver.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/RFSRVResolver.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@80"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/RFSRVResolver.m318199703#318199703#0(0"0(0#0#72"/Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/RFSRVResolver.m8620413504#2156"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Utilities/RFSRVResolver.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/RFSRVResolver.o0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/SSCrypto.o /Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/SSCrypto/SSCrypto.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195877.554612
@@ -1140,6 +1840,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@72"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPElement.m318195567#318195567#0(0"0(0#0#64"/Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPElement.m8629238688#2136"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPElement.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPElement.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPElement.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.800977
+e318199702.902899
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPElement.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPElement.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPElement.m318199702#318199702#0(0"0(0#0#65"/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPElement.m8621310016#2147"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPElement.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPElement.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPIQ.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPIQ.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195567.709939
 e318195567.869256
@@ -1152,6 +1865,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@67"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPIQ.m318195567#318195567#0(0"0(0#0#59"/Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPIQ.m8621490432#2126"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPIQ.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPIQ.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPIQ.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPIQ.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.855709
+e318199702.986840
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPIQ.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPIQ.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@68"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPIQ.m318199702#318199702#0(0"0(0#0#60"/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPIQ.m8612734016#2137"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPIQ.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPIQ.o0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPJID.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPJID.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195877.651435
@@ -1166,6 +1892,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@68"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPJID.m318195877#318195877#0(0"0(0#0#60"/Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPJID.m8628443072#2128"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPJID.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPJID.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPJID.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPJID.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.902990
+e318199703.011105
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPJID.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPJID.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPJID.m318199702#318199703#0(0"0(0#0#61"/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPJID.m8618467392#2139"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPJID.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPJID.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPMessage.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPMessage.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195567.867468
 e318195567.990764
@@ -1178,6 +1917,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@72"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPMessage.m318195567#318195567#0(0"0(0#0#64"/Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPMessage.m8629228224#2136"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPMessage.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPMessage.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPMessage.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPMessage.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199702.986951
+e318199703.095953
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPMessage.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPMessage.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPMessage.m318199702#318199703#0(0"0(0#0#65"/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPMessage.m8616785120#2147"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPMessage.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPMessage.o0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPModule.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPModule.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195877.667129
@@ -1192,6 +1944,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@71"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPModule.m318195877#318195877#0(0"0(0#0#63"/Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPModule.m8627111392#2134"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPModule.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPModule.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPModule.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPModule.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199703.011203
+e318199703.143883
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPModule.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPModule.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPModule.m318199703#318199703#0(0"0(0#0#64"/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPModule.m8616681536#2145"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPModule.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPModule.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPParser.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPParser.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195567.989629
 e318195568.154347
@@ -1204,6 +1969,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@71"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPParser.m318195567#318195568#0(0"0(0#0#63"/Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPParser.m8624463296#2134"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPParser.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPParser.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPParser.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPParser.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199703.096049
+e318199703.240524
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPParser.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPParser.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPParser.m318199703#318199703#0(0"0(0#0#64"/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPParser.m8616437248#2145"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPParser.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPParser.o0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPPresence.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPPresence.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195567.990841
@@ -1218,6 +1996,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@73"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPPresence.m318195567#318195568#0(0"0(0#0#65"/Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPPresence.m8624305184#2138"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPPresence.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPPresence.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPPresence.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPPresence.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199703.143984
+e318199703.251020
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPPresence.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPPresence.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPPresence.m318199703#318199703#0(0"0(0#0#66"/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPPresence.m8627066400#2149"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPPresence.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPPresence.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPReconnect.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPReconnect.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195877.777654
 e318195877.962109
@@ -1230,6 +2021,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@74"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPReconnect.m318195877#318195877#0(0"0(0#0#66"/Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPReconnect.m8612563488#2140"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPReconnect.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPReconnect.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPReconnect.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPReconnect.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199703.240642
+e318199703.400713
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPReconnect.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPReconnect.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPReconnect.m318199703#318199703#0(0"0(0#0#67"/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPReconnect.m8626836224#2151"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPReconnect.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPReconnect.o0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPStream.o /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPStream.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195877.790214
@@ -1244,6 +2048,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@71"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPStream.m318195877#318195878#0(0"0(0#0#63"/Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPStream.m8593908928#2134"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Core/XMPPStream.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPStream.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPStream.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPStream.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199703.251121
+e318199703.698487
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPStream.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPStream.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPStream.m318199703#318199703#0(0"0(0#0#64"/Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPStream.m8625972288#2145"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Core/XMPPStream.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPStream.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318196948.287104
 e318196948.442592
@@ -1256,6 +2073,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@83"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m318196948#318196948#0(0"0(0#0#75"/Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m8621880192#2155"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestAppDelegate.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318216632.170548
+e318216632.375469
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@84"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestAppDelegate.m318216632#318216632#0(0"0(0#0#76"/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestAppDelegate.m8612523360#2166"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestAppDelegate.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestAppDelegate.o0#
 
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318196948.289644
@@ -1270,6 +2100,28 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@86"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m318196948#318196948#0(0"0(0#0#78"/Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m8621114944#2161"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o0#
 
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318215784.263574
+e318215784.464522
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m: In function '-[XMPPTestViewController viewDidLoad]':
+o/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:30: warning: 'XMPPTestViewController' may not respond to '-xmppStream'
+o/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:30: warning: (Messages without a matching method signature
+o/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:30: warning: will be assumed to return 'id' and accept
+o/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:30: warning: '...' as arguments.)
+o/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m: In function '-[XMPPTestViewController sendMessage:]':
+o/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:85: warning: 'XMPPTestViewController' may not respond to '-xmppStream'
+o/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m: In function '-[XMPPTestViewController xmppStreamDidAuthenticate:]':
+o/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:128: warning: 'XMPPTestAppDelegate' may not respond to '-goOnline'
+lSLF07#2@87"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m318215784#318215784#0(1255"/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m: In function '-[XMPPTestViewController viewDidLoad]':/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:30: warning: 'XMPPTestViewController' may not respond to '-xmppStream'/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:30: warning: (Messages without a matching method signature/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:30: warning: will be assumed to return 'id' and accept/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:30: warning: '...' as arguments.)/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m: In function '-[XMPPTestViewController sendMessage:]':/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:85: warning: 'XMPPTestViewController' may not respond to '-xmppStream'/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m: In function '-[XMPPTestViewController xmppStreamDidAuthenticate:]':/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m:128: warning: 'XMPPTestAppDelegate' may not respond to '-goOnline'4(22@57"'XMPPTestViewController' may not respond to '-xmppStream'318215784#134#151#0(6@79"/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m318215779#30#0#30#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)318215784#285#139#0(6@79"/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m318215779#30#0#30#0#0"0(22@57"'XMPPTestViewController' may not respond to '-xmppStream'318215784#808#151#0(6@79"/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m318215779#85#0#85#0#26"'*' may not respond to '*'0(22@52"'XMPPTestAppDelegate' may not respond to '-goOnline'318215784#1108#147#0(6@79"/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m318215779#128#0#128#0#26"'*' may not respond to '*'0(0#0#79"/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m8618806848#2172"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTestViewController.o0#
+
 CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o /Users/samet/Documents/XcodeProjects/XMPPTest/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195103.781135
 e318195103.853122
@@ -1282,6 +2134,19 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@60"Compile /Users/samet/Documents/XcodeProjects/XMPPTest/main.m318195103#318195103#0(0"0(0#0#52"/Users/samet/Documents/XcodeProjects/XMPPTest/main.m8623570368#2117"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch -c /Users/samet/Documents/XcodeProjects/XMPPTest/main.m -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o0#
+
+CCompileC build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o /Users/samet/Documents/sehriye/iphone/XMPPTest/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199701.941076
+e318199702.004958
+r1
+xCompileC
+xbuild/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/samet/Documents/sehriye/iphone/XMPPTest/main.m318199701#318199702#0(0"0(0#0#53"/Users/samet/Documents/sehriye/iphone/XMPPTest/main.m8629148512#2128"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -include /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/main.m -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/main.o0#
 
 CCompileXIB /Users/samet/Documents/XcodeProjects/XMPPTest/Classes/XMPPTestViewController.xib
 s318196947.930960
@@ -1307,6 +2172,17 @@ xCompileXIB
 x/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTestViewController.xib
 lSLF07#2@37"CompileXIB XMPPTestViewController.xib318195102#318195102#0(0"0(0#0#72"/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTestViewController.xib8618386112#616"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTestViewController.nib /Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTestViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
 
+CCompileXIB /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.xib
+s318213829.618880
+e318213830.102358
+r1
+xCompileXIB
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.xib
+lSLF07#2@45"CompileXIB Classes/XMPPTestViewController.xib318213829#318213830#0(0"0(0#0#81"/Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.xib8622103424#627"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTestViewController.nib /Users/samet/Documents/sehriye/iphone/XMPPTest/Classes/XMPPTestViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/samet/Documents/sehriye/iphone/XMPPTest/MainWindow.xib
+r0
+
 CCpResource build/Debug-iphonesimulator/XMPPTest.app/libidn-1.15.tar.gz Vendor/libidn/libidn-1.15.tar.gz
 s318195102.464659
 e318195102.478003
@@ -1325,6 +2201,15 @@ x/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPT
 x/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest
 lSLF07#2@112"GenerateDSYMFile build/Debug-iphonesimulator/XMPPTest.app.dSYM build/Debug-iphonesimulator/XMPPTest.app/XMPPTest318196948#318196948#0(0"0(0#0#95"/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest8616752768#407"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app.dSYM0#
 
+CGenerateDSYMFile /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app.dSYM /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest
+s318216632.443701
+e318216632.480937
+r1
+xGenerateDSYMFile
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app.dSYM
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest
+lSLF07#2@112"GenerateDSYMFile build/Debug-iphonesimulator/XMPPTest.app.dSYM build/Debug-iphonesimulator/XMPPTest.app/XMPPTest318216632#318216632#0(0"0(0#0#96"/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest8616727936#410"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app.dSYM0#
+
 CLd /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest normal i386
 s318196948.442678
 e318196948.511923
@@ -1335,6 +2220,16 @@ xnormal
 xi386
 lSLF07#2@100"Link /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest318196948#318196948#0(0"0(0#0#0"8617128512#1103"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -L/Users/samet/Documents/XcodeProjects/XMPPTest/Vendor/libidn -F/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator -filelist /Users/samet/Documents/XcodeProjects/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTest.LinkFileList -mmacosx-version-min=10.6 -lxml2 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -lidn -lxml2 -framework SystemConfiguration -framework CoreData -lresolv -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest0#
 
+CLd /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest normal i386
+s318216632.375563
+e318216632.443598
+r1
+xLd
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest
+xnormal
+xi386
+lSLF07#2@101"Link /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest318216632#318216632#0(0"0(0#0#0"8610817568#1109"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -L/Users/samet/Documents/sehriye/iphone/XMPPTest/Vendor/libidn -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -filelist /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/Objects-normal/i386/XMPPTest.LinkFileList -mmacosx-version-min=10.6 -lxml2 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -lidn -lxml2 -framework SystemConfiguration -framework CoreData -lresolv -o /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/XMPPTest0#
+
 CProcessInfoPlistFile /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist XMPPTest-Info.plist
 s318195102.037982
 e318195102.041445
@@ -1343,6 +2238,22 @@ xProcessInfoPlistFile
 x/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist
 xXMPPTest-Info.plist
 lSLF07#2@27"Process XMPPTest-Info.plist318195102#318195102#0(0"0(0#0#65"/Users/samet/Documents/XcodeProjects/XMPPTest/XMPPTest-Info.plist8619293376#503"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility XMPPTest-Info.plist -genpkginfo /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist0#
+
+CProcessInfoPlistFile /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app/Info.plist XMPPTest-Info.plist
+r0
+
+CProcessPCH /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch.gch XMPPTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s318199700.613365
+e318199701.940582
+r1
+xProcessPCH
+x/var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch.gch
+xXMPPTest_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile XMPPTest_Prefix.pch318199700#318199701#0(0"0(0#0#66"/Users/samet/Documents/sehriye/iphone/XMPPTest/XMPPTest_Prefix.pch8613461792#2011"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-generated-files.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-own-target-headers.hmap -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-all-target-headers.hmap -iquote /Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/XMPPTest-project-headers.hmap -F/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/include -I/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/libxml2 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources/i386 -I/Users/samet/Documents/sehriye/iphone/XMPPTest/build/XMPPTest.build/Debug-iphonesimulator/XMPPTest.build/DerivedSources -c /Users/samet/Documents/sehriye/iphone/XMPPTest/XMPPTest_Prefix.pch -o /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-blwrrarnygpsqefblvynzoguleke/XMPPTest_Prefix.pch.gch0#
 
 CProcessPCH /var/folders/zf/zf3nHX5PGAyzS387-dNfiU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/XMPPTest_Prefix-dtgcietvqbkcamdosbilljkbzyep/XMPPTest_Prefix.pch.gch XMPPTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
 s318195102.482021
@@ -1406,4 +2317,12 @@ r1
 xTouch
 x/Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app
 lSLF07#2@92"Touch /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app318196948#318196948#0(0"0(0#0#0"8599579712#293"    cd /Users/samet/Documents/XcodeProjects/XMPPTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/samet/Documents/XcodeProjects/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app0#
+
+CTouch /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app
+s318216632.481026
+e318216632.483813
+r1
+xTouch
+x/Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app
+lSLF07#2@93"Touch /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app318216632#318216632#0(0"0(0#0#0"8618573728#295"    cd /Users/samet/Documents/sehriye/iphone/XMPPTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/samet/Documents/sehriye/iphone/XMPPTest/build/Debug-iphonesimulator/XMPPTest.app0#
 
