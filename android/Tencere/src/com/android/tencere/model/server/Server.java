@@ -7,6 +7,8 @@ public abstract class Server {
     protected String service;
     protected String username;
     protected String password;
+    
+    protected String serverUser;
 
 
 	protected void setHost(String Host) {
@@ -34,6 +36,10 @@ public abstract class Server {
 		this.password = Password;
 		
 	}
+	
+	protected void setServerUser(String serverMail){
+		this.serverUser = serverMail;
+	}
 
 
 	public String getHost() {
@@ -58,6 +64,10 @@ public abstract class Server {
 
 	public String getPassword() {
 		return this.password;
+	}
+	
+	public String getServerUser(){
+		return this.serverUser;
 	}
 
 

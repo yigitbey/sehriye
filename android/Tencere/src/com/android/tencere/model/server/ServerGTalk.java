@@ -10,6 +10,7 @@ public class ServerGTalk extends Server {
     	setService("gmail.com");
     	setUserName("at.avrat.kisnek");
     	setPassword("m3rc1m3k");
+    	setServerUser("buluruzbirsey@appspot.com");
 	}
 
 
