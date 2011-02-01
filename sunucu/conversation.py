@@ -13,6 +13,14 @@ class Conversation(db.Model):
     user_2 = db.EmailProperty() 
     date_created = db.DateTimeProperty(auto_now_add = "True") # Creation date of conversation 
     date_joined = db.DateTimeProperty(auto_now = "True") # Join date of user_2
+    user_1_loc = db.GeoPtProperty() # Location of user_1. See http://code.google.com/appengine/docs/python/datastore/typesandpropertyclasses.html#GeoPtProperty
+    user_2_loc = db.GeoPtProperty() # Location of user_2
+    user_1_age = db.IntegerProperty() # Age of user_1
+    user_2_age = db.IntegerProperty() # Age of user_2
+    user_1_name = db.StringProperty() # Name of user_1    
+    user_2_name = db.StringProperty() # Name of user_2    
+    user_1_sex = db.IntegerProperty() # Sex of user_1. See en.wikipedia.org/wiki/ISO_5218
+    user_2_sex = db.IntegerProperty() # Sex of user_2
 
     #TODO: Clear this algorithm.
     def matchPeople(self, current_user):
