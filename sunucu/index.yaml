@@ -16,7 +16,8 @@ indexes:
   - name: user_2
   - name: date_created
   - name: date_joined
-
+  - name: location
+  - name: location_geocells
 
 - kind: Conversation
   properties:
@@ -24,6 +25,8 @@ indexes:
   - name: user_1
   - name: date_created
   - name: date_joined
+  - name: location
+  - name: location_geocells
 
 - kind: User
   properties:
