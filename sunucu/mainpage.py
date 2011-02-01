@@ -1,7 +1,5 @@
 from google.appengine.ext import webapp
 
-from users import User, PersistentUser
-
 class MainPage(webapp.RequestHandler):
     """ Class for root url """
     def get(self):
