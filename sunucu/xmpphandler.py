@@ -32,6 +32,16 @@ class XMPPHandler(webapp.RequestHandler):
             pass_message = 0 # Don't pass pending chat requests to clients
         ###
 
+        ### Trade Name
+        elif command == TRADE_NAME: # If a clients wants to send his name
+            sender = message.sender.split("/")[0] # Remove the identifer string from JID
+            name = message.body.split(":")[1] # Name of the user
+            conversation.setTradeName(name)
+            pass_message = 0
+        ###
+            
+
+
         return pass_message
             
     def post(self):
