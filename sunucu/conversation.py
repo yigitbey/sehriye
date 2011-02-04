@@ -25,17 +25,6 @@ class Conversation(GeoModel):
     user_1_sex = db.IntegerProperty() # Sex of user_1. See http://en.wikipedia.org/wiki/ISO_5218
     user_2_sex = db.IntegerProperty() # Sex of user_2
 
-    user_1_sextrade = db.BooleanProperty(default = False)
-    user_2_sextrade = db.BooleanProperty(default = False)
-    user_1_loctrade = db.BooleanProperty(default = False)
-    user_2_loctrade = db.BooleanProperty(default = False)
-    user_1_agetrade = db.BooleanProperty(default = False)
-    user_2_agetrade = db.BooleanProperty(default = False)
-    user_1_nametrade = db.BooleanProperty(default = False)
-    user_2_nametrade = db.BooleanProperty(default = False)
-    user_1_sextrade = db.BooleanProperty(default = False)
-    user_2_sextrade = db.BooleanProperty(default = False)
-
     def getPartner(self,current_user):
         """Function to get partner"""
         dummy_email = "a@aa.aaa" # Will be set as user_2 if there does not exist any waiting user 
