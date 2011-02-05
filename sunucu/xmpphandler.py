@@ -39,6 +39,15 @@ class XMPPHandler(webapp.RequestHandler):
             conversation.setTradeName(name)
             pass_message = 0
         ###
+
+        ### Trade Age
+        elif command == TRADE_AGE: # If a clients wants to send his age
+            sender = message.sender.split("/")[0] # Remove the identifer string from JID
+            age = message.body.split(":")[1] # Age of the user
+            conversation.setTradeAge(age)
+            pass_message = 0
+        ###
+
             
 
 
