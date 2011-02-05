@@ -48,6 +48,15 @@ class XMPPHandler(webapp.RequestHandler):
             pass_message = 0
         ###
 
+        ### Trade Location
+        elif command == TRADE_LOCATION: # If a clients wants to send his age
+            sender = message.sender.split("/")[0] # Remove the identifer string from JID
+            latitude = message.body.split(":")[1] # Latitude of the user
+            longtitude = message.body.split(":")[2] # Longtitude of the user
+            conversation.setTradeLocation(latitude,longtitude)
+            pass_message = 0
+        ###
+
             
 
 

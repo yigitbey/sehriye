@@ -109,8 +109,22 @@ class Conversation(GeoModel):
             conversation.user_1_age = int(age)
         else:
             conversation.user_2_age = int(age) # Second trade request
-            message_to_send = TRADE_AGE + ":" + conversation.user_2_age # Serialize the custom message for the first user
+            message_to_send = TRADE_AGE + ":" + str(conversation.user_2_age) # Serialize the custom message for the first user
             xmpp.send_message(conversation.user_1,message_to_send)
-            message_to_send = TRADE_AGE + ":" + conversation.user_1_age # Serialize the custom message for the second user
+            message_to_send = TRADE_AGE + ":" + str(conversation.user_1_age) # Serialize the custom message for the second user
             xmpp.send_message(conversation.user_2,message_to_send)
         conversation.put()     
+
+    def setTradeLocation(self, latitude, longtitude):
+        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", self.user_1, self.user_2)
+        conversation = query.get()
+        if conversation.user_1_loc == None: # First trade request
+            conversation.user_1_loc = db.GeoPt(latitude,longtitude)
+        else:
+            conversation.user_2_loc = db.GeoPt(latitude,longtitude) # Second trade request
+            message_to_send = TRADE_LOCATION + ":" + str(conversation.user_1_loc).replace(",",":") # Serialize the custom message for the first user
+            xmpp.send_message(conversation.user_1,message_to_send)
+            message_to_send = TRADE_LOCATION + ":" + str(conversation.user_2_loc).replace(",",":") # Serialize the custom message for the second user
+            xmpp.send_message(conversation.user_2,message_to_send)
+        conversation.put()     
+
