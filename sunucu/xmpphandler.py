@@ -49,11 +49,19 @@ class XMPPHandler(webapp.RequestHandler):
         ###
 
         ### Trade Location
-        elif command == TRADE_LOCATION: # If a clients wants to send his age
+        elif command == TRADE_LOCATION: # If a clients wants to send his location
             sender = message.sender.split("/")[0] # Remove the identifer string from JID
             latitude = message.body.split(":")[1] # Latitude of the user
             longtitude = message.body.split(":")[2] # Longtitude of the user
             conversation.setTradeLocation(latitude,longtitude)
+            pass_message = 0
+        ###
+
+        ### Trade Sex
+        elif command == TRADE_SEX: # If a clients wants to send his sex (#!?^ FUCK gender specific pronouns #!?^)
+            sender = message.sender.split("/")[0] # Remove the identifer string from JID
+            sex = message.body.split(":")[1] # Sex of the user
+            conversation.setTradeSex(sex) # See http://en.wikipedia.org/wiki/ISO_5218
             pass_message = 0
         ###
 

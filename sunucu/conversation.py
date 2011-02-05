@@ -128,3 +128,16 @@ class Conversation(GeoModel):
             xmpp.send_message(conversation.user_2,message_to_send)
         conversation.put()     
 
+    def setTradeSex(self, sex):
+        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", self.user_1, self.user_2)
+        conversation = query.get()
+        if conversation.user_1_sex == None: # First trade request
+            conversation.user_1_sex = int(sex)
+        else:
+            conversation.user_2_sex = int(sex) # Second trade request
+            message_to_send = TRADE_SEX + ":" + str(conversation.user_2_sex) # Serialize the custom message for the first user
+            xmpp.send_message(conversation.user_1,message_to_send)
+            message_to_send = TRADE_SEX + ":" + str(conversation.user_1_sex) # Serialize the custom message for the second user
+            xmpp.send_message(conversation.user_2,message_to_send)
+        conversation.put()     
+
