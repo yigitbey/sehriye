@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>sunucu.xmpphandler</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="sunucu-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="sunucu-module.html">Package&nbsp;sunucu</a> ::
+        Module&nbsp;xmpphandler
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="sunucu.xmpphandler-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="sunucu.xmpphandler-module.html">Module sunucu.xmpphandler</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">google</tt><tt class="py-op">.</tt><tt class="py-name">appengine</tt><tt class="py-op">.</tt><tt class="py-name">api</tt> <tt class="py-keyword">import</tt> <tt class="py-name">xmpp</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">google</tt><tt class="py-op">.</tt><tt class="py-name">appengine</tt><tt class="py-op">.</tt><tt class="py-name">ext</tt> <tt class="py-keyword">import</tt> <tt class="py-name">webapp</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">google</tt><tt class="py-op">.</tt><tt class="py-name">appengine</tt><tt class="py-op">.</tt><tt class="py-name">ext</tt> <tt class="py-keyword">import</tt> <tt class="py-name">db</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module sunucu.conversation=sunucu.conversation-module.html"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-0', 'conversation', 'link-0');">conversation</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class sunucu.conversation.Conversation=sunucu.conversation.Conversation-class.html"><a title="sunucu.conversation.Conversation" class="py-name" href="#" onclick="return doclink('link-1', 'Conversation', 'link-1');">Conversation</a></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Module sunucu.custom_messages=sunucu.custom_messages-module.html"><a title="sunucu.custom_messages" class="py-name" href="#" onclick="return doclink('link-2', 'custom_messages', 'link-2');">custom_messages</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt><tt class="py-op">,</tt> <tt class="py-name">time</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="XMPPHandler"></a><div id="XMPPHandler-def"><a name="L9"></a><tt class="py-lineno">  9</tt> <a class="py-toggle" href="#" id="XMPPHandler-toggle" onclick="return toggle('XMPPHandler');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="sunucu.xmpphandler.XMPPHandler-class.html">XMPPHandler</a><tt class="py-op">(</tt><tt class="py-base-class">webapp</tt><tt class="py-op">.</tt><tt class="py-base-class">RequestHandler</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="XMPPHandler-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="XMPPHandler-expanded"><a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">    <tt class="py-docstring">""" Class for handling xmpp events """</tt>  </tt>
+<a name="XMPPHandler.customMessageHandler"></a><div id="XMPPHandler.customMessageHandler-def"><a name="L11"></a><tt class="py-lineno"> 11</tt> <a class="py-toggle" href="#" id="XMPPHandler.customMessageHandler-toggle" onclick="return toggle('XMPPHandler.customMessageHandler');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="sunucu.xmpphandler.XMPPHandler-class.html#customMessageHandler">customMessageHandler</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">conversation</tt><tt class="py-op">,</tt><tt class="py-param">message</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="XMPPHandler.customMessageHandler-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="XMPPHandler.customMessageHandler-expanded"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">        Handling custom messages imported from custom_messages.py</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">        @param conversation: Current Conversation</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">        @type conversation: Conversation from conversation.py</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">        @param message: Message to be handled</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">        @type message: Class consisting of sender,body,to</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: bool</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">        @return: True if the message will be passed to partner, False otherwise.</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">       </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">body</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">":"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Get the first part of the message</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-comment">### Disconnect</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">command</tt> <tt class="py-op">==</tt> <tt id="link-3" class="py-name" targets="Variable sunucu.custom_messages.DELETE_CONVERSATION=sunucu.custom_messages-module.html#DELETE_CONVERSATION"><a title="sunucu.custom_messages.DELETE_CONVERSATION" class="py-name" href="#" onclick="return doclink('link-3', 'DELETE_CONVERSATION', 'link-3');">DELETE_CONVERSATION</a></tt><tt class="py-op">:</tt> <tt class="py-comment"># If a client wants to disconnect</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">            <tt id="link-4" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-4', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method sunucu.conversation.Conversation.remove()=sunucu.conversation.Conversation-class.html#remove"><a title="sunucu.conversation.Conversation.remove" class="py-name" href="#" onclick="return doclink('link-5', 'remove', 'link-5');">remove</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-comment"># Remove the conversation session from database</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">            <tt class="py-name">pass_message</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-comment">###</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-comment">### Pending Chat</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">command</tt> <tt class="py-op">==</tt> <tt id="link-6" class="py-name" targets="Variable sunucu.custom_messages.PENDING_CONVERSATION=sunucu.custom_messages-module.html#PENDING_CONVERSATION"><a title="sunucu.custom_messages.PENDING_CONVERSATION" class="py-name" href="#" onclick="return doclink('link-6', 'PENDING_CONVERSATION', 'link-6');">PENDING_CONVERSATION</a></tt><tt class="py-op">:</tt> <tt class="py-comment"># If a client wants a conversation</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">            <tt class="py-name">sender</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">sender</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">"/"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Remove the identifier string from JID</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">            <tt class="py-name">latitude</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">body</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">":"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Latitude of user</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">            <tt class="py-name">longtitude</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">body</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">":"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Longtitude of user</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">            <tt id="link-7" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-7', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method sunucu.conversation.Conversation.matchPeopleWithProximity()=sunucu.conversation.Conversation-class.html#matchPeopleWithProximity"><a title="sunucu.conversation.Conversation.matchPeopleWithProximity" class="py-name" href="#" onclick="return doclink('link-8', 'matchPeopleWithProximity', 'link-8');">matchPeopleWithProximity</a></tt><tt class="py-op">(</tt><tt class="py-name">sender</tt><tt class="py-op">,</tt> <tt class="py-name">latitude</tt><tt class="py-op">,</tt> <tt class="py-name">longtitude</tt><tt class="py-op">)</tt> <tt class="py-comment"># Try to find a partner</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">            <tt class="py-name">pass_message</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> <tt class="py-comment"># Don't pass pending chat requests to clients</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-comment">###</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-comment">### Trade Name</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">command</tt> <tt class="py-op">==</tt> <tt id="link-9" class="py-name" targets="Variable sunucu.custom_messages.TRADE_NAME=sunucu.custom_messages-module.html#TRADE_NAME"><a title="sunucu.custom_messages.TRADE_NAME" class="py-name" href="#" onclick="return doclink('link-9', 'TRADE_NAME', 'link-9');">TRADE_NAME</a></tt><tt class="py-op">:</tt> <tt class="py-comment"># If a clients wants to send his name</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">            <tt class="py-name">sender</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">sender</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">"/"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Remove the identifer string from JID</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">            <tt class="py-name">name</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">body</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">":"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Name of the user</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt id="link-10" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-10', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method sunucu.conversation.Conversation.setTradeName()=sunucu.conversation.Conversation-class.html#setTradeName"><a title="sunucu.conversation.Conversation.setTradeName" class="py-name" href="#" onclick="return doclink('link-11', 'setTradeName', 'link-11');">setTradeName</a></tt><tt class="py-op">(</tt><tt class="py-name">name</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">            <tt class="py-name">pass_message</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-comment">###</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-comment">### Trade Age</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">command</tt> <tt class="py-op">==</tt> <tt id="link-12" class="py-name" targets="Variable sunucu.custom_messages.TRADE_AGE=sunucu.custom_messages-module.html#TRADE_AGE"><a title="sunucu.custom_messages.TRADE_AGE" class="py-name" href="#" onclick="return doclink('link-12', 'TRADE_AGE', 'link-12');">TRADE_AGE</a></tt><tt class="py-op">:</tt> <tt class="py-comment"># If a clients wants to send his age</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-name">sender</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">sender</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">"/"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Remove the identifer string from JID</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">            <tt class="py-name">age</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">body</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">":"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Age of the user</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">            <tt id="link-13" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-13', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method sunucu.conversation.Conversation.setTradeAge()=sunucu.conversation.Conversation-class.html#setTradeAge"><a title="sunucu.conversation.Conversation.setTradeAge" class="py-name" href="#" onclick="return doclink('link-14', 'setTradeAge', 'link-14');">setTradeAge</a></tt><tt class="py-op">(</tt><tt class="py-name">age</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">            <tt class="py-name">pass_message</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-comment">###</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-comment">### Trade Location</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">command</tt> <tt class="py-op">==</tt> <tt id="link-15" class="py-name" targets="Variable sunucu.custom_messages.TRADE_LOCATION=sunucu.custom_messages-module.html#TRADE_LOCATION"><a title="sunucu.custom_messages.TRADE_LOCATION" class="py-name" href="#" onclick="return doclink('link-15', 'TRADE_LOCATION', 'link-15');">TRADE_LOCATION</a></tt><tt class="py-op">:</tt> <tt class="py-comment"># If a clients wants to send his location</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">            <tt class="py-name">sender</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">sender</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">"/"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Remove the identifer string from JID</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">            <tt class="py-name">latitude</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">body</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">":"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Latitude of the user</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">            <tt class="py-name">longtitude</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">body</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">":"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Longtitude of the user</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">            <tt id="link-16" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-16', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method sunucu.conversation.Conversation.setTradeLocation()=sunucu.conversation.Conversation-class.html#setTradeLocation"><a title="sunucu.conversation.Conversation.setTradeLocation" class="py-name" href="#" onclick="return doclink('link-17', 'setTradeLocation', 'link-17');">setTradeLocation</a></tt><tt class="py-op">(</tt><tt class="py-name">latitude</tt><tt class="py-op">,</tt><tt class="py-name">longtitude</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">            <tt class="py-name">pass_message</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-comment">###</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-comment">### Trade Sex</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">command</tt> <tt class="py-op">==</tt> <tt id="link-18" class="py-name" targets="Variable sunucu.custom_messages.TRADE_SEX=sunucu.custom_messages-module.html#TRADE_SEX"><a title="sunucu.custom_messages.TRADE_SEX" class="py-name" href="#" onclick="return doclink('link-18', 'TRADE_SEX', 'link-18');">TRADE_SEX</a></tt><tt class="py-op">:</tt> <tt class="py-comment"># If a clients wants to send his sex (#!?^ FUCK gender specific pronouns #!?^)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">            <tt class="py-name">sender</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">sender</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">"/"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Remove the identifer string from JID</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">            <tt class="py-name">sex</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">body</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">":"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-comment">#: Sex of the user. See U{http://en.wikipedia.org/wiki/ISO_5218}</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">            <tt id="link-19" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-19', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method sunucu.conversation.Conversation.setTradeSex()=sunucu.conversation.Conversation-class.html#setTradeSex"><a title="sunucu.conversation.Conversation.setTradeSex" class="py-name" href="#" onclick="return doclink('link-20', 'setTradeSex', 'link-20');">setTradeSex</a></tt><tt class="py-op">(</tt><tt class="py-name">sex</tt><tt class="py-op">)</tt>  </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">            <tt class="py-name">pass_message</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-comment">###</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">pass_message</tt> </tt>
+</div><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">             </tt>
+<a name="XMPPHandler.post"></a><div id="XMPPHandler.post-def"><a name="L78"></a><tt class="py-lineno"> 78</tt> <a class="py-toggle" href="#" id="XMPPHandler.post-toggle" onclick="return toggle('XMPPHandler.post');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="sunucu.xmpphandler.XMPPHandler-class.html#post">post</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="XMPPHandler.post-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="XMPPHandler.post-expanded"><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-docstring">""" </tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">        Function to handle received messages</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: None</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">dummy_email</tt> <tt class="py-op">=</tt> <tt class="py-string">"a@aa.aaa"</tt> <tt class="py-comment">#: Dummy Email. Will be used for user_2 if there is no match.</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-name">message</tt> <tt class="py-op">=</tt> <tt class="py-name">xmpp</tt><tt class="py-op">.</tt><tt class="py-name">Message</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">POST</tt><tt class="py-op">)</tt>  </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-name">pass_message</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> <tt class="py-comment">#: Whether the message will be passed to partner</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">sender</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">sender</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">"/"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-comment"># Remove the identifier string from JID</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt id="link-21" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-21', 'conversation', 'link-0');">conversation</a></tt> <tt class="py-op">=</tt> <tt id="link-22" class="py-name"><a title="sunucu.conversation.Conversation" class="py-name" href="#" onclick="return doclink('link-22', 'Conversation', 'link-1');">Conversation</a></tt><tt class="py-op">(</tt><tt id="link-23" class="py-name" targets="Variable sunucu.conversation.Conversation.user_1=sunucu.conversation.Conversation-class.html#user_1"><a title="sunucu.conversation.Conversation.user_1" class="py-name" href="#" onclick="return doclink('link-23', 'user_1', 'link-23');">user_1</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sender</tt><tt class="py-op">,</tt> <tt id="link-24" class="py-name" targets="Variable sunucu.conversation.Conversation.user_2=sunucu.conversation.Conversation-class.html#user_2"><a title="sunucu.conversation.Conversation.user_2" class="py-name" href="#" onclick="return doclink('link-24', 'user_2', 'link-24');">user_2</a></tt> <tt class="py-op">=</tt> <tt class="py-name">dummy_email</tt> <tt class="py-op">,</tt><tt id="link-25" class="py-name" targets="Variable sunucu.geo.geomodel.GeoModel.location=sunucu.geo.geomodel.GeoModel-class.html#location"><a title="sunucu.geo.geomodel.GeoModel.location" class="py-name" href="#" onclick="return doclink('link-25', 'location', 'link-25');">location</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">GeoPt</tt><tt class="py-op">(</tt><tt class="py-number">41</tt><tt class="py-op">,</tt><tt class="py-number">28</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-comment"># Create a new conversation</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt id="link-26" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-26', 'conversation', 'link-0');">conversation</a></tt> <tt class="py-op">=</tt> <tt id="link-27" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-27', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method sunucu.conversation.Conversation.getPartner()=sunucu.conversation.Conversation-class.html#getPartner"><a title="sunucu.conversation.Conversation.getPartner" class="py-name" href="#" onclick="return doclink('link-28', 'getPartner', 'link-28');">getPartner</a></tt><tt class="py-op">(</tt><tt class="py-name">sender</tt><tt class="py-op">)</tt> <tt class="py-comment"># Try to get a partner</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">body</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"|"</tt><tt class="py-op">:</tt> <tt class="py-comment"># If this is a custom message</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-name">pass_message</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Method sunucu.xmpphandler.XMPPHandler.customMessageHandler()=sunucu.xmpphandler.XMPPHandler-class.html#customMessageHandler"><a title="sunucu.xmpphandler.XMPPHandler.customMessageHandler" class="py-name" href="#" onclick="return doclink('link-29', 'customMessageHandler', 'link-29');">customMessageHandler</a></tt><tt class="py-op">(</tt><tt id="link-30" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-30', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">,</tt><tt class="py-name">message</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-31" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-31', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Variable sunucu.conversation.Conversation.is_started=sunucu.conversation.Conversation-class.html#is_started"><a title="sunucu.conversation.Conversation.is_started" class="py-name" href="#" onclick="return doclink('link-32', 'is_started', 'link-32');">is_started</a></tt> <tt class="py-op">==</tt> <tt class="py-name">True</tt><tt class="py-op">:</tt> <tt class="py-comment"># If this conversation has started</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-33" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-33', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="sunucu.conversation.Conversation.user_1" class="py-name" href="#" onclick="return doclink('link-34', 'user_1', 'link-23');">user_1</a></tt> <tt class="py-op">==</tt> <tt class="py-name">sender</tt><tt class="py-op">:</tt>  </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                <tt class="py-name">partner</tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-35', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="sunucu.conversation.Conversation.user_2" class="py-name" href="#" onclick="return doclink('link-36', 'user_2', 'link-24');">user_2</a></tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                <tt class="py-name">partner</tt> <tt class="py-op">=</tt> <tt id="link-37" class="py-name"><a title="sunucu.conversation" class="py-name" href="#" onclick="return doclink('link-37', 'conversation', 'link-0');">conversation</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="sunucu.conversation.Conversation.user_1" class="py-name" href="#" onclick="return doclink('link-38', 'user_1', 'link-23');">user_1</a></tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">             </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">pass_message</tt> <tt class="py-op">==</tt> <tt class="py-name">True</tt><tt class="py-op">:</tt> <tt class="py-comment"># If we need to pass this message to client (See custom messages)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">                <tt class="py-name">xmpp</tt><tt class="py-op">.</tt><tt class="py-name">send_message</tt><tt class="py-op">(</tt><tt class="py-name">partner</tt><tt class="py-op">,</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt class="py-name">body</tt><tt class="py-op">)</tt> <tt class="py-comment"># Send this message to partner</tt> </tt>
+</div></div><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="sunucu-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Feb  6 17:58:56 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

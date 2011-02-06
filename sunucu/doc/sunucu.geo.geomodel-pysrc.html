@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>sunucu.geo.geomodel</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="sunucu-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="sunucu-module.html">Package&nbsp;sunucu</a> ::
+        <a href="sunucu.geo-module.html">Package&nbsp;geo</a> ::
+        Module&nbsp;geomodel
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="sunucu.geo.geomodel-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="sunucu.geo.geomodel-module.html">Module sunucu.geo.geomodel</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/python2.5</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2009 Roman Nurik</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># Licensed under the Apache License, Version 2.0 (the "License");</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># you may not use this file except in compliance with the License.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># You may obtain a copy of the License at</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#     http://www.apache.org/licenses/LICENSE-2.0</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"># Unless required by applicable law or agreed to in writing, software</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># distributed under the License is distributed on an "AS IS" BASIS,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"># See the License for the specific language governing permissions and</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"># limitations under the License.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">"""Defines the GeoModel class for running basic geospatial queries on</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">single-point geographic entities in Google App Engine.</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">TODO(romannurik): document how bounding box and proximity queries work.</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-name">__author__</tt> <tt class="py-op">=</tt> <tt class="py-string">'api.roman.public@gmail.com (Roman Nurik)'</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">copy</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">math</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">google</tt><tt class="py-op">.</tt><tt class="py-name">appengine</tt><tt class="py-op">.</tt><tt class="py-name">ext</tt> <tt class="py-keyword">import</tt> <tt class="py-name">db</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module sunucu.geo.geocell=sunucu.geo.geocell-module.html"><a title="sunucu.geo.geocell" class="py-name" href="#" onclick="return doclink('link-0', 'geocell', 'link-0');">geocell</a></tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Module sunucu.geo.geomath=sunucu.geo.geomath-module.html"><a title="sunucu.geo.geomath" class="py-name" href="#" onclick="return doclink('link-1', 'geomath', 'link-1');">geomath</a></tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Module sunucu.geo.geotypes=sunucu.geo.geotypes-module.html"><a title="sunucu.geo.geotypes" class="py-name" href="#" onclick="return doclink('link-2', 'geotypes', 'link-2');">geotypes</a></tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Module sunucu.geo.util=sunucu.geo.util-module.html"><a title="sunucu.geo.util" class="py-name" href="#" onclick="return doclink('link-3', 'util', 'link-3');">util</a></tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt id="link-4" class="py-name" targets="Variable sunucu.geo.geomodel.DEBUG=sunucu.geo.geomodel-module.html#DEBUG"><a title="sunucu.geo.geomodel.DEBUG" class="py-name" href="#" onclick="return doclink('link-4', 'DEBUG', 'link-4');">DEBUG</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="default_cost_function"></a><div id="default_cost_function-def"><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt> <a class="py-toggle" href="#" id="default_cost_function-toggle" onclick="return toggle('default_cost_function');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="sunucu.geo.geomodel-module.html#default_cost_function">default_cost_function</a><tt class="py-op">(</tt><tt class="py-param">num_cells</tt><tt class="py-op">,</tt> <tt class="py-param">resolution</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="default_cost_function-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="default_cost_function-expanded"><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">  <tt class="py-docstring">"""The default cost function, used if none is provided by the developer."""</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">  <tt class="py-keyword">return</tt> <tt class="py-number">1e10000</tt> <tt class="py-keyword">if</tt> <tt class="py-name">num_cells</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">pow</tt><tt class="py-op">(</tt><tt id="link-5" class="py-name"><a title="sunucu.geo.geocell" class="py-name" href="#" onclick="return doclink('link-5', 'geocell', 'link-0');">geocell</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Variable sunucu.geo.geocell._GEOCELL_GRID_SIZE=sunucu.geo.geocell-module.html#_GEOCELL_GRID_SIZE"><a title="sunucu.geo.geocell._GEOCELL_GRID_SIZE" class="py-name" href="#" onclick="return doclink('link-6', '_GEOCELL_GRID_SIZE', 'link-6');">_GEOCELL_GRID_SIZE</a></tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt> <tt class="py-keyword">else</tt> <tt class="py-number">0</tt> </tt>
+</div><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="GeoModel"></a><div id="GeoModel-def"><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="GeoModel-toggle" onclick="return toggle('GeoModel');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="sunucu.geo.geomodel.GeoModel-class.html">GeoModel</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GeoModel-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="GeoModel-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">  <tt class="py-docstring">"""A base model class for single-point geographically located entities.</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">  Attributes:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">    location: A db.GeoPt that defines the single geographic point</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">        associated with this entity.</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">  """</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">  <tt id="link-7" class="py-name" targets="Variable sunucu.geo.geomodel.GeoModel.location=sunucu.geo.geomodel.GeoModel-class.html#location"><a title="sunucu.geo.geomodel.GeoModel.location" class="py-name" href="#" onclick="return doclink('link-7', 'location', 'link-7');">location</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">GeoPtProperty</tt><tt class="py-op">(</tt><tt class="py-name">required</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">  <tt id="link-8" class="py-name" targets="Variable sunucu.geo.geomodel.GeoModel.location_geocells=sunucu.geo.geomodel.GeoModel-class.html#location_geocells"><a title="sunucu.geo.geomodel.GeoModel.location_geocells" class="py-name" href="#" onclick="return doclink('link-8', 'location_geocells', 'link-8');">location_geocells</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">StringListProperty</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="GeoModel.update_location"></a><div id="GeoModel.update_location-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="GeoModel.update_location-toggle" onclick="return toggle('GeoModel.update_location');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="sunucu.geo.geomodel.GeoModel-class.html#update_location">update_location</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GeoModel.update_location-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="GeoModel.update_location-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-docstring">"""Syncs underlying geocell properties with the entity's location.</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">    Updates the underlying geocell properties of the entity to match the</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">    entity's location property. A put() must occur after this call to save</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">    the changes to App Engine."""</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-name">max_res_geocell</tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name"><a title="sunucu.geo.geocell" class="py-name" href="#" onclick="return doclink('link-9', 'geocell', 'link-0');">geocell</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Function sunucu.geo.geocell.compute()=sunucu.geo.geocell-module.html#compute"><a title="sunucu.geo.geocell.compute" class="py-name" href="#" onclick="return doclink('link-10', 'compute', 'link-10');">compute</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="sunucu.geo.geomodel.GeoModel.location" class="py-name" href="#" onclick="return doclink('link-11', 'location', 'link-7');">location</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="sunucu.geo.geomodel.GeoModel.location_geocells" class="py-name" href="#" onclick="return doclink('link-12', 'location_geocells', 'link-8');">location_geocells</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">max_res_geocell</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-name">res</tt><tt class="py-op">]</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">                              <tt class="py-keyword">for</tt> <tt class="py-name">res</tt> <tt class="py-keyword">in</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">                              <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt id="link-13" class="py-name"><a title="sunucu.geo.geocell" class="py-name" href="#" onclick="return doclink('link-13', 'geocell', 'link-0');">geocell</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Variable sunucu.geo.geocell.MAX_GEOCELL_RESOLUTION=sunucu.geo.geocell-module.html#MAX_GEOCELL_RESOLUTION"><a title="sunucu.geo.geocell.MAX_GEOCELL_RESOLUTION" class="py-name" href="#" onclick="return doclink('link-14', 'MAX_GEOCELL_RESOLUTION', 'link-14');">MAX_GEOCELL_RESOLUTION</a></tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">  <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="GeoModel.bounding_box_fetch"></a><div id="GeoModel.bounding_box_fetch-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="GeoModel.bounding_box_fetch-toggle" onclick="return toggle('GeoModel.bounding_box_fetch');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="sunucu.geo.geomodel.GeoModel-class.html#bounding_box_fetch">bounding_box_fetch</a><tt class="py-op">(</tt><tt class="py-param">query</tt><tt class="py-op">,</tt> <tt class="py-param">bbox</tt><tt class="py-op">,</tt> <tt class="py-param">max_results</tt><tt class="py-op">=</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">                         <tt class="py-param">cost_function</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GeoModel.bounding_box_fetch-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="GeoModel.bounding_box_fetch-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-docstring">"""Performs a bounding box fetch on the given query.</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">    Fetches entities matching the given query with an additional filter</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">    matching only those entities that are inside of the given rectangular</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">    bounding box.</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">    Args:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">      query: A db.Query on entities of this kind that should be additionally</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">          filtered by bounding box and subsequently fetched.</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">      bbox: A geotypes.Box indicating the bounding box to filter entities by.</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">      max_results: An optional int indicating the maximum number of desired</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">          results.</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">      cost_function: An optional function that accepts two arguments:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">          * num_cells: the number of cells to search</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">          * resolution: the resolution of each cell to search</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">          and returns the 'cost' of querying against this number of cells</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">          at the given resolution.</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">    Returns:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">      The fetched entities.</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">    Raises:</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">      Any exceptions that google.appengine.ext.db.Query.fetch() can raise.</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">    <tt class="py-comment"># TODO(romannurik): Check for GqlQuery.</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">    <tt class="py-name">results</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">cost_function</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">      <tt class="py-name">cost_function</tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name" targets="Function sunucu.geo.geomodel.default_cost_function()=sunucu.geo.geomodel-module.html#default_cost_function"><a title="sunucu.geo.geomodel.default_cost_function" class="py-name" href="#" onclick="return doclink('link-15', 'default_cost_function', 'link-15');">default_cost_function</a></tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt class="py-name">query_geocells</tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name"><a title="sunucu.geo.geocell" class="py-name" href="#" onclick="return doclink('link-16', 'geocell', 'link-0');">geocell</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Function sunucu.geo.geocell.best_bbox_search_cells()=sunucu.geo.geocell-module.html#best_bbox_search_cells"><a title="sunucu.geo.geocell.best_bbox_search_cells" class="py-name" href="#" onclick="return doclink('link-17', 'best_bbox_search_cells', 'link-17');">best_bbox_search_cells</a></tt><tt class="py-op">(</tt><tt class="py-name">bbox</tt><tt class="py-op">,</tt> <tt class="py-name">cost_function</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">query_geocells</tt><tt class="py-op">:</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">      <tt class="py-keyword">if</tt> <tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">_Query__orderings</tt><tt class="py-op">:</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-comment"># NOTE(romannurik): since 'IN' queries seem boken in App Engine,</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-comment"># manually search each geocell and then merge results in-place</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-name">cell_results</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">copy</tt><tt class="py-op">.</tt><tt class="py-name">deepcopy</tt><tt class="py-op">(</tt><tt class="py-name">query</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">            <tt class="py-op">.</tt><tt class="py-name">filter</tt><tt class="py-op">(</tt><tt class="py-string">'location_geocells ='</tt><tt class="py-op">,</tt> <tt class="py-name">search_cell</tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">            <tt class="py-op">.</tt><tt class="py-name">fetch</tt><tt class="py-op">(</tt><tt class="py-name">max_results</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">search_cell</tt> <tt class="py-keyword">in</tt> <tt class="py-name">query_geocells</tt><tt class="py-op">]</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-comment"># Manual in-memory sort on the query's defined ordering.</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-name">query_orderings</tt> <tt class="py-op">=</tt> <tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">_Query__orderings</tt> <tt class="py-keyword">or</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">_ordering_fn</tt><tt class="py-op">(</tt><tt class="py-param">ent1</tt><tt class="py-op">,</tt> <tt class="py-param">ent2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">          <tt class="py-keyword">for</tt> <tt class="py-name">prop</tt><tt class="py-op">,</tt> <tt class="py-name">direction</tt> <tt class="py-keyword">in</tt> <tt class="py-name">query_orderings</tt><tt class="py-op">:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">            <tt class="py-name">prop_cmp</tt> <tt class="py-op">=</tt> <tt class="py-name">cmp</tt><tt class="py-op">(</tt><tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">ent1</tt><tt class="py-op">,</tt> <tt class="py-name">prop</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">ent2</tt><tt class="py-op">,</tt> <tt class="py-name">prop</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">prop_cmp</tt> <tt class="py-op">!=</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">              <tt class="py-keyword">return</tt> <tt class="py-name">prop_cmp</tt> <tt class="py-keyword">if</tt> <tt class="py-name">direction</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt> <tt class="py-keyword">else</tt> <tt class="py-op">-</tt><tt class="py-name">prop_cmp</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">          <tt class="py-keyword">return</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt>  <tt class="py-comment"># Default ent1 &lt; ent2.</tt> </tt>
+</div><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-comment"># Duplicates aren't possible so don't provide a dup_fn.</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt id="link-18" class="py-name"><a title="sunucu.geo.util" class="py-name" href="#" onclick="return doclink('link-18', 'util', 'link-3');">util</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Function sunucu.geo.util.merge_in_place()=sunucu.geo.util-module.html#merge_in_place"><a title="sunucu.geo.util.merge_in_place" class="py-name" href="#" onclick="return doclink('link-19', 'merge_in_place', 'link-19');">merge_in_place</a></tt><tt class="py-op">(</tt><tt class="py-name">cmp_fn</tt><tt class="py-op">=</tt><tt class="py-name">_ordering_fn</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">cell_results</tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-name">results</tt> <tt class="py-op">=</tt> <tt class="py-name">cell_results</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-name">max_results</tt><tt class="py-op">]</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">      <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-comment"># NOTE: We can't pass in max_results because of non-uniformity of the</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-comment"># search.</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-name">results</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">query</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">            <tt class="py-op">.</tt><tt class="py-name">filter</tt><tt class="py-op">(</tt><tt class="py-string">'location_geocells IN'</tt><tt class="py-op">,</tt> <tt class="py-name">query_geocells</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">            <tt class="py-op">.</tt><tt class="py-name">fetch</tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-name">max_results</tt><tt class="py-op">]</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">      <tt class="py-name">results</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-20" class="py-name"><a title="sunucu.geo.geomodel.DEBUG" class="py-name" href="#" onclick="return doclink('link-20', 'DEBUG', 'link-4');">DEBUG</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">      <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">'bbox query looked in %d geocells'</tt> <tt class="py-op">%</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">query_geocells</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt class="py-comment"># In-memory filter.</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">entity</tt> <tt class="py-keyword">for</tt> <tt class="py-name">entity</tt> <tt class="py-keyword">in</tt> <tt class="py-name">results</tt> <tt class="py-keyword">if</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-name">entity</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="sunucu.geo.geomodel.GeoModel.location" class="py-name" href="#" onclick="return doclink('link-21', 'location', 'link-7');">location</a></tt><tt class="py-op">.</tt><tt class="py-name">lat</tt> <tt class="py-op">&gt;=</tt> <tt class="py-name">bbox</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Variable sunucu.geo.geotypes.Box.south=sunucu.geo.geotypes.Box-class.html#south"><a title="sunucu.geo.geotypes.Box.south" class="py-name" href="#" onclick="return doclink('link-22', 'south', 'link-22');">south</a></tt> <tt class="py-keyword">and</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt class="py-name">entity</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="sunucu.geo.geomodel.GeoModel.location" class="py-name" href="#" onclick="return doclink('link-23', 'location', 'link-7');">location</a></tt><tt class="py-op">.</tt><tt class="py-name">lat</tt> <tt class="py-op">&lt;=</tt> <tt class="py-name">bbox</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Variable sunucu.geo.geotypes.Box.north=sunucu.geo.geotypes.Box-class.html#north"><a title="sunucu.geo.geotypes.Box.north" class="py-name" href="#" onclick="return doclink('link-24', 'north', 'link-24');">north</a></tt> <tt class="py-keyword">and</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-name">entity</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="sunucu.geo.geomodel.GeoModel.location" class="py-name" href="#" onclick="return doclink('link-25', 'location', 'link-7');">location</a></tt><tt class="py-op">.</tt><tt class="py-name">lon</tt> <tt class="py-op">&gt;=</tt> <tt class="py-name">bbox</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Variable sunucu.geo.geotypes.Box.west=sunucu.geo.geotypes.Box-class.html#west"><a title="sunucu.geo.geotypes.Box.west" class="py-name" href="#" onclick="return doclink('link-26', 'west', 'link-26');">west</a></tt> <tt class="py-keyword">and</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-name">entity</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="sunucu.geo.geomodel.GeoModel.location" class="py-name" href="#" onclick="return doclink('link-27', 'location', 'link-7');">location</a></tt><tt class="py-op">.</tt><tt class="py-name">lon</tt> <tt class="py-op">&lt;=</tt> <tt class="py-name">bbox</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Variable sunucu.geo.geotypes.Box.east=sunucu.geo.geotypes.Box-class.html#east"><a title="sunucu.geo.geotypes.Box.east" class="py-name" href="#" onclick="return doclink('link-28', 'east', 'link-28');">east</a></tt><tt class="py-op">]</tt> </tt>
+</div><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">  <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="GeoModel.proximity_fetch"></a><div id="GeoModel.proximity_fetch-def"><a name="L141"></a><tt class="py-lineno">141</tt> <a class="py-toggle" href="#" id="GeoModel.proximity_fetch-toggle" onclick="return toggle('GeoModel.proximity_fetch');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="sunucu.geo.geomodel.GeoModel-class.html#proximity_fetch">proximity_fetch</a><tt class="py-op">(</tt><tt class="py-param">query</tt><tt class="py-op">,</tt> <tt class="py-param">center</tt><tt class="py-op">,</tt> <tt class="py-param">max_results</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-param">max_distance</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GeoModel.proximity_fetch-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="GeoModel.proximity_fetch-expanded"><a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt class="py-docstring">"""Performs a proximity/radius fetch on the given query.</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"><tt class="py-docstring">    Fetches at most &lt;max_results&gt; entities matching the given query,</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"><tt class="py-docstring">    ordered by ascending distance from the given center point, and optionally</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-docstring">    limited by the given maximum distance.</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-docstring">    This method uses a greedy algorithm that starts by searching high-resolution</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring">    geocells near the center point and gradually looking in lower and lower</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring">    resolution cells until max_results entities have been found matching the</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">    given query and no closer possible entities can be found.</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-docstring">    Args:</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-docstring">      query: A db.Query on entities of this kind.</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-docstring">      center: A geotypes.Point or db.GeoPt indicating the center point around</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-docstring">          which to search for matching entities.</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-docstring">      max_results: An int indicating the maximum number of desired results.</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-docstring">          The default is 10, and the larger this number, the longer the fetch</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-docstring">          will take.</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-docstring">      max_distance: An optional number indicating the maximum distance to</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"><tt class="py-docstring">          search, in meters.</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-docstring">    Returns:</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-docstring">      The fetched entities, sorted in ascending order by distance to the search</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-docstring">      center.</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">    Raises:</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-docstring">      Any exceptions that google.appengine.ext.db.Query.fetch() can raise.</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">    <tt class="py-comment"># TODO(romannurik): check for GqlQuery</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">    <tt class="py-name">results</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">    <tt class="py-name">searched_cells</tt> <tt class="py-op">=</tt> <tt class="py-name">set</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">    <tt class="py-comment"># The current search geocell containing the lat,lon.</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">    <tt class="py-name">cur_containing_geocell</tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name"><a title="sunucu.geo.geocell" class="py-name" href="#" onclick="return doclink('link-29', 'geocell', 'link-0');">geocell</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="sunucu.geo.geocell.compute" class="py-name" href="#" onclick="return doclink('link-30', 'compute', 'link-10');">compute</a></tt><tt class="py-op">(</tt><tt class="py-name">center</tt><tt class="py-op">)</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">    <tt class="py-comment"># The currently-being-searched geocells.</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">    <tt class="py-comment"># NOTES:</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">    <tt class="py-comment">#     * Start with max possible.</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">    <tt class="py-comment">#     * Must always be of the same resolution.</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">    <tt class="py-comment">#     * Must always form a rectangular region.</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">    <tt class="py-comment">#     * One of these must be equal to the cur_containing_geocell.</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">    <tt class="py-name">cur_geocells</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">cur_containing_geocell</tt><tt class="py-op">]</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">    <tt class="py-name">closest_possible_next_result_dist</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">    <tt class="py-comment"># Assumes both a and b are lists of (entity, dist) tuples, *sorted by dist*.</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">    <tt class="py-comment"># NOTE: This is an in-place merge, and there are guaranteed</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">    <tt class="py-comment"># no duplicates in the resulting list.</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">_merge_results_in_place</tt><tt class="py-op">(</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-param">b</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">      <tt id="link-31" class="py-name"><a title="sunucu.geo.util" class="py-name" href="#" onclick="return doclink('link-31', 'util', 'link-3');">util</a></tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="sunucu.geo.util.merge_in_place" class="py-name" href="#" onclick="return doclink('link-32', 'merge_in_place', 'link-19');">merge_in_place</a></tt><tt class="py-op">(</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-name">b</tt><tt class="py-op">,</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">                        <tt class="py-name">cmp_fn</tt><tt class="py-op">=</tt><tt class="py-keyword">lambda</tt> <tt class="py-name">x</tt><tt class="py-op">,</tt> <tt class="py-name">y</tt><tt class="py-op">:</tt> <tt class="py-name">cmp</tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">y</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">                        <tt class="py-name">dup_fn</tt><tt class="py-op">=</tt><tt class="py-keyword">lambda</tt> <tt class="py-name">x</tt><tt class="py-op">,</tt> <tt class="py-name">y</tt><tt class="py-op">:</tt> <tt class="py-name">x</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">key</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">y</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">key</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">    <tt class="py-name">sorted_edges</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">    <tt class="py-name">sorted_edge_distances</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">    <tt class="py-keyword">while</tt> <tt class="py-name">cur_geocells</tt><tt class="py-op">:</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">      <tt class="py-name">closest_possible_next_result_dist</tt> <tt class="py-op">=</tt> <tt class="py-name">sorted_edge_distances</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">      <tt class="py-keyword">if</tt> <tt class="py-name">max_distance</tt> <tt class="py-keyword">and</tt> <tt class="py-name">closest_possible_next_result_dist</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">max_distance</tt><tt class="py-op">:</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">        <tt class="py-keyword">break</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">      <tt class="py-name">cur_geocells_unique</tt> <tt class="py-op">=</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">set</tt><tt class="py-op">(</tt><tt class="py-name">cur_geocells</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">difference</tt><tt class="py-op">(</tt><tt class="py-name">searched_cells</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">      <tt class="py-comment"># Run query on the next set of geocells.</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">      <tt class="py-name">cur_resolution</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">cur_geocells</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">      <tt class="py-name">temp_query</tt> <tt class="py-op">=</tt> <tt class="py-name">copy</tt><tt class="py-op">.</tt><tt class="py-name">deepcopy</tt><tt class="py-op">(</tt><tt class="py-name">query</tt><tt class="py-op">)</tt>  <tt class="py-comment"># TODO(romannurik): is this safe?</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">      <tt class="py-name">temp_query</tt><tt class="py-op">.</tt><tt class="py-name">filter</tt><tt class="py-op">(</tt><tt class="py-string">'location_geocells IN'</tt><tt class="py-op">,</tt> <tt class="py-name">cur_geocells_unique</tt><tt class="py-op">)</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">      <tt class="py-comment"># Update results and sort.</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">      <tt class="py-name">new_results</tt> <tt class="py-op">=</tt> <tt class="py-name">temp_query</tt><tt class="py-op">.</tt><tt class="py-name">fetch</tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">)</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">      <tt class="py-keyword">if</tt> <tt id="link-33" class="py-name"><a title="sunucu.geo.geomodel.DEBUG" class="py-name" href="#" onclick="return doclink('link-33', 'DEBUG', 'link-4');">DEBUG</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">'fetch complete for %s'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-string">','</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">cur_geocells_unique</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">      <tt class="py-name">searched_cells</tt><tt class="py-op">.</tt><tt class="py-name">update</tt><tt class="py-op">(</tt><tt class="py-name">cur_geocells</tt><tt class="py-op">)</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">      <tt class="py-comment"># Begin storing distance from the search result entity to the</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">      <tt class="py-comment"># search center along with the search result itself, in a tuple.</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">      <tt class="py-name">new_results</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">(</tt><tt class="py-name">entity</tt><tt class="py-op">,</tt> <tt id="link-34" class="py-name"><a title="sunucu.geo.geomath" class="py-name" href="#" onclick="return doclink('link-34', 'geomath', 'link-1');">geomath</a></tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Function sunucu.geo.geomath.distance()=sunucu.geo.geomath-module.html#distance"><a title="sunucu.geo.geomath.distance" class="py-name" href="#" onclick="return doclink('link-35', 'distance', 'link-35');">distance</a></tt><tt class="py-op">(</tt><tt class="py-name">center</tt><tt class="py-op">,</tt> <tt class="py-name">entity</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="sunucu.geo.geomodel.GeoModel.location" class="py-name" href="#" onclick="return doclink('link-36', 'location', 'link-7');">location</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">                     <tt class="py-keyword">for</tt> <tt class="py-name">entity</tt> <tt class="py-keyword">in</tt> <tt class="py-name">new_results</tt><tt class="py-op">]</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">      <tt class="py-name">new_results</tt> <tt class="py-op">=</tt> <tt class="py-name">sorted</tt><tt class="py-op">(</tt><tt class="py-name">new_results</tt><tt class="py-op">,</tt> <tt class="py-keyword">lambda</tt> <tt class="py-name">dr1</tt><tt class="py-op">,</tt> <tt class="py-name">dr2</tt><tt class="py-op">:</tt> <tt class="py-name">cmp</tt><tt class="py-op">(</tt><tt class="py-name">dr1</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">dr2</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">      <tt class="py-name">new_results</tt> <tt class="py-op">=</tt> <tt class="py-name">new_results</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-name">max_results</tt><tt class="py-op">]</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">      <tt class="py-comment"># Merge new_results into results or the other way around, depending on</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">      <tt class="py-comment"># which is larger.</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">      <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">results</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">new_results</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">        <tt class="py-name">_merge_results_in_place</tt><tt class="py-op">(</tt><tt class="py-name">results</tt><tt class="py-op">,</tt> <tt class="py-name">new_results</tt><tt class="py-op">)</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">      <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-name">_merge_results_in_place</tt><tt class="py-op">(</tt><tt class="py-name">new_results</tt><tt class="py-op">,</tt> <tt class="py-name">results</tt><tt class="py-op">)</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">        <tt class="py-name">results</tt> <tt class="py-op">=</tt> <tt class="py-name">new_results</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">      <tt class="py-name">results</tt> <tt class="py-op">=</tt> <tt class="py-name">results</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-name">max_results</tt><tt class="py-op">]</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line"> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">      <tt class="py-name">sorted_edges</tt><tt class="py-op">,</tt> <tt class="py-name">sorted_edge_distances</tt> <tt class="py-op">=</tt> \ </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">          <tt id="link-37" class="py-name"><a title="sunucu.geo.util" class="py-name" href="#" onclick="return doclink('link-37', 'util', 'link-3');">util</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Function sunucu.geo.util.distance_sorted_edges()=sunucu.geo.util-module.html#distance_sorted_edges"><a title="sunucu.geo.util.distance_sorted_edges" class="py-name" href="#" onclick="return doclink('link-38', 'distance_sorted_edges', 'link-38');">distance_sorted_edges</a></tt><tt class="py-op">(</tt><tt class="py-name">cur_geocells</tt><tt class="py-op">,</tt> <tt class="py-name">center</tt><tt class="py-op">)</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line"> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">      <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">results</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt> <tt class="py-keyword">or</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">cur_geocells</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">4</tt><tt class="py-op">:</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">        <tt class="py-comment"># Either no results (in which case we optimize by not looking at</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">        <tt class="py-comment"># adjacents, go straight to the parent) or we've searched 4 adjacent</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">        <tt class="py-comment"># geocells, in which case we should now search the parents of those</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">        <tt class="py-comment"># geocells.</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">        <tt class="py-name">cur_containing_geocell</tt> <tt class="py-op">=</tt> <tt class="py-name">cur_containing_geocell</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">        <tt class="py-name">cur_geocells</tt> <tt class="py-op">=</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">set</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">cell</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-keyword">for</tt> <tt class="py-name">cell</tt> <tt class="py-keyword">in</tt> <tt class="py-name">cur_geocells</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">cur_geocells</tt> <tt class="py-keyword">or</tt> <tt class="py-keyword">not</tt> <tt class="py-name">cur_geocells</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">          <tt class="py-keyword">break</tt>  <tt class="py-comment"># Done with search, we've searched everywhere.</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line"> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">      <tt class="py-keyword">elif</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">cur_geocells</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">        <tt class="py-comment"># Get adjacent in one direction.</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">        <tt class="py-comment"># TODO(romannurik): Watch for +/- 90 degree latitude edge case geocells.</tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">        <tt class="py-name">nearest_edge</tt> <tt class="py-op">=</tt> <tt class="py-name">sorted_edges</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">        <tt class="py-name">cur_geocells</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="sunucu.geo.geocell" class="py-name" href="#" onclick="return doclink('link-39', 'geocell', 'link-0');">geocell</a></tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Function sunucu.geo.geocell.adjacent()=sunucu.geo.geocell-module.html#adjacent"><a title="sunucu.geo.geocell.adjacent" class="py-name" href="#" onclick="return doclink('link-40', 'adjacent', 'link-40');">adjacent</a></tt><tt class="py-op">(</tt><tt class="py-name">cur_geocells</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">nearest_edge</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line"> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">      <tt class="py-keyword">elif</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">cur_geocells</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">2</tt><tt class="py-op">:</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">        <tt class="py-comment"># Get adjacents in perpendicular direction.</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">        <tt class="py-name">nearest_edge</tt> <tt class="py-op">=</tt> <tt id="link-41" class="py-name"><a title="sunucu.geo.util" class="py-name" href="#" onclick="return doclink('link-41', 'util', 'link-3');">util</a></tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="sunucu.geo.util.distance_sorted_edges" class="py-name" href="#" onclick="return doclink('link-42', 'distance_sorted_edges', 'link-38');">distance_sorted_edges</a></tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">cur_containing_geocell</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">                                                   <tt class="py-name">center</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">nearest_edge</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">          <tt class="py-comment"># Was vertical, perpendicular is horizontal.</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">          <tt class="py-name">perpendicular_nearest_edge</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">x</tt> <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt class="py-name">sorted_edges</tt> <tt class="py-keyword">if</tt> <tt class="py-name">x</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">          <tt class="py-comment"># Was horizontal, perpendicular is vertical.</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">          <tt class="py-name">perpendicular_nearest_edge</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">x</tt> <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt class="py-name">sorted_edges</tt> <tt class="py-keyword">if</tt> <tt class="py-name">x</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line"> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">        <tt class="py-name">cur_geocells</tt><tt class="py-op">.</tt><tt class="py-name">extend</tt><tt class="py-op">(</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">            <tt class="py-op">[</tt><tt id="link-43" class="py-name"><a title="sunucu.geo.geocell" class="py-name" href="#" onclick="return doclink('link-43', 'geocell', 'link-0');">geocell</a></tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="sunucu.geo.geocell.adjacent" class="py-name" href="#" onclick="return doclink('link-44', 'adjacent', 'link-40');">adjacent</a></tt><tt class="py-op">(</tt><tt class="py-name">cell</tt><tt class="py-op">,</tt> <tt class="py-name">perpendicular_nearest_edge</tt><tt class="py-op">)</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">             <tt class="py-keyword">for</tt> <tt class="py-name">cell</tt> <tt class="py-keyword">in</tt> <tt class="py-name">cur_geocells</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line"> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">      <tt class="py-comment"># We don't have enough items yet, keep searching.</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">      <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">results</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">max_results</tt><tt class="py-op">:</tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-45" class="py-name"><a title="sunucu.geo.geomodel.DEBUG" class="py-name" href="#" onclick="return doclink('link-45', 'DEBUG', 'link-4');">DEBUG</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">          <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">debug</tt><tt class="py-op">(</tt><tt class="py-string">'have %d results but want %d results, '</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">                        <tt class="py-string">'continuing search'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">results</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">max_results</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">        <tt class="py-keyword">continue</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line"> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">      <tt class="py-keyword">if</tt> <tt id="link-46" class="py-name"><a title="sunucu.geo.geomodel.DEBUG" class="py-name" href="#" onclick="return doclink('link-46', 'DEBUG', 'link-4');">DEBUG</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">debug</tt><tt class="py-op">(</tt><tt class="py-string">'have %d results'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">results</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line"> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">      <tt class="py-comment"># If the currently max_results'th closest item is closer than any</tt> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">      <tt class="py-comment"># of the next test geocells, we're done searching.</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">      <tt class="py-name">current_farthest_returnable_result_dist</tt> <tt class="py-op">=</tt> \ </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line">          <tt id="link-47" class="py-name"><a title="sunucu.geo.geomath" class="py-name" href="#" onclick="return doclink('link-47', 'geomath', 'link-1');">geomath</a></tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="sunucu.geo.geomath.distance" class="py-name" href="#" onclick="return doclink('link-48', 'distance', 'link-35');">distance</a></tt><tt class="py-op">(</tt><tt class="py-name">center</tt><tt class="py-op">,</tt> <tt class="py-name">results</tt><tt class="py-op">[</tt><tt class="py-name">max_results</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="sunucu.geo.geomodel.GeoModel.location" class="py-name" href="#" onclick="return doclink('link-49', 'location', 'link-7');">location</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">      <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">closest_possible_next_result_dist</tt> <tt class="py-op">&gt;=</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">          <tt class="py-name">current_farthest_returnable_result_dist</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-50" class="py-name"><a title="sunucu.geo.geomodel.DEBUG" class="py-name" href="#" onclick="return doclink('link-50', 'DEBUG', 'link-4');">DEBUG</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line">          <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">debug</tt><tt class="py-op">(</tt><tt class="py-string">'DONE next result at least %f away, '</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line">                        <tt class="py-string">'current farthest is %f dist'</tt> <tt class="py-op">%</tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">                        <tt class="py-op">(</tt><tt class="py-name">closest_possible_next_result_dist</tt><tt class="py-op">,</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">                         <tt class="py-name">current_farthest_returnable_result_dist</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line">        <tt class="py-keyword">break</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line"> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line">      <tt class="py-keyword">if</tt> <tt id="link-51" class="py-name"><a title="sunucu.geo.geomodel.DEBUG" class="py-name" href="#" onclick="return doclink('link-51', 'DEBUG', 'link-4');">DEBUG</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line">        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">debug</tt><tt class="py-op">(</tt><tt class="py-string">'next result at least %f away, '</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">                      <tt class="py-string">'current farthest is %f dist'</tt> <tt class="py-op">%</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">                      <tt class="py-op">(</tt><tt class="py-name">closest_possible_next_result_dist</tt><tt class="py-op">,</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">                       <tt class="py-name">current_farthest_returnable_result_dist</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line"> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-52" class="py-name"><a title="sunucu.geo.geomodel.DEBUG" class="py-name" href="#" onclick="return doclink('link-52', 'DEBUG', 'link-4');">DEBUG</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line">      <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">'proximity query looked '</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">                   <tt class="py-string">'in %d geocells'</tt> <tt class="py-op">%</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">searched_cells</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line"> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">entity</tt> <tt class="py-keyword">for</tt> <tt class="py-op">(</tt><tt class="py-name">entity</tt><tt class="py-op">,</tt> <tt class="py-name">dist</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-name">results</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-name">max_results</tt><tt class="py-op">]</tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">max_distance</tt> <tt class="py-keyword">or</tt> <tt class="py-name">dist</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">max_distance</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="sunucu-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Feb  6 17:58:56 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
