@@ -19,15 +19,14 @@ class Conversation(GeoModel):
     date_joined = db.DateTimeProperty(auto_now = "True") # Join date of user_2
     is_started = db.BooleanProperty(default = False) # False if a conversation is on pending state
     
+    # We only need to store one of these on the database,
+    # since we will send both of them on the event of second trade request.
     # Each defaults to null from here. We can control if they are set by checking against it. 
-    user_1_loc = db.GeoPtProperty() # Location of user_1. See http://code.google.com/appengine/docs/python/datastore/typesandpropertyclasses.html#GeoPtProperty
-    user_2_loc = db.GeoPtProperty() # Location of user_2
-    user_1_age = db.IntegerProperty() # Age of user_1
-    user_2_age = db.IntegerProperty() # Age of user_2
-    user_1_name = db.StringProperty() # Name of user_1    
-    user_2_name = db.StringProperty() # Name of user_2    
+    user_1_loc = db.GeoPtProperty() # Location of user_1.
+    user_1_age = db.IntegerProperty() # Age of user_1.
+    user_1_name = db.StringProperty() # Name of user_1.    
     user_1_sex = db.IntegerProperty() # Sex of user_1. See http://en.wikipedia.org/wiki/ISO_5218
-    user_2_sex = db.IntegerProperty() # Sex of user_2. See http://en.wikipedia.org/wiki/ISO_5218
+
 
     def getPartner(self,current_user):
         """
