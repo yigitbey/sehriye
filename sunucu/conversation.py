@@ -2,6 +2,7 @@ from google.appengine.ext import db
 from google.appengine.api import xmpp
 
 from geo.geomodel import GeoModel
+from geo import geotypes
 #from geoasync.geomodel import GeoModel
 from custom_messages import *
 
@@ -56,13 +57,24 @@ class Conversation(GeoModel):
         #dummy_email = "a@aa.aaa" # Will be set as partner if there does not exist any waiting user 
 
         ### Get 10 nearest match
-        results = Conversation.proximity_fetch(
+        #results = Conversation.proximity_fetch(
+            #Conversation.all().filter('is_started', False), # Only conversations that have not started yet
+            #db.GeoPt(la, lo), #With these coordinats
+            #max_results=10, #Maximum number of results
+            #max_distance=100000  # Within 100 km.
+            #)
+        ###
+
+        ### Get 10 near match. See http://code.google.com/p/geomodel/wiki/Usage
+        box_la = float(la) - 0.1
+        box_lo = float(lo) - 0.1
+        results = Conversation.bounding_box_fetch(
             Conversation.all().filter('is_started', False), # Only conversations that have not started yet
-            db.GeoPt(la, lo), #With these coordinats
+            geotypes.Box(float(la),float(lo),float(box_la),float(box_lo)),
             max_results=10, #Maximum number of results
-            max_distance=100000  # Within 100 km.
             )
         ###
+
 
         ###If we have any potential match
         if len(results) > 0: 
