@@ -108,70 +108,70 @@ class Conversation(GeoModel):
         Function to set name of a user
 
         If this is the first trade request on this conversation, it will just set the name for user_1
-        Else it will send each participant's name to other. 
-        (user_1 and user_2 are not sorted and same across each field.)
+        Else it will send each participant's name to party. 
+        (user_1 and user_2 are not sorted and same across each field. So clients will get both participant's data. 
+        Clients need to parse and find the correct value from received data)
         """
         if self.user_1_name == None: # First trade request
             self.user_1_name = name
+            self.put() # We don't need to save second user's name to database.     
         else:
             self.user_2_name = name # Second trade request
-            message_to_send = TRADE_NAME + ":" + self.user_2_name # Serialize the custom message for the first user
+            message_to_send = TRADE_NAME + ":" + self.user_1_name + ":" + self.user_2_name # Serialize the custom message
             xmpp.send_message(self.user_1,message_to_send)
-            message_to_send = TRADE_NAME + ":" + self.user_1_name # Serialize the custom message for the second user
             xmpp.send_message(self.user_2,message_to_send)
-        self.put()     
 
     def setTradeAge(self, age):
         """
         Function to set age of a user
 
         If this is the first trade request on this conversation, it will just set the age for user_1
-        Else it will send each participant's age to other. 
-        (user_1 and user_2 are not sorted and same across each field.)
+        Else it will send each participant's age to party.
+        (user_1 and user_2 are not sorted and same across each field. So clients will get both participant's data. 
+        Clients need to parse and find the correct value from received data)
         """
         if self.user_1_age == None: # First trade request
             self.user_1_age = int(age)
+            self.put() # We don't need to save second user's name to database.          
         else:
             self.user_2_age = int(age) # Second trade request
-            message_to_send = TRADE_AGE + ":" + str(self.user_2_age) # Serialize the custom message for the first user
+            message_to_send = TRADE_AGE + ":" + str(self.user_1_age) + ":" + str(self.user_2_age) # Serialize the custom message
             xmpp.send_message(self.user_1,message_to_send)
-            message_to_send = TRADE_AGE + ":" + str(self.user_1_age) # Serialize the custom message for the second user
             xmpp.send_message(self.user_2,message_to_send)
-        self.put()     
 
     def setTradeLocation(self, latitude, longtitude):
         """
         Function to set name of a user
 
         If this is the first trade request on this conversation, it will just set the location for user_1
-        Else it will send each participant's location to other. 
-        (user_1 and user_2 are not sorted and same across each field.)
+        Else it will send each participant's location to party. 
+        (user_1 and user_2 are not sorted and same across each field. So clients will get both participant's data. 
+        Clients need to parse and find the correct value from received data)
         """
         if self.user_1_loc == None: # First trade request
             self.user_1_loc = db.GeoPt(latitude,longtitude)
+            self.put() # We don't need to save second user's name to database.     
         else:
             self.user_2_loc = db.GeoPt(latitude,longtitude) # Second trade request
-            message_to_send = TRADE_LOCATION + ":" + str(self.user_1_loc).replace(",",":") # Serialize the custom message for the first user
+            message_to_send = TRADE_LOCATION + ":" + str(self.user_1_loc) + ":" + str(self.user_2_loc) # Serialize the custom message
             xmpp.send_message(self.user_1,message_to_send)
-            message_to_send = TRADE_LOCATION + ":" + str(self.user_2_loc).replace(",",":") # Serialize the custom message for the second user
             xmpp.send_message(self.user_2,message_to_send)
-        self.put()     
 
     def setTradeSex(self, sex):
         """
         Function to set sex of a user
 
         If this is the first trade request on this conversation, it will just set the sex for user_1
-        Else it will send each participant's sex to other. 
-        (user_1 and user_2 are not sorted and same across each field.)
+        Else it will send each participant's sex to party. 
+        (user_1 and user_2 are not sorted and same across each field. So clients will get both participant's data. 
+        Clients need to parse and find the correct value from received data)
         """
         if self.user_1_sex == None: # First trade request
             self.user_1_sex = int(sex)
+            self.put() # We don't need to save second user's name to database.     
         else:
             self.user_2_sex = int(sex) # Second trade request
-            message_to_send = TRADE_SEX + ":" + str(self.user_2_sex) # Serialize the custom message for the first user
+            message_to_send = TRADE_SEX + ":" + str(self.user_1_sex) + ":" + str(self.user_2_sex) # Serialize the custom message
             xmpp.send_message(self.user_1,message_to_send)
-            message_to_send = TRADE_SEX + ":" + str(self.user_1_sex) # Serialize the custom message for the second user
             xmpp.send_message(self.user_2,message_to_send)
-        self.put()     
 
