@@ -1,0 +1,6 @@
+K 13
+svn:externals
+V 73
+asynctools    http://asynctools.googlecode.com/svn/trunk/src/asynctools/
+
+END

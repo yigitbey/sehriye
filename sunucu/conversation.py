@@ -2,6 +2,7 @@ from google.appengine.ext import db
 from google.appengine.api import xmpp
 
 from geo.geomodel import GeoModel
+#from geoasync.geomodel import GeoModel
 from custom_messages import *
 
 import logging, random
@@ -24,6 +25,20 @@ class Conversation(GeoModel):
     user_2_name = db.StringProperty() # Name of user_2    
     user_1_sex = db.IntegerProperty() # Sex of user_1. See http://en.wikipedia.org/wiki/ISO_5218
     user_2_sex = db.IntegerProperty() # Sex of user_2
+
+    def setLocation(self,la,lo):
+#        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", self.user_1, "a@aa.aaa")
+ #       conversation = query.get()
+  #      conversation.location = db.GeoPt(la,lo)
+   #     logging.debug(str(conversation.location))
+    #    conversation.update_location()
+     #   conversation.put()
+        self.location = db.GeoPt(la,lo)
+
+        self.update_location()
+    #    conversation.put()
+
+
 
     def getPartner(self,current_user):
         """Function to get partner"""
@@ -54,10 +69,13 @@ class Conversation(GeoModel):
             self = random.choice(results)
             self.user_2 = current_user
             self.is_started = True
+            self.setLocation(la,lo)
             self.put()
             logging.debug("ikinci query geldi")
-            xmpp.send_message(self.user_1,START_CONVERSATION) # See custom_messages.py
-            xmpp.send_message(self.user_2,START_CONVERSATION) # See custom_messages.py
+            message_to_send = START_CONVERSATION + ":" + str(self.user_2) # Serialize START_CONVERSATION
+            xmpp.send_message(self.user_1, message_to_send) # See custom_messages.py
+            message_to_send = START_CONVERSATION + ":" + str(self.user_1) # Serialize START_CONVERSATION
+            xmpp.send_message(self.user_2, message_to_send) # See custom_messages.py
             assert self.user_1 != self.user_2 # A user should not be partnered with itself
             return self.user_1 #Return partner
 
@@ -81,13 +99,6 @@ class Conversation(GeoModel):
         else:
             db.delete(query2.get())
 
-    def setLocation(self,la,lo):
-        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", self.user_1, "a@aa.aaa")
-        conversation = query.get()
-        conversation.location = db.GeoPt(la,lo)
-        logging.debug(str(conversation.location))
-        conversation.update_location()
-        conversation.put()
         
     def setTradeName(self, name):
         query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND user_2 = :2  LIMIT 1", self.user_1, self.user_2)

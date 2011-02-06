@@ -26,8 +26,6 @@ class XMPPHandler(webapp.RequestHandler):
             longtitude = message.body.split(":")[2] # Longtitude of user
 
             partner = conversation.matchPeopleWithProximity(sender, latitude, longtitude) # Try to find a partner
-            if partner == 0 : #If we don't have partner, set the location of the conversation
-                conversation.setLocation(message.body.split(":")[1],message.body.split(":")[2])
 
             pass_message = 0 # Don't pass pending chat requests to clients
         ###
