@@ -25,7 +25,7 @@ class XMPPHandler(webapp.RequestHandler):
             latitude = message.body.split(":")[1] # Latitude of user
             longtitude = message.body.split(":")[2] # Longtitude of user
 
-            partner = conversation.matchPeopleWithProximity(sender, latitude, longtitude) # Try to find a partner
+            conversation.matchPeopleWithProximity(sender, latitude, longtitude) # Try to find a partner
 
             pass_message = 0 # Don't pass pending chat requests to clients
         ###
@@ -63,9 +63,6 @@ class XMPPHandler(webapp.RequestHandler):
             pass_message = 0
         ###
 
-            
-
-
         return pass_message
             
     def post(self):
@@ -75,21 +72,18 @@ class XMPPHandler(webapp.RequestHandler):
         pass_message = 1 
 
         sender = message.sender.split("/")[0] # Remove the identifier string from JID
-        conversation = Conversation(user_1 = sender, user_2 = dummy_email ,location = db.GeoPt(41,28))
-        
-        partner = conversation.getPartner(sender) # Try to get a partner
-        if partner != 0:
-            conversation.user_2 = partner
- 
+        conversation = Conversation(user_1 = sender, user_2 = dummy_email ,location = db.GeoPt(41,28)) # Create a new conversation
+        conversation = conversation.getPartner(sender) # Try to get a partner
+
         if message.body[0] == "|": # If this is a custom message
             pass_message = self.customMessageHandler(conversation,message)
 
-        if partner != 0: #If we have partner
+        if conversation.is_started == True: # If this conversation has started
+            if conversation.user_1 == sender: 
+                partner = conversation.user_2
+            else:
+                partner = conversation.user_1
             
-            # Initialize a conversation
-   
-            # Handling custom messages
-           
-            if pass_message == 1: # If we need to pass this message to client
+            if pass_message == 1: # If we need to pass this message to client (See custom messages)
                 xmpp.send_message(partner, message.body) # Send this message to partner
                          
