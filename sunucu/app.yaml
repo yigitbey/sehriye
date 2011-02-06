@@ -6,7 +6,10 @@ api_version: 1
 inbound_services:
 - xmpp_message
 
+builtins:
+- appstats: on
+- datastore_admin: on
+
 handlers:
 - url: /.*
   script: main.py
-
