@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
@@ -25,8 +25,88 @@
               android:capitalize="none"
               android:scrollHorizontally="true"/>
     <Button android:id="@+id/send"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Send">
+            android:text="Send" android:layout_height="wrap_content" android:layout_width="60px">
     </Button>
 </LinearLayout>
+
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="fill_parent" android:id="@+id/tableLayout1" android:shrinkColumns="*" android:layout_width="fill_parent">
+        <TableRow android:id="@+id/tableRow1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        	<Button android:id="@+id/Disconnect" 
+        		android:text="Disconnect"
+        		android:layout_width="80sp" 
+        		android:layout_height="fill_parent"
+        		android:shrinkColumns="*">
+        	</Button>            
+        </TableRow>
+        <TableRow android:id="@+id/tableRow2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="*">
+            <ListView android:id="@+id/listMessages" 
+            	android:layout_height="fill_parent" 
+            	android:scrollbars="horizontal" 
+            	android:layout_width="240sp"
+            	android:stretchColumns="*">
+            </ListView>
+        </TableRow>
+        <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        	<EditText android:id="@+id/sendText"
+            	android:layout_height="wrap_content"
+              	android:singleLine="false"
+              	android:textSize="16sp"
+              	android:autoText="false"
+              	android:capitalize="none"
+              	android:scrollHorizontally="true" android:layout_width="240sp"/>
+        	<Button android:id="@+id/send" 
+        		android:text="Send"
+        		android:layout_height="fill_parent" android:layout_width="80sp">
+        	</Button>
+        </TableRow>
+    </TableLayout>
+
+-->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@+id/linearLayout1" android:orientation="horizontal">
+        <LinearLayout android:id="@+id/linearLayout2" android:orientation="vertical" android:layout_height="fill_parent" android:layout_width="fill_parent">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/linearLayout3">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout4">
+                    <Button android:text="Name" android:id="@+id/trade_name" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+                </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout5">
+                    <Button android:text="Sex" android:id="@+id/trade_sex" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+                </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout6">
+                    <Button android:text="Age" android:id="@+id/trade_age" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+                </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout6">
+                    <Button android:text="Location" android:id="@+id/trade_location" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+                </LinearLayout>
+                <LinearLayout android:layout_height="fill_parent" android:id="@+id/linearLayout7" android:layout_width="10sp"></LinearLayout>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout8">
+                    <Button android:text="End" android:id="@+id/end" android:layout_width="80sp" android:layout_height="wrap_content"></Button>
+                </LinearLayout>
+            </LinearLayout>
+		    <ListView android:id="@+id/listMessages"
+		              android:layout_width="wrap_content"
+		              android:layout_height="wrap_content"
+		              android:layout_weight="1"
+		              android:scrollbars="horizontal"
+		            />          
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/linearLayout9">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout10">
+                	<EditText android:id="@+id/sendText"
+		            	android:layout_height="wrap_content"
+		              	android:singleLine="false"
+		              	android:textSize="16sp"
+		              	android:autoText="false"
+		              	android:capitalize="none"
+		              	android:scrollHorizontally="true" 
+		              	android:layout_width="240sp"/>
+		        </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout11">
+                	<Button android:id="@+id/send" 
+        				android:text="Send"
+        				android:layout_height="fill_parent" 
+        				android:layout_width="80sp">
+        	</Button></LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
