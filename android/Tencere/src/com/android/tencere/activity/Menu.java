@@ -13,9 +13,11 @@ import org.jivesoftware.smack.packet.Packet;
 import org.jivesoftware.smack.packet.Presence;
 import org.jivesoftware.smack.util.StringUtils;
 
-import com.android.tencere.activity.R;
-
 import android.app.Activity;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -24,6 +26,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import com.android.tencere.activity.custom_messages;
 
 public class Menu extends Activity {
     private ArrayList<String> messages = new ArrayList();
@@ -35,7 +39,6 @@ public class Menu extends Activity {
     public static String server = "buluruzbirsey@appspot.com";
     public String partner;
     public Boolean is_started = false;
-    
     
     
     // Function to send a message
@@ -53,10 +56,8 @@ public class Menu extends Activity {
         super.onCreate(icicle);
         Log.i("XMPPClient", "onCreate called");
         setContentView(R.layout.main);
+
         
-     
-        //mRecipient = (EditText) this.findViewById(R.id.);
-        Log.i("XMPPClient", "mRecipient = " + "buluruzbirsey@appspot.com");
         mSendText = (EditText) this.findViewById(R.id.sendText);
         Log.i("XMPPClient", "mSendText = " + mSendText);
         mList = (ListView) this.findViewById(R.id.listMessages);
@@ -68,9 +69,7 @@ public class Menu extends Activity {
         String host = "mageroya.com";
         String port = "5222";
         String service = "mageroya.com";
-        
-   
-
+  
         // Create a connection
         ConnectionConfiguration connConfig = new ConnectionConfiguration(host, Integer.parseInt(port), service);
         final XMPPConnection connection = new XMPPConnection(connConfig);
@@ -85,14 +84,15 @@ public class Menu extends Activity {
         }
         try {
         	connection.loginAnonymously();
-
         	Log.i("XMPPClient", "Logged in as " + connection.getUser());
 
             // Set the status to available
             Presence presence = new Presence(Presence.Type.available);
             connection.sendPacket(presence);
             setConnection(connection);
-            sendMessage(server,"|PENCON:32:12");
+            
+            //Send a PENDING_CONVERSATION
+            sendMessage(server, custom_messages.PENDING_CONVERSATION + ":32:12");
             
         } catch (XMPPException ex) {
             Log.e("XMPPClient", "[SettingsDialog] Failed to log in as anonymous" );
@@ -105,7 +105,7 @@ public class Menu extends Activity {
         // Set a listener to send a chat text message
         Button send = (Button) this.findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
+        	public void onClick(View view) {
                 String text = mSendText.getText().toString();
                 
                 if (is_started){
@@ -118,16 +118,17 @@ public class Menu extends Activity {
                 }
                 
             }
+            
         });
+        //
     }
-
+    
+    
     /**
      * Called by Settings dialog when a connection is established with the XMPP server
      * @param connection
      */
-    public void setConnection
-            (final XMPPConnection
-                    connection) {
+    public void setConnection (final XMPPConnection connection) {
         this.connection = connection;
         if (connection != null) {
             // Add a packet listener to get messages sent to us
@@ -145,7 +146,7 @@ public class Menu extends Activity {
                             Log.i("XMPPClient", "Got " + command + msg.split(":")[1]);
 
                             // START_CONVERSATION
-                        	if (command.equals("|STACON")){
+                        	if (command.equals(custom_messages.START_CONVERSATION)){
 
                                 Log.i("XMPPClient", "Gotb " + command + msg.split(":")[1]);
                         		partner = msg.split(":")[1];
@@ -158,10 +159,7 @@ public class Menu extends Activity {
     	                            }
     	                        });
                         	}
-                        	
-                        	
-                        	
-                        	
+                        	                    	
                         	
                         }
                         else{
@@ -181,8 +179,13 @@ public class Menu extends Activity {
         }
     }
 
+    
+    
     private void setListAdapter() {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.multi_line_list_item, messages);
         mList.setAdapter(adapter);
     }
+
+
+    
 }
