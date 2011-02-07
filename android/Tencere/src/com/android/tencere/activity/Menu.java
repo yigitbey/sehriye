@@ -32,10 +32,15 @@ public class Menu extends Activity {
     private EditText mSendText;
     private ListView mList;
     private XMPPConnection connection;
-    public String to = "buluruzbirsey@appspot.com";
+    public static String server = "buluruzbirsey@appspot.com";
+    public String partner;
+    public Boolean is_started = false;
+    
+    
     
     // Function to send a message
-    public void sendMessage(String text){
+    public void sendMessage(String to, String text){
+        Log.i("XMPPClient", "Sending text [" + text + "] to [" + to +"]");
         Message msg = new Message(to, Message.Type.chat);
         msg.setBody(text);
         connection.sendPacket(msg);
@@ -87,7 +92,7 @@ public class Menu extends Activity {
             Presence presence = new Presence(Presence.Type.available);
             connection.sendPacket(presence);
             setConnection(connection);
-            sendMessage("|PENCON:32:12");
+            sendMessage(server,"|PENCON:32:12");
             
         } catch (XMPPException ex) {
             Log.e("XMPPClient", "[SettingsDialog] Failed to log in as anonymous" );
@@ -101,16 +106,17 @@ public class Menu extends Activity {
         Button send = (Button) this.findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-            	String to = "buluruzbirsey@appspot.com";
                 String text = mSendText.getText().toString();
-
-                Log.i("XMPPClient", "Sending text [" + text + "] to [" + to + "]");
-                Message msg = new Message(to, Message.Type.chat);
-                msg.setBody(text);
-                connection.sendPacket(msg);
-                messages.add(connection.getUser() + ":");
-                messages.add(text);
-                setListAdapter();
+                
+                if (is_started){
+                	sendMessage(partner,text);
+                	messages.add("You: " + text);
+                    setListAdapter();
+                }
+                else{
+                	sendMessage(server,text);
+                }
+                
             }
         });
     }
@@ -120,7 +126,7 @@ public class Menu extends Activity {
      * @param connection
      */
     public void setConnection
-            (XMPPConnection
+            (final XMPPConnection
                     connection) {
         this.connection = connection;
         if (connection != null) {
@@ -131,15 +137,44 @@ public class Menu extends Activity {
                     Message message = (Message) packet;
                     if (message.getBody() != null) {
                         String fromName = StringUtils.parseBareAddress(message.getFrom());
-                        Log.i("XMPPClient", "Got text [" + message.getBody() + "] from [" + fromName + "]");
-                        messages.add(fromName + ":");
-                        messages.add(message.getBody());
-                        // Add the incoming message to the list view
-                        mHandler.post(new Runnable() {
-                            public void run() {
-                                setListAdapter();
-                            }
-                        });
+                        Log.i("XMPPClient", "Got text [" + message.getBody() + "] from [" + fromName +"]");
+                        
+                        if (fromName.equals(server)){ //If this message is from conversation server
+                        	String msg = message.getBody();
+                        	String command = msg.split(":")[0];	
+                            Log.i("XMPPClient", "Got " + command + msg.split(":")[1]);
+
+                            // START_CONVERSATION
+                        	if (command.equals("|STACON")){
+
+                                Log.i("XMPPClient", "Gotb " + command + msg.split(":")[1]);
+                        		partner = msg.split(":")[1];
+                        		is_started = true;
+                                messages.add("---Conversation Started---");
+    	                        // Add the incoming message to the list view
+    	                        mHandler.post(new Runnable() {
+    	                            public void run() {
+    	                                setListAdapter();
+    	                            }
+    	                        });
+                        	}
+                        	
+                        	
+                        	
+                        	
+                        	
+                        }
+                        else{
+                            messages.add("Stranger: " + message.getBody());
+	                        // Add the incoming message to the list view
+	                        mHandler.post(new Runnable() {
+	                            public void run() {
+	                                setListAdapter();
+	                            }
+	                        });
+                        }
+
+                        Log.i("XMPPClient", "partner [" + partner + "] is_started [" + is_started + "]");
                     }
                 }
             }, filter);
