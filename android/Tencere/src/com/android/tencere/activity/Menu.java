@@ -32,8 +32,17 @@ public class Menu extends Activity {
     private EditText mSendText;
     private ListView mList;
     private XMPPConnection connection;
-
-// Called with the activity is first created.
+    public String to = "buluruzbirsey@appspot.com";
+    
+    // Function to send a message
+    public void sendMessage(String text){
+        Message msg = new Message(to, Message.Type.chat);
+        msg.setBody(text);
+        connection.sendPacket(msg);
+    }
+    
+    
+    // Called with the activity is first created.
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -51,14 +60,11 @@ public class Menu extends Activity {
         
         
         
-        String host = "talk.google.com";
+        String host = "mageroya.com";
         String port = "5222";
-        String service = "gmail.com";
-        String username = "gngr.kck";
-        String password = "trewq1234ASDFG";
+        String service = "mageroya.com";
         
-        
-
+   
 
         // Create a connection
         ConnectionConfiguration connConfig = new ConnectionConfiguration(host, Integer.parseInt(port), service);
@@ -73,15 +79,18 @@ public class Menu extends Activity {
             setConnection(null);
         }
         try {
-            connection.login(username, password);
-            Log.i("XMPPClient", "Logged in as " + connection.getUser());
+        	connection.loginAnonymously();
+
+        	Log.i("XMPPClient", "Logged in as " + connection.getUser());
 
             // Set the status to available
             Presence presence = new Presence(Presence.Type.available);
             connection.sendPacket(presence);
             setConnection(connection);
+            sendMessage("|PENCON:32:12");
+            
         } catch (XMPPException ex) {
-            Log.e("XMPPClient", "[SettingsDialog] Failed to log in as " + username);
+            Log.e("XMPPClient", "[SettingsDialog] Failed to log in as anonymous" );
             Log.e("XMPPClient", ex.toString());
             setConnection(null);
         }
