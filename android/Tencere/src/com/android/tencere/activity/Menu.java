@@ -14,6 +14,7 @@ import org.jivesoftware.smack.packet.Presence;
 import org.jivesoftware.smack.util.StringUtils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -22,8 +23,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-
-import com.android.tencere.activity.custom_messages;
 
 public class Menu extends Activity {
     private ArrayList<String> messages = new ArrayList();
@@ -35,7 +34,7 @@ public class Menu extends Activity {
     public static String server = "buluruzbirsey@appspot.com";
     public String partner;
     public Boolean is_started = false;
-    
+    public ProgressDialog dialog;
     
     // Function to send a message
     public void sendMessage(String to, String text){
@@ -79,22 +78,25 @@ public class Menu extends Activity {
             setConnection(null);
         }
         try {
+        	dialog = ProgressDialog.show(Menu.this, "", "Connecting to server...", true);
         	connection.loginAnonymously();
         	Log.i("XMPPClient", "Logged in as " + connection.getUser());
-
             // Set the status to available
-            Presence presence = new Presence(Presence.Type.available);
+            Presence presence = new Presence(Presence.Type.available);        	
             connection.sendPacket(presence);
+
             setConnection(connection);
-            
-            //Send a PENDING_CONVERSATION
-            sendMessage(server, custom_messages.PENDING_CONVERSATION + ":32:12");
             
         } catch (XMPPException ex) {
             Log.e("XMPPClient", "[SettingsDialog] Failed to log in as anonymous" );
             Log.e("XMPPClient", ex.toString());
             setConnection(null);
         }
+        
+        dialog.dismiss();
+        //Send a PENDING_CONVERSATION
+        sendMessage(server, custom_messages.PENDING_CONVERSATION + ":32:12");
+        dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
         
         
 
@@ -147,6 +149,7 @@ public class Menu extends Activity {
                                 Log.i("XMPPClient", "Gotb " + command + msg.split(":")[1]);
                         		partner = msg.split(":")[1];
                         		is_started = true;
+                        		dialog.dismiss();
                                 messages.add("---Conversation Started---");
     	                        // Add the incoming message to the list view
     	                        mHandler.post(new Runnable() {
