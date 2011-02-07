@@ -79,8 +79,8 @@
                     <Button android:text="Location" android:id="@+id/trade_location" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
                 </LinearLayout>
                 <LinearLayout android:layout_height="fill_parent" android:id="@+id/linearLayout7" android:layout_width="10sp"></LinearLayout>
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout8">
-                    <Button android:text="End" android:id="@+id/end" android:layout_width="80sp" android:layout_height="wrap_content"></Button>
+                <LinearLayout android:layout_width="wrap_content" android:gravity="right" android:layout_height="fill_parent" android:id="@+id/linearLayout8">
+                    <Button android:layout_width="wrap_content" android:text="End" android:id="@+id/end" android:layout_height="wrap_content"></Button>
                 </LinearLayout>
             </LinearLayout>
 		    <ListView android:id="@+id/listMessages"
