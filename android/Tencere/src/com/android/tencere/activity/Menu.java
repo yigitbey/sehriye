@@ -24,10 +24,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+// Main class
 public class Menu extends Activity {
     private ArrayList<String> messages = new ArrayList();
     private Handler mHandler = new Handler();
-
     private EditText mSendText;
     private ListView mList;
     private XMPPConnection connection;
@@ -49,34 +49,175 @@ public class Menu extends Activity {
         msg.setBody(text);
         connection.sendPacket(msg);
     }
+    // End of sendMessage Function
     
+    //Function to update Message List
+    public void updateMessages(){
+    	mHandler.post(new Runnable() {
+            public void run() {
+                setListAdapter();
+            }
+        });
+    }
+    // End of updateMessages Function
     
-    // Called with the activity is first created.
-    @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        Log.i("XMPPClient", "onCreate called");
-        setContentView(R.layout.main);
+    //Function to request a conversation
+    public void requestConversation(){
+        //Send a PENDING_CONVERSATION
+        sendMessage(server, custom_messages.PENDING_CONVERSATION + ":32:12");
+        dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
+    }
+    // End of requestConversation Function
+    
+    //Function to handle server messages
+    public void handleCustomMessage(String msg){
+    	String command = msg.split(":")[0];	
+    	Log.i("XMPPClient",command);
 
+    	
+        // START_CONVERSATION
+    	if (command.equals(custom_messages.START_CONVERSATION)){
+    		partner = msg.split(":")[1];
+    		is_started = true;
+    		dialog.dismiss();
+            messages.add("---Conversation Started---");
+            updateMessages();
+    	}
+    	//
+
+        // DELETE_CONVERSATION
+    	if (command.equals(custom_messages.DELETE_CONVERSATION)){
+    		is_started = false;
+            messages.add("---Disconnected---");
+            updateMessages();
+    	}
+    	//
+
+        // TRADE_NAME
+    	if (command.equals(custom_messages.TRADE_NAME)){
+    		String name = msg.split(":")[1];
+            messages.add("Your Partner's name is: " + name);
+            updateMessages();
+    	}
+    	//
+
+        // TRADE_SEX
+    	if (command.equals(custom_messages.TRADE_SEX)){
+    		Integer sex =  Integer.parseInt(msg.split(":")[1]);
+    		if (sex == 1){
+    			messages.add("Your Partner is a man");
+    		}
+    		if (sex == 2){
+    			messages.add("Your Partner is a woman");
+    		}
+            updateMessages();
+    	}
+    	//
+
+        // TRADE_AGE
+    	if (command.equals(custom_messages.TRADE_AGE)){
+    		Integer age = Integer.parseInt(msg.split(":")[1]);
+    		messages.add("Your Partner is " + age + " years old.");
+            updateMessages();
+    	}
+    	//
+
+        // TRADE_LOCATION
+    	if (command.equals(custom_messages.TRADE_LOCATION)){
+    		String location = msg.split(":")[1];
+    		messages.add("Your Partner is from " + location);
+            updateMessages();
+    	}
+    	//
+
+    	
+    }
+    // End of handleCustomMessage function
+
+    // Function to prepare our UI
+    public void prepareUI(){
         // Get buttons from Layout
         Button send = (Button) this.findViewById(R.id.send);
         Button end = (Button) this.findViewById(R.id.end);
         Button trade_name = (Button) this.findViewById(R.id.trade_name);
         Button trade_sex = (Button) this.findViewById(R.id.trade_sex);
         Button trade_age = (Button) this.findViewById(R.id.trade_age);
+
         Button trade_location = (Button) this.findViewById(R.id.trade_location);
 
+        //Button Listeners
+
+        // Set a listener to send button
+        send.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+                String text = mSendText.getText().toString();
+                if (is_started){
+                	sendMessage(partner,text);
+                	messages.add("You: " + text);
+                    setListAdapter();
+                }
+                else{
+                	//sendMessage(server,text);
+                }   
+            }
+        });
+        //
         
+        // Set a listener to end button
+        end.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        			if (is_started == true){
+        				sendMessage(server,custom_messages.DELETE_CONVERSATION);                
+        				is_started = false;
+        	            messages.add("---Disconnected---");
+        	            updateMessages();
+        			}
+        			else{
+        				requestConversation();
+        			}	
+        	}
+        });
+        //
+
+        // Set a listener to name button
+        trade_name.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+                	sendMessage(server,custom_messages.TRADE_NAME + ":Ahmet");                
+            }
+        });
+        //
         
-        mSendText = (EditText) this.findViewById(R.id.sendText);
-        Log.i("XMPPClient", "mSendText = " + mSendText);
-        mList = (ListView) this.findViewById(R.id.listMessages);
-        Log.i("XMPPClient", "mList = " + mList);
-        setListAdapter();        
+        // Set a listener to age button
+        trade_age.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+                	sendMessage(server,custom_messages.TRADE_AGE + ":22");                
+            }
+        });
+        //
         
-        	
-        
-        
+        // Set a listener to sex button
+        trade_sex.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+                	sendMessage(server,custom_messages.TRADE_SEX + ":1");                
+            }
+        });
+        //
+        // Set a listener to location button
+        trade_location.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+                	sendMessage(server,custom_messages.TRADE_LOCATION + ":32:12");                
+            }
+        });
+        //
+
+    	
+    }
+    // End of prepareUI function
+    
+    //For connecting to server
+    public void connectServer(){
+    	dialog = ProgressDialog.show(Menu.this, "", "Connecting to server...", true);
+    	// Connection Settings
         String host = "mageroya.com";
         String port = "5222";
         String service = "mageroya.com";
@@ -94,7 +235,6 @@ public class Menu extends Activity {
             setConnection(null);
         }
         try {
-        	dialog = ProgressDialog.show(Menu.this, "", "Connecting to server...", true);
         	connection.loginAnonymously();
         	Log.i("XMPPClient", "Logged in as " + connection.getUser());
             // Set the status to available
@@ -110,73 +250,28 @@ public class Menu extends Activity {
         }
         
         dialog.dismiss();
-        //Send a PENDING_CONVERSATION
-        sendMessage(server, custom_messages.PENDING_CONVERSATION + ":32:12");
-        dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
+    }
+    // End of connectServer function
+    
+    // Called on the activity creation.
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+        setContentView(R.layout.main);
+
+        mSendText = (EditText) this.findViewById(R.id.sendText);
+        mList = (ListView) this.findViewById(R.id.listMessages);
+        setListAdapter();        
         
-
-        //Buttons
-
-        // Set a listener to send button
-        send.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                String text = mSendText.getText().toString();
-                if (is_started){
-                	sendMessage(partner,text);
-                	messages.add("You: " + text);
-                    setListAdapter();
-                }
-                else{
-                	sendMessage(server,text);
-                }   
-            }
-        });
-        //
-        
-        // Set a listener to end button
-        end.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                	sendMessage(server,custom_messages.DELETE_CONVERSATION);                
-            }
-        });
-        //
-
-        // Set a listener to name button
-        trade_name.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                	sendMessage(server,custom_messages.TRADE_NAME + ":Ahmet");                
-            }
-        });
-        //
-        // Set a listener to age button
-        trade_age.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                	sendMessage(server,custom_messages.TRADE_AGE + ":22");                
-            }
-        });
-        //
-        // Set a listener to sex button
-        trade_sex.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                	sendMessage(server,custom_messages.TRADE_SEX + ":1");                
-            }
-        });
-        //
-        // Set a listener to location button
-        trade_location.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                	sendMessage(server,custom_messages.TRADE_LOCATION + ":32:12");                
-            }
-        });
-        //
-
-        
+        connectServer();
+        prepareUI();
+        requestConversation();
         
     }
-    
+    // End of onCreate function
     
     /**
-     * Called by Settings dialog when a connection is established with the XMPP server
+     * Called when a connection is established with the XMPP server
      * @param connection
      */
     public void setConnection (final XMPPConnection connection) {
@@ -190,115 +285,29 @@ public class Menu extends Activity {
                     if (message.getBody() != null) {
                         String fromName = StringUtils.parseBareAddress(message.getFrom());
                         Log.i("XMPPClient", "Got text [" + message.getBody() + "] from [" + fromName +"]");
+                    	String msg = message.getBody();
                         
                         if (fromName.equals(server)){ //If this message is from conversation server
-                        	String msg = message.getBody();
-                        	String command = msg.split(":")[0];	
-
-                            //Handle Server Messages
-                            
-                            // START_CONVERSATION
-                        	if (command.equals(custom_messages.START_CONVERSATION)){
-
-                                Log.i("XMPPClient", "Gotb " + command + msg.split(":")[1]);
-                        		partner = msg.split(":")[1];
-                        		is_started = true;
-                        		dialog.dismiss();
-                                messages.add("---Conversation Started---");
-    	                        // Add the incoming message to the list view
-    	                        mHandler.post(new Runnable() {
-    	                            public void run() {
-    	                                setListAdapter();
-    	                            }
-    	                        });
-                        	}
-                        	//
-
-                            // TRADE_NAME
-                        	if (command.equals(custom_messages.TRADE_NAME)){
-                        		String name = msg.split(":")[1];
-                                messages.add("Your Partner's name is: " + name);
-    	                        // Add the incoming message to the list view
-    	                        mHandler.post(new Runnable() {
-    	                            public void run() {
-    	                                setListAdapter();
-    	                            }
-    	                        });
-                        	}
-                        	//
-                        	
-                            // TRADE_SEX
-                        	if (command.equals(custom_messages.TRADE_SEX)){
-                        		Integer sex =  Integer.parseInt(msg.split(":")[1]);
-                        		if (sex == 1){
-                        			messages.add("Your Partner is a man");
-                        		}
-                        		if (sex == 2){
-                        			messages.add("Your Partner is a woman");
-                        		}
-                        			// Add the incoming message to the list view
-    	                        mHandler.post(new Runnable() {
-    	                            public void run() {
-    	                                setListAdapter();
-    	                            }
-    	                        });
-                        	}
-                        	//
-
-                            // TRADE_AGE
-                        	if (command.equals(custom_messages.TRADE_AGE)){
-                        		Integer age = Integer.parseInt(msg.split(":")[1]);
-                        		messages.add("Your Partner is " + age + " years old.");
-                        		// Add the incoming message to the list view
-    	                        mHandler.post(new Runnable() {
-    	                            public void run() {
-    	                                setListAdapter();
-    	                            }
-    	                        });
-                        	}
-                        	//
-
-                            // TRADE_LOCATION
-                        	if (command.equals(custom_messages.TRADE_LOCATION)){
-                        		String location = msg.split(":")[1];
-                        		messages.add("Your Partner is from" + location);
-                        		// Add the incoming message to the list view
-    	                        mHandler.post(new Runnable() {
-    	                            public void run() {
-    	                                setListAdapter();
-    	                            }
-    	                        });
-                        	}
-                        	//
-
-                        	
-                        	
-                        	
-                        	
+                        	handleCustomMessage(msg); //Handle it with this function
                         }
                         else{ // If this is a regular message
-                            messages.add("Stranger: " + message.getBody());
-	                        // Add the incoming message to the list view
-	                        mHandler.post(new Runnable() {
-	                            public void run() {
-	                                setListAdapter();
-	                            }
-	                        });
+                            messages.add("Stranger: " + msg);
+                            updateMessages();
                         }
-
                     }
                 }
             }, filter);
         }
     }
-
+    // End of setConnection function
     
-    
+    //Function to add messages to list
     private void setListAdapter() {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.multi_line_list_item, messages);
         mList.setAdapter(adapter);
     }
+    // End of setListAdapter function
 
 
-    
 }
+// End of class Menu
