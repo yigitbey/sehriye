@@ -67,20 +67,20 @@
         <LinearLayout android:id="@+id/linearLayout2" android:orientation="vertical" android:layout_height="fill_parent" android:layout_width="fill_parent">
             <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/linearLayout3">
                 <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout4">
-                    <Button android:text="Name" android:id="@+id/trade_name" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+                    <Button android:text="Name" android:id="@+id/trade_name"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="10px"></Button>
                 </LinearLayout>
                 <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout5">
-                    <Button android:text="Sex" android:id="@+id/trade_sex" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+                    <Button android:text="Sex" android:id="@+id/trade_sex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="10px"></Button>
                 </LinearLayout>
                 <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout6">
-                    <Button android:text="Age" android:id="@+id/trade_age" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+                    <Button android:text="Age" android:id="@+id/trade_age" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="10px"></Button>
                 </LinearLayout>
                 <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout6">
-                    <Button android:text="Location" android:id="@+id/trade_location" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+                    <Button android:text="Location" android:id="@+id/trade_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="10px"></Button>
                 </LinearLayout>
                 <LinearLayout android:layout_height="fill_parent" android:id="@+id/linearLayout7" android:layout_width="10sp"></LinearLayout>
                 <LinearLayout android:layout_width="wrap_content" android:gravity="right" android:layout_height="fill_parent" android:id="@+id/linearLayout8">
-                    <Button android:layout_width="wrap_content" android:text="Disconnect"
+                    <Button android:layout_width="wrap_content" android:text="Disconnect" android:textSize="10px"
                      android:id="@+id/end" android:layout_height="wrap_content"></Button>
                 </LinearLayout>
             </LinearLayout>
