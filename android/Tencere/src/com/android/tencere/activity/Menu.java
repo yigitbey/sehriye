@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+
 // Main class
 public class Menu extends Activity {
     private ArrayList<String> messages = new ArrayList();
@@ -90,6 +91,9 @@ public class Menu extends Activity {
     		is_started = false;
             messages.add("---Disconnected---");
             updateMessages();
+        	Button end = (Button) this.findViewById(R.id.end);
+            end.setText("New");
+
     	}
     	//
 
@@ -133,87 +137,67 @@ public class Menu extends Activity {
     	
     }
     // End of handleCustomMessage function
-
-    // Function to prepare our UI
-    public void prepareUI(){
-        // Get buttons from Layout
-        Button send = (Button) this.findViewById(R.id.send);
-        Button end = (Button) this.findViewById(R.id.end);
-        Button trade_name = (Button) this.findViewById(R.id.trade_name);
-        Button trade_sex = (Button) this.findViewById(R.id.trade_sex);
-        Button trade_age = (Button) this.findViewById(R.id.trade_age);
-
-        Button trade_location = (Button) this.findViewById(R.id.trade_location);
-
-        //Button Listeners
-
-        // Set a listener to send button
-        send.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                String text = mSendText.getText().toString();
-                if (is_started){
-                	sendMessage(partner,text);
-                	messages.add("You: " + text);
-                    setListAdapter();
-                }
-                else{
-                	//sendMessage(server,text);
-                }   
-            }
-        });
-        //
-        
-        // Set a listener to end button
-        end.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-        			if (is_started == true){
-        				sendMessage(server,custom_messages.DELETE_CONVERSATION);                
-        				is_started = false;
-        	            messages.add("---Disconnected---");
-        	            updateMessages();
-        			}
-        			else{
-        				requestConversation();
-        			}	
-        	}
-        });
-        //
-
-        // Set a listener to name button
-        trade_name.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                	sendMessage(server,custom_messages.TRADE_NAME + ":Ahmet");                
-            }
-        });
-        //
-        
-        // Set a listener to age button
-        trade_age.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                	sendMessage(server,custom_messages.TRADE_AGE + ":22");                
-            }
-        });
-        //
-        
-        // Set a listener to sex button
-        trade_sex.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                	sendMessage(server,custom_messages.TRADE_SEX + ":1");                
-            }
-        });
-        //
-        // Set a listener to location button
-        trade_location.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-                	sendMessage(server,custom_messages.TRADE_LOCATION + ":32:12");                
-            }
-        });
-        //
-
-    	
-    }
-    // End of prepareUI function
     
+    
+    // Button Functions
+    
+    //End button
+    public void endClick(View view) {
+    	Button end = (Button) this.findViewById(R.id.end);
+    	if (is_started == true){
+			sendMessage(server,custom_messages.DELETE_CONVERSATION);                
+			is_started = false;
+            messages.add("---Disconnected---");
+            updateMessages();
+            end.setText("New");
+            
+		}
+		else{
+			requestConversation();
+		}
+    }
+    //
+    
+    //Send button
+    public void sendClick(View view) {
+        String text = mSendText.getText().toString();
+    	mSendText.setText("");
+        if (is_started){
+        	sendMessage(partner,text);
+        	messages.add("You: " + text);
+            setListAdapter();
+        }
+        else{
+        	//sendMessage(server,text);
+        }   
+    }
+    //
+    
+    //Name button
+    public void nameClick(View view) {
+    	sendMessage(server,custom_messages.TRADE_NAME + ":Ahmet");                
+    }
+    //
+    
+    //Age button
+    public void ageClick(View view) {
+    	sendMessage(server,custom_messages.TRADE_AGE + ":22");                
+	}
+    //
+    
+    //Sex button
+	public void sexClick(View view) {
+    	sendMessage(server,custom_messages.TRADE_SEX + ":1");                
+	}
+	//
+	
+	//Location button
+	public void locationClick(View view) {
+    	sendMessage(server,custom_messages.TRADE_LOCATION + ":32:12");                
+	}
+	//
+
+       
     //For connecting to server
     public void connectServer(){
     	dialog = ProgressDialog.show(Menu.this, "", "Connecting to server...", true);
@@ -264,7 +248,6 @@ public class Menu extends Activity {
         setListAdapter();        
         
         connectServer();
-        prepareUI();
         requestConversation();
         
     }
