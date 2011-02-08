@@ -35,6 +35,12 @@ public class Menu extends Activity {
     public String partner;
     public Boolean is_started = false;
     public ProgressDialog dialog;
+    public String partnerName;
+    public Integer partnerAge;
+    public Integer partnerSex;
+    public String partnerLocation;
+    public String partnerID = "Stranger";
+    
     
     // Function to send a message
     public void sendMessage(String to, String text){
@@ -52,6 +58,15 @@ public class Menu extends Activity {
         Log.i("XMPPClient", "onCreate called");
         setContentView(R.layout.main);
 
+        // Get buttons from Layout
+        Button send = (Button) this.findViewById(R.id.send);
+        Button end = (Button) this.findViewById(R.id.end);
+        Button trade_name = (Button) this.findViewById(R.id.trade_name);
+        Button trade_sex = (Button) this.findViewById(R.id.trade_sex);
+        Button trade_age = (Button) this.findViewById(R.id.trade_age);
+        Button trade_location = (Button) this.findViewById(R.id.trade_location);
+
+        
         
         mSendText = (EditText) this.findViewById(R.id.sendText);
         Log.i("XMPPClient", "mSendText = " + mSendText);
@@ -59,6 +74,7 @@ public class Menu extends Activity {
         Log.i("XMPPClient", "mList = " + mList);
         setListAdapter();        
         
+        	
         
         
         String host = "mageroya.com";
@@ -98,14 +114,13 @@ public class Menu extends Activity {
         sendMessage(server, custom_messages.PENDING_CONVERSATION + ":32:12");
         dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
         
-        
 
-        // Set a listener to send a chat text message
-        Button send = (Button) this.findViewById(R.id.send);
+        //Buttons
+
+        // Set a listener to send button
         send.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {
                 String text = mSendText.getText().toString();
-                
                 if (is_started){
                 	sendMessage(partner,text);
                 	messages.add("You: " + text);
@@ -113,12 +128,50 @@ public class Menu extends Activity {
                 }
                 else{
                 	sendMessage(server,text);
-                }
-                
+                }   
             }
-            
         });
         //
+        
+        // Set a listener to end button
+        end.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+                	sendMessage(server,custom_messages.DELETE_CONVERSATION);                
+            }
+        });
+        //
+
+        // Set a listener to name button
+        trade_name.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+                	sendMessage(server,custom_messages.TRADE_NAME + ":Ahmet");                
+            }
+        });
+        //
+        // Set a listener to age button
+        trade_age.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+                	sendMessage(server,custom_messages.TRADE_AGE + ":22");                
+            }
+        });
+        //
+        // Set a listener to sex button
+        trade_sex.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+                	sendMessage(server,custom_messages.TRADE_SEX + ":1");                
+            }
+        });
+        //
+        // Set a listener to location button
+        trade_location.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+                	sendMessage(server,custom_messages.TRADE_LOCATION + ":32:12");                
+            }
+        });
+        //
+
+        
+        
     }
     
     
@@ -141,8 +194,9 @@ public class Menu extends Activity {
                         if (fromName.equals(server)){ //If this message is from conversation server
                         	String msg = message.getBody();
                         	String command = msg.split(":")[0];	
-                            Log.i("XMPPClient", "Got " + command + msg.split(":")[1]);
 
+                            //Handle Server Messages
+                            
                             // START_CONVERSATION
                         	if (command.equals(custom_messages.START_CONVERSATION)){
 
@@ -158,10 +212,71 @@ public class Menu extends Activity {
     	                            }
     	                        });
                         	}
-                        	                    	
+                        	//
+
+                            // TRADE_NAME
+                        	if (command.equals(custom_messages.TRADE_NAME)){
+                        		String name = msg.split(":")[1];
+                                messages.add("Your Partner's name is: " + name);
+    	                        // Add the incoming message to the list view
+    	                        mHandler.post(new Runnable() {
+    	                            public void run() {
+    	                                setListAdapter();
+    	                            }
+    	                        });
+                        	}
+                        	//
+                        	
+                            // TRADE_SEX
+                        	if (command.equals(custom_messages.TRADE_SEX)){
+                        		Integer sex =  Integer.parseInt(msg.split(":")[1]);
+                        		if (sex == 1){
+                        			messages.add("Your Partner is a man");
+                        		}
+                        		if (sex == 2){
+                        			messages.add("Your Partner is a woman");
+                        		}
+                        			// Add the incoming message to the list view
+    	                        mHandler.post(new Runnable() {
+    	                            public void run() {
+    	                                setListAdapter();
+    	                            }
+    	                        });
+                        	}
+                        	//
+
+                            // TRADE_AGE
+                        	if (command.equals(custom_messages.TRADE_AGE)){
+                        		Integer age = Integer.parseInt(msg.split(":")[1]);
+                        		messages.add("Your Partner is " + age + " years old.");
+                        		// Add the incoming message to the list view
+    	                        mHandler.post(new Runnable() {
+    	                            public void run() {
+    	                                setListAdapter();
+    	                            }
+    	                        });
+                        	}
+                        	//
+
+                            // TRADE_LOCATION
+                        	if (command.equals(custom_messages.TRADE_LOCATION)){
+                        		String location = msg.split(":")[1];
+                        		messages.add("Your Partner is from" + location);
+                        		// Add the incoming message to the list view
+    	                        mHandler.post(new Runnable() {
+    	                            public void run() {
+    	                                setListAdapter();
+    	                            }
+    	                        });
+                        	}
+                        	//
+
+                        	
+                        	
+                        	
                         	
                         }
-                        else{
+                        else{ // If this is a regular message
                             messages.add("Stranger: " + message.getBody());
 	                        // Add the incoming message to the list view
 	                        mHandler.post(new Runnable() {
@@ -171,7 +286,6 @@ public class Menu extends Activity {
 	                        });
                         }
 
-                        Log.i("XMPPClient", "partner [" + partner + "] is_started [" + is_started + "]");
                     }
                 }
             }, filter);

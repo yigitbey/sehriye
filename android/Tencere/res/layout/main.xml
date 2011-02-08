@@ -80,7 +80,8 @@
                 </LinearLayout>
                 <LinearLayout android:layout_height="fill_parent" android:id="@+id/linearLayout7" android:layout_width="10sp"></LinearLayout>
                 <LinearLayout android:layout_width="wrap_content" android:gravity="right" android:layout_height="fill_parent" android:id="@+id/linearLayout8">
-                    <Button android:layout_width="wrap_content" android:text="End" android:id="@+id/end" android:layout_height="wrap_content"></Button>
+                    <Button android:layout_width="wrap_content" android:text="Disconnect"
+                     android:id="@+id/end" android:layout_height="wrap_content"></Button>
                 </LinearLayout>
             </LinearLayout>
 		    <ListView android:id="@+id/listMessages"
