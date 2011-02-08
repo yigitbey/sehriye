@@ -45,8 +45,7 @@ class Conversation(GeoModel):
         @rtype: Conversation
         @return: conversation with user_1 and user_2 populated
         """
-        dummy_email = "a@aa.aaa" # Will be set as user_2 if there does not exist any waiting user 
-        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_2 != :2 AND user_1 = :1  LIMIT 1", current_user, dummy_email) # If user_1 is current user
+        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1  LIMIT 1 AND is_started = :2", current_user, True) # If user_1 is current user
         query2 = db.GqlQuery("SELECT * FROM Conversation WHERE user_2 = :1 LIMIT 1", current_user) # If user_2 is current user
         if query.count() == 1: # On a match for user_1
             self = query.get()            
