@@ -41,6 +41,7 @@ public class Menu extends Activity {
     public Integer partnerSex;
     public String partnerLocation;
     public String partnerID = "Stranger";
+    private Button end;
     
     
     // Function to send a message
@@ -83,16 +84,20 @@ public class Menu extends Activity {
     		dialog.dismiss();
             messages.add("---Conversation Started---");
             updateMessages();
+            end.setText("End");
+
     	}
     	//
 
         // DELETE_CONVERSATION
     	if (command.equals(custom_messages.DELETE_CONVERSATION)){
-    		is_started = false;
+    		
             messages.add("---Disconnected---");
             updateMessages();
-        	Button end = (Button) this.findViewById(R.id.end);
             end.setText("New");
+            is_started = false;
+            
+            
 
     	}
     	//
@@ -245,6 +250,8 @@ public class Menu extends Activity {
 
         mSendText = (EditText) this.findViewById(R.id.sendText);
         mList = (ListView) this.findViewById(R.id.listMessages);
+        end = (Button) this.findViewById(R.id.end);
+
         setListAdapter();        
         
         connectServer();
