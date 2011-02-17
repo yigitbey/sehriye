@@ -112,9 +112,16 @@
 - (void)goOnline
 {
 	NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
-	[presence addAttributeWithName:@"type" stringValue:@"subscribe"];
+	[presence addAttributeWithName:@"type" stringValue:@"subscribed"];
+	
 	
 	[[self xmppStream] sendElement:presence];
+	
+	NSXMLElement *presence2 = [NSXMLElement elementWithName:@"presence" stringValue:@"available"];
+	//[presence2 addAttributeWithName:@"type" stringValue:@"subscribe"];
+	
+	
+	[[self xmppStream] sendElement:presence2];
 }
 
 - (void)goOffline

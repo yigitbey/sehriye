@@ -36,6 +36,7 @@
 		1173020C12F748A400809A51 /* RFSRVResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1173020912F748A400809A51 /* RFSRVResolver.m */; };
 		1173023912F74CCD00809A51 /* XMPPTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1173023712F74CCD00809A51 /* XMPPTestViewController.m */; };
 		1173023A12F74CCD00809A51 /* XMPPTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1173023812F74CCD00809A51 /* XMPPTestViewController.xib */; };
+		11C45B69130B219400DCA936 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C45B68130B219400DCA936 /* CoreLocation.framework */; };
 		1D3623260D0F684500981E51 /* XMPPTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* XMPPTestAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -101,6 +102,7 @@
 		1173023612F74CCD00809A51 /* XMPPTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPTestViewController.h; sourceTree = "<group>"; };
 		1173023712F74CCD00809A51 /* XMPPTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPTestViewController.m; sourceTree = "<group>"; };
 		1173023812F74CCD00809A51 /* XMPPTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = XMPPTestViewController.xib; path = Classes/XMPPTestViewController.xib; sourceTree = "<group>"; };
+		11C45B68130B219400DCA936 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* XMPPTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPTestAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* XMPPTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPTestAppDelegate.m; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				1173012D12F73A6E00809A51 /* SystemConfiguration.framework in Frameworks */,
 				117301C212F7455600809A51 /* CoreData.framework in Frameworks */,
 				117301C412F7456C00809A51 /* libresolv.dylib in Frameworks */,
+				11C45B69130B219400DCA936 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +301,7 @@
 				1173012C12F73A6E00809A51 /* SystemConfiguration.framework */,
 				117301C112F7455600809A51 /* CoreData.framework */,
 				117301C312F7456C00809A51 /* libresolv.dylib */,
+				11C45B68130B219400DCA936 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
