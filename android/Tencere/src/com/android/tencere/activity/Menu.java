@@ -13,6 +13,11 @@ import org.jivesoftware.smack.packet.Packet;
 import org.jivesoftware.smack.packet.Presence;
 import org.jivesoftware.smack.util.StringUtils;
 
+
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.content.Context;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -41,10 +46,14 @@ public class Menu extends Activity {
     public Integer partnerSex;
     public String partnerLocation;
     public String partnerID = "Stranger";
-    private Button end;
-    private Button newconversation;
     
     
+    public Button end;
+    public Button newConversation;
+    
+    public LocationManager locmgr = null;
+    public String myLocation;
+	    
     // Function to send a message
     public void sendMessage(String to, String text){
         Log.i("XMPPClient", "Sending text [" + text + "] to [" + to +"]");
@@ -89,7 +98,7 @@ public class Menu extends Activity {
             //end.setText("End");  ///!!!!!?!?!?!?!!
             
             //end.setVisibility(View.VISIBLE); //end is visible
-            //newconversation.setVisibility(View.GONE); //new is invisible
+            //newConversation.setVisibility(View.GONE); //new is invisible
             
             updateMessages();
     	}
@@ -103,7 +112,7 @@ public class Menu extends Activity {
             updateMessages();
 
             //end.setVisibility(View.GONE); //end is invisible
-            //newconversation.setVisibility(View.VISIBLE); //new is visible
+            //newConversation.setVisibility(View.VISIBLE); //new is visible
             
             is_started = false;
            
@@ -116,6 +125,7 @@ public class Menu extends Activity {
     	if (command.equals(custom_messages.TRADE_NAME)){
     		String name = msg.split(":")[1];
             messages.add("Your Partner's name is: " + name);
+            partnerID = name;
             updateMessages();
     	}
     	//
@@ -159,8 +169,6 @@ public class Menu extends Activity {
     
     //End button
     public void endClick(View view) {
-    	Button end = (Button) this.findViewById(R.id.end);
-    	Button newconversation = (Button) this.findViewById(R.id.newconversation);
 
 			sendMessage(server,custom_messages.DELETE_CONVERSATION); //tell the server it's over             
 			is_started = false; //make us note of it
@@ -170,7 +178,7 @@ public class Menu extends Activity {
             //end.setText("New");
            
             end.setVisibility(View.INVISIBLE); //end is invisible
-            newconversation.setVisibility(View.VISIBLE); //new is visible
+            newConversation.setVisibility(View.VISIBLE); //new is visible
             
 	}
     
@@ -178,27 +186,16 @@ public class Menu extends Activity {
     
     //New button
     public void newconversationClick(View view) {
-    	Button end = (Button) this.findViewById(R.id.end);
-    	Button newconversation = (Button) this.findViewById(R.id.newconversation);
     	
         end.setVisibility(View.VISIBLE); //end is visible
-        newconversation.setVisibility(View.INVISIBLE); //new is invisible
+        newConversation.setVisibility(View.INVISIBLE); //new is invisible
     	
 		requestConversation();
 
 		
     }
     //
-    
-    
-    
-
-    //
-    
-    
-   
-    
-    
+        
     
     //Send button
     public void sendClick(View view) {
@@ -235,10 +232,12 @@ public class Menu extends Activity {
 	
 	//Location button
 	public void locationClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_LOCATION + ":32:12");                
+    	sendMessage(server,custom_messages.TRADE_LOCATION + ":" + myLocation);                
 	}
 	//
-
+		
+	
+	
        
     //For connecting to server
     public void connectServer(){
@@ -284,11 +283,14 @@ public class Menu extends Activity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.main);
-
+        
         mSendText = (EditText) this.findViewById(R.id.sendText);
         mList = (ListView) this.findViewById(R.id.listMessages);
         end = (Button) this.findViewById(R.id.end);
-
+    	newConversation = (Button) this.findViewById(R.id.newconversation);
+    	locmgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+    	  
+    	
         setListAdapter();        
         
         connectServer();
@@ -326,7 +328,7 @@ public class Menu extends Activity {
                         	handleCustomMessage(msg); //Handle it with this function
                         }
                         else{ // If this is a regular message
-                            messages.add("Stranger: " + msg);
+                            messages.add(partnerID + ": " + msg);
                             updateMessages();
                         }
                     }
@@ -342,7 +344,42 @@ public class Menu extends Activity {
         mList.setAdapter(adapter);
     }
     // End of setListAdapter function
+    LocationListener onLocationChange=new LocationListener() {
+        public void onLocationChanged(Location loc) {
+            //sets and displays the lat/long when a location is provided
+            String latlong = loc.getLatitude() + ":" + loc.getLongitude();   
+            myLocation = latlong;
+        }
+         
+        public void onProviderDisabled(String provider) {
+        // required for interface, not used
+        }
+         
+        public void onProviderEnabled(String provider) {
+        // required for interface, not used
+        }
+         
+        public void onStatusChanged(String provider, int status,
+        Bundle extras) {
+        // required for interface, not used
+        }
+    };
+    
+    //pauses listener while app is inactive
+    @Override
+    public void onPause() {
+        super.onPause();
+        locmgr.removeUpdates(onLocationChange);
+    }
+    
+    //reactivates listener when app is resumed
+    @Override
+    public void onResume() {
+        super.onResume();
+        locmgr.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,10000.0f,onLocationChange);
+    }
 
-
+    
+    
 }
 // End of class Menu
