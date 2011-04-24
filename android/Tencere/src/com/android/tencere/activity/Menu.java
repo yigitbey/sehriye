@@ -41,8 +41,9 @@ public class Menu extends Activity {
     public Integer partnerSex;
     public String partnerLocation;
     public String partnerID = "Stranger";
-    private Button end;
-    private Button newconversation;
+
+    public Button end;
+    public Button newConversation;
     
     
     // Function to send a message
@@ -80,15 +81,14 @@ public class Menu extends Activity {
     	
         // START_CONVERSATION
     	if (command.equals(custom_messages.START_CONVERSATION)){
+    		
     		partner = msg.split(":")[1];
     		is_started = true;
     		dialog.dismiss();
+    		
             messages.add("---Conversation Started---");
-            updateMessages();
-            //end.setText("End");  ///!!!!!?!?!?!?!!
-            
-            //end.setVisibility(View.VISIBLE); //end is visible
-            //newconversation.setVisibility(View.GONE); //new is invisible
+           // end.setVisibility(View.VISIBLE); //end is visible
+           // newConversation.setVisibility(View.GONE); //new is invisible
             
             updateMessages();
 
@@ -97,17 +97,14 @@ public class Menu extends Activity {
 
         // DELETE_CONVERSATION
     	if (command.equals(custom_messages.DELETE_CONVERSATION)){
-    		
-            messages.add("---Disconnected---");
-            updateMessages();
-            //end.setText("New");
-            
-            //end.setVisibility(View.GONE); //end is invisible
-            //newconversation.setVisibility(View.VISIBLE); //new is visible
-            
+
             is_started = false;
-           
             
+            messages.add("---Disconnected---");
+        //  end.setVisibility(View.INVISIBLE); //end is invisible
+        //  newConversation.setVisibility(View.VISIBLE); //new is visible
+            
+            updateMessages();
 
     	}
     	//
@@ -158,30 +155,24 @@ public class Menu extends Activity {
     
     //End button
     public void endClick(View view) {
-    	Button end = (Button) this.findViewById(R.id.end);
-    	Button newconversation = (Button) this.findViewById(R.id.newconversation);
 
-			sendMessage(server,custom_messages.DELETE_CONVERSATION); //tell the server it's over             
+			sendMessage(server,custom_messages.DELETE_CONVERSATION);            
 			is_started = false; //make us note of it
             messages.add("---Disconnected---");
             updateMessages();
-
-            //end.setText("New");
            
-            end.setVisibility(View.INVISIBLE); //end is invisible
-            newconversation.setVisibility(View.VISIBLE); //new is visible
+         // end.setVisibility(View.INVISIBLE); //end is invisible
+         // newConversation.setVisibility(View.VISIBLE); //new is visible
             
 	}
     
     
     
-    //New button
+    //NewConversation button
     public void newconversationClick(View view) {
-    	Button end = (Button) this.findViewById(R.id.end);
-    	Button newconversation = (Button) this.findViewById(R.id.newconversation);
     	
-        end.setVisibility(View.VISIBLE); //end is visible
-        newconversation.setVisibility(View.INVISIBLE); //new is invisible
+       // end.setVisibility(View.VISIBLE); //end is visible
+       // newConversation.setVisibility(View.INVISIBLE); //new is invisible
     	
 		requestConversation();
 
@@ -287,12 +278,14 @@ public class Menu extends Activity {
         mSendText = (EditText) this.findViewById(R.id.sendText);
         mList = (ListView) this.findViewById(R.id.listMessages);
         end = (Button) this.findViewById(R.id.end);
+        newConversation = (Button) this.findViewById(R.id.newconversation);
 
-        setListAdapter();        
-        
+
+        setListAdapter();
+
         connectServer();
         requestConversation();
-        
+
     }
     // End of onCreate function
     

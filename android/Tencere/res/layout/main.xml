@@ -13,9 +13,9 @@
 		            />
 		            <LinearLayout android:layout_height="wrap_content"  android:gravity="right" android:id="@+id/linearLayout8" android:layout_width="fill_parent" android:fadingEdge="vertical|horizontal">
 		              
-		                <Button android:textSize="10sp" android:text="NEW" android:onClick="newconversationClick" android:layout_width="wrap_content" android:id="@+id/newconversation" android:fadingEdge="vertical" android:layout_height="30dip" android:textStyle="bold"></Button>
+		                <Button android:textSize="12sp" android:text="NEW" android:onClick="newconversationClick" android:id="@+id/newconversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="35dip"></Button>
 		    		     
-		                <Button android:textSize="10sp" android:text="END" android:onClick="endClick" android:layout_width="wrap_content" android:id="@+id/end" android:fadingEdge="vertical" android:layout_height="30dip" android:textStyle="bold"></Button>
+		                <Button android:textSize="12sp" android:text="END" android:onClick="endClick" android:id="@+id/end" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="35dip"></Button>
 		         
 		         
 		            </LinearLayout>
