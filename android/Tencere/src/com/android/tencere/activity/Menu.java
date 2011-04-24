@@ -1,6 +1,6 @@
 package com.android.tencere.activity;
 
-import java.util.ArrayList;
+ import java.util.ArrayList;
 
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.PacketListener;
