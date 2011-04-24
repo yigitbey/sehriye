@@ -36,11 +36,13 @@ public class Menu extends Activity {
     public String partner;
     public Boolean is_started = false;
     public ProgressDialog dialog;
-    public String partnerName;
-    public Integer partnerAge;
+   
+    public String partnerName = "Stranger"; //defaults to "Stranger" (initially not known)
     public Integer partnerSex;
+    public Integer partnerAge;
     public String partnerLocation;
-    public String partnerID = "Stranger";
+    
+    //public String partnerID = "Stranger"; (never used?) 
 
     public Button end;
     public Button newConversation;
@@ -111,15 +113,15 @@ public class Menu extends Activity {
 
         // TRADE_NAME
     	if (command.equals(custom_messages.TRADE_NAME)){
-    		String name = msg.split(":")[1];
-            messages.add("Your Partner's name is: " + name);
+    		partnerName = msg.split(":")[1]; //parse the input to get the name and update partnerName
+            messages.add("Your Partner's name is: " + partnerName); //display the name
             updateMessages();
     	}
     	//
 
         // TRADE_SEX
     	if (command.equals(custom_messages.TRADE_SEX)){
-    		Integer sex =  Integer.parseInt(msg.split(":")[1]);
+    		Integer sex =  Integer.parseInt(msg.split(":")[1]); //parse the input
     		if (sex == 1){
     			messages.add("Your Partner is a man");
     		}
@@ -132,7 +134,7 @@ public class Menu extends Activity {
 
         // TRADE_AGE
     	if (command.equals(custom_messages.TRADE_AGE)){
-    		Integer age = Integer.parseInt(msg.split(":")[1]);
+    		Integer age = Integer.parseInt(msg.split(":")[1]); //parse the input
     		messages.add("Your Partner is " + age + " years old.");
             updateMessages();
     	}
@@ -140,7 +142,7 @@ public class Menu extends Activity {
 
         // TRADE_LOCATION
     	if (command.equals(custom_messages.TRADE_LOCATION)){
-    		String location = msg.split(":")[1];
+    		String location = msg.split(":")[1]; //parse the input
     		messages.add("Your Partner is from " + location);
             updateMessages();
     	}
@@ -310,7 +312,7 @@ public class Menu extends Activity {
                         	handleCustomMessage(msg); //Handle it with this function
                         }
                         else{ // If this is a regular message
-                            messages.add("Stranger: " + msg);
+                            messages.add(partnerName + ": " + msg);
                             updateMessages();
                         }
                     }
