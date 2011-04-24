@@ -83,9 +83,9 @@ public class Menu extends Activity {
     		is_started = true;
     		dialog.dismiss();
             messages.add("---Conversation Started---");
+            //end.setText("End");
             updateMessages();
-            end.setText("End");
-
+   
     	}
     	//
 
@@ -93,8 +93,9 @@ public class Menu extends Activity {
     	if (command.equals(custom_messages.DELETE_CONVERSATION)){
     		
             messages.add("---Disconnected---");
+            //end.setText("New");
             updateMessages();
-            end.setText("New");
+
             is_started = false;
             
             
@@ -148,7 +149,7 @@ public class Menu extends Activity {
     
     //End button
     public void endClick(View view) {
-    	Button end = (Button) this.findViewById(R.id.end);
+    	end = (Button) this.findViewById(R.id.end);
     	if (is_started == true){
 			sendMessage(server,custom_messages.DELETE_CONVERSATION);                
 			is_started = false;
@@ -259,6 +260,14 @@ public class Menu extends Activity {
         
     }
     // End of onCreate function
+
+    // Called on the activity destroy.
+    @Override
+    public void onDestroy() {
+    	sendMessage(server,custom_messages.DELETE_CONVERSATION);                
+    }
+    // End of destroy function
+
     
     /**
      * Called when a connection is established with the XMPP server
