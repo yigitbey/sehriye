@@ -42,6 +42,7 @@ public class Menu extends Activity {
     public String partnerLocation;
     public String partnerID = "Stranger";
     private Button end;
+    private Button newconversation;
     
     
     // Function to send a message
@@ -85,7 +86,12 @@ public class Menu extends Activity {
             messages.add("---Conversation Started---");
             //end.setText("End");
             updateMessages();
-   
+            //end.setText("End");  ///!!!!!?!?!?!?!!
+            
+            //end.setVisibility(View.VISIBLE); //end is visible
+            //newconversation.setVisibility(View.GONE); //new is invisible
+            
+            updateMessages();
     	}
     	//
 
@@ -96,8 +102,11 @@ public class Menu extends Activity {
             //end.setText("New");
             updateMessages();
 
-            is_started = false;
+            //end.setVisibility(View.GONE); //end is invisible
+            //newconversation.setVisibility(View.VISIBLE); //new is visible
             
+            is_started = false;
+           
             
 
     	}
@@ -139,6 +148,7 @@ public class Menu extends Activity {
             updateMessages();
     	}
     	//
+    	
 
     	
     }
@@ -149,20 +159,46 @@ public class Menu extends Activity {
     
     //End button
     public void endClick(View view) {
-    	end = (Button) this.findViewById(R.id.end);
-    	if (is_started == true){
-			sendMessage(server,custom_messages.DELETE_CONVERSATION);                
-			is_started = false;
+    	Button end = (Button) this.findViewById(R.id.end);
+    	Button newconversation = (Button) this.findViewById(R.id.newconversation);
+
+			sendMessage(server,custom_messages.DELETE_CONVERSATION); //tell the server it's over             
+			is_started = false; //make us note of it
             messages.add("---Disconnected---");
             updateMessages();
-            end.setText("New");
+
+            //end.setText("New");
+           
+            end.setVisibility(View.INVISIBLE); //end is invisible
+            newconversation.setVisibility(View.VISIBLE); //new is visible
             
-		}
-		else{
-			requestConversation();
-		}
+	}
+    
+    
+    
+    //New button
+    public void newconversationClick(View view) {
+    	Button end = (Button) this.findViewById(R.id.end);
+    	Button newconversation = (Button) this.findViewById(R.id.newconversation);
+    	
+        end.setVisibility(View.VISIBLE); //end is visible
+        newconversation.setVisibility(View.INVISIBLE); //new is invisible
+    	
+		requestConversation();
+
+		
     }
     //
+    
+    
+    
+
+    //
+    
+    
+   
+    
+    
     
     //Send button
     public void sendClick(View view) {
