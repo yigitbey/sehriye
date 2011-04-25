@@ -87,6 +87,7 @@ public class Menu extends Activity {
     		dialog.dismiss();
     		
             messages.add("---Conversation Started---");
+      
            // end.setVisibility(View.VISIBLE); //end is visible
            // newConversation.setVisibility(View.GONE); //new is invisible
             
@@ -217,13 +218,17 @@ public class Menu extends Activity {
     
     //Name button
     public void nameClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_NAME + ":Ahmet");                
+//    	sendMessage(server,custom_messages.TRADE_NAME + ":Ahmet");
+    	sendMessage(server,custom_messages.TRADE_NAME + ":" + android.os.SystemClock.elapsedRealtime() + " Bey");                
+
     }
     //
     
     //Age button
     public void ageClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_AGE + ":22");                
+//    	sendMessage(server,custom_messages.TRADE_AGE + ":22");  
+    	sendMessage(server,custom_messages.TRADE_AGE + ":" + android.os.SystemClock.currentThreadTimeMillis()/50);               
+
 	}
     //
     
