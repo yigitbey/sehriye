@@ -140,7 +140,7 @@ public class Menu extends Activity {
     		
     		Integer age = Integer.parseInt(msg.split(":")[1]); //parse the input
     		messages.add("Your Partner is " + age + " years old.");
-    		partnerAge = Integer.toString(age); //update partnerAge (Integer to String? strong typed?)
+    		partnerAge = Integer.toString(age); //update partnerAge
             updateMessages();
             
     	}
@@ -299,6 +299,7 @@ public class Menu extends Activity {
     }
     // End of onCreate function
     
+
     /**
      * Called when a connection is established with the XMPP server
      * @param connection
