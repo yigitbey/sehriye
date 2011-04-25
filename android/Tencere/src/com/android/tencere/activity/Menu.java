@@ -37,12 +37,13 @@ public class Menu extends Activity {
     public Boolean is_started = false;
     public ProgressDialog dialog;
    
-    public String partnerName = "Stranger"; //defaults to "Stranger" (initially not known)
-    public Integer partnerSex;
-    public Integer partnerAge;
-    public String partnerLocation;
-    
-    //public String partnerID = "Stranger"; (never used?) 
+    public String partnerName = "Stranger"; //initially not known
+    /*public String partnerSex = null; // initially not known
+    public String partnerAge = null; //initially not known
+    public String partnerLocation = null; //initially not known*/
+    public String partnerSex = ""; // initially not known
+    public String partnerAge = ""; //initially not known
+    public String partnerLocation = ""; //initially not known
 
     public Button end;
     public Button newConversation;
@@ -111,40 +112,50 @@ public class Menu extends Activity {
     	}
     	//
 
-        // TRADE_NAME
+    	 // TRADE_NAME
     	if (command.equals(custom_messages.TRADE_NAME)){
-    		partnerName = msg.split(":")[1]; //parse the input to get the name and update partnerName
-            messages.add("Your Partner's name is: " + partnerName); //display the name
+    		String name = msg.split(":")[1];
+            messages.add("Your Partner's name is: " + name);
+            partnerName = name; //update partnerName
             updateMessages();
     	}
     	//
 
         // TRADE_SEX
     	if (command.equals(custom_messages.TRADE_SEX)){
+    		
     		Integer sex =  Integer.parseInt(msg.split(":")[1]); //parse the input
     		if (sex == 1){
     			messages.add("Your Partner is a man");
+    			partnerSex = "M"; //update partnerSex
     		}
     		if (sex == 2){
     			messages.add("Your Partner is a woman");
+    			partnerSex = "F"; //update partnerSex
     		}
             updateMessages();
+            
     	}
     	//
 
         // TRADE_AGE
     	if (command.equals(custom_messages.TRADE_AGE)){
+    		
     		Integer age = Integer.parseInt(msg.split(":")[1]); //parse the input
     		messages.add("Your Partner is " + age + " years old.");
+    		partnerAge = Integer.toString(age); //update partnerAge (Integer to String? strong typed?)
             updateMessages();
+            
     	}
     	//
 
         // TRADE_LOCATION
     	if (command.equals(custom_messages.TRADE_LOCATION)){
+    		
     		String location = msg.split(":")[1]; //parse the input
     		messages.add("Your Partner is from " + location);
             updateMessages();
+            
     	}
     	//
 
@@ -312,8 +323,26 @@ public class Menu extends Activity {
                         	handleCustomMessage(msg); //Handle it with this function
                         }
                         else{ // If this is a regular message
-                            messages.add(partnerName + ": " + msg);
-                            updateMessages();
+                        	if (partnerSex.equals("") && partnerAge.equals("")) { //nothing known besides name
+                                messages.add(partnerName + ": " + msg); //display only the name (with the message)
+                                updateMessages();		
+                        	}
+                        	else { //at least one extra thing is known
+                        		if (partnerSex.equals("")) { //only partnerAge known
+                        		     messages.add(partnerName + " (" + partnerAge +")" + " : " + msg);
+                                     updateMessages();		
+                        		}
+                        		else if (partnerAge.equals("")) { //only partnerSex known
+                        			 messages.add(partnerName + " (" + partnerSex +")" + " : " + msg);
+                                     updateMessages();		
+                        		}
+                        			 else {//both known
+                            			 messages.add(partnerName + " (" + partnerSex + ", " + partnerAge + ")" + " : " + msg);
+                                         updateMessages();                    				 
+                        		     }
+                        		
+                        	}
+
                         }
                     }
                 }
