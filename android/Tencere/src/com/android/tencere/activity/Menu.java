@@ -38,12 +38,9 @@ public class Menu extends Activity {
     public ProgressDialog dialog;
    
     public String partnerName = "Stranger"; //initially not known
-    /*public String partnerSex = null; // initially not known
+    public String partnerSex = null; // initially not known
     public String partnerAge = null; //initially not known
-    public String partnerLocation = null; //initially not known*/
-    public String partnerSex = ""; // initially not known
-    public String partnerAge = ""; //initially not known
-    public String partnerLocation = ""; //initially not known
+    public String partnerLocation = null; //initially not known
 
     public Button end;
     public Button newConversation;
@@ -323,21 +320,21 @@ public class Menu extends Activity {
                         	handleCustomMessage(msg); //Handle it with this function
                         }
                         else{ // If this is a regular message
-                        	if (partnerSex.equals("") && partnerAge.equals("")) { //nothing known besides name
+                        	if (partnerSex==null && partnerAge==null) { //nothing known besides name
                                 messages.add(partnerName + ": " + msg); //display only the name (with the message)
                                 updateMessages();		
                         	}
                         	else { //at least one extra thing is known
-                        		if (partnerSex.equals("")) { //only partnerAge known
-                        		     messages.add(partnerName + " (" + partnerAge +")" + " : " + msg);
+                        		if (partnerSex==null) { //only partnerAge known
+                        		     messages.add(partnerName + " (" + partnerAge +")" + ": " + msg);
                                      updateMessages();		
                         		}
-                        		else if (partnerAge.equals("")) { //only partnerSex known
-                        			 messages.add(partnerName + " (" + partnerSex +")" + " : " + msg);
+                        		else if (partnerAge==null) { //only partnerSex known
+                        			 messages.add(partnerName + " (" + partnerSex +")" + ": " + msg);
                                      updateMessages();		
                         		}
                         			 else {//both known
-                            			 messages.add(partnerName + " (" + partnerSex + ", " + partnerAge + ")" + " : " + msg);
+                            			 messages.add(partnerName + " (" + partnerSex + ", " + partnerAge + ")" + ": " + msg);
                                          updateMessages();                    				 
                         		     }
                         		
