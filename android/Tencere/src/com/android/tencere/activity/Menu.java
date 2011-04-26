@@ -36,11 +36,18 @@ public class Menu extends Activity {
     public String partner;
     public Boolean is_started = false;
     public ProgressDialog dialog;
+    
+    
+    public String myName = android.os.SystemClock.currentThreadTimeMillis()*7 + " Bey";
+    public String myAge = android.os.SystemClock.currentThreadTimeMillis()/10 + "";
+    public String mySex = "1";
+    public String myLocation = "32:12";
    
     public String partnerName = "Stranger"; //initially not known
     public String partnerSex = null; // initially not known
     public String partnerAge = null; //initially not known
     public String partnerLocation = null; //initially not known
+    
 
     public Button end;
     public Button newConversation;
@@ -73,6 +80,23 @@ public class Menu extends Activity {
     }
     // End of requestConversation Function
     
+    
+    
+    //Function to pick your own info from the trade message coming from the server
+    public String infoPicker (String msg, String myinfo) {
+
+		String info1 = msg.split(":")[1]; //get the the info1
+		String info2 = msg.split(":")[2]; //get the the info2
+		
+		if (info1.equals(myinfo)) //info1 is mine
+			return info2;
+		else // info2 is mine
+			return info1;
+				
+    
+    }
+    // End of infoPicker Function
+    
     //Function to handle server messages
     public void handleCustomMessage(String msg){
     	String command = msg.split(":")[0];	
@@ -100,7 +124,6 @@ public class Menu extends Activity {
     	if (command.equals(custom_messages.DELETE_CONVERSATION)){
 
             is_started = false;
-            
             messages.add("---Disconnected---");
         //  end.setVisibility(View.INVISIBLE); //end is invisible
         //  newConversation.setVisibility(View.VISIBLE); //new is visible
@@ -112,36 +135,43 @@ public class Menu extends Activity {
 
     	 // TRADE_NAME
     	if (command.equals(custom_messages.TRADE_NAME)){
-    		String name = msg.split(":")[1];
+    		
+    		String name = infoPicker(msg, myName); //find whichever one belongs to the partner   		
             messages.add("Your Partner's name is: " + name);
             partnerName = name; //update partnerName
-            updateMessages();
+
     	}
     	//
 
         // TRADE_SEX
     	if (command.equals(custom_messages.TRADE_SEX)){
+    		  		
+    		String sex = infoPicker(msg, mySex); //find whichever one belongs to the partner
     		
-    		Integer sex =  Integer.parseInt(msg.split(":")[1]); //parse the input
-    		if (sex == 1){
+    		if (sex.equals("1")){
     			messages.add("Your Partner is a man");
-    			partnerSex = "M"; //update partnerSex
+    			partnerSex = "1"; //update partnerSex
     		}
-    		if (sex == 2){
+    		if (sex.equals("2")){
     			messages.add("Your Partner is a woman");
-    			partnerSex = "F"; //update partnerSex
+    			partnerSex = "2"; //update partnerSex
     		}
+    		
             updateMessages();
             
+            //****************************************************************
+    		//TODO: handle cases other than 1 & 2
+    		//TODO: string for sex? integer? char?
+        
     	}
     	//
 
         // TRADE_AGE
     	if (command.equals(custom_messages.TRADE_AGE)){
     		
-    		Integer age = Integer.parseInt(msg.split(":")[1]); //parse the input
+    		String age = infoPicker(msg, myAge); //find whichever one belongs to the partner
     		messages.add("Your Partner is " + age + " years old.");
-    		partnerAge = Integer.toString(age); //update partnerAge (Integer to String? strong typed?)
+    		partnerAge = age; //update partnerAge
             updateMessages();
             
     	}
@@ -150,8 +180,9 @@ public class Menu extends Activity {
         // TRADE_LOCATION
     	if (command.equals(custom_messages.TRADE_LOCATION)){
     		
-    		String location = msg.split(":")[1]; //parse the input
+    		String location = infoPicker(msg, myLocation); //find whichever one belongs to the partner
     		messages.add("Your Partner is from " + location);
+    		partnerLocation = location; //update partnerLocation
             updateMessages();
             
     	}
@@ -186,7 +217,6 @@ public class Menu extends Activity {
        // newConversation.setVisibility(View.INVISIBLE); //new is invisible
     	
 		requestConversation();
-
 		
     }
     //
@@ -198,17 +228,17 @@ public class Menu extends Activity {
     
     
    
-    
-    
-    
+
     //Send button
     public void sendClick(View view) {
+    	
         String text = mSendText.getText().toString();
     	mSendText.setText("");
         if (is_started){
         	sendMessage(partner,text);
         	messages.add("You: " + text);
             setListAdapter();
+            
         }
         else{
         	//sendMessage(server,text);
@@ -218,29 +248,25 @@ public class Menu extends Activity {
     
     //Name button
     public void nameClick(View view) {
-//    	sendMessage(server,custom_messages.TRADE_NAME + ":Ahmet");
-    	sendMessage(server,custom_messages.TRADE_NAME + ":" + android.os.SystemClock.elapsedRealtime() + " Bey");                
-
+    	sendMessage(server,custom_messages.TRADE_NAME + ":" + myName);
     }
     //
     
     //Age button
-    public void ageClick(View view) {
-//    	sendMessage(server,custom_messages.TRADE_AGE + ":22");  
-    	sendMessage(server,custom_messages.TRADE_AGE + ":" + android.os.SystemClock.currentThreadTimeMillis()/50);               
-
+    public void ageClick(View view) {              
+    	sendMessage(server,custom_messages.TRADE_AGE + ":" + myAge);
 	}
     //
     
     //Sex button
 	public void sexClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_SEX + ":1");                
+    	sendMessage(server,custom_messages.TRADE_SEX + ":" + mySex);                
 	}
 	//
 	
 	//Location button
 	public void locationClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_LOCATION + ":32:12");                
+    	sendMessage(server,custom_messages.TRADE_LOCATION + ":" + myLocation);                
 	}
 	//
 
@@ -287,6 +313,10 @@ public class Menu extends Activity {
     // Called on the activity creation.
     @Override
     public void onCreate(Bundle icicle) {
+    	
+    	//check for internet connection?
+
+    	
         super.onCreate(icicle);
         setContentView(R.layout.main);
 
