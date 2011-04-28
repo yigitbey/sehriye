@@ -139,6 +139,7 @@ public class Menu extends Activity {
     		String name = infoPicker(msg, myName); //find whichever one belongs to the partner   		
             messages.add("Your Partner's name is: " + name);
             partnerName = name; //update partnerName
+            
 
     	}
     	//
@@ -233,8 +234,8 @@ public class Menu extends Activity {
     public void sendClick(View view) {
     	
         String text = mSendText.getText().toString();
-    	mSendText.setText("");
-        if (is_started){
+
+        if (is_started && !text.equals("")) {
         	sendMessage(partner,text);
         	messages.add("You: " + text);
             setListAdapter();
@@ -242,7 +243,10 @@ public class Menu extends Activity {
         }
         else{
         	//sendMessage(server,text);
-        }   
+        }
+        
+    	mSendText.setText("");
+    	
     }
     //
     
@@ -266,7 +270,7 @@ public class Menu extends Activity {
 	
 	//Location button
 	public void locationClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_LOCATION + ":" + myLocation);                
+    	sendMessage(server,custom_messages.TRADE_LOCATION + myLocation);                
 	}
 	//
 
