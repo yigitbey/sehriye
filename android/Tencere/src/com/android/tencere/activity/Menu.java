@@ -140,6 +140,8 @@ public class Menu extends Activity {
             messages.add("Your Partner's name is: " + name);
             partnerName = name; //update partnerName
             
+            updateMessages();
+            
 
     	}
     	//
