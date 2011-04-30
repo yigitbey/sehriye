@@ -39,7 +39,7 @@ public class Menu extends Activity {
     
     
     public String myName = android.os.SystemClock.currentThreadTimeMillis()*5 + " Bey";
-    public String myAge = android.os.SystemClock.currentThreadTimeMillis()/4 + "";
+    public String myAge = android.os.SystemClock.currentThreadTimeMillis()/3 + "";
     public String mySex = "1";
     public String myLocation = "32:12";
    
@@ -157,11 +157,11 @@ public class Menu extends Activity {
     		
     		if (sex.equals("1")){
     			messages.add("Your Partner is a man");
-    			partnerSex = "1"; //update partnerSex
+    			partnerSex = "M"; //update partnerSex
     		}
     		if (sex.equals("2")){
     			messages.add("Your Partner is a woman");
-    			partnerSex = "2"; //update partnerSex
+    			partnerSex = "F"; //update partnerSex
     		}
     		
             updateMessages();
@@ -270,7 +270,10 @@ public class Menu extends Activity {
     
     //Sex button
 	public void sexClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_SEX + ":" + mySex);                
+		int sexForServer;
+		if (mySex=="M") sexForServer = 1;
+		else sexForServer = 2;
+    	sendMessage(server,custom_messages.TRADE_SEX + ":" + sexForServer);                
 	}
 	//
 	
