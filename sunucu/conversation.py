@@ -73,11 +73,13 @@ class Conversation(GeoModel):
         """ 
 
         ### Get 10 near match. See U{http://code.google.com/p/geomodel/wiki/Usage}
-        box_la = float(la) - 0.1
-        box_lo = float(lo) - 0.1
+        box_la = float(la) - 0.05
+        box_lo = float(lo) - 0.05
+        box_la1 = float(la) + 0.05
+        box_lo1 = float(lo) + 0.05
         results = Conversation.bounding_box_fetch(
             Conversation.all().filter('is_started', False), # Only conversations that have not started yet
-            geotypes.Box(float(la),float(lo),float(box_la),float(box_lo)),
+            geotypes.Box(float(box_la1),float(box_lo1),float(box_la),float(box_lo)),
             max_results=10, #Maximum number of results
             )
         ###
