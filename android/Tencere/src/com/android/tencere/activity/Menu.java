@@ -70,7 +70,7 @@ public class Menu extends Activity {
     
     // Function to reset partner values
     public void clearConversation() {
-    	partnerName = null;
+    	partnerName = "Stranger";
     	partnerSex = null;
     	partnerAge = null;
     	partnerLocation = null;
@@ -100,6 +100,8 @@ public class Menu extends Activity {
     	
     	double[] location = getGPS();
     	myLocation = Double.toString(location[0]) + ":" + Double.toString(location[1]); //set myLocation
+		messages.add("myLocation: " + myLocation); updateMessages(); //DEBUG
+
         
     	//Send a PENDING_CONVERSATION
         sendMessage(server, custom_messages.PENDING_CONVERSATION + ":" + myLocation);
@@ -115,12 +117,20 @@ public class Menu extends Activity {
 
 		String info1 = msg.split(":")[1]; //get the the info1
 		String info2 = msg.split(":")[2]; //get the the info2
-		
+		messages.add("info1: " + info1 + "        info2:  " + info2); updateMessages(); //DEBUG
+		messages.add("mine was: " + myinfo); updateMessages(); //DEBUG
+
+	
+		String info;
 		if (info1.equals(myinfo)) //info1 is mine
-			return info2;
+			info = info2;
 		else // info2 is mine
-			return info1;
-				
+			info = info1;
+		
+		
+		messages.add("hence i pick: " + info); updateMessages(); //DEBUG
+		return info;
+
     
     }
     // End of infoPicker Function
