@@ -43,14 +43,22 @@ public class Menu extends Activity {
     public Boolean is_started = false;
     public ProgressDialog dialog;
     
+    
+    
+    
+    
     public String myName = android.os.SystemClock.currentThreadTimeMillis()*5 + " Bey";
     public String myAge = android.os.SystemClock.currentThreadTimeMillis()/3 + "";
     public String mySex = "1";
+    public String myLocation;
    
     public String partnerName = "Stranger"; //initially not known
     public String partnerSex = null; // initially not known
     public String partnerAge = null; //initially not known
     public String partnerLocation = null; //initially not known
+    
+    
+    
     
 
     public Button end;
@@ -58,7 +66,6 @@ public class Menu extends Activity {
     
     
     public LocationManager locmgr = null;
-    public String myLocation;
 	    
     // Function to send a message
     public void sendMessage(String to, String text){
