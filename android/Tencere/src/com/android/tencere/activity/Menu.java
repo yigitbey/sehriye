@@ -50,7 +50,7 @@ public class Menu extends Activity {
     public String myName = android.os.SystemClock.currentThreadTimeMillis()*5 + " Bey";
     public String myAge = android.os.SystemClock.currentThreadTimeMillis()/3 + "";
     public String mySex = "1";
-    public String myLocation;
+    public String myLocation; //to be set later
    
     public String partnerName = "Stranger"; //initially not known
     public String partnerSex = null; // initially not known
@@ -66,7 +66,16 @@ public class Menu extends Activity {
     
     
     public LocationManager locmgr = null;
-	    
+
+    
+    // Function to reset partner values
+    public void clearConversation() {
+    	partnerName = null;
+    	partnerSex = null;
+    	partnerAge = null;
+    	partnerLocation = null;
+    }
+    
     // Function to send a message
     public void sendMessage(String to, String text){
         Log.e("XMPPClient", "Sending text [" + text + "] to [" + to +"]");
@@ -90,10 +99,11 @@ public class Menu extends Activity {
     public void requestConversation(){
     	
     	double[] location = getGPS();
-    	myLocation = Double.toString(location[0]) + ":" + Double.toString(location[1]);
+    	myLocation = Double.toString(location[0]) + ":" + Double.toString(location[1]); //set myLocation
         
     	//Send a PENDING_CONVERSATION
         sendMessage(server, custom_messages.PENDING_CONVERSATION + ":" + myLocation);
+        messages.add("****I JUST SENT:  " + custom_messages.PENDING_CONVERSATION + ":" + myLocation); updateMessages(); //DEBUG
         dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
     }
     // End of requestConversation Function
@@ -240,6 +250,8 @@ public class Menu extends Activity {
        // end.setVisibility(View.VISIBLE); //end is visible
        // newConversation.setVisibility(View.INVISIBLE); //new is invisible
     	
+    	
+    	clearConversation();
 		requestConversation();
 		
     }
