@@ -83,8 +83,10 @@ public class Menu extends Activity {
     public void requestConversation(){
     	
     	double[] location = getGPS();
-        //Send a PENDING_CONVERSATION
-        sendMessage(server, custom_messages.PENDING_CONVERSATION + ":"+Double.toString(location[0]) + ":" + Double.toString(location[1]));
+    	myLocation = Double.toString(location[0]) + ":" + Double.toString(location[1]);
+        
+    	//Send a PENDING_CONVERSATION
+        sendMessage(server, custom_messages.PENDING_CONVERSATION + ":" + myLocation);
         dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
     }
     // End of requestConversation Function
