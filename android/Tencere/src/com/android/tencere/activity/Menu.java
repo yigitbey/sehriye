@@ -50,7 +50,7 @@ public class Menu extends Activity {
     public String myName = android.os.SystemClock.currentThreadTimeMillis()*5 + " Bey";
     public String myAge = android.os.SystemClock.currentThreadTimeMillis()/3 + "";
     public String mySex = "1";
-    public String myLocation = "32:12";
+    public String myLocation;
    
     public String partnerName = "Stranger"; //initially not known
     public String partnerSex = null; // initially not known
