@@ -38,8 +38,8 @@ public class Menu extends Activity {
     public ProgressDialog dialog;
     
     
-    public String myName = android.os.SystemClock.currentThreadTimeMillis()*7 + " Bey";
-    public String myAge = android.os.SystemClock.currentThreadTimeMillis()/10 + "";
+    public String myName = android.os.SystemClock.currentThreadTimeMillis()*5 + " Bey";
+    public String myAge = android.os.SystemClock.currentThreadTimeMillis()/4 + "";
     public String mySex = "1";
     public String myLocation = "32:12";
    
@@ -55,7 +55,7 @@ public class Menu extends Activity {
     
     // Function to send a message
     public void sendMessage(String to, String text){
-        Log.i("XMPPClient", "Sending text [" + text + "] to [" + to +"]");
+        Log.e("XMPPClient", "Sending text [" + text + "] to [" + to +"]");
         Message msg = new Message(to, Message.Type.chat);
         msg.setBody(text);
         connection.sendPacket(msg);
@@ -99,7 +99,10 @@ public class Menu extends Activity {
     
     //Function to handle server messages
     public void handleCustomMessage(String msg){
+    	messages.add("******message came: " + msg);  updateMessages(); //DEBUG
     	String command = msg.split(":")[0];	
+    	messages.add("******hence the command is: " + command);  updateMessages(); //DEBUG
+
     	Log.i("XMPPClient",command);
 
     	
@@ -135,7 +138,8 @@ public class Menu extends Activity {
 
     	 // TRADE_NAME
     	if (command.equals(custom_messages.TRADE_NAME)){
-    		
+    		//messages.add("MESSAGE THAT CAME TO ME: " + msg); updateMessages(); //DEBUG
+    		//messages.add("my name was: " + myName); updateMessages(); //DEBUG
     		String name = infoPicker(msg, myName); //find whichever one belongs to the partner   		
             messages.add("Your Partner's name is: " + name);
             partnerName = name; //update partnerName
@@ -272,7 +276,7 @@ public class Menu extends Activity {
 	
 	//Location button
 	public void locationClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_LOCATION + myLocation);                
+    	sendMessage(server,custom_messages.TRADE_LOCATION + ":" + myLocation);                
 	}
 	//
 
