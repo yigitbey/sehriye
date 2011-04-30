@@ -13,13 +13,14 @@
 		            />
 		            <LinearLayout android:layout_height="wrap_content"  android:gravity="right" android:id="@+id/linearLayout8" android:layout_width="fill_parent" android:fadingEdge="vertical|horizontal">
 		              
-		                <Button android:textSize="12sp" android:text="NEW" android:onClick="newconversationClick" android:id="@+id/newconversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="35dip"></Button>
+		                <Button android:textSize="11sp" android:text="NEW" android:onClick="newconversationClick" android:id="@+id/newconversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
 		    		     
-		                <Button android:textSize="12sp" android:text="END" android:onClick="endClick" android:id="@+id/end" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="35dip"></Button>
+		                <Button android:textSize="11sp" android:text="END" android:onClick="endClick" android:id="@+id/end" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
 		         
 		         
 		            </LinearLayout>
 		    </RelativeLayout>
+
 		    <HorizontalScrollView android:layout_height="wrap_content" android:id="@+id/horizontalScrollView1" android:layout_width="fill_parent" android:padding="5px" android:fadingEdge="vertical" android:foregroundGravity="fill_horizontal|center_horizontal" android:isScrollContainer="true" android:layout_gravity="center">
 		        <LinearLayout android:id="@+id/linearLayout3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="horizontal">
 
@@ -48,10 +49,12 @@
 
                 	<Button android:id="@+id/send" 
 	                	android:onClick="sendClick"	
-        				android:text="Send"
+        				android:text="   Send   "
         				android:layout_height="wrap_content" 
-        				android:layout_width="wrap_content">
+        				android:layout_width="wrap_content" android:textStyle="bold" android:textSize="18sp">
         		</Button>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+
