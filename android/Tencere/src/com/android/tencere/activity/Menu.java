@@ -99,9 +99,9 @@ public class Menu extends Activity {
     
     //Function to handle server messages
     public void handleCustomMessage(String msg){
-    	messages.add("******message came: " + msg);  updateMessages(); //DEBUG
+    	//messages.add("******message came: " + msg);  updateMessages(); //DEBUG
     	String command = msg.split(":")[0];	
-    	messages.add("******hence the command is: " + command);  updateMessages(); //DEBUG
+    	//messages.add("******hence the command is: " + command);  updateMessages(); //DEBUG
 
     	Log.i("XMPPClient",command);
 
