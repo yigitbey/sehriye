@@ -20,6 +20,6 @@
         </activity>
    
     </application>
-    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="4"/>
+    <uses-sdk android:targetSdkVersion="7" android:minSdkVersion="7"/>
 
 </manifest> 
