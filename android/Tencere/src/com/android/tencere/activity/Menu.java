@@ -19,10 +19,14 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -266,7 +270,42 @@ public class Menu extends Activity {
     
     //Name button
     public void nameClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_NAME + ":" + myName);
+    	if (myName == "myNotSetDefaultName"){
+    	
+    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+    		alert.setTitle("Enter your name");
+    		alert.setMessage("Enter your name to succeed.");
+
+    		// Set an EditText view to get user input 
+    		final EditText input = new EditText(this);
+    		alert.setView(input);
+
+    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+    			public void onClick(DialogInterface dialog, int whichButton) {
+    				Editable value = input.getText();
+    				// Do something with value!
+    				if (value.toString().length() > 0){
+    					myName = value.toString();
+    					SharedPreferences settings = getPreferences(0);
+    					SharedPreferences.Editor editor = settings.edit();
+    					editor.putString("name", myName);
+    					editor.commit();
+
+    				}
+    				else myName = "myNotSetDefaultName";
+
+    					
+    			}
+    		});
+
+    		
+
+    		alert.show();
+    	}
+    	if (myName != "myNotSetDefaultName" || myName != ""){
+    		sendMessage(server,custom_messages.TRADE_NAME + ":" + myName);
+    	}
     }
     //
     
@@ -350,7 +389,10 @@ public class Menu extends Activity {
     	newConversation = (Button) this.findViewById(R.id.newconversation);
     	locmgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     	  
+    	SharedPreferences settings = getPreferences(0);
+        myName = settings.getString("name", "myNotSetDefaultName");
     	
+        
         setListAdapter();        
         
         connectServer();
