@@ -303,16 +303,51 @@ public class Menu extends Activity {
 
     		alert.show();
     	}
-    	if (myName != "myNotSetDefaultName" || myName != ""){
+    	if (myName != "myNotSetDefaultName" && myName != ""){
     		sendMessage(server,custom_messages.TRADE_NAME + ":" + myName);
     	}
     }
     //
     
     //Age button
-    public void ageClick(View view) {              
-    	sendMessage(server,custom_messages.TRADE_AGE + ":" + myAge);
-	}
+    public void ageClick(View view) {
+    	if (myAge == "myNotSetDefaultAge"){
+        	
+    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+    		alert.setTitle("Enter your age");
+    		alert.setMessage("Enter your age to succeed.");
+
+    		// Set an EditText view to get user input 
+    		final EditText input = new EditText(this);
+    		alert.setView(input);
+
+    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+    			public void onClick(DialogInterface dialog, int whichButton) {
+    				Editable value = input.getText();
+    				// Do something with value!
+    				if (value.toString().length() > 0){
+    					myAge = value.toString();
+    					SharedPreferences settings = getPreferences(0);
+    					SharedPreferences.Editor editor = settings.edit();
+    					editor.putString("age", myAge);
+    					editor.commit();
+
+    				}
+    				else myAge = "myNotSetDefaultName";
+
+    					
+    			}
+    		});
+
+    		
+
+    		alert.show();
+    	}
+    	if (myAge != "myNotSetDefaultAge" && myAge != ""){
+    		sendMessage(server,custom_messages.TRADE_AGE + ":" + myAge);
+    	}
+    }
     //
     
     //Sex button
@@ -391,7 +426,7 @@ public class Menu extends Activity {
     	  
     	SharedPreferences settings = getPreferences(0);
         myName = settings.getString("name", "myNotSetDefaultName");
-    	
+    	myAge = settings.getString("age","myNotSetDefaultAge");
         
         setListAdapter();        
         
