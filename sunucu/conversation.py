@@ -31,6 +31,8 @@ class Conversation(GeoModel):
     user_1_age = db.IntegerProperty() #: Age of user_1.
     user_1_name = db.StringProperty() #: Name of user_1.    
     user_1_sex = db.IntegerProperty() #: Sex of user_1. See U{http://en.wikipedia.org/wiki/ISO_5218}
+    user_1_phone = db.StringProperty() #: Phone number of user_1.
+    user_1_mail = db.StringProperty() #: Mail of user_1
 
 
     def getPartner(self,current_user):
@@ -213,3 +215,24 @@ class Conversation(GeoModel):
             xmpp.send_message(self.user_1,message_to_send)
             xmpp.send_message(self.user_2,message_to_send)
 
+    def setTradePhone(self, phone):
+        
+        if self.user_1_phone == None:
+            self.user_1_phone = phone
+            self.put()
+        else:
+            self.user_2_phone = phone
+            message_to_send = TRADE_PHONE + ":" + str(self.user_1_phone) + ":" + str(self.user_2_phone)
+            xmpp.send_message(self.user_1, message_to_send)
+            xmpp.send_message(self.user_2, message_to_send)
+
+    def setTradeMail(self, mail):
+
+        if self.user_1_mail == None:
+            self.user_1_mail = mail
+            self.put()
+        else:
+            self.user_2_mail = mail
+            message_to_send = TRADE_MAIL + ":" + str(self.user_1_mail) + ":" + str(self.user_2_mail)
+            xmpp.send_message(self.user_1, message_to_send)
+            xmpp.send_message(self.user_2, message_to_send)
