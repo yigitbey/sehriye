@@ -398,12 +398,12 @@ public class Menu extends Activity {
             setConnection(connection);
             
         } catch (XMPPException ex) {
-            Log.e("XMPPClient", "[SettingsDialog] Failed to log in as anonymous" );
-            Log.e("XMPPClient", ex.toString());
+        	Log.e("XMPPClient", "[SettingsDialog] Failed to log in as anonymous" );
+        	Log.e("XMPPClient", ex.toString());
             setConnection(null);
         }
         
-        dialog.dismiss();
+        dialog.dismiss(); //Clear the connection pending dialog
     }
     // End of connectServer function
     
