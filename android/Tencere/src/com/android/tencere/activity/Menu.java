@@ -1,6 +1,7 @@
 package com.android.tencere.activity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.PacketListener;
@@ -13,10 +14,19 @@ import org.jivesoftware.smack.packet.Packet;
 import org.jivesoftware.smack.packet.Presence;
 import org.jivesoftware.smack.util.StringUtils;
 
+
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -36,16 +46,34 @@ public class Menu extends Activity {
     public String partner;
     public Boolean is_started = false;
     public ProgressDialog dialog;
-    public String partnerName;
-    public Integer partnerAge;
-    public Integer partnerSex;
-    public String partnerLocation;
-    public String partnerID = "Stranger";
     
     
+    
+    
+    
+    public String myName = android.os.SystemClock.currentThreadTimeMillis()*5 + " Bey";
+    public String myAge = android.os.SystemClock.currentThreadTimeMillis()/3 + "";
+    public String mySex = "1";
+    public String myLocation;
+   
+    public String partnerName = "Stranger"; //initially not known
+    public String partnerSex = null; // initially not known
+    public String partnerAge = null; //initially not known
+    public String partnerLocation = null; //initially not known
+    
+    
+    
+    
+
+    public Button end;
+    public Button newConversation;
+    
+    
+    public LocationManager locmgr = null;
+	    
     // Function to send a message
     public void sendMessage(String to, String text){
-        Log.i("XMPPClient", "Sending text [" + text + "] to [" + to +"]");
+        Log.e("XMPPClient", "Sending text [" + text + "] to [" + to +"]");
         Message msg = new Message(to, Message.Type.chat);
         msg.setBody(text);
         connection.sendPacket(msg);
@@ -56,7 +84,7 @@ public class Menu extends Activity {
     public void updateMessages(){
     	mHandler.post(new Runnable() {
             public void run() {
-                setListAdapter();
+                setListAdapter(); 
             }
         });
     }
@@ -64,75 +92,129 @@ public class Menu extends Activity {
     
     //Function to request a conversation
     public void requestConversation(){
-        //Send a PENDING_CONVERSATION
-        sendMessage(server, custom_messages.PENDING_CONVERSATION + ":32:12");
+    	
+    	double[] location = getGPS();
+    	myLocation = Double.toString(location[0]) + ":" + Double.toString(location[1]);
+        
+    	//Send a PENDING_CONVERSATION
+        sendMessage(server, custom_messages.PENDING_CONVERSATION + ":" + myLocation);
         dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
     }
     // End of requestConversation Function
     
+    
+    
+    //Function to pick your own info from the trade message coming from the server
+    public String infoPicker (String msg, String myinfo) {
+
+		String info1 = msg.split(":")[1]; //get the the info1
+		String info2 = msg.split(":")[2]; //get the the info2
+		
+		if (info1.equals(myinfo)) //info1 is mine
+			return info2;
+		else // info2 is mine
+			return info1;
+				
+    
+    }
+    // End of infoPicker Function
+    
     //Function to handle server messages
     public void handleCustomMessage(String msg){
+    	//messages.add("******message came: " + msg);  updateMessages(); //DEBUG
     	String command = msg.split(":")[0];	
+    	//messages.add("******hence the command is: " + command);  updateMessages(); //DEBUG
+
     	Log.i("XMPPClient",command);
 
     	
         // START_CONVERSATION
     	if (command.equals(custom_messages.START_CONVERSATION)){
+    		
     		partner = msg.split(":")[1];
     		is_started = true;
     		dialog.dismiss();
+    		
             messages.add("---Conversation Started---");
+      
+           // end.setVisibility(View.VISIBLE); //end is visible
+           // newConversation.setVisibility(View.GONE); //new is invisible
+            
             updateMessages();
     	}
     	//
 
         // DELETE_CONVERSATION
     	if (command.equals(custom_messages.DELETE_CONVERSATION)){
-    		is_started = false;
+            is_started = false;
             messages.add("---Disconnected---");
+        //  end.setVisibility(View.INVISIBLE); //end is invisible
+        //  newConversation.setVisibility(View.VISIBLE); //new is visible
+            
             updateMessages();
-        	Button end = (Button) this.findViewById(R.id.end);
-            end.setText("New");
 
     	}
     	//
 
-        // TRADE_NAME
+    	 // TRADE_NAME
     	if (command.equals(custom_messages.TRADE_NAME)){
-    		String name = msg.split(":")[1];
+    		//messages.add("MESSAGE THAT CAME TO ME: " + msg); updateMessages(); //DEBUG
+    		//messages.add("my name was: " + myName); updateMessages(); //DEBUG
+    		String name = infoPicker(msg, myName); //find whichever one belongs to the partner   		
             messages.add("Your Partner's name is: " + name);
+            partnerName = name; //update partnerName
+            
             updateMessages();
+            
+
     	}
     	//
 
         // TRADE_SEX
     	if (command.equals(custom_messages.TRADE_SEX)){
-    		Integer sex =  Integer.parseInt(msg.split(":")[1]);
-    		if (sex == 1){
+    		  		
+    		String sex = infoPicker(msg, mySex); //find whichever one belongs to the partner
+    		
+    		if (sex.equals("1")){
     			messages.add("Your Partner is a man");
+    			partnerSex = "M"; //update partnerSex
     		}
-    		if (sex == 2){
+    		if (sex.equals("2")){
     			messages.add("Your Partner is a woman");
+    			partnerSex = "F"; //update partnerSex
     		}
+    		
             updateMessages();
+            
+            //****************************************************************
+    		//TODO: handle cases other than 1 & 2
+    		//TODO: string for sex? integer? char?
+        
     	}
     	//
 
         // TRADE_AGE
     	if (command.equals(custom_messages.TRADE_AGE)){
-    		Integer age = Integer.parseInt(msg.split(":")[1]);
+    		
+    		String age = infoPicker(msg, myAge); //find whichever one belongs to the partner
     		messages.add("Your Partner is " + age + " years old.");
+    		partnerAge = age; //update partnerAge
             updateMessages();
+            
     	}
     	//
 
         // TRADE_LOCATION
     	if (command.equals(custom_messages.TRADE_LOCATION)){
-    		String location = msg.split(":")[1];
+    		
+    		String location = infoPicker(msg, myLocation); //find whichever one belongs to the partner
     		messages.add("Your Partner is from " + location);
+    		partnerLocation = location; //update partnerLocation
             updateMessages();
+            
     	}
     	//
+    	
 
     	
     }
@@ -143,60 +225,148 @@ public class Menu extends Activity {
     
     //End button
     public void endClick(View view) {
-    	Button end = (Button) this.findViewById(R.id.end);
-    	if (is_started == true){
-			sendMessage(server,custom_messages.DELETE_CONVERSATION);                
-			is_started = false;
+
+			sendMessage(server,custom_messages.DELETE_CONVERSATION);            
+			is_started = false; //make us note of it
             messages.add("---Disconnected---");
             updateMessages();
-            end.setText("New");
+           
+         // end.setVisibility(View.INVISIBLE); //end is invisible
+         // newConversation.setVisibility(View.VISIBLE); //new is visible
             
-		}
-		else{
-			requestConversation();
-		}
+	}
+    
+    
+    
+    //NewConversation button
+    public void newconversationClick(View view) {
+    	
+       // end.setVisibility(View.VISIBLE); //end is visible
+       // newConversation.setVisibility(View.INVISIBLE); //new is invisible
+    	
+		requestConversation();
+		
     }
     //
-    
     //Send button
     public void sendClick(View view) {
+    	
         String text = mSendText.getText().toString();
-    	mSendText.setText("");
-        if (is_started){
+
+        if (is_started && !text.equals("")) {
         	sendMessage(partner,text);
         	messages.add("You: " + text);
             setListAdapter();
+            
         }
         else{
         	//sendMessage(server,text);
-        }   
+        }
+        
+    	mSendText.setText("");
+    	
     }
     //
     
     //Name button
     public void nameClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_NAME + ":Ahmet");                
+    	if (myName == "myNotSetDefaultName"){
+    	
+    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+    		alert.setTitle("Enter your name");
+    		alert.setMessage("Enter your name to succeed.");
+
+    		// Set an EditText view to get user input 
+    		final EditText input = new EditText(this);
+    		alert.setView(input);
+
+    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+    			public void onClick(DialogInterface dialog, int whichButton) {
+    				Editable value = input.getText();
+    				// Do something with value!
+    				if (value.toString().length() > 0){
+    					myName = value.toString();
+    					SharedPreferences settings = getPreferences(0);
+    					SharedPreferences.Editor editor = settings.edit();
+    					editor.putString("name", myName);
+    					editor.commit();
+
+    				}
+    				else myName = "myNotSetDefaultName";
+
+    					
+    			}
+    		});
+
+    		
+
+    		alert.show();
+    	}
+    	if (myName != "myNotSetDefaultName" && myName != ""){
+    		sendMessage(server,custom_messages.TRADE_NAME + ":" + myName);
+    	}
     }
     //
     
     //Age button
     public void ageClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_AGE + ":22");                
-	}
+    	if (myAge == "myNotSetDefaultAge"){
+        	
+    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+    		alert.setTitle("Enter your age");
+    		alert.setMessage("Enter your age to succeed.");
+
+    		// Set an EditText view to get user input 
+    		final EditText input = new EditText(this);
+    		alert.setView(input);
+
+    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+    			public void onClick(DialogInterface dialog, int whichButton) {
+    				Editable value = input.getText();
+    				// Do something with value!
+    				if (value.toString().length() > 0){
+    					myAge = value.toString();
+    					SharedPreferences settings = getPreferences(0);
+    					SharedPreferences.Editor editor = settings.edit();
+    					editor.putString("age", myAge);
+    					editor.commit();
+
+    				}
+    				else myAge = "myNotSetDefaultName";
+
+    					
+    			}
+    		});
+
+    		
+
+    		alert.show();
+    	}
+    	if (myAge != "myNotSetDefaultAge" && myAge != ""){
+    		sendMessage(server,custom_messages.TRADE_AGE + ":" + myAge);
+    	}
+    }
     //
     
     //Sex button
 	public void sexClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_SEX + ":1");                
+		int sexForServer;
+		if (mySex=="M") sexForServer = 1;
+		else sexForServer = 2;
+    	sendMessage(server,custom_messages.TRADE_SEX + ":" + sexForServer);                
 	}
 	//
 	
 	//Location button
 	public void locationClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_LOCATION + ":32:12");                
+    	sendMessage(server,custom_messages.TRADE_LOCATION + ":" + myLocation);                
 	}
 	//
-
+		
+	
+	
        
     //For connecting to server
     public void connectServer(){
@@ -228,30 +398,51 @@ public class Menu extends Activity {
             setConnection(connection);
             
         } catch (XMPPException ex) {
-            Log.e("XMPPClient", "[SettingsDialog] Failed to log in as anonymous" );
-            Log.e("XMPPClient", ex.toString());
+        	Log.e("XMPPClient", "[SettingsDialog] Failed to log in as anonymous" );
+        	Log.e("XMPPClient", ex.toString());
             setConnection(null);
         }
         
-        dialog.dismiss();
+        dialog.dismiss(); //Clear the connection pending dialog
     }
     // End of connectServer function
     
     // Called on the activity creation.
     @Override
     public void onCreate(Bundle icicle) {
+    	
+    	//check for internet connection?
+
+    	
         super.onCreate(icicle);
         setContentView(R.layout.main);
-
+        
         mSendText = (EditText) this.findViewById(R.id.sendText);
         mList = (ListView) this.findViewById(R.id.listMessages);
+        end = (Button) this.findViewById(R.id.end);
+
+    	newConversation = (Button) this.findViewById(R.id.newconversation);
+    	locmgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+    	  
+    	SharedPreferences settings = getPreferences(0);
+        myName = settings.getString("name", "myNotSetDefaultName");
+    	myAge = settings.getString("age","myNotSetDefaultAge");
+        
         setListAdapter();        
         
         connectServer();
         requestConversation();
-        
+
     }
     // End of onCreate function
+
+    // Called on the activity destroy.
+    @Override
+    public void onDestroy() {
+    	sendMessage(server,custom_messages.DELETE_CONVERSATION);                
+    }
+    // End of destroy function
+
     
     /**
      * Called when a connection is established with the XMPP server
@@ -274,8 +465,26 @@ public class Menu extends Activity {
                         	handleCustomMessage(msg); //Handle it with this function
                         }
                         else{ // If this is a regular message
-                            messages.add("Stranger: " + msg);
-                            updateMessages();
+                        	if (partnerSex==null && partnerAge==null) { //nothing known besides name
+                                messages.add(partnerName + ": " + msg); //display only the name (with the message)
+                                updateMessages();		
+                        	}
+                        	else { //at least one extra thing is known
+                        		if (partnerSex==null) { //only partnerAge known
+                        		     messages.add(partnerName + " (" + partnerAge +")" + ": " + msg);
+                                     updateMessages();		
+                        		}
+                        		else if (partnerAge==null) { //only partnerSex known
+                        			 messages.add(partnerName + " (" + partnerSex +")" + ": " + msg);
+                                     updateMessages();		
+                        		}
+                        			 else {//both known
+                            			 messages.add(partnerName + " (" + partnerSex + ", " + partnerAge + ")" + ": " + msg);
+                                         updateMessages();                    				 
+                        		     }
+                        		
+                        	}
+
                         }
                     }
                 }
@@ -290,7 +499,61 @@ public class Menu extends Activity {
         mList.setAdapter(adapter);
     }
     // End of setListAdapter function
+    LocationListener onLocationChange=new LocationListener() {
+        public void onLocationChanged(Location loc) {
+            //sets and displays the lat/long when a location is provided
+            String latlong = loc.getLatitude() + ":" + loc.getLongitude();   
+            myLocation = latlong;
+        }
+         
+        public void onProviderDisabled(String provider) {
+        // required for interface, not used
+        }
+         
+        public void onProviderEnabled(String provider) {
+        // required for interface, not used
+        }
+         
+        public void onStatusChanged(String provider, int status,
+        Bundle extras) {
+        // required for interface, not used
+        }
+    };
+    
+    //pauses listener while app is inactive
+    @Override
+    public void onPause() {
+        super.onPause();
+        locmgr.removeUpdates(onLocationChange);
+    }
+    
+    //reactivates listener when app is resumed
+    @Override
+    public void onResume() {
+        super.onResume();
+        locmgr.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,10000.0f,onLocationChange);
+    }
 
+    
+    private double[] getGPS() {
+   	 LocationManager lm = (LocationManager) getSystemService(
+   	  Context.LOCATION_SERVICE);
+   	 List<String> providers = lm.getProviders(true);
 
+   	 Location l = null;
+   	 
+   	 for (int i=providers.size()-1; i>=0; i--) {
+   	  l = lm.getLastKnownLocation(providers.get(i));
+   	  if (l != null) break;
+   	 }
+   	 
+   	 double[] gps = new double[2];
+   	 if (l != null) {
+   	  gps[0] = l.getLatitude();
+   	  gps[1] = l.getLongitude();
+   	 }
+
+   	 return gps;
+   	}
 }
 // End of class Menu

@@ -1,111 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-        >
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:orientation="horizontal"
-                  android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-            >
-    </LinearLayout>
-    <ListView android:id="@+id/listMessages"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:scrollbars="horizontal"
-            />
-    <EditText android:id="@+id/sendText"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:singleLine="true"
-              android:textSize="16sp"
-              android:autoText="false"
-              android:capitalize="none"
-              android:scrollHorizontally="true"/>
-    <Button android:id="@+id/send"
-            android:text="Send" android:layout_height="wrap_content" android:layout_width="60px">
-    </Button>
-</LinearLayout>
 
-
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="fill_parent" android:id="@+id/tableLayout1" android:shrinkColumns="*" android:layout_width="fill_parent">
-        <TableRow android:id="@+id/tableRow1" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        	<Button android:id="@+id/Disconnect" 
-        		android:text="Disconnect"
-        		android:layout_width="80sp" 
-        		android:layout_height="fill_parent"
-        		android:shrinkColumns="*">
-        	</Button>            
-        </TableRow>
-        <TableRow android:id="@+id/tableRow2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="*">
-            <ListView android:id="@+id/listMessages" 
-            	android:layout_height="fill_parent" 
-            	android:scrollbars="horizontal" 
-            	android:layout_width="240sp"
-            	android:stretchColumns="*">
-            </ListView>
-        </TableRow>
-        <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        	<EditText android:id="@+id/sendText"
-            	android:layout_height="wrap_content"
-              	android:singleLine="false"
-              	android:textSize="16sp"
-              	android:autoText="false"
-              	android:capitalize="none"
-              	android:scrollHorizontally="true" android:layout_width="240sp"/>
-        	<Button android:id="@+id/send" 
-        		android:text="Send"
-        		android:layout_height="fill_parent" android:layout_width="80sp">
-        	</Button>
-        </TableRow>
-    </TableLayout>
-
--->
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@+id/linearLayout1" android:orientation="horizontal">
         <LinearLayout android:id="@+id/linearLayout2" android:orientation="vertical" android:layout_height="fill_parent" android:layout_width="fill_parent">
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/linearLayout3">
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout4">
-                    <Button android:text="Name" android:id="@+id/trade_name"  android:layout_width="wrap_content" android:onClick="nameClick" android:layout_height="wrap_content" android:textSize="10px"></Button>
-                    <Button android:text="Sex" android:id="@+id/trade_sex" android:layout_width="wrap_content" android:onClick="sexClick" android:layout_height="wrap_content" android:textSize="10px"></Button>
-                    <Button android:text="Age" android:id="@+id/trade_age" android:layout_width="wrap_content" android:onClick="ageClick" android:layout_height="wrap_content" android:textSize="10px"></Button>
-                    <Button android:text="Location" android:id="@+id/trade_location" android:onClick="locationClick" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="10px"></Button>
-                    <Button android:text="Number" android:id="@+id/number"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="10px"></Button>
-                </LinearLayout>
-                <LinearLayout android:layout_height="fill_parent" android:id="@+id/linearLayout7" android:layout_width="10sp"></LinearLayout>
-                <LinearLayout android:layout_width="wrap_content" android:gravity="right" android:layout_height="fill_parent" android:id="@+id/linearLayout8">
-                    <Button android:layout_width="wrap_content" android:text="End" android:onClick="endClick" android:textSize="10px"
-                     android:id="@+id/end" android:layout_height="wrap_content"></Button>
-                </LinearLayout>
-            </LinearLayout>
+		    <RelativeLayout android:layout_height="wrap_content" android:layout_weight="1" android:layout_width="wrap_content" android:id="@+id/relativeLayout1">
+		    		 
 		    <ListView android:id="@+id/listMessages"
 		              android:layout_width="wrap_content"
 		              android:layout_height="wrap_content"
-		              android:layout_weight="1"
+					  android:drawSelectorOnTop="true"
 		              android:stackFromBottom="true"
 		              android:transcriptMode="normal" 
-		            />          
+		            />
+		            <LinearLayout android:layout_height="wrap_content"  android:gravity="right" android:id="@+id/linearLayout8" android:layout_width="fill_parent" android:fadingEdge="vertical|horizontal">
+		              
+		                <Button android:textSize="11sp" android:text="NEW" android:onClick="newconversationClick" android:id="@+id/newconversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
+		    		     
+		                <Button android:textSize="11sp" android:text="END" android:onClick="endClick" android:id="@+id/end" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
+		         
+		         
+		            </LinearLayout>
+		    </RelativeLayout>
+
+		    <HorizontalScrollView android:layout_height="wrap_content" android:id="@+id/horizontalScrollView1" android:layout_width="fill_parent" android:padding="5px" android:fadingEdge="vertical" android:foregroundGravity="fill_horizontal|center_horizontal" android:isScrollContainer="true" android:layout_gravity="center">
+		       	<TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1" android:layout_height="fill_parent">
+		              <TableRow android:layout_width="fill_parent" android:id="@+id/tableRow1" android:layout_height="fill_parent">
+		                <Button android:textSize="10sp" android:text="Name" android:layout_height="wrap_content" android:onClick="nameClick" android:layout_width="wrap_content" android:id="@+id/trade_name"></Button>
+		                <Button android:textSize="10sp" android:text="Sex" android:layout_height="wrap_content" android:onClick="sexClick" android:layout_width="wrap_content" android:id="@+id/trade_sex"></Button>
+		                <Button android:textSize="10sp" android:text="Age" android:layout_height="wrap_content" android:onClick="ageClick" android:layout_width="wrap_content" android:id="@+id/trade_age"></Button>
+		                <Button android:textSize="10sp" android:text="Location" android:layout_height="wrap_content" android:onClick="locationClick" android:layout_width="wrap_content" android:id="@+id/trade_location"></Button>
+		                <Button android:textSize="10sp" android:text="Number" android:layout_height="wrap_content" android:onClick="numberClick" android:layout_width="wrap_content" android:id="@+id/number"></Button>
+	            		<Button android:textSize="10sp" android:text="Mail" android:layout_height="wrap_content" android:onClick="mailClick" android:layout_width="wrap_content" android:id="@+id/mail"></Button>
+	            </TableRow>
+		        </TableLayout>
+		       	
+
+		    </HorizontalScrollView>          
             <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/linearLayout9">
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout10">
                 	<EditText android:id="@+id/sendText"
 		            	android:layout_height="wrap_content"
+		            	android:layout_width="wrap_content"
 		              	android:singleLine="false"
 		              	android:textSize="16sp"
 		              	android:autoText="false"
 		              	android:capitalize="none"
-		              	
+		              	android:layout_weight="1" 
 		              	android:scrollHorizontally="true" 
-		              	android:layout_width="240sp"/>
-		        </LinearLayout>
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/linearLayout11">
+		              	/>
+
                 	<Button android:id="@+id/send" 
 	                	android:onClick="sendClick"	
-        				android:text="Send"
-        				android:layout_height="fill_parent" 
-        				android:layout_width="80sp">
-        	</Button></LinearLayout>
+        				android:text="   Send   "
+        				android:layout_height="wrap_content" 
+        				android:layout_width="wrap_content" android:textStyle="bold" android:textSize="18sp">
+        		</Button>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
 

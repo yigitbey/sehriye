@@ -31,6 +31,8 @@ class Conversation(GeoModel):
     user_1_age = db.IntegerProperty() #: Age of user_1.
     user_1_name = db.StringProperty() #: Name of user_1.    
     user_1_sex = db.IntegerProperty() #: Sex of user_1. See U{http://en.wikipedia.org/wiki/ISO_5218}
+    user_1_phone = db.StringProperty() #: Phone number of user_1.
+    user_1_mail = db.StringProperty() #: Mail of user_1
 
 
     def getPartner(self,current_user):
@@ -72,11 +74,13 @@ class Conversation(GeoModel):
         """ 
 
         ### Get 10 near match. See U{http://code.google.com/p/geomodel/wiki/Usage}
-        box_la = float(la) - 0.1
-        box_lo = float(lo) - 0.1
+        box_la = float(la) - 0.05
+        box_lo = float(lo) - 0.05
+        box_la1 = float(la) + 0.05
+        box_lo1 = float(lo) + 0.05
         results = Conversation.bounding_box_fetch(
             Conversation.all().filter('is_started', False), # Only conversations that have not started yet
-            geotypes.Box(float(la),float(lo),float(box_la),float(box_lo)),
+            geotypes.Box(float(box_la1),float(box_lo1),float(box_la),float(box_lo)),
             max_results=10, #Maximum number of results
             )
         ###
@@ -210,3 +214,24 @@ class Conversation(GeoModel):
             xmpp.send_message(self.user_1,message_to_send)
             xmpp.send_message(self.user_2,message_to_send)
 
+    def setTradePhone(self, phone):
+        
+        if self.user_1_phone == None:
+            self.user_1_phone = phone
+            self.put()
+        else:
+            self.user_2_phone = phone
+            message_to_send = TRADE_PHONE + ":" + str(self.user_1_phone) + ":" + str(self.user_2_phone)
+            xmpp.send_message(self.user_1, message_to_send)
+            xmpp.send_message(self.user_2, message_to_send)
+
+    def setTradeMail(self, mail):
+
+        if self.user_1_mail == None:
+            self.user_1_mail = mail
+            self.put()
+        else:
+            self.user_2_mail = mail
+            message_to_send = TRADE_MAIL + ":" + str(self.user_1_mail) + ":" + str(self.user_2_mail)
+            xmpp.send_message(self.user_1, message_to_send)
+            xmpp.send_message(self.user_2, message_to_send)

@@ -73,6 +73,12 @@ class XMPPHandler(webapp.RequestHandler):
             pass_message = False
         ###
 
+        elif command == TRADE_PHONE: # If a clients want to send his phone number
+            sender = message.sender.split("/")[0] #: Remove the identifier string from JID
+            phone = message.body.split(":")[1] #: Phone number of the user
+            conversation.setTradePhone(phone)
+            pass_message = False #: Sets if the message will be passed to partner
+
         return pass_message
             
     def post(self):
@@ -81,6 +87,7 @@ class XMPPHandler(webapp.RequestHandler):
 
         @rtype: None
         """
+        #TODO: Delete this variable.
         dummy_email = "a@aa.aaa" #: Dummy Email. Will be used for user_2 if there is no match.
         message = xmpp.Message(self.request.POST) 
         pass_message = True #: Whether the message will be passed to partner

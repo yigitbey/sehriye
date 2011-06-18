@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>xmpphandler.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>xmpphandler.py</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-0'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-0">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="kn">from</span> <span class="nn">google.appengine.api</span> <span class="kn">import</span> <span class="n">xmpp</span>
+<span class="kn">from</span> <span class="nn">google.appengine.ext</span> <span class="kn">import</span> <span class="n">webapp</span>
+<span class="kn">from</span> <span class="nn">google.appengine.ext</span> <span class="kn">import</span> <span class="n">db</span>
+
+<span class="kn">from</span> <span class="nn">conversation</span> <span class="kn">import</span> <span class="n">Conversation</span>
+<span class="kn">from</span> <span class="nn">custom_messages</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">logging</span><span class="o">,</span> <span class="nn">time</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        <p>Class for handling xmpp events</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="k">class</span> <span class="nc">XMPPHandler</span><span class="p">(</span><span class="n">webapp</span><span class="o">.</span><span class="n">RequestHandler</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p>def customMessageHandler(self,conversation,message):</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="n">Handling</span> <span class="n">custom</span> <span class="n">messages</span> <span class="n">imported</span> <span class="kn">from</span> <span class="nn">custom_messages.py</span>
+        
+        <span class="nd">@param</span> <span class="n">conversation</span><span class="p">:</span> <span class="n">Current</span> <span class="n">Conversation</span>
+        <span class="nd">@type</span> <span class="n">conversation</span><span class="p">:</span> <span class="n">Conversation</span> <span class="kn">from</span> <span class="nn">conversation.py</span>
+        <span class="nd">@param</span> <span class="n">message</span><span class="p">:</span> <span class="n">Message</span> <span class="n">to</span> <span class="n">be</span> <span class="n">handled</span>
+        <span class="nd">@type</span> <span class="n">message</span><span class="p">:</span> <span class="n">Class</span> <span class="n">consisting</span> <span class="n">of</span> <span class="n">sender</span><span class="p">,</span><span class="n">body</span><span class="p">,</span><span class="n">to</span>
+
+        <span class="nd">@rtype</span><span class="p">:</span> <span class="nb">bool</span>
+        <span class="nd">@return</span><span class="p">:</span> <span class="bp">True</span> <span class="k">if</span> <span class="n">the</span> <span class="n">message</span> <span class="n">will</span> <span class="n">be</span> <span class="n">passed</span> <span class="n">to</span> <span class="n">partner</span><span class="p">,</span> <span class="bp">False</span> <span class="n">otherwise</span><span class="o">.</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p>command = message.body.split(":")[0] #: Get the first part of the message</p>
+<h3>Disconnect</h3>
+<p>if command == DELETE_CONVERSATION: # If a client wants to disconnect
+<pre>conversation.remove() # Remove the conversation session from database
+pass_message = True</p>
+<h3 />
+</pre>
+
+<h3>Pending Chat</h3>
+<p>elif command == PENDING_CONVERSATION: # If a client wants a conversation
+sender = message.sender.split("/")[0] #: Remove the identifier string from JID
+latitude = message.body.split(":")[1] #: Latitude of user
+longtitude = message.body.split(":")[2] #: Longtitude of user</p>
+<p>conversation.matchPeopleWithProximity(sender, latitude, longtitude) # Try to find a partner</p>
+<p>pass_message = False # Don't pass pending chat requests to clients</p>
+<h3 />
+<h3>Trade Name</h3>
+<p>elif command == TRADE_NAME: # If a clients wants to send his name
+sender = message.sender.split("/")[0] #: Remove the identifer string from JID
+name = message.body.split(":")[1] #: Name of the user
+conversation.setTradeName(name)
+pass_message = False</p>
+<h3 />
+<h3>Trade Age</h3>
+<p>elif command == TRADE_AGE: # If a clients wants to send his age
+sender = message.sender.split("/")[0] #: Remove the identifer string from JID
+age = message.body.split(":")[1] #: Age of the user
+conversation.setTradeAge(age)
+pass_message = False</p>
+<h3 />
+<h3>Trade Location</h3>
+<p>elif command == TRADE_LOCATION: # If a clients wants to send his location
+sender = message.sender.split("/")[0] #: Remove the identifer string from JID
+latitude = message.body.split(":")[1] #: Latitude of the user
+longtitude = message.body.split(":")[2] #: Longtitude of the user
+conversation.setTradeLocation(latitude,longtitude)
+pass_message = False</p>
+<h3 />
+<h3>Trade Sex</h3>
+<p>elif command == TRADE_SEX: # If a clients wants to send his sex (#!?^ FUCK gender specific pronouns #!?^)
+sender = message.sender.split("/")[0] #: Remove the identifer string from JID
+sex = message.body.split(":")[1] #: Sex of the user. See U{http://en.wikipedia.org/wiki/ISO_5218}
+conversation.setTradeSex(sex)
+pass_message = False</p>
+<h3 />
+<p>return pass_message</p>
+<p>def post(self):</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="n">Function</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">received</span> <span class="n">messages</span>
+
+        <span class="nd">@rtype</span><span class="p">:</span> <span class="bp">None</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p>dummy_email = "a@aa.aaa" #: Dummy Email. Will be used for user_2 if there is no match.
+message = xmpp.Message(self.request.POST)
+pass_message = True #: Whether the message will be passed to partner</p>
+<p>sender = message.sender.split("/")[0] # Remove the identifier string from JID
+conversation = Conversation(user_1 = sender, user_2 = dummy_email ,location = db.GeoPt(41,28)) # Create a new conversation
+conversation = conversation.getPartner(sender) # Try to get a partner</p>
+<p>if message.body[0] == "|": # If this is a custom message
+<pre>pass_message = self.customMessageHandler(conversation,message)
+</pre>
+if conversation.is_started == True: # If this conversation has started
+if conversation.user_1 == sender:
+<pre>partner = conversation.user_2
+else:
+partner = conversation.user_1
+</pre>
+if pass_message == True: # If we need to pass this message to client (See custom messages)
+xmpp.send_message(partner, message.body) # Send this message to partner</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

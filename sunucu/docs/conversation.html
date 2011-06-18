@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>conversation.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>conversation.py</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-0'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-0">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="kn">from</span> <span class="nn">google.appengine.ext</span> <span class="kn">import</span> <span class="n">db</span>
+<span class="kn">from</span> <span class="nn">google.appengine.api</span> <span class="kn">import</span> <span class="n">xmpp</span>
+
+<span class="kn">from</span> <span class="nn">geo.geomodel</span> <span class="kn">import</span> <span class="n">GeoModel</span>
+<span class="kn">from</span> <span class="nn">geo</span> <span class="kn">import</span> <span class="n">geotypes</span>
+
+<span class="kn">from</span> <span class="nn">custom_messages</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">import</span> <span class="nn">logging</span><span class="o">,</span> <span class="nn">random</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        <p>For storing conversation sessions on database</p>
+<p>@todo: Decide a method to detect remove discontinued conversations.
+@todo: Revive the old matchPeople method in case of nobody is found on area.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="k">class</span> <span class="nc">Conversation</span><span class="p">(</span><span class="n">GeoModel</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="n">user_1</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">EmailProperty</span><span class="p">()</span> <span class="c">#: JID of user_1</span>
+    <span class="n">user_2</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">EmailProperty</span><span class="p">()</span> <span class="c">#: JID of user_2</span>
+    
+    <span class="n">date_created</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">DateTimeProperty</span><span class="p">(</span><span class="n">auto_now_add</span> <span class="o">=</span> <span class="s">&quot;True&quot;</span><span class="p">)</span> <span class="c">#: Creation date of conversation </span>
+    <span class="n">date_joined</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">DateTimeProperty</span><span class="p">(</span><span class="n">auto_now</span> <span class="o">=</span> <span class="s">&quot;True&quot;</span><span class="p">)</span> <span class="c">#: Join date of user_2</span>
+    <span class="n">is_started</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">BooleanProperty</span><span class="p">(</span><span class="n">default</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span> <span class="c">#: False if a conversation is on pending state</span>
+    </pre></div></pre></div>
+      </td>
+    </tr><tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p>We only need to store one of these on the database,
+since we will send both of them on the event of second trade request.
+Each defaults to null from here. We can control if they have been set by checking against it. </p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="n">user_1_loc</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">GeoPtProperty</span><span class="p">()</span> <span class="c">#: Location of user_1.</span>
+    <span class="n">user_1_age</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">IntegerProperty</span><span class="p">()</span> <span class="c">#: Age of user_1.</span>
+    <span class="n">user_1_name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">StringProperty</span><span class="p">()</span> <span class="c">#: Name of user_1.    </span>
+    <span class="n">user_1_sex</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">IntegerProperty</span><span class="p">()</span> <span class="c">#: Sex of user_1. See U{http://en.wikipedia.org/wiki/ISO_5218}</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p>Function to get the conversation</p>
+<p>If it finds an initiated conversation, it will return that conversation.
+Else it will return the dummy conversation created by calling function.</p>
+<p>@param current_user: JID of user requesting partner
+@type current_user: string
+@rtype: Conversation
+@return: conversation with user_1 and user_2 populated</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">getPartner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">current_user</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="n">dummy_email</span> <span class="o">=</span> <span class="s">&quot;a@aa.aaa&quot;</span> <span class="c"># Will be set as user_2 if there does not exist any waiting user </span>
+        <span class="n">query</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">GqlQuery</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Conversation WHERE user_2 != :2 AND user_1 = :1  LIMIT 1&quot;</span><span class="p">,</span> <span class="n">current_user</span><span class="p">,</span> <span class="n">dummy_email</span><span class="p">)</span> <span class="c"># If user_1 is current user</span>
+        <span class="n">query2</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">GqlQuery</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Conversation WHERE user_2 = :1 LIMIT 1&quot;</span><span class="p">,</span> <span class="n">current_user</span><span class="p">)</span> <span class="c"># If user_2 is current user</span>
+        <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c"># On a match for user_1</span>
+            <span class="bp">self</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>            
+        <span class="k">elif</span> <span class="n">query2</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span> <span class="o">=</span> <span class="n">query2</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+            </pre></div></pre></div>
+      </td>
+    </tr><tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p>Function for matching current user with another user with their proximity</p>
+<p>It will populate self if it finds a match and will toggle is_started,
+otherwise it will create a new entry for this conversation (pending state)
+@param current_user: JID of user requesting partner
+@type current_user: string
+@param la: Latitude of the user
+@type la: float
+@param lo: Longtitude of the user
+@type lo: float
+@rtype: None</p>
+<p>@todo: Clear this algorithm.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">matchPeopleWithProximity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_user</span><span class="p">,</span> <span class="n">la</span><span class="p">,</span><span class="n">lo</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <h2>Get 10 near match. See U{http://code.google.com/p/geomodel/wiki/Usage}</h2>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="n">box_la</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">la</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.1</span>
+        <span class="n">box_lo</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">lo</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.1</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">Conversation</span><span class="o">.</span><span class="n">bounding_box_fetch</span><span class="p">(</span>
+            <span class="n">Conversation</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s">&#39;is_started&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span> <span class="c"># Only conversations that have not started yet</span>
+            <span class="n">geotypes</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">la</span><span class="p">),</span><span class="nb">float</span><span class="p">(</span><span class="n">lo</span><span class="p">),</span><span class="nb">float</span><span class="p">(</span><span class="n">box_la</span><span class="p">),</span><span class="nb">float</span><span class="p">(</span><span class="n">box_lo</span><span class="p">)),</span>
+            <span class="n">max_results</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="c">#Maximum number of results</span>
+            <span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <h2 />
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <h2>If we have any potential match</h2>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> </pre></div></pre></div>
+      </td>
+    </tr><tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <h2>Start a conversation</h2>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>            <span class="bp">self</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_2</span> <span class="o">=</span> <span class="n">current_user</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_started</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">put</span><span class="p">()</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        <h2 />
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;ikinci query geldi&quot;</span><span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <h2>Send partner's JID to participants</h2>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>            <span class="n">message_to_send</span> <span class="o">=</span> <span class="n">START_CONVERSATION</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_2</span><span class="p">)</span> <span class="c">#: Serialize START_CONVERSATION</span>
+            <span class="n">xmpp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_1</span><span class="p">,</span> <span class="n">message_to_send</span><span class="p">)</span> <span class="c"># See custom_messages.py</span>
+            <span class="n">message_to_send</span> <span class="o">=</span> <span class="n">START_CONVERSATION</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_1</span><span class="p">)</span> <span class="c">#: Serialize START_CONVERSATION</span>
+            <span class="n">xmpp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_2</span><span class="p">,</span> <span class="n">message_to_send</span><span class="p">)</span> <span class="c"># See custom_messages.py</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-14'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-14">#</a>
+        </div>
+        <h2 />
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-15'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-15">#</a>
+        </div>
+        <h2 />
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-16'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-16">#</a>
+        </div>
+        <h2>If nobody is waiting (:/) add this user to the waiting list</h2>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">else</span><span class="p">:</span> <span class="c"># Add this user to waiting list</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">GeoPt</span><span class="p">(</span><span class="n">la</span><span class="p">,</span><span class="n">lo</span><span class="p">)</span> <span class="c"># See U{http://code.google.com/p/geomodel/wiki/Usage}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_location</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">put</span><span class="p">()</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;ucuncu query geldi&quot;</span><span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-17'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-17">#</a>
+        </div>
+        <h2 />
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-18'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-18">#</a>
+        </div>
+        <p>Function to delete this conversation
+@rtype: None</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-19'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-19">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="n">db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+       </pre></div></pre></div>
+      </td>
+    </tr><tr id='section-20'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-20">#</a>
+        </div>
+        <p>Function to set name of a user</p>
+<p>If this is the first trade request on this conversation, it will just set the name for user_1
+Else it will send each participant's name to party.
+(user_1 and user_2 are not sorted and same across each field. So clients will get both participant's data.
+Clients need to parse and find the correct value from received data)</p>
+<p>@param name: Name of the user
+@type name: String
+@rtype: None</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">setTradeName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-21'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-21">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_1_name</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span> <span class="c"># First trade request</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_1_name</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">put</span><span class="p">()</span> <span class="c"># We don&#39;t need to save second user&#39;s name to database.     </span>
+        <span class="k">else</span><span class="p">:</span> <span class="c"># Second trade request</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_2_name</span> <span class="o">=</span> <span class="n">name</span> 
+            <span class="n">message_to_send</span> <span class="o">=</span> <span class="n">TRADE_NAME</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_1_name</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_2_name</span> <span class="c"># Serialize the custom message</span>
+            <span class="n">xmpp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_1</span><span class="p">,</span><span class="n">message_to_send</span><span class="p">)</span>
+            <span class="n">xmpp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_2</span><span class="p">,</span><span class="n">message_to_send</span><span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-22'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-22">#</a>
+        </div>
+        <p>Function to set age of a user</p>
+<p>If this is the first trade request on this conversation, it will just set the age for user_1
+Else it will send each participant's age to party.
+(user_1 and user_2 are not sorted and same across each field. So clients will get both participant's data.
+Clients need to parse and find the correct value from received data)</p>
+<p>@param age: Age of the user
+@type age: Integer
+@rtype: None</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">setTradeAge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-23'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-23">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_1_age</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span> <span class="c"># First trade request</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_1_age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">put</span><span class="p">()</span> <span class="c"># We don&#39;t need to save second user&#39;s name to database.          </span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_2_age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="c"># Second trade request</span>
+            <span class="n">message_to_send</span> <span class="o">=</span> <span class="n">TRADE_AGE</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_1_age</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_2_age</span><span class="p">)</span> <span class="c"># Serialize the custom message</span>
+            <span class="n">xmpp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_1</span><span class="p">,</span><span class="n">message_to_send</span><span class="p">)</span>
+            <span class="n">xmpp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_2</span><span class="p">,</span><span class="n">message_to_send</span><span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-24'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-24">#</a>
+        </div>
+        <p>Function to set name of a user</p>
+<p>If this is the first trade request on this conversation, it will just set the location for user_1
+Else it will send each participant's location to party.
+(user_1 and user_2 are not sorted and same across each field. So clients will get both participant's data.
+Clients need to parse and find the correct value from received data)</p>
+<p>@param latitude: Latitude of the user
+@type latitude: Float
+@param longtitude: Longtitude of the user
+@type longtitude: Float
+@rtype: None</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">setTradeLocation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">latitude</span><span class="p">,</span> <span class="n">longtitude</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-25'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-25">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_1_loc</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span> <span class="c"># First trade request</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_1_loc</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">GeoPt</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span><span class="n">longtitude</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">put</span><span class="p">()</span> <span class="c"># We don&#39;t need to save second user&#39;s name to database.     </span>
+        <span class="k">else</span><span class="p">:</span> <span class="c"># Second trade request</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_2_loc</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">GeoPt</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span><span class="n">longtitude</span><span class="p">)</span> 
+            <span class="n">message_to_send</span> <span class="o">=</span> <span class="n">TRADE_LOCATION</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_1_loc</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_2_loc</span><span class="p">)</span> <span class="c"># Serialize the custom message</span>
+            <span class="n">xmpp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_1</span><span class="p">,</span><span class="n">message_to_send</span><span class="p">)</span>
+            <span class="n">xmpp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_2</span><span class="p">,</span><span class="n">message_to_send</span><span class="p">)</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-26'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-26">#</a>
+        </div>
+        <p>Function to set sex of a user</p>
+<p>If this is the first trade request on this conversation, it will just set the sex for user_1
+Else it will send each participant's sex to party.
+(user_1 and user_2 are not sorted and same across each field. So clients will get both participant's data.
+Clients need to parse and find the correct value from received data)</p>
+<p>@param sex: Sex of the user
+@type sex: integer. See U{http://en.wikipedia.org/wiki/ISO_5218}
+@rtype: None</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">setTradeSex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sex</span><span class="p">):</span></pre></div></pre></div>
+      </td>
+    </tr><tr id='section-27'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-27">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_1_sex</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span> <span class="c"># First trade request</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_1_sex</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">put</span><span class="p">()</span> <span class="c"># We don&#39;t need to save second user&#39;s name to database.     </span>
+        <span class="k">else</span><span class="p">:</span> <span class="c"># Second trade request</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_2_sex</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span> 
+            <span class="n">message_to_send</span> <span class="o">=</span> <span class="n">TRADE_SEX</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_1_sex</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_2_sex</span><span class="p">)</span> <span class="c"># Serialize the custom message</span>
+            <span class="n">xmpp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_1</span><span class="p">,</span><span class="n">message_to_send</span><span class="p">)</span>
+            <span class="n">xmpp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_2</span><span class="p">,</span><span class="n">message_to_send</span><span class="p">)</span>
+
+</pre></div></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
