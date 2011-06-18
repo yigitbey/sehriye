@@ -5,3 +5,6 @@ class MainPage(webapp.RequestHandler):
     def get(self):
         """ Placeholder function for mainpage """
         self.response.headers['Content-Type'] = 'text/plain'
+
+
+### Comment test
