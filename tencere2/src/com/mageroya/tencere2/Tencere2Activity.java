@@ -11,3 +11,14 @@ public class Tencere2Activity extends Activity {
         setContentView(R.layout.main);
     }
 }
+
+abstract class User {
+	public String name;
+    public String age;
+    public String sex;
+    public String location;
+    public String phoneNumber;
+    public String email;
+    
+    abstract String getName();
+}
