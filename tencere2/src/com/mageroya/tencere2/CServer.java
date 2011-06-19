@@ -14,14 +14,18 @@ public class CServer{
     public final String TRADE_PHONENUMBER = "|TRAPHO";
     public final String TRADE_EMAIL = "TRAMAI";
 
-    public Conversation requestConversation(LocalUser localUser){
+    public void requestConversation(LocalUser localUser){
 	
-	public double[] location = localUser.getLocation();
-	public String message_to_send = Double.toString(location[0]) + ":" + Double.toString(location[1]);
-	
-	//TODO:
-	//Send a Pending Conversation to server
+       	RemoteUser remoteUser = new RemoteUser(this.address);
+	Conversation conversation = new Conversation(localUser, remoteUser);
 
+	public double[] location = localUser.getLocation();
+	public String myLocation = Double.toString(location[0]) + ":" + Double.toString(location[1]);
+	String message_to_send = this.PENDING_CONVERSATION + ":" + myLocation;
+
+	conversation.sendMessage(remoteUser, message_to_send);
+
+	//TODO: Show "Waiting for a match..." dialog
     }
 
 
