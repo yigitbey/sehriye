@@ -4,7 +4,7 @@ import RemoteUser;
 
 
 public class CServer{
-    public String address;
+    public String address = "buluruzbirsey@appspot.com";
     public final String PENDING_CONVERSATION = "|PENCON";
     public final String START_CONVERSATION = "|STACON";
     public final String DELETE_CONVERSATION = "|DELETE_CONVERSATION";
@@ -23,3 +23,6 @@ public class CServer{
 	//Send a Pending Conversation to server
 
     }
+
+
+}
