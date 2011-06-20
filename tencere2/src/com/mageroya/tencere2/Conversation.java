@@ -11,12 +11,12 @@ public class Conversation{
     public String dateJoined;
     public LocalUser localUser;
     public RemoteUser remoteUser;
-    public ConnConfiguration connConfig;
+    public ConnectionConfiguration connConfig;
     public JServer jserver;
 
     public Conversation(LocalUser localUser, RemoteUser remoteUser){
-	this.connConfig = new ConnectionConfiguration(Jserver.host, Integer.parseInt(Jserver.port), Jserver.service);
-	this.jServer = Jserver(this.connConfig);
+	this.connConfig = new ConnectionConfiguration(JServer.host, Integer.parseInt(JServer.port), JServer.service);
+	this.jserver = JServer(this.connConfig);
 	this.localUser = localUser;
 	this.remoteUser = remoteUser;
 	
