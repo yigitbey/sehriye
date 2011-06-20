@@ -1,5 +1,5 @@
-import JServer;
-import CServer;
+import com.mageroya.tencere2.JServer;
+import com.mageroya.tencere2.CServer;
 
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.packet.Message;

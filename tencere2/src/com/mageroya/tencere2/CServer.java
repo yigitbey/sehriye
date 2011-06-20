@@ -1,6 +1,6 @@
-import Conversation;
-import LocalUser;
-import RemoteUser;
+import com.mageroya.tencere2.Conversation;
+import com.mageroya.tencere2.LocalUser;
+import com.mageroya.tencere2.RemoteUser;
 
 
 public class CServer{
