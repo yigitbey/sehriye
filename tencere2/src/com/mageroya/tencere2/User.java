@@ -13,13 +13,15 @@ public abstract class User {
     abstract String getName();
     abstract String getAge();
     abstract String getSex();
-    abstract double[] getLocation();
+    abstract String getLocation();
     abstract String getPhoneNumber();
     abstract String getEmail();
     
 
-    public User(String JID){
-	this.JID = JID;
+    public User(String JID) {
+    	
+    	this.JID = JID;
+    	
     }
 }
     
