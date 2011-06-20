@@ -12,7 +12,7 @@ public class Conversation{
     public LocalUser localUser;
     public RemoteUser remoteUser;
     public ConnConfiguration connConfig;
-    public Jserver jserver;
+    public JServer jserver;
 
     public Conversation(LocalUser localUser, RemoteUser remoteUser){
 	this.connConfig = new ConnectionConfiguration(Jserver.host, Integer.parseInt(Jserver.port), Jserver.service);
@@ -22,14 +22,14 @@ public class Conversation{
 	
     }
 
-    public void sendMessage(String to, String text){
-	Message msg = new Message(to, Message.Type.chat);
+    public void sendMessage(RemoteUser to, String text){
+	Message msg = new Message(to.JID, Message.Type.chat);
 	msg.setBody(text);
 	this.jserver.sendPacket(msg);
     }
 
     public void sendToPartner(String text){
-	Message msg = new Message(this.remoteUser, Message.Type.chat);
+	Message msg = new Message(this.remoteUser.getName(), Message.Type.chat);
 	msg.setBody(text);
 	this.jserver.sendPacket(msg);
     }
