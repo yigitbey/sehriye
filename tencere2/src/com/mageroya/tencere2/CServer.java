@@ -1,6 +1,6 @@
-import Conversation;
-import LocalUser;
-import RemoteUser;
+import com.mageroya.tencere2.Conversation;
+import com.mageroya.tencere2.LocalUser;
+import com.mageroya.tencere2.RemoteUser;
 
 
 public class CServer{
@@ -16,14 +16,13 @@ public class CServer{
 
     public void requestConversation(LocalUser localUser){
 	
-       	RemoteUser remoteUser = new RemoteUser(this.address);
+    RemoteUser remoteUser = new RemoteUser(this.address);
 	Conversation conversation = new Conversation(localUser, remoteUser);
 
-	public double[] location = localUser.getLocation();
-	public String myLocation = Double.toString(location[0]) + ":" + Double.toString(location[1]);
-	String message_to_send = this.PENDING_CONVERSATION + ":" + myLocation;
+	String location = localUser.getLocation();
+ 	String messageToSend = this.PENDING_CONVERSATION + ":" + location;
 
-	conversation.sendMessage(remoteUser, message_to_send);
+	conversation.sendMessage(remoteUser, messageToSend);
 
 	//TODO: Show "Waiting for a match..." dialog
     }

@@ -1,5 +1,5 @@
-import JServer;
-import CServer;
+import com.mageroya.tencere2.JServer;
+import com.mageroya.tencere2.CServer;
 
 import org.jivesoftware.smack.packet.Message;
 
@@ -10,24 +10,23 @@ public class Conversation{
     public String dateJoined;
     public LocalUser localUser;
     public RemoteUser remoteUser;
-    public ConnConfiguration connConfig;
     public JServer jServer;
 
     public Conversation(LocalUser localUser, RemoteUser remoteUser, JServer jServer){
-	this.jServer = jServer();
+	this.jServer = JServer();
 	this.localUser = localUser;
 	this.remoteUser = remoteUser;
 	
     }
 
-    public void sendMessage(String to, String text){
-	Message msg = new Message(to, Message.Type.chat);
+    public void sendMessage(RemoteUser to, String text){
+	Message msg = new Message(to.JID, Message.Type.chat);
 	msg.setBody(text);
 	this.jserver.sendPacket(msg);
     }
 
     public void sendToPartner(String text){
-	Message msg = new Message(this.remoteUser, Message.Type.chat);
+	Message msg = new Message(this.remoteUser.getName(), Message.Type.chat);
 	msg.setBody(text);
 	this.jserver.sendPacket(msg);
     }
