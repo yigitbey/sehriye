@@ -1,7 +1,6 @@
 import JServer;
 import CServer;
 
-import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.packet.Message;
 
 
@@ -12,11 +11,10 @@ public class Conversation{
     public LocalUser localUser;
     public RemoteUser remoteUser;
     public ConnConfiguration connConfig;
-    public Jserver jserver;
+    public JServer jServer;
 
-    public Conversation(LocalUser localUser, RemoteUser remoteUser){
-	this.connConfig = new ConnectionConfiguration(Jserver.host, Integer.parseInt(Jserver.port), Jserver.service);
-	this.jServer = Jserver(this.connConfig);
+    public Conversation(LocalUser localUser, RemoteUser remoteUser, JServer jServer){
+	this.jServer = jServer();
 	this.localUser = localUser;
 	this.remoteUser = remoteUser;
 	
