@@ -31,6 +31,21 @@ public class Conversation{
 	this.jserver.sendPacket(msg);
     }
 
+    //handleIncomingMessage
+    public void handleIncomingMessage(Message message){
+	String fromName = StringUtils.parseBareAddress(message.getFrom());
+	Log.i("XMPPClient", "Got text [" + message.getBody() + "] from [" + fromName +"]");
+	String msg = message.getBody();
+                        
+	if (fromName.equals(CServer.address)){ //If this message is from conversation server
+	    handleCustomMessage(msg); //Handle it with this function
+	}else{ // If this is a regular message
+	    //messages.add(partnerName + ": " + msg); //display only the name (with the message)
+	    //updateMessages();
+	}
+    }//End of handleMessage
+
+
 
     //Function to handle server messages
     public void handleCustomMessage(String msg){
