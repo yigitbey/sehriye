@@ -1,6 +1,8 @@
 package com.mageroya.tencere2;
 
 
+import com.mageroya.tencere2.LocalUser;
+
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.XMPPException;
@@ -14,6 +16,7 @@ import org.jivesoftware.smack.util.StringUtils;
 
 import android.util.Log;
 
+
 public class JServer {
     public static String host = "mageroya.com";
     public static int port = 5222;
@@ -21,7 +24,7 @@ public class JServer {
     public XMPPConnection connection;
 
 
-    public JServer() {
+    public JServer(LocalUser localUser) {
     	ConnectionConfiguration connConfig = new ConnectionConfiguration(JServer.host, JServer.port, JServer.service);
     	final XMPPConnection connection = new XMPPConnection(connConfig);
 	
@@ -47,6 +50,7 @@ public class JServer {
 		//On exception log it, and set connection as null.
         try{ 
 		    connection.loginAnonymously();
+		    localUser.name = connection.getUser();
 		    
 		    //Log login info
 		    Log.i("XMPPClient", "Logged in as " + connection.getUser());

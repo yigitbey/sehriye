@@ -18,10 +18,10 @@ public abstract class User {
     abstract String getEmail();
     
 
-    public User(String JID) {
-    	
+    public User(String JID) {	
     	this.JID = JID;
-    	
     }
+   
+    
 }
     

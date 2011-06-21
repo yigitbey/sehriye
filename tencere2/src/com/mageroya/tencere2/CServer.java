@@ -1,3 +1,6 @@
+package com.mageroya.tencere2;
+
+import com.mageroya.tencere2.JServer;
 import com.mageroya.tencere2.Conversation;
 import com.mageroya.tencere2.LocalUser;
 import com.mageroya.tencere2.RemoteUser;
@@ -14,17 +17,17 @@ public class CServer{
     public static final String TRADE_PHONENUMBER = "|TRAPHO";
     public static final String TRADE_EMAIL = "TRAMAI";
 
-    public void requestConversation(LocalUser localUser){
+    public void requestConversation(LocalUser localUser, JServer jServer){
 	
-    RemoteUser remoteUser = new RemoteUser(this.address);
-	Conversation conversation = new Conversation(localUser, remoteUser);
-
-	String location = localUser.getLocation();
- 	String messageToSend = this.PENDING_CONVERSATION + ":" + location;
-
-	conversation.sendMessage(remoteUser, messageToSend);
-
-	//TODO: Show "Waiting for a match..." dialog
+	    RemoteUser remoteUser = new RemoteUser(CServer.address);
+		Conversation conversation = new Conversation(localUser, remoteUser,jServer);
+	
+		String location = localUser.getLocation();
+	 	String messageToSend = CServer.PENDING_CONVERSATION + ":" + location;
+	
+		conversation.sendMessage(remoteUser, messageToSend);
+	
+		//TODO: Show "Waiting for a match..." dialog
     }
 
 
