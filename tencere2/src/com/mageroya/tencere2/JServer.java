@@ -68,7 +68,29 @@ public class JServer {
 
     }
 
-    //TODO: Implement setConnection function
+
+    //setConnection
+    public void setConnection (final XMPPConnection connection) {
+        this.connection = connection;
+        if (connection != null) {
+            // Add a packet listener to get messages sent to us
+            PacketFilter filter = new MessageTypeFilter(Message.Type.chat); // Set a filter for only chat type XMPP packets
+            connection.addPacketListener(new PacketListener() { //Set a new Packet Listener on this connection with this filter
+		    public void processPacket(Packet packet) {
+			Message message = (Message) packet; //Cast received package to a XMPP Message
+			if (message.getBody() != null) {
+			    conversation.handleIncomingMessage(message); //Handle the message
+			}
+		    }
+		}, filter);
+        }
+
+
+    }// End of setConnection
+
+
+
+
     
 
 }
