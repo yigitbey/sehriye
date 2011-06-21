@@ -4,15 +4,15 @@ import com.mageroya.tencere2.RemoteUser;
 
 
 public class CServer{
-    public final String address = "buluruzbirsey@appspot.com";
-    public final String PENDING_CONVERSATION = "|PENCON";
-    public final String START_CONVERSATION = "|STACON";
-    public final String DELETE_CONVERSATION = "|DELETE_CONVERSATION";
-    public final String TRADE_LOCATION = "|TRALOC";
-    public final String TRADE_NAME = "|TRANAM";
-    public final String TRADE_SEX = "|TRASEX";
-    public final String TRADE_PHONENUMBER = "|TRAPHO";
-    public final String TRADE_EMAIL = "TRAMAI";
+    public static final String address = "buluruzbirsey@appspot.com";
+    public static final String PENDING_CONVERSATION = "|PENCON";
+    public static final String START_CONVERSATION = "|STACON";
+    public static final String DELETE_CONVERSATION = "|DELETE_CONVERSATION";
+    public static final String TRADE_LOCATION = "|TRALOC";
+    public static final String TRADE_NAME = "|TRANAM";
+    public static final String TRADE_SEX = "|TRASEX";
+    public static final String TRADE_PHONENUMBER = "|TRAPHO";
+    public static final String TRADE_EMAIL = "TRAMAI";
 
     public void requestConversation(LocalUser localUser){
 	
