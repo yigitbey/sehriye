@@ -3,6 +3,7 @@ package com.android.tencere.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.PacketListener;
 import org.jivesoftware.smack.XMPPConnection;

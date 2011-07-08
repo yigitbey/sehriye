@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@+id/linearLayout1" android:orientation="horizontal">
+       
         <LinearLayout android:id="@+id/linearLayout2" android:orientation="vertical" android:layout_height="fill_parent" android:layout_width="fill_parent">
+		    
 		    <RelativeLayout android:layout_height="wrap_content" android:layout_weight="1" android:layout_width="wrap_content" android:id="@+id/relativeLayout1">
+
+		    <ImageView android:adjustViewBounds="false" android:scaleType="fitXY" android:layout_width="wrap_content" android:src="@drawable/tepe" android:id="@+id/imageView1" android:layout_alignParentLeft="true" android:layout_height="50px" android:layout_alignBottom="@+id/linearLayout8" android:layout_alignParentTop="true" ></ImageView>
+		            		    
+		     <LinearLayout android:gravity="right" android:id="@+id/linearLayout8" android:fadingEdge="vertical|horizontal" android:layout_centerHorizontal="true" android:layout_width="fill_parent" android:orientation="horizontal" android:baselineAligned="false" android:layout_height="wrap_content">
+		              
+		                <Button android:textSize="11sp" android:text="NEW" android:onClick="newconversationClick" android:id="@+id/newconversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
+		    		     
+		                <Button android:textSize="11sp" android:text="END" android:onClick="endClick" android:id="@+id/end" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
+		     </LinearLayout>
 		    		 
 		    <ListView android:id="@+id/listMessages"
 		              android:layout_width="wrap_content"
 		              android:layout_height="wrap_content"
 					  android:drawSelectorOnTop="true"
+					  android:padding="20px"
 		              android:stackFromBottom="true"
 		              android:transcriptMode="normal" 
 		            />
-		            <LinearLayout android:layout_height="wrap_content"  android:gravity="right" android:id="@+id/linearLayout8" android:layout_width="fill_parent" android:fadingEdge="vertical|horizontal">
-		              
-		                <Button android:textSize="11sp" android:text="NEW" android:onClick="newconversationClick" android:id="@+id/newconversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
-		    		     
-		                <Button android:textSize="11sp" android:text="END" android:onClick="endClick" android:id="@+id/end" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
+
 		         
 		         
-		            </LinearLayout>
+		           
+		           
 		    </RelativeLayout>
 
 		    <HorizontalScrollView android:layout_height="wrap_content" android:id="@+id/horizontalScrollView1" android:layout_width="fill_parent" android:padding="5px" android:fadingEdge="vertical" android:foregroundGravity="fill_horizontal|center_horizontal" android:isScrollContainer="true" android:layout_gravity="center">
