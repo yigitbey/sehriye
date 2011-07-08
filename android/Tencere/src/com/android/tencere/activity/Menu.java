@@ -35,6 +35,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.android.tencere.activity.User;
 
 // Main class
 public class Menu extends Activity {
@@ -43,27 +44,18 @@ public class Menu extends Activity {
     private EditText mSendText;
     private ListView mList;
     private XMPPConnection connection;
-    public static String server = "buluruzbirsey@appspot.com";
-    public String partner;
+   
+
     public Boolean is_started = false;
     public ProgressDialog dialog;
     
+    public static String server = "buluruzbirsey@appspot.com";
     
     
-    
-    
-    public String myName = android.os.SystemClock.currentThreadTimeMillis()*5 + " Bey";
-    public String myAge = android.os.SystemClock.currentThreadTimeMillis()/3 + "";
-    public String mySex = "1";
-    public String myLocation;
-   
-    public String partnerName = "Stranger"; //initially not known
-    public String partnerSex = null; // initially not known
-    public String partnerAge = null; //initially not known
-    public String partnerLocation = null; //initially not known
-    
-    
-    
+    //-- Creating users
+    public User me = new User();
+    public User partner = new User("Stranger",null,null,null,null,null);
+    //--
     
 
     public Button end;
@@ -72,16 +64,16 @@ public class Menu extends Activity {
     
     public LocationManager locmgr = null;
 	    
-    // Function to send a message
+    //-- Function to send a message
     public void sendMessage(String to, String text){
         Log.e("XMPPClient", "Sending text [" + text + "] to [" + to +"]");
         Message msg = new Message(to, Message.Type.chat);
         msg.setBody(text);
         connection.sendPacket(msg);
     }
-    // End of sendMessage Function
+    //-- End of sendMessage Function
     
-    //Function to update Message List
+    //-- Function to update Message List
     public void updateMessages(){
     	mHandler.post(new Runnable() {
             public void run() {
@@ -89,16 +81,16 @@ public class Menu extends Activity {
             }
         });
     }
-    // End of updateMessages Function
+    //-- End of updateMessages Function
     
-    //Function to request a conversation
+    //-- Function to request a conversation
     public void requestConversation(){
     	
     	double[] location = getGPS();
-    	myLocation = Double.toString(location[0]) + ":" + Double.toString(location[1]);
+    	me.location = Double.toString(location[0]) + ":" + Double.toString(location[1]);
         
     	//Send a PENDING_CONVERSATION
-        sendMessage(server, custom_messages.PENDING_CONVERSATION + ":" + myLocation);
+        sendMessage(server, custom_messages.PENDING_CONVERSATION + ":" + me.location);
         dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
     }
     // End of requestConversation Function
@@ -132,7 +124,7 @@ public class Menu extends Activity {
         // START_CONVERSATION
     	if (command.equals(custom_messages.START_CONVERSATION)){
     		
-    		partner = msg.split(":")[1];
+    		partner.setAdress(msg.split(":")[1]);
     		is_started = true;
     		dialog.dismiss();
     		
@@ -160,10 +152,10 @@ public class Menu extends Activity {
     	 // TRADE_NAME
     	if (command.equals(custom_messages.TRADE_NAME)){
     		//messages.add("MESSAGE THAT CAME TO ME: " + msg); updateMessages(); //DEBUG
-    		//messages.add("my name was: " + myName); updateMessages(); //DEBUG
-    		String name = infoPicker(msg, myName); //find whichever one belongs to the partner   		
+    		//messages.add("my name was: " + me.name); updateMessages(); //DEBUG
+    		String name = infoPicker(msg, me.name); //find whichever one belongs to the partner   		
             messages.add("Your Partner's name is: " + name);
-            partnerName = name; //update partnerName
+            partner.name = name; //update partner.name
             
             updateMessages();
             
@@ -174,15 +166,15 @@ public class Menu extends Activity {
         // TRADE_SEX
     	if (command.equals(custom_messages.TRADE_SEX)){
     		  		
-    		String sex = infoPicker(msg, mySex); //find whichever one belongs to the partner
+    		String sex = infoPicker(msg, me.sex); //find whichever one belongs to the partner
     		
     		if (sex.equals("1")){
     			messages.add("Your Partner is a man");
-    			partnerSex = "M"; //update partnerSex
+    			partner.sex = "M"; //update partner.sex
     		}
     		if (sex.equals("2")){
     			messages.add("Your Partner is a woman");
-    			partnerSex = "F"; //update partnerSex
+    			partner.sex = "F"; //update partner.sex
     		}
     		
             updateMessages();
@@ -197,9 +189,9 @@ public class Menu extends Activity {
         // TRADE_AGE
     	if (command.equals(custom_messages.TRADE_AGE)){
     		
-    		String age = infoPicker(msg, myAge); //find whichever one belongs to the partner
+    		String age = infoPicker(msg, me.age); //find whichever one belongs to the partner
     		messages.add("Your Partner is " + age + " years old.");
-    		partnerAge = age; //update partnerAge
+    		partner.age = age; //update partner.age
             updateMessages();
             
     	}
@@ -208,9 +200,9 @@ public class Menu extends Activity {
         // TRADE_LOCATION
     	if (command.equals(custom_messages.TRADE_LOCATION)){
     		
-    		String location = infoPicker(msg, myLocation); //find whichever one belongs to the partner
+    		String location = infoPicker(msg, me.location); //find whichever one belongs to the partner
     		messages.add("Your Partner is from " + location);
-    		partnerLocation = location; //update partnerLocation
+    		partner.location = location; //update partnerLocation
             updateMessages();
             
     	}
@@ -255,7 +247,7 @@ public class Menu extends Activity {
         String text = mSendText.getText().toString();
 
         if (is_started && !text.equals("")) {
-        	sendMessage(partner,text);
+        	sendMessage(partner.address,text);
         	messages.add("You: " + text);
             setListAdapter();
             
@@ -271,7 +263,7 @@ public class Menu extends Activity {
     
     //Name button
     public void nameClick(View view) {
-    	if (myName == "myNotSetDefaultName"){
+    	if (me.name == "myNotSetDefaultName"){
     	
     		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
@@ -287,14 +279,14 @@ public class Menu extends Activity {
     				Editable value = input.getText();
     				// Do something with value!
     				if (value.toString().length() > 0){
-    					myName = value.toString();
+    					me.name = value.toString();
     					SharedPreferences settings = getPreferences(0);
     					SharedPreferences.Editor editor = settings.edit();
-    					editor.putString("name", myName);
+    					editor.putString("name", me.name);
     					editor.commit();
 
     				}
-    				else myName = "myNotSetDefaultName";
+    				else me.name = "myNotSetDefaultName";
 
     					
     			}
@@ -304,15 +296,15 @@ public class Menu extends Activity {
 
     		alert.show();
     	}
-    	if (myName != "myNotSetDefaultName" && myName != ""){
-    		sendMessage(server,custom_messages.TRADE_NAME + ":" + myName);
+    	if (me.name != "myNotSetDefaultName" && me.name != ""){
+    		sendMessage(server,custom_messages.TRADE_NAME + ":" + me.name);
     	}
     }
     //
     
     //Age button
     public void ageClick(View view) {
-    	if (myAge == "myNotSetDefaultAge"){
+    	if (me.age == "myNotSetDefaultAge"){
         	
     		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
@@ -328,14 +320,14 @@ public class Menu extends Activity {
     				Editable value = input.getText();
     				// Do something with value!
     				if (value.toString().length() > 0){
-    					myAge = value.toString();
+    					me.age = value.toString();
     					SharedPreferences settings = getPreferences(0);
     					SharedPreferences.Editor editor = settings.edit();
-    					editor.putString("age", myAge);
+    					editor.putString("age", me.age);
     					editor.commit();
 
     				}
-    				else myAge = "myNotSetDefaultName";
+    				else me.age = "myNotSetDefaultName";
 
     					
     			}
@@ -345,8 +337,8 @@ public class Menu extends Activity {
 
     		alert.show();
     	}
-    	if (myAge != "myNotSetDefaultAge" && myAge != ""){
-    		sendMessage(server,custom_messages.TRADE_AGE + ":" + myAge);
+    	if (me.age != "myNotSetDefaultAge" && me.age != ""){
+    		sendMessage(server,custom_messages.TRADE_AGE + ":" + me.age);
     	}
     }
     //
@@ -354,7 +346,7 @@ public class Menu extends Activity {
     //Sex button
 	public void sexClick(View view) {
 		int sexForServer;
-		if (mySex=="M") sexForServer = 1;
+		if (me.sex == "M") sexForServer = 1;
 		else sexForServer = 2;
     	sendMessage(server,custom_messages.TRADE_SEX + ":" + sexForServer);                
 	}
@@ -362,7 +354,7 @@ public class Menu extends Activity {
 	
 	//Location button
 	public void locationClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_LOCATION + ":" + myLocation);                
+    	sendMessage(server,custom_messages.TRADE_LOCATION + ":" + me.location);                
 	}
 	//
 		
@@ -426,8 +418,8 @@ public class Menu extends Activity {
     	locmgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     	  
     	SharedPreferences settings = getPreferences(0);
-        myName = settings.getString("name", "myNotSetDefaultName");
-    	myAge = settings.getString("age","myNotSetDefaultAge");
+        me.name = settings.getString("name", "myNotSetDefaultName");
+    	me.age = settings.getString("age","myNotSetDefaultAge");
         
         setListAdapter();        
         
@@ -466,21 +458,21 @@ public class Menu extends Activity {
                         	handleCustomMessage(msg); //Handle it with this function
                         }
                         else{ // If this is a regular message
-                        	if (partnerSex==null && partnerAge==null) { //nothing known besides name
-                                messages.add(partnerName + ": " + msg); //display only the name (with the message)
+                        	if (partner.sex==null && partner.age==null) { //nothing known besides name
+                                messages.add(partner.name + ": " + msg); //display only the name (with the message)
                                 updateMessages();		
                         	}
                         	else { //at least one extra thing is known
-                        		if (partnerSex==null) { //only partnerAge known
-                        		     messages.add(partnerName + " (" + partnerAge +")" + ": " + msg);
+                        		if (partner.sex==null) { //only partner.age known
+                        		     messages.add(partner.name + " (" + partner.age +")" + ": " + msg);
                                      updateMessages();		
                         		}
-                        		else if (partnerAge==null) { //only partnerSex known
-                        			 messages.add(partnerName + " (" + partnerSex +")" + ": " + msg);
+                        		else if (partner.age==null) { //only partner.sex known
+                        			 messages.add(partner.name + " (" + partner.sex +")" + ": " + msg);
                                      updateMessages();		
                         		}
                         			 else {//both known
-                            			 messages.add(partnerName + " (" + partnerSex + ", " + partnerAge + ")" + ": " + msg);
+                            			 messages.add(partner.name + " (" + partner.sex + ", " + partner.age + ")" + ": " + msg);
                                          updateMessages();                    				 
                         		     }
                         		
@@ -504,7 +496,7 @@ public class Menu extends Activity {
         public void onLocationChanged(Location loc) {
             //sets and displays the lat/long when a location is provided
             String latlong = loc.getLatitude() + ":" + loc.getLongitude();   
-            myLocation = latlong;
+            me.location = latlong;
         }
          
         public void onProviderDisabled(String provider) {
