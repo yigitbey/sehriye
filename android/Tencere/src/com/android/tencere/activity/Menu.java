@@ -37,13 +37,27 @@ import android.widget.ListView;
 
 import com.android.tencere.activity.User;
 import com.android.tencere.activity.Server;
+import com.android.tencere.activity.Conversation;
 
 /**
 * Main class
 */ 
 public class Menu extends Activity {
-		
-		
+
+	//
+	// CLASS VARIABLES
+	//
+    
+    //-- XMPP Connection
+    private XMPPConnection connection;    
+    //--
+    
+    //-- Creating a conversation
+    public User me = new User();
+    public User partner = new User("Stranger",null,null,null,null,null);
+    public Conversation conversation = new Conversation(me,partner);
+    //--
+
 	//-- UI elements
     private ArrayList<String> messages = new ArrayList(); 
     private Handler mHandler = new Handler();
@@ -54,44 +68,35 @@ public class Menu extends Activity {
     public Button newConversation;
 	//--
     
-    private XMPPConnection connection;
-    public Boolean is_started = false;
-    
-    	
-    
-    //-- Creating users
-    public User me = new User();
-    public User partner = new User("Stranger",null,null,null,null,null);
-    //--
-    
-
-    
-    
-    /** Location Manager */
+    //-- Location Manager 
     public LocationManager locmgr = null;
     LocationListener onLocationChange=new LocationListener() {
         public void onLocationChanged(Location loc) {
             //sets and displays the lat/long when a location is provided
             String latlong = loc.getLatitude() + ":" + loc.getLongitude();   
-            me.location = latlong;
+            conversation.me.location = latlong;
         }
-         
         public void onProviderDisabled(String provider) {
         // required for interface, not used
         }
-         
         public void onProviderEnabled(String provider) {
         // required for interface, not used
         }
-         
         public void onStatusChanged(String provider, int status, Bundle extras) {
         // required for interface, not used
         }
     };
+    // --
     
     
+    //
+    // END OF CLASS VARIABLES
+    //
     
     
+    //
+    // CLASS METHODS START HERE
+    //
 
     /**
  	* Sends a message to a xmpp jid            
@@ -105,19 +110,7 @@ public class Menu extends Activity {
         connection.sendPacket(msg);
     }
     
-    
-    /**
-    * Updates messages seen on the screen
-    @return void
-    */
-    public void updateMessages(){
-    	mHandler.post(new Runnable() {
-            public void run() {
-                setListAdapter(); 
-            }
-        });
-    }
-    
+      
     /**
     * Function to request a conversation
     @return void
@@ -127,36 +120,16 @@ public class Menu extends Activity {
     	double[] location = getGPS();
     	
     	//Serialize the location	
-    	me.location = Double.toString(location[0]) + ":" + Double.toString(location[1]);
+    	conversation.me.location = Double.toString(location[0]) + ":" + Double.toString(location[1]);
         
     	//Send a PENDING_CONVERSATION
-        sendMessage(Server.agent, custom_messages.PENDING_CONVERSATION + ":" + me.location);
+        sendMessage(Server.agent, custom_messages.PENDING_CONVERSATION + ":" + conversation.me.location);
         
         //Show a dialog box indicating the pending status
         dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
     }
     
     
-    
-    /**
-     * Function to pick your own info from the trade message coming from the server
-    @param msg Received message
-    @param myinfo My Information
-    @return Info that's not mine
-    */
-    
-    public String infoPicker (String msg, String myinfo) {
-
-		String info1 = msg.split(":")[1]; //get the the info1
-		String info2 = msg.split(":")[2]; //get the the info2
-		
-		if (info1.equals(myinfo)) //info1 is mine
-			return info2;
-		else // info2 is mine
-			return info1;
-				
-    
-    }
     /**
     * Function to handle server messages
     * <p>
@@ -176,8 +149,8 @@ public class Menu extends Activity {
         // START_CONVERSATION
     	if (command.equals(custom_messages.START_CONVERSATION)){
     		
-    		partner.setAdress(msg.split(":")[1]);
-    		is_started = true;
+    		conversation.partner.setAdress(msg.split(":")[1]);
+    		conversation.is_started = true;
     		dialog.dismiss();
     		
             messages.add("---Conversation Started---");
@@ -191,7 +164,7 @@ public class Menu extends Activity {
 
         // DELETE_CONVERSATION
     	if (command.equals(custom_messages.DELETE_CONVERSATION)){
-            is_started = false;
+    		conversation.is_started = false;
             messages.add("---Disconnected---");
         //  end.setVisibility(View.INVISIBLE); //end is invisible
         //  newConversation.setVisibility(View.VISIBLE); //new is visible
@@ -204,10 +177,10 @@ public class Menu extends Activity {
     	 // TRADE_NAME
     	if (command.equals(custom_messages.TRADE_NAME)){
     		//messages.add("MESSAGE THAT CAME TO ME: " + msg); updateMessages(); //DEBUG
-    		//messages.add("my name was: " + me.name); updateMessages(); //DEBUG
-    		String name = infoPicker(msg, me.name); //find whichever one belongs to the partner   		
+    		//messages.add("my name was: " + conversation.me.name); updateMessages(); //DEBUG
+    		String name = infoPicker(msg, conversation.me.name); //find whichever one belongs to the partner   		
             messages.add("Your Partner's name is: " + name);
-            partner.name = name; //update partner.name
+            conversation.partner.name = name; //update conversation.partner.name
             
             updateMessages();
             
@@ -218,22 +191,18 @@ public class Menu extends Activity {
         // TRADE_SEX
     	if (command.equals(custom_messages.TRADE_SEX)){
     		  		
-    		String sex = infoPicker(msg, me.sex); //find whichever one belongs to the partner
+    		String sex = infoPicker(msg, conversation.me.sex); //find whichever one belongs to the partner
     		
     		if (sex.equals("1")){
     			messages.add("Your Partner is a man");
-    			partner.sex = "M"; //update partner.sex
+    			conversation.partner.sex = "M"; //update conversation.partner.sex
     		}
     		if (sex.equals("2")){
     			messages.add("Your Partner is a woman");
-    			partner.sex = "F"; //update partner.sex
+    			conversation.partner.sex = "F"; //update conversation.partner.sex
     		}
     		
             updateMessages();
-            
-            //****************************************************************
-    		//TODO: handle cases other than 1 & 2
-    		//TODO: string for sex? integer? char?
         
     	}
     	//
@@ -241,9 +210,9 @@ public class Menu extends Activity {
         // TRADE_AGE
     	if (command.equals(custom_messages.TRADE_AGE)){
     		
-    		String age = infoPicker(msg, me.age); //find whichever one belongs to the partner
+    		String age = infoPicker(msg, conversation.me.age); //find whichever one belongs to the partner
     		messages.add("Your Partner is " + age + " years old.");
-    		partner.age = age; //update partner.age
+    		conversation.partner.age = age; //update conversation.partner.age
             updateMessages();
             
     	}
@@ -252,9 +221,9 @@ public class Menu extends Activity {
         // TRADE_LOCATION
     	if (command.equals(custom_messages.TRADE_LOCATION)){
     		
-    		String location = infoPicker(msg, me.location); //find whichever one belongs to the partner
+    		String location = infoPicker(msg, conversation.me.location); //find whichever one belongs to the partner
     		messages.add("Your Partner is from " + location);
-    		partner.location = location; //update partnerLocation
+    		conversation.partner.location = location; //update partnerLocation
             updateMessages();
             
     	}
@@ -272,7 +241,7 @@ public class Menu extends Activity {
     public void endClick(View view) {
 
 			sendMessage(Server.agent,custom_messages.DELETE_CONVERSATION);            
-			is_started = false; //make us note of it
+			conversation.is_started = false; //make us note of it
             messages.add("---Disconnected---");
             updateMessages();
            
@@ -298,8 +267,8 @@ public class Menu extends Activity {
     	
         String text = mSendText.getText().toString();
 
-        if (is_started && !text.equals("")) {
-        	sendMessage(partner.address,text);
+        if (conversation.is_started && !text.equals("")) {
+        	sendMessage(conversation.partner.address,text);
         	messages.add("You: " + text);
             setListAdapter();
             
@@ -315,7 +284,7 @@ public class Menu extends Activity {
     
     //Name button
     public void nameClick(View view) {
-    	if (me.name == "myNotSetDefaultName"){
+    	if (conversation.me.name == "myNotSetDefaultName"){
     	
     		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
@@ -331,14 +300,14 @@ public class Menu extends Activity {
     				Editable value = input.getText();
     				// Do something with value!
     				if (value.toString().length() > 0){
-    					me.name = value.toString();
+    					conversation.me.name = value.toString();
     					SharedPreferences settings = getPreferences(0);
     					SharedPreferences.Editor editor = settings.edit();
-    					editor.putString("name", me.name);
+    					editor.putString("name", conversation.me.name);
     					editor.commit();
 
     				}
-    				else me.name = "myNotSetDefaultName";
+    				else conversation.me.name = "myNotSetDefaultName";
 
     					
     			}
@@ -348,15 +317,15 @@ public class Menu extends Activity {
 
     		alert.show();
     	}
-    	if (me.name != "myNotSetDefaultName" && me.name != ""){
-    		sendMessage(Server.agent,custom_messages.TRADE_NAME + ":" + me.name);
+    	if (conversation.me.name != "myNotSetDefaultName" && conversation.me.name != ""){
+    		sendMessage(Server.agent,custom_messages.TRADE_NAME + ":" + conversation.me.name);
     	}
     }
     //
     
     //Age button
     public void ageClick(View view) {
-    	if (me.age == "myNotSetDefaultAge"){
+    	if (conversation.me.age == "myNotSetDefaultAge"){
         	
     		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
@@ -372,14 +341,14 @@ public class Menu extends Activity {
     				Editable value = input.getText();
     				// Do something with value!
     				if (value.toString().length() > 0){
-    					me.age = value.toString();
+    					conversation.me.age = value.toString();
     					SharedPreferences settings = getPreferences(0);
     					SharedPreferences.Editor editor = settings.edit();
-    					editor.putString("age", me.age);
+    					editor.putString("age", conversation.me.age);
     					editor.commit();
 
     				}
-    				else me.age = "myNotSetDefaultName";
+    				else conversation.me.age = "myNotSetDefaultName";
 
     					
     			}
@@ -389,8 +358,8 @@ public class Menu extends Activity {
 
     		alert.show();
     	}
-    	if (me.age != "myNotSetDefaultAge" && me.age != ""){
-    		sendMessage(Server.agent,custom_messages.TRADE_AGE + ":" + me.age);
+    	if (conversation.me.age != "myNotSetDefaultAge" && conversation.me.age != ""){
+    		sendMessage(Server.agent,custom_messages.TRADE_AGE + ":" + conversation.me.age);
     	}
     }
     //
@@ -398,7 +367,7 @@ public class Menu extends Activity {
     //Sex button
 	public void sexClick(View view) {
 		int sexForServer;
-		if (me.sex == "M") sexForServer = 1;
+		if (conversation.me.sex == "M") sexForServer = 1;
 		else sexForServer = 2;
     	sendMessage(Server.agent,custom_messages.TRADE_SEX + ":" + sexForServer);                
 	}
@@ -406,13 +375,10 @@ public class Menu extends Activity {
 	
 	//Location button
 	public void locationClick(View view) {
-    	sendMessage(Server.agent,custom_messages.TRADE_LOCATION + ":" + me.location);                
+    	sendMessage(Server.agent,custom_messages.TRADE_LOCATION + ":" + conversation.me.location);                
 	}
 	//
-		
-	
-	
-       
+	 
     //For connecting to server
     public void connectServer(){
     	dialog = ProgressDialog.show(Menu.this, "", "Connecting to server...", true);
@@ -451,43 +417,24 @@ public class Menu extends Activity {
         dialog.dismiss(); //Clear the connection pending dialog
     }
     // End of connectServer function
+   
     
-    // Called on the activity creation.
-    @Override
-    public void onCreate(Bundle icicle) {
-    	
-    	//check for internet connection?
+    /**
+     * Function to pick your own info from the trade message coming from the server
+    @param msg Received message
+    @param myinfo My Information
+    @return Info that's not mine
+    */
+    
+    public String infoPicker (String msg, String myinfo) {
+		String info1 = msg.split(":")[1]; //get the the info1
+		String info2 = msg.split(":")[2]; //get the the info2
 
-    	
-        super.onCreate(icicle);
-        setContentView(R.layout.main);
-        
-        mSendText = (EditText) this.findViewById(R.id.sendText);
-        mList = (ListView) this.findViewById(R.id.listMessages);
-        end = (Button) this.findViewById(R.id.end);
-
-    	newConversation = (Button) this.findViewById(R.id.newconversation);
-    	locmgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-    	  
-    	SharedPreferences settings = getPreferences(0);
-        me.name = settings.getString("name", "myNotSetDefaultName");
-    	me.age = settings.getString("age","myNotSetDefaultAge");
-        
-        setListAdapter();        
-        
-        connectServer();
-        requestConversation();
-
+		if (info1.equals(myinfo)) //info1 is mine
+			return info2;
+		else // info2 is mine
+			return info1;   
     }
-    // End of onCreate function
-
-    // Called on the activity destroy.
-    @Override
-    public void onDestroy() {
-    	sendMessage(Server.agent,custom_messages.DELETE_CONVERSATION);                
-    }
-    // End of destroy function
-
     
     /**
      * Called when a connection is established with the XMPP server
@@ -510,21 +457,21 @@ public class Menu extends Activity {
                         	handleCustomMessage(msg); //Handle it with this function
                         }
                         else{ // If this is a regular message
-                        	if (partner.sex==null && partner.age==null) { //nothing known besides name
-                                messages.add(partner.name + ": " + msg); //display only the name (with the message)
+                        	if (conversation.partner.sex==null && conversation.partner.age==null) { //nothing known besides name
+                                messages.add(conversation.partner.name + ": " + msg); //display only the name (with the message)
                                 updateMessages();		
                         	}
                         	else { //at least one extra thing is known
-                        		if (partner.sex==null) { //only partner.age known
-                        		     messages.add(partner.name + " (" + partner.age +")" + ": " + msg);
+                        		if (conversation.partner.sex==null) { //only conversation.partner.age known
+                        		     messages.add(conversation.partner.name + " (" + conversation.partner.age +")" + ": " + msg);
                                      updateMessages();		
                         		}
-                        		else if (partner.age==null) { //only partner.sex known
-                        			 messages.add(partner.name + " (" + partner.sex +")" + ": " + msg);
+                        		else if (conversation.partner.age==null) { //only conversation.partner.sex known
+                        			 messages.add(conversation.partner.name + " (" + conversation.partner.sex +")" + ": " + msg);
                                      updateMessages();		
                         		}
                         			 else {//both known
-                            			 messages.add(partner.name + " (" + partner.sex + ", " + partner.age + ")" + ": " + msg);
+                            			 messages.add(conversation.partner.name + " (" + conversation.partner.sex + ", " + conversation.partner.age + ")" + ": " + msg);
                                          updateMessages();                    				 
                         		     }
                         		
@@ -538,28 +485,6 @@ public class Menu extends Activity {
     }
     // End of setConnection function
     
-    //Function to add messages to list
-    private void setListAdapter() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.multi_line_list_item, messages);
-        mList.setAdapter(adapter);
-    }
-    // End of setListAdapter function
-
-    
-    //pauses listener while app is inactive
-    @Override
-    public void onPause() {
-        super.onPause();
-        locmgr.removeUpdates(onLocationChange);
-    }
-    
-    //reactivates listener when app is resumed
-    @Override
-    public void onResume() {
-        super.onResume();
-        locmgr.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,10000.0f,onLocationChange);
-    }
-
     
     private double[] getGPS() {
     	LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -580,5 +505,77 @@ public class Menu extends Activity {
 
    	 	return gps;
    	}
+    
+    //Function to add messages to list
+    private void setListAdapter() {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.multi_line_list_item, messages);
+        mList.setAdapter(adapter);
+    }
+    // End of setListAdapter function
+   
+    /**
+    * Updates messages seen on the screen
+    @return void
+    */
+    public void updateMessages(){
+    	mHandler.post(new Runnable() {
+            public void run() {
+                setListAdapter(); 
+            }
+        });
+    }
+    
+    // Called on the activity creation.
+    @Override
+    public void onCreate(Bundle icicle) {
+    	
+    	//check for internet connection?
+
+    	
+        super.onCreate(icicle);
+        setContentView(R.layout.main);
+        
+        mSendText = (EditText) this.findViewById(R.id.sendText);
+        mList = (ListView) this.findViewById(R.id.listMessages);
+        end = (Button) this.findViewById(R.id.end);
+
+    	newConversation = (Button) this.findViewById(R.id.newconversation);
+    	locmgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+    	  
+    	SharedPreferences settings = getPreferences(0);
+    	conversation.me.name = settings.getString("name", "myNotSetDefaultName");
+    	conversation.me.age = settings.getString("age","myNotSetDefaultAge");
+        
+        setListAdapter();        
+        
+        connectServer();
+        requestConversation();
+
+    }
+    // End of onCreate function
+    
+    // Called on the activity destroy.
+    @Override
+    public void onDestroy() {
+    	sendMessage(Server.agent,custom_messages.DELETE_CONVERSATION);                
+    }
+    // End of destroy function
+    
+    //pauses listener while app is inactive
+    @Override
+    public void onPause() {
+        super.onPause();
+        locmgr.removeUpdates(onLocationChange);
+    }
+    
+    //reactivates listener when app is resumed
+    @Override
+    public void onResume() {
+        super.onResume();
+        locmgr.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,10000.0f,onLocationChange);
+    }
+
+    
+
 }
 // End of class Menu
