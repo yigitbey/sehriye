@@ -14,14 +14,16 @@
         android:layout_height="fill_parent" 
         android:layout_width="fill_parent">
 
-	<RelativeLayout android:layout_height="wrap_content"
-		android:layout_weight="1" android:layout_width="wrap_content"
+	<RelativeLayout 
+	    android:layout_height="wrap_content"
+		android:layout_weight="1" 
+		android:layout_width="wrap_content"
 		android:id="@+id/relativeLayout1">
 
 		<ImageView android:adjustViewBounds="false"
 			android:scaleType="fitXY" android:layout_width="wrap_content"
 			android:src="@drawable/tepe" android:id="@+id/imageView1"
-			android:layout_alignParentLeft="true" android:layout_height="50px"
+			android:layout_alignParentLeft="true" android:layout_height="30px"
 			android:layout_alignBottom="@+id/linearLayout8"
 			android:layout_alignParentTop="true">
 		</ImageView>
@@ -48,11 +50,9 @@
 		<ListView android:id="@+id/listMessages"
 			android:drawSelectorOnTop="true" 
 
-			android:stackFromBottom="true" 
 			android:transcriptMode="normal"
-			android:layout_height="wrap_content" 
 			android:layout_width="wrap_content"
-			android:layout_below="@+id/imageView1" />
+			android:layout_below="@+id/imageView1" android:smoothScrollbar="true" android:scrollbars="vertical" android:layout_height="fill_parent" android:layout_marginLeft="30dip" android:layout_marginRight="30dip" android:stackFromBottom="false"/>
 		
 	</RelativeLayout>
 
