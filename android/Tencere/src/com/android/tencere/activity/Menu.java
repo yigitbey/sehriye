@@ -37,7 +37,9 @@ import android.widget.ListView;
 
 import com.android.tencere.activity.User;
 
-// Main class
+/**
+* Main class
+*/ 
 public class Menu extends Activity {
     private ArrayList<String> messages = new ArrayList();
     private Handler mHandler = new Handler();
@@ -64,16 +66,24 @@ public class Menu extends Activity {
     
     public LocationManager locmgr = null;
 	    
-    //-- Function to send a message
+
+    /**
+ 	* Sends a message to a xmpp jid            
+	@param  to  Jisd to send message                 
+	@param  text Message to send                        
+ 	*/
     public void sendMessage(String to, String text){
         Log.e("XMPPClient", "Sending text [" + text + "] to [" + to +"]");
         Message msg = new Message(to, Message.Type.chat);
         msg.setBody(text);
         connection.sendPacket(msg);
     }
-    //-- End of sendMessage Function
     
-    //-- Function to update Message List
+    
+    /**
+    * Updates messages seen on the screen
+    @return void
+    */
     public void updateMessages(){
     	mHandler.post(new Runnable() {
             public void run() {
@@ -81,23 +91,34 @@ public class Menu extends Activity {
             }
         });
     }
-    //-- End of updateMessages Function
     
-    //-- Function to request a conversation
+    /**
+    * Function to request a conversation
+    @return void
+    */
     public void requestConversation(){
-    	
+    	//Get location
     	double[] location = getGPS();
+    	
+    	//Serialize the location	
     	me.location = Double.toString(location[0]) + ":" + Double.toString(location[1]);
         
     	//Send a PENDING_CONVERSATION
         sendMessage(server, custom_messages.PENDING_CONVERSATION + ":" + me.location);
+        
+        //Show a dialog box indicating the pending status
         dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
     }
-    // End of requestConversation Function
     
     
     
-    //Function to pick your own info from the trade message coming from the server
+    /**
+     * Function to pick your own info from the trade message coming from the server
+    @param msg Received message
+    @param myinfo My Information
+    @return Info that's not mine
+    */
+    
     public String infoPicker (String msg, String myinfo) {
 
 		String info1 = msg.split(":")[1]; //get the the info1
@@ -110,17 +131,22 @@ public class Menu extends Activity {
 				
     
     }
-    // End of infoPicker Function
-    
-    //Function to handle server messages
+    /**
+    * Function to handle server messages
+    * <p>
+    * If command is START_CONVERSATION, set partner's address and set conversation.is_started to true. Also remove the pending dialog box.
+    * <p>
+    * If command is DELETE_CONVERSATION, set conversation.is_started to false
+    * <p>
+    * If command is TRADE_*, set partner's info and print it on the screen
+    *  
+    @param msg Received xmpp message
+    @return void
+    */
     public void handleCustomMessage(String msg){
-    	//messages.add("******message came: " + msg);  updateMessages(); //DEBUG
     	String command = msg.split(":")[0];	
-    	//messages.add("******hence the command is: " + command);  updateMessages(); //DEBUG
 
-    	Log.i("XMPPClient",command);
-
-    	
+    	Log.i("Tencere",msg);
         // START_CONVERSATION
     	if (command.equals(custom_messages.START_CONVERSATION)){
     		
@@ -211,10 +237,10 @@ public class Menu extends Activity {
 
     	
     }
-    // End of handleCustomMessage function
     
     
-    // Button Functions
+    
+    
     
     //End button
     public void endClick(View view) {
