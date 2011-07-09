@@ -36,6 +36,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.android.tencere.activity.User;
+import com.android.tencere.activity.Server;
 
 /**
 * Main class
@@ -51,8 +52,7 @@ public class Menu extends Activity {
     public Boolean is_started = false;
     public ProgressDialog dialog;
     
-    public static String server = "buluruzbirsey@appspot.com";
-    
+    	
     
     //-- Creating users
     public User me = new User();
@@ -104,7 +104,7 @@ public class Menu extends Activity {
     	me.location = Double.toString(location[0]) + ":" + Double.toString(location[1]);
         
     	//Send a PENDING_CONVERSATION
-        sendMessage(server, custom_messages.PENDING_CONVERSATION + ":" + me.location);
+        sendMessage(Server.agent, custom_messages.PENDING_CONVERSATION + ":" + me.location);
         
         //Show a dialog box indicating the pending status
         dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
@@ -245,7 +245,7 @@ public class Menu extends Activity {
     //End button
     public void endClick(View view) {
 
-			sendMessage(server,custom_messages.DELETE_CONVERSATION);            
+			sendMessage(Server.agent,custom_messages.DELETE_CONVERSATION);            
 			is_started = false; //make us note of it
             messages.add("---Disconnected---");
             updateMessages();
@@ -279,7 +279,7 @@ public class Menu extends Activity {
             
         }
         else{
-        	//sendMessage(server,text);
+        	//sendMessage(Server.agent,text);
         }
         
     	mSendText.setText("");
@@ -323,7 +323,7 @@ public class Menu extends Activity {
     		alert.show();
     	}
     	if (me.name != "myNotSetDefaultName" && me.name != ""){
-    		sendMessage(server,custom_messages.TRADE_NAME + ":" + me.name);
+    		sendMessage(Server.agent,custom_messages.TRADE_NAME + ":" + me.name);
     	}
     }
     //
@@ -364,7 +364,7 @@ public class Menu extends Activity {
     		alert.show();
     	}
     	if (me.age != "myNotSetDefaultAge" && me.age != ""){
-    		sendMessage(server,custom_messages.TRADE_AGE + ":" + me.age);
+    		sendMessage(Server.agent,custom_messages.TRADE_AGE + ":" + me.age);
     	}
     }
     //
@@ -374,13 +374,13 @@ public class Menu extends Activity {
 		int sexForServer;
 		if (me.sex == "M") sexForServer = 1;
 		else sexForServer = 2;
-    	sendMessage(server,custom_messages.TRADE_SEX + ":" + sexForServer);                
+    	sendMessage(Server.agent,custom_messages.TRADE_SEX + ":" + sexForServer);                
 	}
 	//
 	
 	//Location button
 	public void locationClick(View view) {
-    	sendMessage(server,custom_messages.TRADE_LOCATION + ":" + me.location);                
+    	sendMessage(Server.agent,custom_messages.TRADE_LOCATION + ":" + me.location);                
 	}
 	//
 		
@@ -391,9 +391,9 @@ public class Menu extends Activity {
     public void connectServer(){
     	dialog = ProgressDialog.show(Menu.this, "", "Connecting to server...", true);
     	// Connection Settings
-        String host = "mageroya.com";
-        String port = "5222";
-        String service = "mageroya.com";
+        String host = Server.host;
+        String port = Server.port;
+        String service = Server.service;
   
         // Create a connection
         ConnectionConfiguration connConfig = new ConnectionConfiguration(host, Integer.parseInt(port), service);
@@ -458,7 +458,7 @@ public class Menu extends Activity {
     // Called on the activity destroy.
     @Override
     public void onDestroy() {
-    	sendMessage(server,custom_messages.DELETE_CONVERSATION);                
+    	sendMessage(Server.agent,custom_messages.DELETE_CONVERSATION);                
     }
     // End of destroy function
 
@@ -480,7 +480,7 @@ public class Menu extends Activity {
                         Log.i("XMPPClient", "Got text [" + message.getBody() + "] from [" + fromName +"]");
                     	String msg = message.getBody();
                         
-                        if (fromName.equals(server)){ //If this message is from conversation server
+                        if (fromName.equals(Server.agent)){ //If this message is from conversation server
                         	handleCustomMessage(msg); //Handle it with this function
                         }
                         else{ // If this is a regular message
