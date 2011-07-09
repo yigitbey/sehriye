@@ -38,11 +38,6 @@ import android.widget.ListView;
 * Main class
 */ 
 public class Menu extends Activity {
-
-	//
-	// CLASS VARIABLES
-	//
-   
     //-- XMPP Connection
     private XMPPConnection connection;    
     //-- Conversation
@@ -57,15 +52,8 @@ public class Menu extends Activity {
     public ProgressDialog dialog;
     public Button end;
     public Button newConversation; 
-    //
-    // END OF CLASS VARIABLES
-    //
-    
-    
-    //
-    // CLASS METHODS START HERE
-    //
 
+    
     /**
  	* Sends a message to a xmpp jid            
 	@param  to  Jisd to send message                 
@@ -96,14 +84,10 @@ public class Menu extends Activity {
     
     
     /**
-    * Function to handle server messages
-    * <p>
-    * If command is START_CONVERSATION, set partner's address and set conversation.is_started to true. Also remove the pending dialog box.
-    * <p>
-    * If command is DELETE_CONVERSATION, set conversation.is_started to false
-    * <p>
-    * If command is TRADE_*, set partner's info and print it on the screen
-    *  
+    * Function to handle server messages<br>
+    * If command is START_CONVERSATION, set partner's address and set conversation.is_started to true. Also remove the pending dialog box.<br>
+    * If command is DELETE_CONVERSATION, set conversation.is_started to false<br>
+    * If command is TRADE_*, set partner's info and print it on the screen 
     @param msg Received xmpp message
     @return void
     */
