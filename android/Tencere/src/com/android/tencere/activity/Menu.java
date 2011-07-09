@@ -1,8 +1,10 @@
 package com.android.tencere.activity;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.android.tencere.activity.User;
+import com.android.tencere.activity.Server;
+import com.android.tencere.activity.Conversation;
 
+import java.util.ArrayList;
 
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.PacketListener;
@@ -15,9 +17,6 @@ import org.jivesoftware.smack.packet.Packet;
 import org.jivesoftware.smack.packet.Presence;
 import org.jivesoftware.smack.util.StringUtils;
 
-
-import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -35,10 +34,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.android.tencere.activity.User;
-import com.android.tencere.activity.Server;
-import com.android.tencere.activity.Conversation;
-
 /**
 * Main class
 */ 
@@ -47,48 +42,21 @@ public class Menu extends Activity {
 	//
 	// CLASS VARIABLES
 	//
-    
+   
     //-- XMPP Connection
     private XMPPConnection connection;    
-    //--
-    
-    //-- Creating a conversation
-    public User me = new User();
-    public User partner = new User("Stranger",null,null,null,null,null);
-    public Conversation conversation = new Conversation(me,partner);
-    //--
-
-	//-- UI elements
-    private ArrayList<String> messages = new ArrayList(); 
-    private Handler mHandler = new Handler();
-    private EditText mSendText;
-    private ListView mList;
-    public ProgressDialog dialog;
-    public Button end;
-    public Button newConversation;
-	//--
-    
+    //-- Conversation
+    public Conversation conversation;
     //-- Location Manager 
     public LocationManager locmgr = null;
-    LocationListener onLocationChange=new LocationListener() {
-        public void onLocationChanged(Location loc) {
-            //sets and displays the lat/long when a location is provided
-            String latlong = loc.getLatitude() + ":" + loc.getLongitude();   
-            conversation.me.location = latlong;
-        }
-        public void onProviderDisabled(String provider) {
-        // required for interface, not used
-        }
-        public void onProviderEnabled(String provider) {
-        // required for interface, not used
-        }
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-        // required for interface, not used
-        }
-    };
-    // --
-    
-    
+	//-- UI elements
+    public ArrayList<String> messages = new ArrayList(); 
+    public Handler mHandler = new Handler();
+    public EditText mSendText;
+    public ListView mList;
+    public ProgressDialog dialog;
+    public Button end;
+    public Button newConversation; 
     //
     // END OF CLASS VARIABLES
     //
@@ -104,7 +72,7 @@ public class Menu extends Activity {
 	@param  text Message to send                        
  	*/
     public void sendMessage(String to, String text){
-        Log.e("XMPPClient", "Sending text [" + text + "] to [" + to +"]");
+        Log.i("Tencere", "Sending text [" + text + "] to [" + to +"]");
         Message msg = new Message(to, Message.Type.chat);
         msg.setBody(text);
         connection.sendPacket(msg);
@@ -116,17 +84,14 @@ public class Menu extends Activity {
     @return void
     */
     public void requestConversation(){
-    	//Get location
-    	double[] location = getGPS();
-    	
-    	//Serialize the location	
-    	conversation.me.location = Double.toString(location[0]) + ":" + Double.toString(location[1]);
-        
-    	//Send a PENDING_CONVERSATION
-        sendMessage(Server.agent, custom_messages.PENDING_CONVERSATION + ":" + conversation.me.location);
-        
-        //Show a dialog box indicating the pending status
+    	//Show a dialog box indicating the pending status
         dialog = ProgressDialog.show(Menu.this, "", "Waiting for a match...", true);
+    	//Get location
+    	double[] location = conversation.me.getLocation(); 	
+    	//Serialize the location	
+    	conversation.me.location = Double.toString(location[0]) + ":" + Double.toString(location[1]);  
+    	//Send a PENDING_CONVERSATION
+        sendMessage(Server.agent, custom_messages.PENDING_CONVERSATION + ":" + conversation.me.location);     
     }
     
     
@@ -228,16 +193,13 @@ public class Menu extends Activity {
             
     	}
     	//
-    	
 
-    	
     }
     
     
-    
-    
-    
-    //End button
+    /**
+     * Defines end button behaviour
+     */
     public void endClick(View view) {
 
 			sendMessage(Server.agent,custom_messages.DELETE_CONVERSATION);            
@@ -249,10 +211,10 @@ public class Menu extends Activity {
          // newConversation.setVisibility(View.VISIBLE); //new is visible
             
 	}
-    
-    
-    
-    //NewConversation button
+
+    /**
+     * Defines new button behaviour
+     */
     public void newconversationClick(View view) {
     	
        // end.setVisibility(View.VISIBLE); //end is visible
@@ -261,8 +223,10 @@ public class Menu extends Activity {
 		requestConversation();
 		
     }
-    //
-    //Send button
+    
+    /**
+     * Defines send button behaviour
+     */
     public void sendClick(View view) {
     	
         String text = mSendText.getText().toString();
@@ -282,7 +246,9 @@ public class Menu extends Activity {
     }
     //
     
-    //Name button
+    /**
+     * Defines name button behaviour
+     */
     public void nameClick(View view) {
     	if (conversation.me.name == "myNotSetDefaultName"){
     	
@@ -323,7 +289,9 @@ public class Menu extends Activity {
     }
     //
     
-    //Age button
+    /**
+     * Defines age button behaviour
+     */
     public void ageClick(View view) {
     	if (conversation.me.age == "myNotSetDefaultAge"){
         	
@@ -364,7 +332,9 @@ public class Menu extends Activity {
     }
     //
     
-    //Sex button
+    /**
+     * Defines sex button behaviour
+     */
 	public void sexClick(View view) {
 		int sexForServer;
 		if (conversation.me.sex == "M") sexForServer = 1;
@@ -373,13 +343,19 @@ public class Menu extends Activity {
 	}
 	//
 	
-	//Location button
+    /**
+     * Defines location button behaviour
+     */
 	public void locationClick(View view) {
     	sendMessage(Server.agent,custom_messages.TRADE_LOCATION + ":" + conversation.me.location);                
 	}
 	//
 	 
-    //For connecting to server
+    /**
+     * Connects to Jabber server and logs in anonymously.
+     * <br>
+     * Server must accept SASL Anonymous logins. 
+     */
     public void connectServer(){
     	dialog = ProgressDialog.show(Menu.this, "", "Connecting to server...", true);
     	// Connection Settings
@@ -391,32 +367,42 @@ public class Menu extends Activity {
         ConnectionConfiguration connConfig = new ConnectionConfiguration(host, Integer.parseInt(port), service);
         final XMPPConnection connection = new XMPPConnection(connConfig);
 
+        //Try connecting the xmpp server
         try {
             connection.connect();
-            Log.i("XMPPClient", "[SettingsDialog] Connected to " + connection.getHost());
-        } catch (XMPPException ex) {
-            Log.e("XMPPClient", "[SettingsDialog] Failed to connect to " + connection.getHost());
-            Log.e("XMPPClient", ex.toString());
-            setConnection(null);
+            Log.i("Tencere", "[SettingsDialog] Connected to " + connection.getHost());
         }
+        //If connection was not established, log it and show an error to user
+        catch (XMPPException ex) {
+            Log.e("Tencere", "[SettingsDialog] Failed to connect to " + connection.getHost());
+            Log.e("Tencere", ex.toString());
+            setConnection(null);
+            //Show error
+            dialog = ProgressDialog.show(Menu.this, "", "Unable to connect", true);
+        }
+        
+        //Try logging in as anonymous
         try {
         	connection.loginAnonymously();
-        	Log.i("XMPPClient", "Logged in as " + connection.getUser());
+        	Log.i("Tencere", "Logged in");
             // Set the status to available
             Presence presence = new Presence(Presence.Type.available);        	
             connection.sendPacket(presence);
-
-            setConnection(connection);
-            
-        } catch (XMPPException ex) {
-        	Log.e("XMPPClient", "[SettingsDialog] Failed to log in as anonymous" );
-        	Log.e("XMPPClient", ex.toString());
+            setConnection(connection); 
+            //Clear the connection pending dialog
+            dialog.dismiss();             
+        }
+        //If logging in was not possible, log it and show an error to user
+        catch (XMPPException ex) {
+        	Log.e("Tencere", "[SettingsDialog] Failed to log in as anonymous" );
+        	Log.e("Tencere", ex.toString());
             setConnection(null);
+            //Show error
+            dialog = ProgressDialog.show(Menu.this, "", "Unable to login", true);
         }
         
-        dialog.dismiss(); //Clear the connection pending dialog
+
     }
-    // End of connectServer function
    
     
     /**
@@ -445,73 +431,47 @@ public class Menu extends Activity {
         if (connection != null) {
             // Add a packet listener to get messages sent to us
             PacketFilter filter = new MessageTypeFilter(Message.Type.chat);
+            
+            //Filter only chat messages
             connection.addPacketListener(new PacketListener() {
+            	
+            	//On a chat message received
                 public void processPacket(Packet packet) {
                     Message message = (Message) packet;
+                    
+                    //If the message is not empty
                     if (message.getBody() != null) {
                         String fromName = StringUtils.parseBareAddress(message.getFrom());
-                        Log.i("XMPPClient", "Got text [" + message.getBody() + "] from [" + fromName +"]");
-                    	String msg = message.getBody();
+                        String msg = message.getBody();
                         
-                        if (fromName.equals(Server.agent)){ //If this message is from conversation server
+                        //If this message is from conversation server
+                        if (fromName.equals(Server.agent)){ 
                         	handleCustomMessage(msg); //Handle it with this function
+                        	Log.i("Tencere", "Got text [" + msg + "] from agent");
                         }
-                        else{ // If this is a regular message
-                        	if (conversation.partner.sex==null && conversation.partner.age==null) { //nothing known besides name
-                                messages.add(conversation.partner.name + ": " + msg); //display only the name (with the message)
-                                updateMessages();		
-                        	}
-                        	else { //at least one extra thing is known
-                        		if (conversation.partner.sex==null) { //only conversation.partner.age known
-                        		     messages.add(conversation.partner.name + " (" + conversation.partner.age +")" + ": " + msg);
-                                     updateMessages();		
-                        		}
-                        		else if (conversation.partner.age==null) { //only conversation.partner.sex known
-                        			 messages.add(conversation.partner.name + " (" + conversation.partner.sex +")" + ": " + msg);
-                                     updateMessages();		
-                        		}
-                        			 else {//both known
-                            			 messages.add(conversation.partner.name + " (" + conversation.partner.sex + ", " + conversation.partner.age + ")" + ": " + msg);
-                                         updateMessages();                    				 
-                        		     }
-                        		
-                        	}
-
+                        // If this is a regular message
+                        else{ 
+                        	messages.add(conversation.partner.name + ": " + msg); //display only the name (with the message)
+                        	updateMessages();          
+                        	Log.i("Tencere", "Got text [" + msg + "] from partner");
                         }
                     }
+                    
+                    
                 }
             }, filter);
         }
     }
-    // End of setConnection function
     
     
-    private double[] getGPS() {
-    	LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-    	List<String> providers = lm.getProviders(true);
-
-    	Location l = null;
-   	 
-    	for (int i=providers.size()-1; i>=0; i--) {
-    		l = lm.getLastKnownLocation(providers.get(i));
-    		if (l != null) break;
-   	 	}
-   	 
-   	 	double[] gps = new double[2];
-   	 	if (l != null) {
-   	 		gps[0] = l.getLatitude();
-   	 		gps[1] = l.getLongitude();
-   	 	}
-
-   	 	return gps;
-   	}
-    
-    //Function to add messages to list
+    /**
+     * Function to add messages to list
+     * */
     private void setListAdapter() {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.multi_line_list_item, messages);
         mList.setAdapter(adapter);
     }
-    // End of setListAdapter function
+
    
     /**
     * Updates messages seen on the screen
@@ -525,30 +485,42 @@ public class Menu extends Activity {
         });
     }
     
-    // Called on the activity creation.
+    /** Called on the activity creation.
+     * TODO: check for internet connection?
+     @param icicle Bundle
+     */
     @Override
     public void onCreate(Bundle icicle) {
-    	
-    	//check for internet connection?
-
-    	
         super.onCreate(icicle);
+        
+        //Initialize the main UI
         setContentView(R.layout.main);
         
+        
+        //Initialize UI Buttons
         mSendText = (EditText) this.findViewById(R.id.sendText);
         mList = (ListView) this.findViewById(R.id.listMessages);
         end = (Button) this.findViewById(R.id.end);
-
     	newConversation = (Button) this.findViewById(R.id.newconversation);
+    	 
+    	
+    	//Initialize the location manager
     	locmgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-    	  
+    	
+    	//Get stored user variables
     	SharedPreferences settings = getPreferences(0);
-    	conversation.me.name = settings.getString("name", "myNotSetDefaultName");
-    	conversation.me.age = settings.getString("age","myNotSetDefaultAge");
+    	String storedName = settings.getString("name", "myNotSetDefaultName");
+    	String storedAge = settings.getString("age","myNotSetDefaultAge");
+    	
+        //Create a conversation
+        User me = new User(storedName, storedAge ,null,null,null,null,locmgr);
+        User partner = new User("Stranger",null,null,null,null,null,locmgr);
+        conversation = new Conversation(me,partner);
+        setListAdapter(); 
+        //Connect to jabber server
+        connectServer(); 
         
-        setListAdapter();        
-        
-        connectServer();
+        //Request a conversation from the agent
         requestConversation();
 
     }
@@ -565,17 +537,16 @@ public class Menu extends Activity {
     @Override
     public void onPause() {
         super.onPause();
-        locmgr.removeUpdates(onLocationChange);
+        locmgr.removeUpdates(conversation.me.onLocationChange);
     }
     
     //reactivates listener when app is resumed
     @Override
     public void onResume() {
         super.onResume();
-        locmgr.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,10000.0f,onLocationChange);
+        locmgr.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,10000.0f,conversation.me.onLocationChange);
     }
 
     
-
 }
 // End of class Menu
