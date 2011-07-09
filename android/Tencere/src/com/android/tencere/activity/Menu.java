@@ -42,15 +42,20 @@ import com.android.tencere.activity.Server;
 * Main class
 */ 
 public class Menu extends Activity {
-    private ArrayList<String> messages = new ArrayList();
+		
+		
+	//-- UI elements
+    private ArrayList<String> messages = new ArrayList(); 
     private Handler mHandler = new Handler();
     private EditText mSendText;
     private ListView mList;
-    private XMPPConnection connection;
-   
-
-    public Boolean is_started = false;
     public ProgressDialog dialog;
+    public Button end;
+    public Button newConversation;
+	//--
+    
+    private XMPPConnection connection;
+    public Boolean is_started = false;
     
     	
     
@@ -60,12 +65,33 @@ public class Menu extends Activity {
     //--
     
 
-    public Button end;
-    public Button newConversation;
     
     
+    /** Location Manager */
     public LocationManager locmgr = null;
-	    
+    LocationListener onLocationChange=new LocationListener() {
+        public void onLocationChanged(Location loc) {
+            //sets and displays the lat/long when a location is provided
+            String latlong = loc.getLatitude() + ":" + loc.getLongitude();   
+            me.location = latlong;
+        }
+         
+        public void onProviderDisabled(String provider) {
+        // required for interface, not used
+        }
+         
+        public void onProviderEnabled(String provider) {
+        // required for interface, not used
+        }
+         
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+        // required for interface, not used
+        }
+    };
+    
+    
+    
+    
 
     /**
  	* Sends a message to a xmpp jid            
@@ -518,26 +544,7 @@ public class Menu extends Activity {
         mList.setAdapter(adapter);
     }
     // End of setListAdapter function
-    LocationListener onLocationChange=new LocationListener() {
-        public void onLocationChanged(Location loc) {
-            //sets and displays the lat/long when a location is provided
-            String latlong = loc.getLatitude() + ":" + loc.getLongitude();   
-            me.location = latlong;
-        }
-         
-        public void onProviderDisabled(String provider) {
-        // required for interface, not used
-        }
-         
-        public void onProviderEnabled(String provider) {
-        // required for interface, not used
-        }
-         
-        public void onStatusChanged(String provider, int status,
-        Bundle extras) {
-        // required for interface, not used
-        }
-    };
+
     
     //pauses listener while app is inactive
     @Override
@@ -555,24 +562,23 @@ public class Menu extends Activity {
 
     
     private double[] getGPS() {
-   	 LocationManager lm = (LocationManager) getSystemService(
-   	  Context.LOCATION_SERVICE);
-   	 List<String> providers = lm.getProviders(true);
+    	LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+    	List<String> providers = lm.getProviders(true);
 
-   	 Location l = null;
+    	Location l = null;
    	 
-   	 for (int i=providers.size()-1; i>=0; i--) {
-   	  l = lm.getLastKnownLocation(providers.get(i));
-   	  if (l != null) break;
-   	 }
+    	for (int i=providers.size()-1; i>=0; i--) {
+    		l = lm.getLastKnownLocation(providers.get(i));
+    		if (l != null) break;
+   	 	}
    	 
-   	 double[] gps = new double[2];
-   	 if (l != null) {
-   	  gps[0] = l.getLatitude();
-   	  gps[1] = l.getLongitude();
-   	 }
+   	 	double[] gps = new double[2];
+   	 	if (l != null) {
+   	 		gps[0] = l.getLatitude();
+   	 		gps[1] = l.getLongitude();
+   	 	}
 
-   	 return gps;
+   	 	return gps;
    	}
 }
 // End of class Menu
