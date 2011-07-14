@@ -9,5 +9,5 @@ public class custom_messages {
 	public static String TRADE_AGE = "|TRAAGE";
 	public static String TRADE_SEX = "|TRASEX";
 	public static String TRADE_NUMBER = "|TRANUM";
-	public static String TRADE_MAIL = "|TRANUM";
+	public static String TRADE_MAIL = "|TRAMAI";
 }

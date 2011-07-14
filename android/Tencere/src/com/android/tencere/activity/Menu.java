@@ -191,7 +191,7 @@ public class Menu extends Activity {
     	if (command.equals(custom_messages.TRADE_NUMBER)){
     		
     		String number = infoPicker(msg, conversation.me.number); //find whichever one belongs to the partner
-    		messages.add("Your Partner's number " + number);
+    		messages.add("Your Partner's number: " + number);
     		conversation.partner.number = number; //update partner's number
             updateMessages();
             
@@ -200,9 +200,8 @@ public class Menu extends Activity {
     	
         // TRADE_MAIL
     	if (command.equals(custom_messages.TRADE_MAIL)){
-    		
     		String mail = infoPicker(msg, conversation.me.mail); //find whichever one belongs to the partner
-    		messages.add("Your Partner's mail" + mail);
+    		messages.add("Your Partner's mail: " + mail);
     		conversation.partner.mail = mail; //update partner's mail
             updateMessages();
             
@@ -299,6 +298,7 @@ public class Menu extends Activity {
     					SharedPreferences.Editor editor = settings.edit();
     					editor.putString("name", conversation.me.name);
     					editor.commit();
+    					sendMessage(Server.agent,custom_messages.TRADE_NAME + ":" + conversation.me.name);
 
     				}
     				else conversation.me.name = "myNotSetDefaultName";
@@ -339,6 +339,7 @@ public class Menu extends Activity {
     					SharedPreferences.Editor editor = settings.edit();
     					editor.putString("age", conversation.me.age);
     					editor.commit();
+    					sendMessage(Server.agent,custom_messages.TRADE_AGE + ":" + conversation.me.age);
 
     				}
     				else conversation.me.age = "myNotSetDefaultName";
@@ -407,6 +408,7 @@ public class Menu extends Activity {
     					SharedPreferences.Editor editor = settings.edit();
     					editor.putString("mail", conversation.me.mail);
     					editor.commit();
+    					
 
     				}
     				else conversation.me.mail = "myNotSetDefaultMail";

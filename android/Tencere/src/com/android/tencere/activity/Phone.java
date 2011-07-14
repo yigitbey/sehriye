@@ -1,9 +1,5 @@
 package com.android.tencere.activity;
 
-import android.content.ContentValues;
-import android.content.Intent;
-import android.net.Uri;
-import android.provider.Contacts;
 import android.telephony.TelephonyManager;
 
 
