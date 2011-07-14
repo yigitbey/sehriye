@@ -182,6 +182,28 @@ public class Menu extends Activity {
             
     	}
     	//
+    	
+        // TRADE_NUMBER
+    	if (command.equals(custom_messages.TRADE_NUMBER)){
+    		
+    		String number = infoPicker(msg, conversation.me.number); //find whichever one belongs to the partner
+    		messages.add("Your Partner's number " + number);
+    		conversation.partner.number = number; //update partner's number
+            updateMessages();
+            
+    	}
+    	//
+    	
+        // TRADE_MAIL
+    	if (command.equals(custom_messages.TRADE_MAIL)){
+    		
+    		String mail = infoPicker(msg, conversation.me.mail); //find whichever one belongs to the partner
+    		messages.add("Your Partner's mail" + mail);
+    		conversation.partner.mail = mail; //update partner's mail
+            updateMessages();
+            
+    	}
+    	//
 
     }
     
@@ -267,9 +289,6 @@ public class Menu extends Activity {
     					
     			}
     		});
-
-    		
-
     		alert.show();
     	}
     	if (conversation.me.name != "myNotSetDefaultName" && conversation.me.name != ""){
@@ -310,9 +329,6 @@ public class Menu extends Activity {
     					
     			}
     		});
-
-    		
-
     		alert.show();
     	}
     	if (conversation.me.age != "myNotSetDefaultAge" && conversation.me.age != ""){
@@ -347,6 +363,47 @@ public class Menu extends Activity {
     	sendMessage(Server.agent,custom_messages.TRADE_NUMBER + ":" + myPhone.number);                
 	}
 	//
+	
+	
+    /**
+     * Defines name button behaviour
+     */
+    public void mailClick(View view) {
+    	if (conversation.me.mail == "myNotSetDefaultMail"){
+    	
+    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+    		alert.setTitle("Enter your mail address");
+    		alert.setMessage("Enter your mail address to succeed.");
+
+    		// Set an EditText view to get user input 
+    		final EditText input = new EditText(this);
+    		alert.setView(input);
+
+    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+    			public void onClick(DialogInterface dialog, int whichButton) {
+    				Editable value = input.getText();
+    				// Do something with value!
+    				if (value.toString().length() > 0){
+    					conversation.me.mail = value.toString();
+    					SharedPreferences settings = getPreferences(0);
+    					SharedPreferences.Editor editor = settings.edit();
+    					editor.putString("mail", conversation.me.mail);
+    					editor.commit();
+
+    				}
+    				else conversation.me.mail = "myNotSetDefaultMail";
+
+    					
+    			}
+    		});
+    		alert.show();
+    	}
+    	if (conversation.me.mail != "myNotSetDefaultMail" && conversation.me.mail != ""){
+    		sendMessage(Server.agent,custom_messages.TRADE_MAIL + ":" + conversation.me.mail);
+    	}
+    }
+    //
 	 
     /**
      * Connects to Jabber server and logs in anonymously.
@@ -511,12 +568,14 @@ public class Menu extends Activity {
     	SharedPreferences settings = getPreferences(0);
     	String storedName = settings.getString("name", "myNotSetDefaultName");
     	String storedAge = settings.getString("age","myNotSetDefaultAge");
+    	String storedMail = settings.getString("mail","myNotSetDefaultMail");
+    	
     	
     	//Get phone number
     	myPhone = new Phone(mTelephonyMgr);
     	
         //Create a conversation
-        User me = new User(storedName, storedAge ,null,null,null,null,locmgr);
+        User me = new User(storedName, storedAge ,null,null,myPhone.number,storedMail,locmgr);
         User partner = new User("Stranger",null,null,null,null,null,locmgr);
         conversation = new Conversation(me,partner);
         setListAdapter(); 
