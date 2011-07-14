@@ -11,9 +11,9 @@
 		            		    
 		     <LinearLayout android:gravity="right" android:id="@+id/linearLayout8" android:fadingEdge="vertical|horizontal" android:layout_centerHorizontal="true" android:layout_width="fill_parent" android:orientation="horizontal" android:baselineAligned="false" android:layout_height="wrap_content">
 		              
-		                <Button android:textSize="11sp" android:text="NEW" android:onClick="newconversationClick" android:id="@+id/newconversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
+		                <Button android:textSize="11sp" android:text="@string/newconv" android:onClick="newconversationClick" android:id="@+id/newconversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
 		    		     
-		                <Button android:textSize="11sp" android:text="END" android:onClick="endClick" android:id="@+id/end" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
+		                <Button android:textSize="11sp" android:text="@string/endconv" android:onClick="endClick" android:id="@+id/end" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
 		     </LinearLayout>
 		    		 
 		    <ListView android:id="@+id/listMessages"

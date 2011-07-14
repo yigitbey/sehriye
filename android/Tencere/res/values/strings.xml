@@ -2,4 +2,7 @@
 <resources>
     <string name="hello">Hello World, WelcomeMenu!</string>
     <string name="app_name">Tencere</string>
+    <string name="addcontact">Add Contact</string>
+    <string name="newconv">NEW</string>
+    <string name="endconv">END</string>
 </resources>
