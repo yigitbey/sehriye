@@ -26,6 +26,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
@@ -44,6 +45,10 @@ public class Menu extends Activity {
     public Conversation conversation;
     //-- Location Manager 
     public LocationManager locmgr = null;
+    //-- Telephony Manager
+    TelephonyManager mTelephonyMgr; 
+    //-- This Phone
+    public Phone myPhone;
 	//-- UI elements
     public ArrayList<String> messages = new ArrayList(); 
     public Handler mHandler = new Handler();
@@ -334,6 +339,14 @@ public class Menu extends Activity {
     	sendMessage(Server.agent,custom_messages.TRADE_LOCATION + ":" + conversation.me.location);                
 	}
 	//
+	
+	/**
+     * Defines number button behaviour
+     */
+	public void numberClick(View view) {
+    	sendMessage(Server.agent,custom_messages.TRADE_NUMBER + ":" + myPhone.number);                
+	}
+	//
 	 
     /**
      * Connects to Jabber server and logs in anonymously.
@@ -491,10 +504,16 @@ public class Menu extends Activity {
     	//Initialize the location manager
     	locmgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     	
+    	//Initialize the telephony manager
+        mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE); 
+    	
     	//Get stored user variables
     	SharedPreferences settings = getPreferences(0);
     	String storedName = settings.getString("name", "myNotSetDefaultName");
     	String storedAge = settings.getString("age","myNotSetDefaultAge");
+    	
+    	//Get phone number
+    	myPhone = new Phone(mTelephonyMgr);
     	
         //Create a conversation
         User me = new User(storedName, storedAge ,null,null,null,null,locmgr);
