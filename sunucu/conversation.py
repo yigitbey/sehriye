@@ -47,7 +47,8 @@ class Conversation(GeoModel):
         @rtype: Conversation
         @return: conversation with user_1 and user_2 populated
         """
-        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1  LIMIT 1 AND is_started = :2", current_user, True) # If user_1 is current user
+        query = db.GqlQuery("SELECT * FROM Conversation WHERE user_1 = :1 AND is_started = :2", current_user, True) # If user_1 is current user
+
         query2 = db.GqlQuery("SELECT * FROM Conversation WHERE user_2 = :1 LIMIT 1", current_user) # If user_2 is current user
         if query.count() == 1: # On a match for user_1
             self = query.get()            
@@ -121,8 +122,10 @@ class Conversation(GeoModel):
         Function to delete this conversation
         @rtype: None
         """
-
+        self.put()
         db.delete(self)
+        self.put()
+
        
     def setTradeName(self, name):
         """
@@ -214,18 +217,40 @@ class Conversation(GeoModel):
             xmpp.send_message(self.user_1,message_to_send)
             xmpp.send_message(self.user_2,message_to_send)
 
-    def setTradePhone(self, phone):
-        
+    def setTradeNumber(self, phone):
+        """
+        Function to set phone number of a user
+        If this is the first trade request on this conversation, it will just set the phone for user_1
+        Else it will send each participant's phone to party. 
+        (user_1 and user_2 are not sorted and same across each field. So clients will get both participant's data. 
+        Clients need to parse and find the correct value from received data)
+
+        @param phone: Phone number of the user
+        @type phone:  String
+        @rtype: None
+        """
+
         if self.user_1_phone == None:
             self.user_1_phone = phone
             self.put()
         else:
             self.user_2_phone = phone
-            message_to_send = TRADE_PHONE + ":" + str(self.user_1_phone) + ":" + str(self.user_2_phone)
+            message_to_send = TRADE_NUMBER + ":" + str(self.user_1_phone) + ":" + str(self.user_2_phone)
             xmpp.send_message(self.user_1, message_to_send)
             xmpp.send_message(self.user_2, message_to_send)
 
     def setTradeMail(self, mail):
+        """
+        Function to set mail address of a user
+        If this is the first trade request on this conversation, it will just set the mail for user_1
+        Else it will send each participant's phone to party. 
+        (user_1 and user_2 are not sorted and same across each field. So clients will get both participant's data. 
+        Clients need to parse and find the correct value from received data)
+
+        @param mail: Mail address of the user
+        @type mail: String
+        @rtype: None
+        """
 
         if self.user_1_mail == None:
             self.user_1_mail = mail

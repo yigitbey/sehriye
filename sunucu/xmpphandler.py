@@ -77,7 +77,16 @@ class XMPPHandler(webapp.RequestHandler):
         elif command == TRADE_NUMBER: # If a clients want to send his phone number
             sender = message.sender.split("/")[0] #: Remove the identifier string from JID
             phone = message.body.split(":")[1] #: Phone number of the user
-            conversation.setTradePhone(phone)
+            conversation.setTradeNumber(phone)
+            pass_message = False #: Sets if the message will be passed to partner
+        ###
+
+        ### Trade MAIL
+
+        elif command == TRADE_MAIL: # If a clients want to send his phone number
+            sender = message.sender.split("/")[0] #: Remove the identifier string from JID
+            mail = message.body.split(":")[1] #: Mail address of the user
+            conversation.setTradeMail(mail)
             pass_message = False #: Sets if the message will be passed to partner
         ###
 
