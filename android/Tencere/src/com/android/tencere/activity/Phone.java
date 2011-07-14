@@ -1,6 +1,11 @@
 package com.android.tencere.activity;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.Contacts;
 import android.telephony.TelephonyManager;
+
 
 public class Phone {
 	public String number;
@@ -17,9 +22,11 @@ public class Phone {
 
 	public String getMy10DigitPhoneNumber(){
 		String s = this.getMyPhoneNumber();
-		return s.substring(2);
+		return s;
 	}
+	
+	
+	
+	
 }
-
-
 	

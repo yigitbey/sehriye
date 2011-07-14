@@ -20,12 +20,15 @@ import org.jivesoftware.smack.util.StringUtils;
 import android.location.LocationManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Contacts;
+import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.util.Log;
@@ -57,6 +60,7 @@ public class Menu extends Activity {
     public ProgressDialog dialog;
     public Button end;
     public Button newConversation; 
+    public Button addcontact;
 
     
     /**
@@ -185,6 +189,19 @@ public class Menu extends Activity {
 
     }
     
+    
+    /**
+     * Defines add contact button behaviour
+     */
+    public void addcontactClick(View view) {
+    	
+    	Intent addContactIntent = new Intent(Contacts.Intents.Insert.ACTION, Contacts.People.CONTENT_URI);
+    	addContactIntent.putExtra(Contacts.Intents.Insert.NAME, conversation.partner.name); // the name
+    	addContactIntent.putExtra(ContactsContract.Intents.Insert.PHONE, "359345834534");
+    	startActivity(addContactIntent);
+
+    }
+    //
     
     /**
      * Defines end button behaviour
@@ -489,6 +506,9 @@ public class Menu extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        
+        
+        
         
         //Initialize the main UI
         setContentView(R.layout.main);

@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, WelcomeMenu!</string>
     <string name="app_name">Tencere</string>
+    <string name="addcontact">+</string>
 </resources>

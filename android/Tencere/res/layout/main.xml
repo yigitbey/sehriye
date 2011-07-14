@@ -24,6 +24,7 @@
 		              android:stackFromBottom="true"
 		              android:transcriptMode="normal" 
 		            />
+		    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:layout_alignBottom="@+id/imageView1" android:text="@string/addcontact" android:id="@+id/addcontact" android:onClick="addcontactClick"></Button>
 
 		         
 		         
