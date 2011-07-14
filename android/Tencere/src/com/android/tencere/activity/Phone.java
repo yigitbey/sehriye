@@ -10,19 +10,11 @@ public class Phone {
 	   
 	public Phone(TelephonyManager mTelephonyMgr){
 		this.mTelephonyMgr = mTelephonyMgr;
-		this.number = getMy10DigitPhoneNumber();
+		this.number = getMyPhoneNumber();
 	}	
 	public String getMyPhoneNumber(){
 	    return this.mTelephonyMgr.getLine1Number();
 	}
 
-	public String getMy10DigitPhoneNumber(){
-		String s = this.getMyPhoneNumber();
-		return s;
-	}
-	
-	
-	
-	
 }
 	
