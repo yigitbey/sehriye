@@ -36,6 +36,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 /**
@@ -55,12 +56,12 @@ public class Menu extends Activity {
 	//-- UI elements
     public ArrayList<String> messages = new ArrayList(); 
     public Handler mHandler = new Handler();
-    public EditText mSendText;
-    public ListView mList;
+    public EditText txtMessage;
+    public ListView lstMessages;
     public ProgressDialog dialog;
-    public Button end;
-    public Button newConversation; 
-    public Button addcontact;
+    public ImageButton btnEndConversation;
+    public ImageButton btnNewConversation; 
+    public ImageButton btnAddContact;
 
     
     /**
@@ -214,7 +215,7 @@ public class Menu extends Activity {
     /**
      * Defines add contact button behaviour
      */
-    public void addcontactClick(View view) {
+    public void btnAddContactClick(View view) {
     	
     	Intent addContactIntent = new Intent(Contacts.Intents.Insert.ACTION, Contacts.People.CONTENT_URI);
     	addContactIntent.putExtra(Contacts.Intents.Insert.NAME, conversation.partner.name); // the name
@@ -227,7 +228,7 @@ public class Menu extends Activity {
     /**
      * Defines end button behaviour
      */
-    public void endClick(View view) {
+    public void btnEndConversationClick(View view) {
 
 			sendMessage(Server.agent,custom_messages.DELETE_CONVERSATION);            
 			conversation.is_started = false; //make us note of it
@@ -242,7 +243,7 @@ public class Menu extends Activity {
     /**
      * Defines new button behaviour
      */
-    public void newconversationClick(View view) {
+    public void btnNewConversationClick(View view) {
     	
        // end.setVisibility(View.VISIBLE); //end is visible
        // newConversation.setVisibility(View.INVISIBLE); //new is invisible
@@ -254,9 +255,9 @@ public class Menu extends Activity {
     /**
      * Defines send button behaviour
      */
-    public void sendClick(View view) {
+    public void btnSendClick(View view) {
     	
-        String text = mSendText.getText().toString();
+        String text = txtMessage.getText().toString();
 
         if (conversation.is_started && !text.equals("")) {
         	sendMessage(conversation.partner.address,text);
@@ -268,7 +269,7 @@ public class Menu extends Activity {
         	//sendMessage(Server.agent,text);
         }
         
-    	mSendText.setText("");
+    	txtMessage.setText("");
     	
     }
     //
@@ -542,7 +543,7 @@ public class Menu extends Activity {
      * */
     private void setListAdapter() {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.multi_line_list_item, messages);
-        mList.setAdapter(adapter);
+        lstMessages.setAdapter(adapter);
     }
 
    
@@ -574,10 +575,10 @@ public class Menu extends Activity {
         
         
         //Initialize UI Buttons
-        mSendText = (EditText) this.findViewById(R.id.sendText);
-        mList = (ListView) this.findViewById(R.id.listMessages);
-        end = (Button) this.findViewById(R.id.end);
-    	newConversation = (Button) this.findViewById(R.id.newconversation);
+        txtMessage = (EditText) this.findViewById(R.id.txtMessage);
+        lstMessages = (ListView) this.findViewById(R.id.lstMessages);
+        btnEndConversation = (ImageButton) this.findViewById(R.id.btnEndConversation);
+    	btnNewConversation = (ImageButton) this.findViewById(R.id.btnEndConversation);
     	 
     	
     	//Initialize the location manager

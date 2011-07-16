@@ -1,71 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    >
+    
+    
+<RelativeLayout
+    android:id="@+id/RLayout"
+    android:layout_width="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="wrap_content">
+    
+    
+    
+    <ImageView
+    android:id="@+id/imgTopBar"
+    android:layout_width="wrap_content" 
+    android:src="@drawable/topbar" 
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true" 
+    android:layout_alignParentLeft="true">
+    </ImageView>
+    
+    
+    <ImageButton 
+    android:layout_width="wrap_content" 
+    android:id="@+id/btnAddContact" 
+    android:src="@drawable/addcontact" 
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop="true" 
+    android:layout_toLeftOf="@+id/btnNewConversation"
+    android:background="@null"
+    android:onClick="btnAddContactClick">
+    </ImageButton>
+    
+    
+    <ImageButton 
+    android:layout_width="wrap_content" 
+    android:id="@+id/btnNewConversation" 
+    android:src="@drawable/newconversation" 
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop="true" 
+    android:layout_toLeftOf="@+id/btnEndConversation"
+    android:background="@null"
+    android:onClick="btnNewConversationClick">
+    </ImageButton>
+    
+    
+    <ImageButton
+    android:layout_width="wrap_content" 
+    android:id="@+id/btnEndConversation" android:src="@drawable/endconversation"
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop="true" 
+    android:layout_alignParentRight="true"
+    android:background="@null"
+    android:onClick="btnEndConversationClick">
+    </ImageButton>
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@+id/linearLayout1" android:orientation="horizontal">
-       
-        <LinearLayout android:id="@+id/linearLayout2" android:orientation="vertical" android:layout_height="fill_parent" android:layout_width="fill_parent">
-		    
-		    <RelativeLayout android:layout_height="wrap_content" android:layout_weight="1" android:layout_width="wrap_content" android:id="@+id/relativeLayout1">
-
-		    <ImageView android:adjustViewBounds="false" android:scaleType="fitXY" android:layout_width="wrap_content" android:src="@drawable/tepe" android:id="@+id/imageView1" android:layout_alignParentLeft="true" android:layout_height="50px" android:layout_alignBottom="@+id/linearLayout8" android:layout_alignParentTop="true" ></ImageView>
-		            		    
-		     <LinearLayout android:gravity="right" android:id="@+id/linearLayout8" android:fadingEdge="vertical|horizontal" android:layout_centerHorizontal="true" android:layout_width="fill_parent" android:orientation="horizontal" android:baselineAligned="false" android:layout_height="wrap_content">
-		              
-		                <Button android:textSize="11sp" android:text="NEW" android:onClick="newconversationClick" android:id="@+id/newconversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
-		    		     
-		                <Button android:textSize="11sp" android:text="END" android:onClick="endClick" android:id="@+id/end" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
-		     </LinearLayout>
-		    		 
-		    <ListView android:id="@+id/listMessages"
-		              android:layout_width="wrap_content"
-		              android:layout_height="wrap_content"
-					  android:drawSelectorOnTop="true"
-					  android:padding="20px"
-		              android:stackFromBottom="true"
-		              android:transcriptMode="normal" 
-		            />
-		    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:layout_alignBottom="@+id/imageView1" android:text="@string/addcontact" android:id="@+id/addcontact" android:onClick="addcontactClick"></Button>
-
-		         
-		         
-		           
-		           
-		    </RelativeLayout>
-
-		    <HorizontalScrollView android:layout_height="wrap_content" android:id="@+id/horizontalScrollView1" android:layout_width="fill_parent" android:padding="5px" android:fadingEdge="vertical" android:foregroundGravity="fill_horizontal|center_horizontal" android:isScrollContainer="true" android:layout_gravity="center">
-		       	<TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1" android:layout_height="fill_parent">
-		              <TableRow android:layout_width="fill_parent" android:id="@+id/tableRow1" android:layout_height="fill_parent">
-		                <Button android:textSize="10sp" android:text="Name" android:layout_height="wrap_content" android:onClick="nameClick" android:layout_width="wrap_content" android:id="@+id/trade_name"></Button>
-		                <Button android:textSize="10sp" android:text="Sex" android:layout_height="wrap_content" android:onClick="sexClick" android:layout_width="wrap_content" android:id="@+id/trade_sex"></Button>
-		                <Button android:textSize="10sp" android:text="Age" android:layout_height="wrap_content" android:onClick="ageClick" android:layout_width="wrap_content" android:id="@+id/trade_age"></Button>
-		                <Button android:textSize="10sp" android:text="Location" android:layout_height="wrap_content" android:onClick="locationClick" android:layout_width="wrap_content" android:id="@+id/trade_location"></Button>
-		                <Button android:textSize="10sp" android:text="Number" android:layout_height="wrap_content" android:onClick="numberClick" android:layout_width="wrap_content" android:id="@+id/number"></Button>
-	            		<Button android:textSize="10sp" android:text="Mail" android:layout_height="wrap_content" android:onClick="mailClick" android:layout_width="wrap_content" android:id="@+id/mail"></Button>
-	            </TableRow>
-		        </TableLayout>
-		       	
-
-		    </HorizontalScrollView>          
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/linearLayout9">
-                	<EditText android:id="@+id/sendText"
-		            	android:layout_height="wrap_content"
-		            	android:layout_width="wrap_content"
-		              	android:singleLine="false"
-		              	android:textSize="16sp"
-		              	android:autoText="false"
-		              	android:capitalize="none"
-		              	android:layout_weight="1" 
-		              	android:scrollHorizontally="true" 
-		              	/>
-
-                	<Button android:id="@+id/send" 
-	                	android:onClick="sendClick"	
-        				android:text="   Send   "
-        				android:layout_height="wrap_content" 
-        				android:layout_width="wrap_content" android:textStyle="bold" android:textSize="18sp">
-        		</Button>
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+</RelativeLayout>
 
 
+
+
+	<ListView 
+	android:id="@+id/lstMessages"
+    android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:drawSelectorOnTop="true"
+	android:padding="20px"
+	android:stackFromBottom="true"
+	android:transcriptMode="normal" 
+	/>
+	
+	
+	<!-- filler -->
+	<TextView
+	android:layout_height="0dip" 
+    android:layout_width="fill_parent"
+    android:layout_weight="1" android:id="@+id/filler"/>
+	<!-- filler -->
+	
+	
+	<LinearLayout 
+	android:id="@+id/linearLayout1" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content" 
+	android:layout_gravity="bottom">
+		
+		
+		<EditText 
+		android:layout_weight="1" 
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/txtMessage">
+		
+		<requestFocus></requestFocus>
+			
+		</EditText>
+		
+		
+		<ImageButton 
+		android:src="@drawable/logo" 
+		android:layout_height="42dp" 
+		android:layout_width="72dp" 
+		android:id="@+id/btnSend"
+		android:onClick="btnSendClick">
+		</ImageButton>
+		
+		
+	</LinearLayout>
+
+
+
+
+</LinearLayout>
