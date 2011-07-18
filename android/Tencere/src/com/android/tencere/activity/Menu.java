@@ -613,6 +613,7 @@ public class Menu extends Activity {
     // Called on the activity destroy.
     @Override
     public void onDestroy() {
+    	super.onDestroy();
     	sendMessage(Server.agent,custom_messages.DELETE_CONVERSATION);                
     }
     // End of destroy function
