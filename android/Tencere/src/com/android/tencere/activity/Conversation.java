@@ -8,6 +8,13 @@ public class Conversation {
 	public User me;
 	public User partner;
 
+	public Boolean nameClicked = false;
+    public Boolean ageClicked = false;
+    public Boolean sexClicked = false;
+    public Boolean locationClicked = false;
+    public Boolean numberClicked = false;
+    public Boolean mailClicked = false;
+	
 	public Conversation(){
 		this.is_started = false;
 		this.me = null;
@@ -27,4 +34,5 @@ public class Conversation {
 	public void end(){
 		this.is_started = false;
 	}
+	
 }

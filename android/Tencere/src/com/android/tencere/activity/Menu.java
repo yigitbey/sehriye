@@ -25,9 +25,9 @@ import android.content.SharedPreferences;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.Contacts;
 import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
@@ -37,23 +37,26 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
 * Main class
 */ 
 public class Menu extends Activity {
     //-- XMPP Connection
-    private XMPPConnection connection;    
+    private XMPPConnection connection = null;    
     //-- Conversation
-    public Conversation conversation;
+    public Conversation conversation = null;
     //-- Location Manager 
     public LocationManager locmgr = null;
     //-- Telephony Manager
     TelephonyManager mTelephonyMgr; 
+    //-- Connectivity Manager
+	ConnectivityManager conMgr;
     //-- This Phone
     public Phone myPhone;
 	//-- UI elements
-    public ArrayList<String> messages = new ArrayList(); 
+    public ArrayList<String> messages = new ArrayList<String>(); 
     public Handler mHandler = new Handler();
     public EditText mSendText;
     public ListView mList;
@@ -61,7 +64,11 @@ public class Menu extends Activity {
     public Button end;
     public Button newConversation; 
     public Button addcontact;
-
+    
+    //Me
+    public User me;
+    //Null Partner
+    public User nullPartner;
     
     /**
  	* Sends a message to a xmpp jid            
@@ -122,7 +129,7 @@ public class Menu extends Activity {
 
         // DELETE_CONVERSATION
     	if (command.equals(custom_messages.DELETE_CONVERSATION)){
-    		conversation.is_started = false;
+    		conversation = new Conversation(me,nullPartner); //Reset it
             messages.add("---Disconnected---");
         //  end.setVisibility(View.INVISIBLE); //end is invisible
         //  newConversation.setVisibility(View.VISIBLE); //new is visible
@@ -216,21 +223,25 @@ public class Menu extends Activity {
      */
     public void addcontactClick(View view) {
     	
-    	Intent addContactIntent = new Intent(Contacts.Intents.Insert.ACTION, Contacts.People.CONTENT_URI);
-    	addContactIntent.putExtra(Contacts.Intents.Insert.NAME, conversation.partner.name); // the name
-    	addContactIntent.putExtra(ContactsContract.Intents.Insert.PHONE, "359345834534");
+    	Intent addContactIntent = new Intent(ContactsContract.Intents.Insert.ACTION, ContactsContract.Contacts.CONTENT_URI);
+    	addContactIntent.putExtra(ContactsContract.Intents.Insert.NAME, conversation.partner.name); // the name
+    	addContactIntent.putExtra(ContactsContract.Intents.Insert.PHONE, conversation.partner.number); // number
+    	addContactIntent.putExtra(ContactsContract.Intents.Insert.EMAIL, conversation.partner.mail); // mail
+    	
     	startActivity(addContactIntent);
 
     }
     //
+    
+    
     
     /**
      * Defines end button behaviour
      */
     public void endClick(View view) {
 
-			sendMessage(Server.agent,custom_messages.DELETE_CONVERSATION);            
-			conversation.is_started = false; //make us note of it
+			sendMessage(Server.agent,custom_messages.DELETE_CONVERSATION);        
+	        conversation = new Conversation(me,nullPartner);
             messages.add("---Disconnected---");
             updateMessages();
            
@@ -246,9 +257,14 @@ public class Menu extends Activity {
     	
        // end.setVisibility(View.VISIBLE); //end is visible
        // newConversation.setVisibility(View.INVISIBLE); //new is invisible
-    	
-		requestConversation();
-		
+    	if (connection == null){
+    		connectServer();
+    	}
+    	else if(conversation.is_started == true){
+    		endClick(view); //Act as if pressed on end button
+    	}
+		requestConversation(); // request a new conversation
+
     }
     
     /**
@@ -277,39 +293,42 @@ public class Menu extends Activity {
      * Defines name button behaviour
      */
     public void nameClick(View view) {
-    	if (conversation.me.name == "myNotSetDefaultName"){
-    	
-    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
-    		alert.setTitle("Enter your name");
-    		alert.setMessage("Enter your name to succeed.");
-
-    		// Set an EditText view to get user input 
-    		final EditText input = new EditText(this);
-    		alert.setView(input);
-
-    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-    			public void onClick(DialogInterface dialog, int whichButton) {
-    				Editable value = input.getText();
-    				// Do something with value!
-    				if (value.toString().length() > 0){
-    					conversation.me.name = value.toString();
-    					SharedPreferences settings = getPreferences(0);
-    					SharedPreferences.Editor editor = settings.edit();
-    					editor.putString("name", conversation.me.name);
-    					editor.commit();
-    					sendMessage(Server.agent,custom_messages.TRADE_NAME + ":" + conversation.me.name);
-
-    				}
-    				else conversation.me.name = "myNotSetDefaultName";
-
-    					
-    			}
-    		});
-    		alert.show();
-    	}
-    	if (conversation.me.name != "myNotSetDefaultName" && conversation.me.name != ""){
-    		sendMessage(Server.agent,custom_messages.TRADE_NAME + ":" + conversation.me.name);
+    	if (conversation.nameClicked == false){
+    		conversation.nameClicked = true;
+	    	if (conversation.me.name == "myNotSetDefaultName"){
+	    	
+	    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+	
+	    		alert.setTitle("Enter your name");
+	    		alert.setMessage("Enter your name to succeed.");
+	
+	    		// Set an EditText view to get user input 
+	    		final EditText input = new EditText(this);
+	    		alert.setView(input);
+	
+	    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+	    			public void onClick(DialogInterface dialog, int whichButton) {
+	    				Editable value = input.getText();
+	    				// Do something with value!
+	    				if (value.toString().length() > 0){
+	    					conversation.me.name = value.toString();
+	    					SharedPreferences settings = getPreferences(0);
+	    					SharedPreferences.Editor editor = settings.edit();
+	    					editor.putString("name", conversation.me.name);
+	    					editor.commit();
+	    					sendMessage(Server.agent,custom_messages.TRADE_NAME + ":" + conversation.me.name);
+	
+	    				}
+	    				else conversation.me.name = "myNotSetDefaultName";
+	
+	    					
+	    			}
+	    		});
+	    		alert.show();
+	    	}
+	    	if (conversation.me.name != "myNotSetDefaultName" && conversation.me.name != ""){
+	    		sendMessage(Server.agent,custom_messages.TRADE_NAME + ":" + conversation.me.name);
+	    	}
     	}
     }
     //
@@ -318,39 +337,42 @@ public class Menu extends Activity {
      * Defines age button behaviour
      */
     public void ageClick(View view) {
-    	if (conversation.me.age == "myNotSetDefaultAge"){
-        	
-    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
-    		alert.setTitle("Enter your age");
-    		alert.setMessage("Enter your age to succeed.");
-
-    		// Set an EditText view to get user input 
-    		final EditText input = new EditText(this);
-    		alert.setView(input);
-
-    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-    			public void onClick(DialogInterface dialog, int whichButton) {
-    				Editable value = input.getText();
-    				// Do something with value!
-    				if (value.toString().length() > 0){
-    					conversation.me.age = value.toString();
-    					SharedPreferences settings = getPreferences(0);
-    					SharedPreferences.Editor editor = settings.edit();
-    					editor.putString("age", conversation.me.age);
-    					editor.commit();
-    					sendMessage(Server.agent,custom_messages.TRADE_AGE + ":" + conversation.me.age);
-
-    				}
-    				else conversation.me.age = "myNotSetDefaultName";
-
-    					
-    			}
-    		});
-    		alert.show();
-    	}
-    	if (conversation.me.age != "myNotSetDefaultAge" && conversation.me.age != ""){
-    		sendMessage(Server.agent,custom_messages.TRADE_AGE + ":" + conversation.me.age);
+    	if (conversation.ageClicked == false){
+    		conversation.ageClicked = true;
+	    	if (conversation.me.age == "myNotSetDefaultAge"){
+	        	
+	    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+	
+	    		alert.setTitle("Enter your age");
+	    		alert.setMessage("Enter your age to succeed.");
+	
+	    		// Set an EditText view to get user input 
+	    		final EditText input = new EditText(this);
+	    		alert.setView(input);
+	
+	    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+	    			public void onClick(DialogInterface dialog, int whichButton) {
+	    				Editable value = input.getText();
+	    				// Do something with value!
+	    				if (value.toString().length() > 0){
+	    					conversation.me.age = value.toString();
+	    					SharedPreferences settings = getPreferences(0);
+	    					SharedPreferences.Editor editor = settings.edit();
+	    					editor.putString("age", conversation.me.age);
+	    					editor.commit();
+	    					sendMessage(Server.agent,custom_messages.TRADE_AGE + ":" + conversation.me.age);
+	
+	    				}
+	    				else conversation.me.age = "myNotSetDefaultName";
+	
+	    					
+	    			}
+	    		});
+	    		alert.show();
+	    	}
+	    	if (conversation.me.age != "myNotSetDefaultAge" && conversation.me.age != ""){
+	    		sendMessage(Server.agent,custom_messages.TRADE_AGE + ":" + conversation.me.age);
+	    	}
     	}
     }
     //
@@ -359,10 +381,13 @@ public class Menu extends Activity {
      * Defines sex button behaviour
      */
 	public void sexClick(View view) {
-		int sexForServer;
-		if (conversation.me.sex == "M") sexForServer = 1;
-		else sexForServer = 2;
-    	sendMessage(Server.agent,custom_messages.TRADE_SEX + ":" + sexForServer);                
+    	if (conversation.sexClicked == false){
+    		conversation.sexClicked = true;
+			int sexForServer = 2; //Defaults to Female
+			if (conversation.me.sex == "M") 
+				sexForServer = 1;
+	    	sendMessage(Server.agent,custom_messages.TRADE_SEX + ":" + sexForServer);           
+    	}
 	}
 	//
 	
@@ -370,7 +395,10 @@ public class Menu extends Activity {
      * Defines location button behaviour
      */
 	public void locationClick(View view) {
-    	sendMessage(Server.agent,custom_messages.TRADE_LOCATION + ":" + conversation.me.location);                
+    	if (conversation.locationClicked == false){
+    		conversation.locationClicked = true;
+    		sendMessage(Server.agent,custom_messages.TRADE_LOCATION + ":" + conversation.me.location);        
+    	}
 	}
 	//
 	
@@ -378,7 +406,10 @@ public class Menu extends Activity {
      * Defines number button behaviour
      */
 	public void numberClick(View view) {
-    	sendMessage(Server.agent,custom_messages.TRADE_NUMBER + ":" + myPhone.number);                
+    	if (conversation.numberClicked == false){
+    		conversation.numberClicked = true;
+    		sendMessage(Server.agent,custom_messages.TRADE_NUMBER + ":" + myPhone.number);     
+    	}
 	}
 	//
 	
@@ -387,39 +418,42 @@ public class Menu extends Activity {
      * Defines name button behaviour
      */
     public void mailClick(View view) {
-    	if (conversation.me.mail == "myNotSetDefaultMail"){
-    	
-    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
-    		alert.setTitle("Enter your mail address");
-    		alert.setMessage("Enter your mail address to succeed.");
-
-    		// Set an EditText view to get user input 
-    		final EditText input = new EditText(this);
-    		alert.setView(input);
-
-    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-    			public void onClick(DialogInterface dialog, int whichButton) {
-    				Editable value = input.getText();
-    				// Do something with value!
-    				if (value.toString().length() > 0){
-    					conversation.me.mail = value.toString();
-    					SharedPreferences settings = getPreferences(0);
-    					SharedPreferences.Editor editor = settings.edit();
-    					editor.putString("mail", conversation.me.mail);
-    					editor.commit();
-    					
-
-    				}
-    				else conversation.me.mail = "myNotSetDefaultMail";
-
-    					
-    			}
-    		});
-    		alert.show();
-    	}
-    	if (conversation.me.mail != "myNotSetDefaultMail" && conversation.me.mail != ""){
-    		sendMessage(Server.agent,custom_messages.TRADE_MAIL + ":" + conversation.me.mail);
+    	if (conversation.mailClicked == false){
+    		conversation.mailClicked = true;
+	    	if (conversation.me.mail == "myNotSetDefaultMail"){
+	    	
+	    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+	
+	    		alert.setTitle("Enter your mail address");
+	    		alert.setMessage("Enter your mail address to succeed.");
+	
+	    		// Set an EditText view to get user input 
+	    		final EditText input = new EditText(this);
+	    		alert.setView(input);
+	
+	    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+	    			public void onClick(DialogInterface dialog, int whichButton) {
+	    				Editable value = input.getText();
+	    				// Do something with value!
+	    				if (value.toString().length() > 0){
+	    					conversation.me.mail = value.toString();
+	    					SharedPreferences settings = getPreferences(0);
+	    					SharedPreferences.Editor editor = settings.edit();
+	    					editor.putString("mail", conversation.me.mail);
+	    					editor.commit();
+	    					
+	
+	    				}
+	    				else conversation.me.mail = "myNotSetDefaultMail";
+	
+	    					
+	    			}
+	    		});
+	    		alert.show();
+	    	}
+	    	if (conversation.me.mail != "myNotSetDefaultMail" && conversation.me.mail != ""){
+	    		sendMessage(Server.agent,custom_messages.TRADE_MAIL + ":" + conversation.me.mail);
+	    	}
     	}
     }
     //
@@ -559,7 +593,7 @@ public class Menu extends Activity {
     }
     
     /** Called on the activity creation.
-     * TODO: check for internet connection?
+
      @param icicle Bundle
      */
     @Override
@@ -585,6 +619,9 @@ public class Menu extends Activity {
     	
     	//Initialize the telephony manager
         mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE); 
+        
+        //initialize the Connectivity Manager
+		conMgr = (ConnectivityManager) getSystemService (Context.CONNECTIVITY_SERVICE);
     	
     	//Get stored user variables
     	SharedPreferences settings = getPreferences(0);
@@ -594,18 +631,23 @@ public class Menu extends Activity {
     	
     	
     	//Get phone number
-    	myPhone = new Phone(mTelephonyMgr);
+    	myPhone = new Phone(mTelephonyMgr,conMgr);
     	
         //Create a conversation
-        User me = new User(storedName, storedAge ,null,null,myPhone.number,storedMail,locmgr);
-        User partner = new User("Stranger",null,null,null,null,null,locmgr);
-        conversation = new Conversation(me,partner);
+        me = new User(storedName, storedAge ,null,null,myPhone.number,storedMail,locmgr);
+        nullPartner = new User("Stranger",null,null,null,null,null,locmgr);
+        conversation = new Conversation(me,nullPartner);
         setListAdapter(); 
-        //Connect to jabber server
-        connectServer(); 
         
-        //Request a conversation from the agent
-        requestConversation();
+        if (myPhone.checkInternetConnection() == true){
+	        //Connect to jabber server
+	        connectServer(); 
+	        //Request a conversation from the agent
+	        requestConversation();
+        }
+        else{
+        	Toast.makeText(getApplicationContext(), "Unable to connect to internet", Toast.LENGTH_SHORT).show();
+        }
 
     }
     // End of onCreate function
