@@ -94,7 +94,7 @@
 		<EditText
 		android:id="@+id/txtMessage"
 		android:imeOptions="actionSend"
-		android:maxLines="1"
+		android:inputType="text"
 		android:maxLength="200"
 		android:hint="Say something!"
 		android:layout_weight="1" 
