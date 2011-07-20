@@ -32,17 +32,21 @@ import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnKeyListener;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
 * Main class
 */ 
-public class Menu extends Activity {
+public class Menu extends Activity implements OnKeyListener{
     //-- XMPP Connection
     private XMPPConnection connection = null;    
     //-- Conversation
@@ -86,7 +90,29 @@ public class Menu extends Activity {
         connection.sendPacket(msg);
     }
     
-      
+    
+    /**
+    * Function to send the current message in the text box
+    */
+    public void sendCurrentMessage(View view) {
+    	
+        String text = txtMessage.getText().toString();
+
+        if (conversation.is_started && !text.equals("")) {
+        	sendMessage(conversation.partner.address,text);
+        	messages.add("You: " + text);
+            setListAdapter();
+            
+        }
+        else{
+        	//sendMessage(Server.agent,text);
+        }
+        
+    	txtMessage.setText("");
+    	
+    }
+    
+    
     /**
     * Function to request a conversation
     @return void
@@ -270,26 +296,12 @@ public class Menu extends Activity {
 		requestConversation(); // request a new conversation
 
     }
-    
+      
     /**
      * Defines send button behaviour
-     */
+     */  
     public void btnSendClick(View view) {
-    	
-        String text = txtMessage.getText().toString();
-
-        if (conversation.is_started && !text.equals("")) {
-        	sendMessage(conversation.partner.address,text);
-        	messages.add("You: " + text);
-            setListAdapter();
-            
-        }
-        else{
-        	//sendMessage(Server.agent,text);
-        }
-        
-    	txtMessage.setText("");
-    	
+       sendCurrentMessage(view);
     }
     //
     
@@ -655,8 +667,22 @@ public class Menu extends Activity {
         	Toast.makeText(getApplicationContext(), "Unable to connect to internet", Toast.LENGTH_SHORT).show();
         }
 
-        
-        
+    
+        /*
+         * Listens to keyboard events
+         */
+        txtMessage.setOnEditorActionListener(
+        		new EditText.OnEditorActionListener() {
+        			@Override
+        			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        				if (actionId == EditorInfo.IME_ACTION_SEND) { // Send action triggered
+        					// Send the current message
+        					btnSend.performClick();
+        					}
+        				
+        				return false;
+        				}
+        			});
         
         
         
@@ -685,6 +711,13 @@ public class Menu extends Activity {
         super.onResume();
         locmgr.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,10000.0f,conversation.me.onLocationChange);
     }
+
+
+	@Override
+	public boolean onKey(View arg0, int arg1, KeyEvent arg2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
     
 }
