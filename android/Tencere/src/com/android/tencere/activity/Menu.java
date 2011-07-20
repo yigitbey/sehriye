@@ -680,7 +680,7 @@ public class Menu extends Activity implements OnKeyListener{
         					btnSend.performClick();
         					}
         				
-        				return false;
+        				return true;
         				}
         			});
         
