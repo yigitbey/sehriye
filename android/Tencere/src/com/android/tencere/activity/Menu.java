@@ -249,7 +249,7 @@ public class Menu extends Activity implements OnKeyListener{
     
     
     /**
-     * Defines add contact button behaviour
+     * Defines add contact button behavior		
      */
     public void btnAddContactClick(View view) {
     	
@@ -266,7 +266,7 @@ public class Menu extends Activity implements OnKeyListener{
     
     
     /**
-     * Defines end button behaviour
+     * Defines end button behavior
      */
     public void btnEndConversationClick(View view) {
 
@@ -281,7 +281,7 @@ public class Menu extends Activity implements OnKeyListener{
 	}
 
     /**
-     * Defines new button behaviour
+     * Defines new button behavior
      */
     public void btnNewConversationClick(View view) {
     	
@@ -298,7 +298,7 @@ public class Menu extends Activity implements OnKeyListener{
     }
       
     /**
-     * Defines send button behaviour
+     * Defines send button behavior
      */  
     public void btnSendClick(View view) {
        sendCurrentMessage(view);
@@ -306,7 +306,7 @@ public class Menu extends Activity implements OnKeyListener{
     //
     
     /**
-     * Defines name button behaviour
+     * Defines name button behavior
      */
     public void nameClick(View view) {
     	if (conversation.nameClicked == false){
@@ -350,7 +350,7 @@ public class Menu extends Activity implements OnKeyListener{
     //
     
     /**
-     * Defines age button behaviour
+     * Defines age button behavior
      */
     public void ageClick(View view) {
     	if (conversation.ageClicked == false){
@@ -394,7 +394,7 @@ public class Menu extends Activity implements OnKeyListener{
     //
     
     /**
-     * Defines sex button behaviour
+     * Defines sex button behavior
      */
 	public void sexClick(View view) {
     	if (conversation.sexClicked == false){
@@ -408,7 +408,7 @@ public class Menu extends Activity implements OnKeyListener{
 	//
 	
     /**
-     * Defines location button behaviour
+     * Defines location button behavior
      */
 	public void locationClick(View view) {
     	if (conversation.locationClicked == false){
@@ -419,7 +419,7 @@ public class Menu extends Activity implements OnKeyListener{
 	//
 	
 	/**
-     * Defines number button behaviour
+     * Defines number button behavior
      */
 	public void numberClick(View view) {
     	if (conversation.numberClicked == false){
@@ -431,7 +431,7 @@ public class Menu extends Activity implements OnKeyListener{
 	
 	
     /**
-     * Defines name button behaviour
+     * Defines name button behavior
      */
     public void mailClick(View view) {
     	if (conversation.mailClicked == false){
@@ -684,9 +684,7 @@ public class Menu extends Activity implements OnKeyListener{
         				}
         			});
         
-        
-        
-        
+    
     }
     // End of onCreate function
     
