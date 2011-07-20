@@ -61,9 +61,11 @@ public class Menu extends Activity {
     public EditText txtMessage;
     public ListView lstMessages;
     public ProgressDialog dialog;
+    
     public ImageButton btnEndConversation;
     public ImageButton btnNewConversation; 
     public ImageButton btnAddContact;
+    public ImageButton btnSend;
 
     
     //Me
@@ -613,7 +615,9 @@ public class Menu extends Activity {
         txtMessage = (EditText) this.findViewById(R.id.txtMessage);
         lstMessages = (ListView) this.findViewById(R.id.lstMessages);
         btnEndConversation = (ImageButton) this.findViewById(R.id.btnEndConversation);
-    	btnNewConversation = (ImageButton) this.findViewById(R.id.btnEndConversation);
+    	btnNewConversation = (ImageButton) this.findViewById(R.id.btnNewConversation);
+    	btnAddContact = (ImageButton) this.findViewById(R.id.btnAddContact);
+    	btnSend = (ImageButton) this.findViewById(R.id.btnSend);
     	 
     	
     	//Initialize the location manager
