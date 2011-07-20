@@ -611,7 +611,7 @@ public class Menu extends Activity {
         setContentView(R.layout.main);
         
         
-        //Initialize UI Buttons
+        //Initialize UI Elements
         txtMessage = (EditText) this.findViewById(R.id.txtMessage);
         lstMessages = (ListView) this.findViewById(R.id.lstMessages);
         btnEndConversation = (ImageButton) this.findViewById(R.id.btnEndConversation);
@@ -655,6 +655,12 @@ public class Menu extends Activity {
         	Toast.makeText(getApplicationContext(), "Unable to connect to internet", Toast.LENGTH_SHORT).show();
         }
 
+        
+        
+        
+        
+        
+        
     }
     // End of onCreate function
     

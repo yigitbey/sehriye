@@ -113,6 +113,7 @@
 		android:layout_height="42dp" 
 		android:layout_width="72dp" 	
 		android:onClick="btnSendClick"
+		android:hapticFeedbackEnabled="true"
 		>
 		</ImageButton>
 		
