@@ -25,8 +25,8 @@
     
     
     <ImageButton 
+    android:id="@+id/btnAddContact"
     android:layout_width="wrap_content" 
-    android:id="@+id/btnAddContact" 
     android:src="@drawable/addcontact" 
     android:layout_height="wrap_content" 
     android:layout_alignParentTop="true" 
@@ -37,8 +37,8 @@
     
     
     <ImageButton 
-    android:layout_width="wrap_content" 
     android:id="@+id/btnNewConversation" 
+    android:layout_width="wrap_content" 
     android:src="@drawable/newconversation" 
     android:layout_height="wrap_content" 
     android:layout_alignParentTop="true" 
@@ -49,8 +49,9 @@
     
     
     <ImageButton
+    android:id="@+id/btnEndConversation"
     android:layout_width="wrap_content" 
-    android:id="@+id/btnEndConversation" android:src="@drawable/endconversation"
+    android:src="@drawable/endconversation"
     android:layout_height="wrap_content" 
     android:layout_alignParentTop="true" 
     android:layout_alignParentRight="true"
@@ -90,23 +91,26 @@
 	android:layout_gravity="bottom">
 		
 		
-		<EditText 
+		<EditText
+		android:id="@+id/txtMessage"
+		android:imeOptions="actionSend"
 		android:layout_weight="1" 
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content" 
-		android:id="@+id/txtMessage">
+		>
 		
 		<requestFocus></requestFocus>
 			
 		</EditText>
 		
 		
-		<ImageButton 
+		<ImageButton
+		android:id="@+id/btnSend" 
 		android:src="@drawable/logo" 
 		android:layout_height="42dp" 
-		android:layout_width="72dp" 
-		android:id="@+id/btnSend"
-		android:onClick="btnSendClick">
+		android:layout_width="72dp" 	
+		android:onClick="btnSendClick"
+		>
 		</ImageButton>
 		
 		
