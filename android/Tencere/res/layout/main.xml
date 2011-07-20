@@ -94,9 +94,12 @@
 		<EditText
 		android:id="@+id/txtMessage"
 		android:imeOptions="actionSend"
+		android:maxLines="1"
+		android:maxLength="200"
+		android:hint="Say something!"
 		android:layout_weight="1" 
 		android:layout_height="wrap_content"
-		android:layout_width="wrap_content" 
+		android:layout_width="wrap_content"
 		>
 		
 		<requestFocus></requestFocus>
