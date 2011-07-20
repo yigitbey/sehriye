@@ -680,6 +680,7 @@ public class Menu extends Activity implements OnKeyListener{
         					btnSend.performClick();
         					}
         				
+        				// Keep listening (do not hide the keyboard)
         				return true;
         				}
         			});
