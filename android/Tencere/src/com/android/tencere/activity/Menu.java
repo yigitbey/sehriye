@@ -602,10 +602,7 @@ public class Menu extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        
-        
-        
-        
+              
         //Initialize the main UI
         setContentView(R.layout.main);
         
