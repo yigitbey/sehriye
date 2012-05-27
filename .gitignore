@@ -1,2 +1,5 @@
+*.gitignore
+*.class
+*.ap_
 *.pyc
 *.apk
