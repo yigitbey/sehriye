@@ -1,10 +1,11 @@
 application: buluruzbirsey
-version: 1
+version: 2
 runtime: python
 api_version: 1
 
 inbound_services:
 - xmpp_message
+- xmpp_error
 
 builtins:
 - appstats: on
