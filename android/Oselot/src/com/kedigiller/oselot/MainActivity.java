@@ -32,22 +32,21 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    
+    //Android *Manager Internals
     public LocationManager locmgr = null; //-- Location Manager 
     public TelephonyManager mTelephonyMgr;      //-- Telephony Manager  
     public Phone myPhone;  //-- This Phone
 	public ConnectivityManager conMgr;    //-- Connectivity Manager
     
+	//Conversation variables
 	public Xmpp xmpp; //-- Xmpp Manager  
 	public User me; //-- Me as a conversation partner
     public User opponent; //-- My opponent
     public User nullPartner; //-- Null partner
 	public Conversation conversation; //-- Xmpp Conversation
     
-	//UI
+	//UI Views
 	public static ProgressDialog dialog; //-- Info Box
-
-    
     public EditText txtMessage; //-- Message box
     public ListView lstMessages; //-- Message list
     public Button btnEndConversation;// -- End conversation button
@@ -56,34 +55,38 @@ public class MainActivity extends Activity {
     public ArrayList<String> messages = new ArrayList<String>(); 
     public Handler mHandler = new Handler();
 	
-	StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+	//Networking on main thread
+    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
+    //Application to hold application-wide variables.
 	public Oselot app;
 
+	//Handlers for different types of xmpp messages
 	public static Handler messageHandler;
 	public static Handler conversationHandler;
 	public static Handler tradeHandler;
 	
 	public void initialise(){
+		//Create a new xmpp object
 		this.xmpp = new Xmpp();
+		
+		//Android internals for location & telephony & connection & phone state
 		this.locmgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE); //Initialise the location manager    	
         this.mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE); //Initialise the telephony manager
 		this.conMgr = (ConnectivityManager) getSystemService (Context.CONNECTIVITY_SERVICE); //Initialise the Connectivity Manager
     	this.myPhone = new Phone(mTelephonyMgr,conMgr); //Get phone state
 
 
-		app = (Oselot)this.getApplication();
-
 		//Setting app variables
-
-		app.xmpp = this.xmpp;
+    	app = (Oselot)this.getApplication();
+    	app.xmpp = this.xmpp;
 		app.locmgr = this.locmgr;
 		app.mTelephonyMgr = this.mTelephonyMgr;
 		app.conMgr = this.conMgr;
 		app.myPhone = this.myPhone;
 		app.mainActivity = this;
 		
-		  //Initialise UI Buttons
+		//Initialise UI Buttons
         txtMessage = (EditText) this.findViewById(R.id.txtMessage);
         lstMessages = (ListView) this.findViewById(R.id.lstMessages);
         btnEndConversation = (Button) this.findViewById(R.id.btnEndConversation);
@@ -111,13 +114,17 @@ public class MainActivity extends Activity {
         nullPartner = new User("Stranger",null,null,null,null,null);
         conversation = new Conversation(me,nullPartner);
         setListAdapter(); 
-    	
         xmpp.me = me;
         xmpp.partner = nullPartner;		
     	
     	
-    	//Get phone number
+    	//Get phone number from device
     	myPhone = new Phone(mTelephonyMgr,conMgr);
+    	
+	}
+	
+	//Function to initialise handlers for conversation status&trade&text xmpp messages
+	public void initialise_handlers(){
     	
     	//Conversation start & end Handler
 		conversationHandler = new Handler(){
@@ -202,7 +209,17 @@ public class MainActivity extends Activity {
 			  }
 		};
 	}
-	
+	//End of initialise_handlers
+
+	//** Function for telling XMPP instance to start a connection & create a conversation */
+    public void initialiseConnection(){
+    	app.xmpp.connectServer();
+    	app.conversation.requestConversation(me,xmpp);
+    }
+    //End of initialiseConnection
+
+    
+	//** XMPP connection & new conversation procedure */
 	public void start_connection_procedure(){
 		
     	//Check Internet connection
@@ -221,6 +238,7 @@ public class MainActivity extends Activity {
     		Toast.makeText(getApplicationContext(), "Unable to connect to internet", Toast.LENGTH_SHORT).show();
          }
 	}
+	//end of start_connection_procedure
 	
 	/** Called when the activity is first created. */
     @Override
@@ -228,39 +246,43 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainold);
         
+        //Networking on main thread
     	StrictMode.setThreadPolicy(policy); 
     		
     	//Initialise app variables
     	this.initialise();
+
+    	//Setup handlers for various xmpp messages
+    	this.initialise_handlers();
 
 		//Get my Location
 		double[] myLocation = app.getLocation();
 		//Serialise the location 
 		this.me.location = Double.toString(myLocation[0]) + ":" + Double.toString(myLocation[1]);  
 	
+		//Start a new connection & conversation
 		this.start_connection_procedure();
 
-		    
     }
 		
-    /**
-     * Function to pick your own info from the trade message coming from the server
-    @param msg Received message
-    @param myinfo My Information
-    @return Info that's not mine
-    */
-    
-    public String infoPicker (String msg, String myinfo) {
-    	Log.i("oselot.infoPicker",msg + ":" + myinfo);
-		String info1 = msg.split(":")[1]; //get the the info1
-		String info2 = msg.split(":")[2]; //get the the info2
 
-		Log.i("oselot.infoPicker",info1 + ":" + info2 + ":" + myinfo);
-		if (info1.equals(myinfo)) //info1 is mine
-			return info2;
-		else // info2 is mine
-			return info1;   
+    
+	
+    /**
+     * Defines add contact button behaviour
+     */
+    public void btnAddContactClick(View view) {
+    	
+    	Intent addContactIntent = new Intent(ContactsContract.Intents.Insert.ACTION, ContactsContract.Contacts.CONTENT_URI);
+    	addContactIntent.putExtra(ContactsContract.Intents.Insert.NAME, conversation.partner.name); // the name
+    	addContactIntent.putExtra(ContactsContract.Intents.Insert.PHONE, conversation.partner.number); // number
+    	addContactIntent.putExtra(ContactsContract.Intents.Insert.EMAIL, conversation.partner.mail); // mail
+    	
+    	startActivity(addContactIntent);
+
     }
+    //End of btnAddContactClick
+
     /**
      * Defines end button behaviour
      */
@@ -270,9 +292,6 @@ public class MainActivity extends Activity {
 	        conversation = new Conversation(me,nullPartner);
             messages.add("---Disconnected---");
             updateMessages();
-           
-         // end.setVisibility(View.INVISIBLE); //end is invisible
-         // newConversation.setVisibility(View.VISIBLE); //new is visible
             
 	}
 
@@ -304,6 +323,7 @@ public class MainActivity extends Activity {
      */
     public void btnSendClick(View view) {
     	
+    	//Get user input
         String text = txtMessage.getText().toString();
 
         if (conversation.is_started && !text.equals("")) {
@@ -312,10 +332,8 @@ public class MainActivity extends Activity {
             setListAdapter();
             
         }
-        else{
-        	//sendMessage(Server.agent,text);
-        }
         
+        //Empty user input button
     	txtMessage.setText("");
     	
     }
@@ -367,7 +385,7 @@ public class MainActivity extends Activity {
 	    	}
     	}
     }
-    //
+    //End of name click
     
     /**
      * Defines age button behaviour
@@ -413,7 +431,7 @@ public class MainActivity extends Activity {
 	    	}
     	}
     }
-    //
+    //End of age click
     
     /**
      * Defines sex button behaviour
@@ -429,21 +447,6 @@ public class MainActivity extends Activity {
 	}
 	//
 	
-	
-    /**
-     * Defines add contact button behaviour
-     */
-    public void btnAddContactClick(View view) {
-    	
-    	Intent addContactIntent = new Intent(ContactsContract.Intents.Insert.ACTION, ContactsContract.Contacts.CONTENT_URI);
-    	addContactIntent.putExtra(ContactsContract.Intents.Insert.NAME, conversation.partner.name); // the name
-    	addContactIntent.putExtra(ContactsContract.Intents.Insert.PHONE, conversation.partner.number); // number
-    	addContactIntent.putExtra(ContactsContract.Intents.Insert.EMAIL, conversation.partner.mail); // mail
-    	
-    	startActivity(addContactIntent);
-
-    }
-    //
 	
     /**
      * Defines location button behaviour
@@ -478,14 +481,36 @@ public class MainActivity extends Activity {
 	}
 	//
     
+	
     /**
-     * Function to add messages to list
+     * Function to pick your own info from the trade message coming from the server
+    @param msg Received message
+    @param myinfo My Information
+    @return Info that's not mine
+    */
+    public String infoPicker (String msg, String myinfo) {
+    	Log.i("oselot.infoPicker",msg + ":" + myinfo);
+		String info1 = msg.split(":")[1]; //get the the info1
+		String info2 = msg.split(":")[2]; //get the the info2
+
+		Log.i("oselot.infoPicker",info1 + ":" + info2 + ":" + myinfo);
+		if (info1.equals(myinfo)) //info1 is mine
+			return info2;
+		else // info2 is mine
+			return info1;   
+    }
+    //End of infoPicker
+
+	
+    /**
+     * Function to add & update messages to list
      * */
     private void setListAdapter() {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.multi_line_list_item, messages);
         lstMessages.setAdapter(adapter);
     }
-
+    //End of setListAdapter
+ 
    
     /**
     * Updates messages seen on the screen
@@ -498,17 +523,12 @@ public class MainActivity extends Activity {
             }
         });
     }
+    //End of updateMessages
     
-    public void initialiseConnection(){
-    	app.xmpp.connectServer();
-    	app.conversation.requestConversation(me,xmpp);
-    }
-    
-
-
-    
-
+    //** Function to clear progress dialog on this activity */
     public static void clearDialog(){
     	dialog.dismiss();
     }
+    //End of clearDialog
 }
+//End of MainActivity
