@@ -25,12 +25,12 @@
 		    		             android:id="@+id/addcontact"
 		    		             android:layout_width="46dp"
 		    		             android:layout_height="match_parent"
-		    		             android:onClick="addcontactClick"
+ 		    		             android:onClick="btnAddContactClick"
 		    		             android:text="@string/addcontact" />
 		              
-		                <Button android:textSize="11sp" android:text="NEW" android:onClick="newconversationClick" android:id="@+id/btnNewConversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
+		                <Button android:textSize="11sp" android:text="NEW" android:onClick="btnNewConversationClick" android:id="@+id/btnNewConversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:clickable="true" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
 		    		     
-		                <Button android:textSize="11sp" android:text="END" android:onClick="endClick" android:id="@+id/btnEndConversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
+		                <Button android:textSize="11sp" android:text="END" android:onClick="btnEndConversationClick" android:id="@+id/btnEndConversation" android:fadingEdge="vertical" android:textStyle="bold" android:layout_width="80dip" android:hapticFeedbackEnabled="true" android:layout_height="32dip"></Button>
 		     </LinearLayout>
 
 		           

@@ -4,14 +4,12 @@ package com.kedigiller.oselot;
 
 import java.util.ArrayList;
 
-import com.kedigiller.oselot.Phone;
-import com.kedigiller.oselot.User;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
@@ -19,6 +17,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
+import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.util.Log;
@@ -429,6 +428,22 @@ public class MainActivity extends Activity {
     	}
 	}
 	//
+	
+	
+    /**
+     * Defines add contact button behaviour
+     */
+    public void btnAddContactClick(View view) {
+    	
+    	Intent addContactIntent = new Intent(ContactsContract.Intents.Insert.ACTION, ContactsContract.Contacts.CONTENT_URI);
+    	addContactIntent.putExtra(ContactsContract.Intents.Insert.NAME, conversation.partner.name); // the name
+    	addContactIntent.putExtra(ContactsContract.Intents.Insert.PHONE, conversation.partner.number); // number
+    	addContactIntent.putExtra(ContactsContract.Intents.Insert.EMAIL, conversation.partner.mail); // mail
+    	
+    	startActivity(addContactIntent);
+
+    }
+    //
 	
     /**
      * Defines location button behaviour
