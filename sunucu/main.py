@@ -8,7 +8,7 @@ from mainpage import MainPage
 
 application = webapp.WSGIApplication([
         ('/_ah/xmpp/message/chat/', XMPPHandler), # Every XMPP message is handled by XMPPHandler class
-        ('/_ah/xmpp/error/', XmppError), # For XMPP errors
+        ('/_ah/xmpp/message/error/', XmppError), # For XMPP errors
         ],debug=True)
 
 def main():

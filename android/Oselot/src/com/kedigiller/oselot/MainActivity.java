@@ -329,7 +329,7 @@ public class MainActivity extends Activity {
      */
     public void nameClick(View view) {
     	if (conversation.nameClicked == false){
-    		conversation.nameClicked = true;
+    		
 	    	if (conversation.me.name == "myNotSetDefaultName"){
 	    	
 	    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -341,7 +341,7 @@ public class MainActivity extends Activity {
 	    		final EditText input = new EditText(this);
 	    		alert.setView(input);
 	
-	    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+	    		alert.setPositiveButton("Send", new DialogInterface.OnClickListener() {
 	    			public void onClick(DialogInterface dialog, int whichButton) {
 	    				Editable value = input.getText();
 	    				// Do something with value!
@@ -352,6 +352,7 @@ public class MainActivity extends Activity {
 	    					editor.putString("name", conversation.me.name);
 	    					editor.commit();
 	    					xmpp.sendMessage(Server.agent,custom_messages.TRADE_NAME + ":" + conversation.me.name);
+	    					conversation.nameClicked = true;
 	
 	    				}
 	    				else conversation.me.name = "myNotSetDefaultName";
@@ -363,6 +364,7 @@ public class MainActivity extends Activity {
 	    	}
 	    	if (conversation.me.name != "myNotSetDefaultName" && conversation.me.name != ""){
 	    		xmpp.sendMessage(Server.agent,custom_messages.TRADE_NAME + ":" + conversation.me.name);
+	    		conversation.nameClicked = true;
 	    	}
     	}
     }
@@ -373,7 +375,7 @@ public class MainActivity extends Activity {
      */
     public void ageClick(View view) {
     	if (conversation.ageClicked == false){
-    		conversation.ageClicked = true;
+    		
 	    	if (conversation.me.age == "myNotSetDefaultAge"){
 	        	
 	    		AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -385,7 +387,7 @@ public class MainActivity extends Activity {
 	    		final EditText input = new EditText(this);
 	    		alert.setView(input);
 	
-	    		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+	    		alert.setPositiveButton("Send", new DialogInterface.OnClickListener() {
 	    			public void onClick(DialogInterface dialog, int whichButton) {
 	    				Editable value = input.getText();
 	    				// Do something with value!
@@ -396,6 +398,7 @@ public class MainActivity extends Activity {
 	    					editor.putString("age", conversation.me.age);
 	    					editor.commit();
 	    					xmpp.sendMessage(Server.agent,custom_messages.TRADE_AGE + ":" + conversation.me.age);
+	    					conversation.ageClicked = true;
 	
 	    				}
 	    				else conversation.me.age = "myNotSetDefaultName";
@@ -407,6 +410,7 @@ public class MainActivity extends Activity {
 	    	}
 	    	if (conversation.me.age != "myNotSetDefaultAge" && conversation.me.age != ""){
 	    		xmpp.sendMessage(Server.agent,custom_messages.TRADE_AGE + ":" + conversation.me.age);
+	    		conversation.ageClicked = true;
 	    	}
     	}
     }
